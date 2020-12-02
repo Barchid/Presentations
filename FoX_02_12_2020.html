@@ -1,40 +1,144 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Réunion FoX 02/12/2020</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+	<title>Réunion FoX 02/12/2020</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h2 class="r-fit-text">Réunion FoX 02/12/2020</h2>
+				<p>Sami BARCHID</p>
+			</section>
+
+			<section data-markdown>
+				# Tour de table
+				- Bibliographie
+				- Projet publication du stage
+			</section>
+
+			<section>
+				<section>
+					<h1>Bibliographie</h1>
+				</section>
+
+				<section>
+					<h3>
+						But de la thèse
+					</h3>
+
+					SNN pour de la compréhension bio-inspirée de scène nécessaire à la navigation
+					robotique.
+				</section>
+
+				<section>
+					<h3>
+						Résumé bibliographie
+					</h3>
+					<ul>
+						<li>Supervised SNN</li>
+						<li>Unsupervised SNN (STDP)</li>
+						<li>Modèles de vision biologiques</li>
+						<li>Neurosciences computationnelles</li>
+						<li>Event-based datasets</li>
+					</ul>
+				</section>
+
+				<section data-markdown>
+					### Enjeux pour le simulateur
+					- Images naturelles haute-résolution
+					- Tâches de vision "complexes" (segmentation, détection, ...)
+					- Spatio-temporel = traitement vidéos
+				</section>
+
+				<section data-markdown>
+					### Solutions existantes
+
+					- Basé sur GPU
+						- [BindsNET](https://github.com/BindsNET/bindsnet)
+						- [SpykeTorch](https://github.com/miladmozafari/SpykeTorch)
+						- [Plein d'autres...](https://github.com/fzenke/spytorch)
+
+					- Limitations
+						- Besoin mémoire pour le traitement d'une vidéo
+						- Moins proche des hardwares neuromorphiques
+						- Implémentations peuvent être spécifiques
+				</section>
+
+				<section data-markdown>
+					### Simulateur perso
+					- Traitement vidéo
+					- Implémentation spécifique à mon cas d'utilisation
+				</section>
+			</section>
+
+			<section>
+				<section data-markdown>
+					# Projet publication du stage
+				</section>
+
+				<section>
+					<h3>MDAF-Net</h3>
+					<img src="img/FoX_02_12_2020/HDAF_Net_Architecture.png">
+				</section>
+
+				<section data-markdown>
+					### Histoire
+
+					- Faibles résultats sur datasets indoor traditionnels (NYU-D v2)
+					- Très bons résultats sur SceneNet RGB-D
+					- Voir sur gros datasets outdoor (CityScapes)
+				</section>
+				<section>
+					<h3>Résultats visuels sur le validation set</h3>
+					<img src="img/FoX_02_12_2020/CS_quali_rgb.PNG">
+				</section>
+				<section>
+					<h3>Ground truth - Prediction</h3>
+					<img src="img/FoX_02_12_2020/CS_quali_gt.PNG">
+				</section>
+
+				<section data-markdown>
+					### Publication
+					- Rédaction en chantier
+					- Établir un plan expérimental
+						- Autres datasets
+						- Variation des paramètres du modèle
+						- Étude d'ablation
+						- Comparaison état de l'art
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-				slideNumber: 'c/t',
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
