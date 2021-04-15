@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning</title>
+	<title>Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local
+		Learning</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
@@ -19,26 +20,58 @@
 	<div class="reveal">
 		<div class="slides">
 			<!-- Titre -->
-			<section data-background-color="#ae2573">
-				<h5>Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning</h5>
-				<img src="img/logo_udl_blanc.png">
-				<small>Sami BARCHID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; José MENNESSON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chaabane DJÉRABA</small>
-			</section>
-
-			<section data-markdown>
-				# Summary
-				- Spiking Neural Networks (SNNs)
-				- SNN for Pattern Recognition
-				- Deep Continuous Local Learning (DECOLLE)
-				- Methodology
-				- Experimental Proof-of-Concept
-				- Future Works
-				- Conclusion
+			<section>
+				<h5 style="text-transform: capitalize;">Deep Spiking Convolutional Neural Network for Single Object
+					Localization Based On Deep Continuous Local Learning</h5>
+				<br>
+				<br>
+				<small><b>Sami BARCHID</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; José MENNESSON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Chaabane DJÉRABA</small>
+				<img src="img/logos_cbmi.png">
+				<p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script>
 			</section>
 
 			<section>
 				<section data-markdown>
-					# Spiking Neural Networks
+					# Context
+				</section>
+				<section>
+					<h3>Deep learning</h3>
+					<ul>
+						<li>State-of-the-art in almost all Computer Vision and Machine Learning tasks</li>
+						<li>Growing computational, memory and energy costs</li>
+					</ul>
+					<img src="img/carbon-footprint.png">
+				</section>
+
+				<section>
+					<h3>Spiking Neural Networks <span style="text-transform:none; font-weight: normal; font-style: italic;">(SNNs)</span> </h3>
+					<ul>
+						<li>Third-generation of AI <small>[Maass1997]</small></li>
+						<li>Spiking neurons : strongly inspired by the neurons of our brain</li>
+						<li>Implementable on low-power neuromorphic hardware <small>[Davies2018]</small></li>
+						<li><b>A potential solution</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Challenges</h3>
+					<ul>
+						<li>Spiking neurons are not differentiable <small>[Kaiser2020]</small></li>
+						<ul>
+							<li><b>No backpropagation</b></li>
+						</ul>
+						<li>Performance still behind Artificial Neural Networks (ANNs)</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section data-markdown>
+					# SNN for Pattern Recognition
 				</section>
 
 				<section>
@@ -46,56 +79,19 @@
 
 					<ul>
 						<li>
-							An SNN consists of <b>spiking neurons</b> that communicate asynchronously through discrete spatio-temporal events called <b>spikes</b>.
+							An SNN consists of <b>spiking neurons</b> that communicate asynchronously through discrete
+							spatio-temporal events called <b>spikes</b>.
 						</li>
 						<li>
 							Leaky Integrate and Fire (LIF) neuron model
 						</li>
 					</ul>
-					
-					<img src="img/The-illustration-of-Leaky-Integrate-and-Fire-LIF-neuron-dynamics-The-pre-spikes-are.png">
+
+					<img
+						src="img/The-illustration-of-Leaky-Integrate-and-Fire-LIF-neuron-dynamics-The-pre-spikes-are.png">
 					<small>
-						Lee et al., "Enabling Spike-Based Backpropagation for Training Deep Neural Network Architectures"
+						Lee, Chankyu, et al. "Enabling spike-based backpropagation for training deep neural network architectures." Frontiers in neuroscience 14 (2020).
 					</small>
-				</section>
-
-				<!-- <section>
-					<h3>Comparison with Artificial Neural Networks (ANN)</h3>
-
-					<table>
-						<thead>
-							<th>ANN</th>
-							<th>SNN</th>
-						</thead>
-						<tbody>
-							<td></td>
-						</tbody>
-					</table>
-				</section> -->
-
-				<section data-markdown>
-					### Simulation
-					- SNNs can be simulated on GPU/CPU hardware
-					- Discretize the continuous dynamics of spiking neurons into `$T$` successive timesteps
-				</section>
-
-				<section data-markdown>
-					### Pros 🟢
-					- Can be implemented on low-power hardware
-					- Unsupervised biological learning possible
-				</section>
-
-				<section data-markdown>
-					### Cons 🔴
-					- Spiking neurons are not differentiable
-						- No backpropagation
-					- Performance still behind Artificial Neural Networks (ANN) 
-				</section>
-			</section>
-
-			<section>
-				<section>
-					<h1>SNN for Pattern Recognition</h1>
 				</section>
 
 				<section data-markdown data-auto-animate>
@@ -135,16 +131,17 @@
 					### Overview
 					- Supervised surrogate gradient learning
 					- Online learning
-						- Synaptic weights are updated at each time-step
-					-  Local error optimization
-						- Implementable on neuromorphic computers
+					- Synaptic weights are updated at each time-step
+					- Local error optimization
+					- Implementable on neuromorphic computers
 					- Low memory complexity
-						- Enable deep network simulation
+					- Enable deep network simulation
 				</section>
 
 				<section>
 					<img src="img/DECOLLE.png">
-					<i><small>Kaiser et al., "Synaptic Plasticity Dynamics for Deep Continuous Local Learning (DECOLLE)"</small></i>
+					<i><small>Kaiser et al., "Synaptic Plasticity Dynamics for Deep Continuous Local Learning
+							(DECOLLE)"</small></i>
 				</section>
 			</section>
 
@@ -168,7 +165,8 @@
 
 				<section>
 					<img src="img/frequency_coding.png">
-					<small>Falez et al., "Improving Spiking Neural Networks Trained with Spike Timing Dependent Plasticity for Image Recognition"</small>
+					<small>Falez et al., "Improving Spiking Neural Networks Trained with Spike Timing Dependent
+						Plasticity for Image Recognition"</small>
 				</section>
 
 				<section data-markdown>
@@ -177,7 +175,7 @@
 					- A readout layer is attached to each layer
 					- It produces a bounding box prediction
 					- A DCSNN `$s(\mathbf{I})$` composed of `$L$` layers outputs `$L$` bounding box predictions.
-					
+
 					In short, &nbsp;&nbsp;&nbsp; `$s(\mathbf{I}) = \{\mathbf{B}_i\}^{L}_1$`
 				</section>
 
@@ -189,18 +187,18 @@
 				<section data-markdown>
 					### Output Conversion Strategy
 					- DECOLLE = online learning
-						- An output prediction is produced for each of the `$T$` timesteps
-						- One prediction for each readout layer
+					- An output prediction is produced for each of the `$T$` timesteps
+					- One prediction for each readout layer
 					- **Which prediction should we choose ?**
 				</section>
 
 				<section data-markdown>
 					### Output Conversion Strategy
 					- A rate-coded image delivers its total information after the `$T$` timesteps
-						- **Keep the prediction of the last timestep**
+					- **Keep the prediction of the last timestep**
 
 					- Hierarchical representation of successive layers
-						- **Keep the prediction of the last layer, `$\mathbf{B}_L$`**
+					- **Keep the prediction of the last layer, `$\mathbf{B}_L$`**
 				</section>
 			</section>
 
@@ -215,11 +213,11 @@
 						<li>Training split: <b>6000 images</b></li>
 						<li>Testing split: <b>1349 images</b></li>
 					</ul>
-					<img src="img/Oxford_IIIT_Pet.png">			
+					<img src="img/Oxford_IIIT_Pet.png">
 				</section>
 				<section>
 					<h3>Implementation Details</h3>
-	
+
 					<table>
 						<tbody>
 							<tr>
@@ -263,16 +261,17 @@
 				<section data-markdown>
 					### Observations
 					- Most object are well-localized ($55$ to $75$% mIoU)
-					- Small objects are poorly localized ($\le 15$% mIoU) 
+					- Small objects are poorly localized ($\le 15$% mIoU)
 				</section>
 
 				<section data-markdown>
 					### Hypotheses
 					1. **Common data imbalance problem**
-						- Most images are close-up pictures of pets
-						- The network does not generalize to rare small examples
+					- Most images are close-up pictures of pets
+					- The network does not generalize to rare small examples
 					2. **Output Conversion**
-						- Loss of information when using the proposed output conversion *(i.e. last prediction of last layer)*
+					- Loss of information when using the proposed output conversion *(i.e. last prediction of last
+					layer)*
 				</section>
 			</section>
 
@@ -285,17 +284,17 @@
 					### Futher experiments
 					- Use harder datasets (small examples, etc)
 					- Test other output conversion :
-						- Mean of all predictions
-						- Median value of all predictions
+					- Mean of all predictions
+					- Median value of all predictions
 					- Test other neural coding
-						- Temporal coding, rank order, etc
+					- Temporal coding, rank order, etc
 
 					Paper extension ?
 				</section>
 				<section data-markdown>
 					### Other ideas
 					- Use event-based input instead of static images
-						- Lead to a fully spike-based object tracking solution
+					- Lead to a fully spike-based object tracking solution
 					- Multiple object localization
 					- Other tasks (object detection, segmentation, etc)
 				</section>
@@ -313,6 +312,15 @@
 					- Proof-of-Concept results show the applicability of recent supervised approaches
 					- First step towards harder vision tasks *(e.g. object detection, semantic segmentation)*
 				</section>
+			</section>
+			<section data-markdown>
+				### References
+				- **[Davies2018]**: *Davies, Mike, et al. "Loihi: A neuromorphic manycore processor with on-chip
+				learning." Ieee Micro 38.1 (2018): 82-99.*
+				- **[Maass1997]**: *W. Maass, “Networks of spiking neurons: the third generation of neural network
+				models,” Neural networks, vol. 10, no. 9, pp. 1659–1671, 1997.*
+				- **[Kaiser2020]**: *J. Kaiser, et al. “Synaptic plasticity dynamics for
+				deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424, 2020.*
 			</section>
 		</div>
 	</div>
