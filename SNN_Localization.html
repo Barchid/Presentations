@@ -48,7 +48,8 @@
 				</section>
 
 				<section>
-					<h3>Spiking Neural Networks <span style="text-transform:none; font-weight: normal; font-style: italic;">(SNNs)</span> </h3>
+					<h3>Spiking Neural Networks <span
+							style="text-transform:none; font-weight: normal; font-style: italic;">(SNNs)</span> </h3>
 					<ul>
 						<li>Third-generation of AI <small>[Maass1997]</small></li>
 						<li>Spiking neurons : strongly inspired by the neurons of our brain</li>
@@ -71,7 +72,23 @@
 
 			<section>
 				<section data-markdown>
-					# SNN for Pattern Recognition
+					# SNN for Computer Vision
+				</section>
+
+				<section>
+					<h3>TODO</h3>
+				</section>
+
+				<section>
+					<h3>Image neural Coding</h3>
+
+					<ul>
+						<li><b>Definition : </b> converts the numerical values of pixels into spikes.</li>
+						<li>No established methods</li>
+					</ul>
+					<img style="height: 325px" src="img/frequency_coding.png" alt="Neural Coding examples">
+					<small>Falez, Pierre. Improving spiking neural networks trained with spike timing dependent
+						plasticity for image recognition. Diss. Université de Lille, 2019.</small>
 				</section>
 
 				<section>
@@ -88,86 +105,139 @@
 					</ul>
 
 					<img
-						src="img/The-illustration-of-Leaky-Integrate-and-Fire-LIF-neuron-dynamics-The-pre-spikes-are.png">
-					<small>
-						Lee, Chankyu, et al. "Enabling spike-based backpropagation for training deep neural network architectures." Frontiers in neuroscience 14 (2020).
-					</small>
-				</section>
-
-				<section data-markdown data-auto-animate>
-					### Learning Approaches
-					1. ANN-to-SNN Conversion
-					2. Backpropagation adaptation
-					3. Unsupervised local learning
-				</section>
-
-				<section data-markdown data-auto-animate>
-					### Learning Approaches
-					1. ANN-to-SNN Conversion
-					2. **Backpropagation adaptation**
-					3. Unsupervised local learning
-				</section>
-
-				<section data-markdown>
-					### State of SNN in Computer Vision
-					- Simple recognition tasks *(e.g. digit recognition)*
-					- Mostly shallow networks
-					- Lack of works towards **complex vision tasks**
+						src="img/Spiking_neuron.png" style="height: 400px">
 				</section>
 
 				<section>
-					<h3>Objective</h3>
-					<p>Exploit recent works on supervised learning to perform complex tasks</p>
+					<h3>Running an SNN</h3>
+					<ul>
+						<li>Neuromorphic hardware</li>
+
+						<ul>
+							<li>Limited capacity of neurons</li>
+							<li>Difficult to access</li>
+						</ul>
+						<br>
+						<li>Simulation on CPU/GPU</li>
+
+						<ul>
+							<li>The continuous dynamics of spiking neurons cannot be run 'as is'</li>
+							<li>Need to discretize the continuous dynamics into $T$ timesteps </li>
+						</ul>
+					</ul>
+				</section>
+
+				<section data-auto-animate>
+					<h3>Learning Approaches</h3>
+					<ol>
+						<li>Unsupervised local learning <small>[Caporale2008]</small>
+						</li>
+						<ul>
+							<li>Neuromorphic implementation</li>
+							<li>No annotation</li>
+						</ul>
+						<li>ANN-to-SNN conversion <small>[Cao2015]</small></li>
+						<ul>
+							<li>Best performance</li>
+							<li>Training is still on ANNs</li>
+						</ul>
+						<li>Adapted backpropagation <small>[Kaiser2020]</small></li>
+						<ul>
+							<li>Good performance recently</li>
+						</ul>
+					</ol>
+				</section>
+
+				<section data-auto-animate>
+					<h3>Learning Approaches</h3>
+					<ol>
+						<li>Unsupervised local learning <small>[Caporale2008]</small>
+						</li>
+						<ul>
+							<li>Neuromorphic implementation</li>
+							<li>No annotation</li>
+						</ul>
+						<li>ANN-to-SNN conversion <small>[Cao2015]</small></li>
+						<ul>
+							<li>Best performance</li>
+							<li>Training is still on ANNs</li>
+						</ul>
+						<b>
+							<li>Adapted backpropagation <small>[Kaiser2020]</small></li>
+						</b>
+						<ul>
+							<li>Good performance recently</li>
+						</ul>
+					</ol>
+				</section>
+
+				<section data-markdown data-auto-animate>
+					### State of SNN in Computer Vision
+					- Simple recognition tasks *(e.g. digit recognition)*
+					- Mostly shallow networks
+
+					- Lack of works towards complex vision tasks
+				</section>
+
+				<section data-markdown data-auto-animate>
+					### State of SNN in Computer Vision
+
+					- Simple recognition tasks *(e.g. digit recognition)*
+					- Mostly shallow networks
+
+					- Lack of works towards complex vision tasks
+					- **Proposed contribution :**
+						- Exploit recent supervised learning approach to perform complex vision task
 				</section>
 
 			</section>
 
 			<section>
-				<section data-markdown>
-					# Deep Continuous Local Learning
+				<section>
+					<h1>Deep Continuous Local Learning</h1>
+
+					<br>
+					<br>
+					<small>Kaiser, et al. “Synaptic plasticity dynamics for
+						deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424,
+						2020</small>
 				</section>
 
 				<section data-markdown>
 					### Overview
 					- Supervised surrogate gradient learning
 					- Online learning
-					- Synaptic weights are updated at each time-step
+						- Synaptic weights are updated at each time-step
 					- Local error optimization
-					- Implementable on neuromorphic computers
+						- Implementable on neuromorphic computers
 					- Low memory complexity
-					- Enable deep network simulation
+						- Enable deep network simulation
 				</section>
 
 				<section>
+					<h3>DECOLLE scheme</h3>
 					<img src="img/DECOLLE.png">
-					<i><small>Kaiser et al., "Synaptic Plasticity Dynamics for Deep Continuous Local Learning
-							(DECOLLE)"</small></i>
+					<small>Kaiser, et al. “Synaptic plasticity dynamics for
+						deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424,
+						2020</small>
 				</section>
 			</section>
 
 			<section>
 				<section data-markdown>
-					# Methodology
+					# Contributions
 				</section>
 
 				<section>
-					<h3>Overview</h3>
+					<h3>Formulation</h3>
 					<img src="img/FPN_DECOLLE_Overview.png">
 				</section>
 
-				<section data-markdown>
-					### Image neural Coding
-
-					- **Definition :** converts the numerical values of pixels into spikes.
-					- No established method
-					- Rate coding is used
-				</section>
-
-				<section>
+				<!-- <section>
 					<img src="img/frequency_coding.png">
 					<small>Falez et al., "Improving Spiking Neural Networks Trained with Spike Timing Dependent
 						Plasticity for Image Recognition"</small>
-				</section>
+				</section> -->
 
 				<section data-markdown>
 					### Readout Layers
@@ -187,24 +257,24 @@
 				<section data-markdown>
 					### Output Conversion Strategy
 					- DECOLLE = online learning
-					- An output prediction is produced for each of the `$T$` timesteps
+						- An output prediction is produced for each of the `$T$` timesteps
 					- One prediction for each readout layer
-					- **Which prediction should we choose ?**
+						- **Which prediction should we choose ?**
 				</section>
 
 				<section data-markdown>
 					### Output Conversion Strategy
 					- A rate-coded image delivers its total information after the `$T$` timesteps
-					- **Keep the prediction of the last timestep**
+						- **Keep the prediction of the last timestep**
 
 					- Hierarchical representation of successive layers
-					- **Keep the prediction of the last layer, `$\mathbf{B}_L$`**
+						- **Keep the prediction of the last layer, `$\mathbf{B}_L$`**
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<h1>Experimental Proof-of-Concept</h1>
+					<h1>Experiments</h1>
 				</section>
 				<section>
 					<h3>Oxford-IIIT-Pet dataset</h3>
@@ -215,112 +285,129 @@
 					</ul>
 					<img src="img/Oxford_IIIT_Pet.png">
 				</section>
+				
 				<section>
-					<h3>Implementation Details</h3>
-
-					<table>
-						<tbody>
-							<tr>
-								<th>Implementation</th>
-								<td>GPU with PyTorch</td>
-							</tr>
-							<tr>
-								<th>GPU</th>
-								<td>NVIDIA 2080Ti</td>
-							</tr>
-							<tr>
-								<th>Batch size</th>
-								<td>$16$</td>
-							</tr>
-							<tr>
-								<th>Optimizer</th>
-								<td>AdaMax $\beta_1=0$ & $\beta_2=0.95$</td>
-							</tr>
-							<tr>
-								<th>Loss</th>
-								<td>Smooth L1</td>
-							</tr>
-							<tr>
-								<th>Learning rate</th>
-								<td>$10^{-9}$</td>
-							</tr>
-							<tr>
-								<th>Data augmentation</th>
-								<td>Horizontal flipping and random brightness</td>
-							</tr>
-						</tbody>
-					</table>
+					<h3>Mean Intersection over Union <span style="text-transform: none;">(mIoU)</span></h3>
+						<p>The mean value of all the intersections between the predicted $\mathbf{B}$ and the ground truth over their unions.</p>
+						<img src="img/IoU.png" alt="IoU" style="height: 400px;">
+					</ul>
 				</section>
+
 				<section>
 					<h3>Results</h3>
 					<p>$63.2$% mIoU</p>
 
 					<img src="img/qualitative_results.png">
-				</section>
-
-				<section data-markdown>
-					### Observations
-					- Most object are well-localized ($55$ to $75$% mIoU)
-					- Small objects are poorly localized ($\le 15$% mIoU)
+					<ul>
+						<li>Most object are well-localized ($55$ to $75$% mIoU)</li>
+						<li>Small objects are poorly localized ($\le 15$% mIoU)</li>
+					</ul>
 				</section>
 
 				<section data-markdown>
 					### Hypotheses
 					1. **Common data imbalance problem**
-					- Most images are close-up pictures of pets
-					- The network does not generalize to rare small examples
+						- Most images are close-up pictures of pets
+						- The network does not generalize to rare small examples
 					2. **Output Conversion**
-					- Loss of information when using the proposed output conversion *(i.e. last prediction of last
-					layer)*
+						- Loss of information when using the proposed output conversion *(i.e. last prediction of last
+						layer)*
 				</section>
 			</section>
 
-			<section>
-				<section>
-					<h1>Future Works</h1>
-				</section>
-
+			<!-- <section>
 				<section data-markdown>
 					### Futher experiments
-					- Use harder datasets (small examples, etc)
+					- Use harder datasets (small examples, etc.)
 					- Test other output conversion :
 					- Mean of all predictions
 					- Median value of all predictions
 					- Test other neural coding
-					- Temporal coding, rank order, etc
+					- Temporal coding, rank order, etc.
 
 					Paper extension ?
 				</section>
-				<section data-markdown>
-					### Other ideas
-					- Use event-based input instead of static images
-					- Lead to a fully spike-based object tracking solution
-					- Multiple object localization
-					- Other tasks (object detection, segmentation, etc)
-				</section>
+			</section> -->
 
+			<section>
 				<section>
-					<h3>Collaboration</h3>
-					<p>If you want to use DECOLLE for your tasks, tell me ! </p>
+					<h1>Conclusion and Perspectives</h1>
+				</section>
+				<section data-markdown>
+					### Conclusion
+					- First work on Supervised DCSNN for complex vision tasks
+
+					- Proof-of-Concept results show the applicability of recent supervised approaches
+
+					- First step towards more complex vision tasks
+				</section>
+				<section data-markdown>
+					### Perspectives
+					- Use event-based input instead of static images
+
+					- Leads to a fully spike-based object tracking solution
+					- Multiple object localization
+					- Other tasks (object detection, segmentation, etc.)
 				</section>
 			</section>
 
 			<section>
-				<section data-markdown>
-					# Conclusion
-					- First work on Supervised DCSNN for complex vision tasks
-					- Proof-of-Concept results show the applicability of recent supervised approaches
-					- First step towards harder vision tasks *(e.g. object detection, semantic segmentation)*
-				</section>
+				<h1>Thanks !</h1>
 			</section>
-			<section data-markdown>
-				### References
-				- **[Davies2018]**: *Davies, Mike, et al. "Loihi: A neuromorphic manycore processor with on-chip
-				learning." Ieee Micro 38.1 (2018): 82-99.*
-				- **[Maass1997]**: *W. Maass, “Networks of spiking neurons: the third generation of neural network
-				models,” Neural networks, vol. 10, no. 9, pp. 1659–1671, 1997.*
-				- **[Kaiser2020]**: *J. Kaiser, et al. “Synaptic plasticity dynamics for
-				deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424, 2020.*
+
+			<section>
+				<h5>References</h5>
+				<ul>
+					<li><small><b>[Davies2018]</b> : <i>Davies, Mike, et al. "Loihi: A neuromorphic manycore processor
+								with on-chip learning." Ieee Micro 38.1 (2018): 82-99.</i></small></li>
+					<li><small><b>[Maass1997]</b> : <i>W. Maass, “Networks of spiking neurons: the third generation of
+								neural network
+								models,” Neural networks, vol. 10, no. 9, pp. 1659–1671, 1997.</i></small></li>
+					<li><small><b>[Kaiser2020]</b> : <i> Kaiser, et al. “Synaptic plasticity dynamics for
+								deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424,
+								2020.</i></small></li>
+					<li><small><b>[Caporale2008]</b> : <i> N. Caporale and Y. Dan, "Spike timing-dependent plasticity: a Hebbian learning rule" Annu. Rev. Neurosci., vol. 31, pp. 25–46, 2008.</i></small></li>
+					<li><small><b>[Cao2015]</b> : <i>Y. Cao, et al. “Spiking deep convolutional neural
+								networks for energy-efficient object recognition,” International Journal
+								of Computer Vision, vol. 113, no. 1, pp. 54–66, 2015.</i></small></li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Implementation Details</h3>
+
+				<table>
+					<tbody>
+						<tr>
+							<th>Implementation</th>
+							<td>GPU with PyTorch</td>
+						</tr>
+						<tr>
+							<th>GPU</th>
+							<td>NVIDIA 2080Ti</td>
+						</tr>
+						<tr>
+							<th>Batch size</th>
+							<td>$16$</td>
+						</tr>
+						<tr>
+							<th>Optimizer</th>
+							<td>AdaMax $\beta_1=0$ & $\beta_2=0.95$</td>
+						</tr>
+						<tr>
+							<th>Loss</th>
+							<td>Smooth L1</td>
+						</tr>
+						<tr>
+							<th>Learning rate</th>
+							<td>$10^{-9}$</td>
+						</tr>
+						<tr>
+							<th>Data augmentation</th>
+							<td>Horizontal flipping and random brightness</td>
+						</tr>
+					</tbody>
+				</table>
 			</section>
 		</div>
 	</div>
