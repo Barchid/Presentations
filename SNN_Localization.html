@@ -44,7 +44,7 @@
 						<li>State-of-the-art in almost all Computer Vision and Machine Learning tasks</li>
 						<li>Growing computational, memory and energy costs</li>
 					</ul>
-					<img src="img/carbon-footprint.png">
+					<img class="fragment" src="img/carbon-footprint.png">
 				</section>
 
 				<section>
@@ -52,9 +52,12 @@
 							style="text-transform:none; font-weight: normal; font-style: italic;">(SNNs)</span> </h3>
 					<ul>
 						<li>Third-generation of AI <small>[Maass1997]</small></li>
+						<br>
 						<li>Spiking neurons : strongly inspired by the neurons of our brain</li>
+						<br>
 						<li>Implementable on low-power neuromorphic hardware <small>[Davies2018]</small></li>
-						<li><b>A potential solution</b></li>
+						<br>
+						<li class="fragment"><b>A potential solution</b></li>
 					</ul>
 				</section>
 
@@ -63,8 +66,9 @@
 					<ul>
 						<li>Spiking neurons are not differentiable <small>[Kaiser2020]</small></li>
 						<ul>
-							<li><b>No backpropagation</b></li>
+							<li class="fragment"><b>No backpropagation</b></li>
 						</ul>
+						<br>
 						<li>Performance still behind Artificial Neural Networks (ANNs)</li>
 					</ul>
 				</section>
@@ -111,85 +115,72 @@
 				<section>
 					<h3>Running an SNN</h3>
 					<ul>
-						<li>Neuromorphic hardware</li>
+						<div class="fragment">
+							<li> <b>Neuromorphic hardware</b></li>
 
-						<ul>
-							<li>Limited capacity of neurons</li>
-							<li>Difficult to access</li>
-						</ul>
+							<ul>
+								<li>Limited capacity of neurons</li>
+								<li>Difficult to access</li>
+							</ul>
+						</div>
 						<br>
-						<li>Simulation on CPU/GPU</li>
+						<div class="fragment">
+							<li><b>Simulation on CPU/GPU</b></li>
 
-						<ul>
-							<li>The continuous dynamics of spiking neurons cannot be run 'as is'</li>
-							<li>Need to discretize the continuous dynamics into $T$ timesteps </li>
-						</ul>
+							<ul>
+								<li>The continuous dynamics of spiking neurons cannot be run 'as is'</li>
+								<li>Need to discretize the continuous dynamics into $T$ timesteps </li>
+							</ul>
+						</div>
 					</ul>
 				</section>
 
-				<section data-auto-animate>
+				<section>
 					<h3>Learning Approaches</h3>
 					<ol>
-						<li>Unsupervised local learning <small>[Caporale2008]</small>
-						</li>
-						<ul>
-							<li>Neuromorphic implementation</li>
-							<li>No annotation</li>
-						</ul>
-						<li>ANN-to-SNN conversion <small>[Cao2015]</small></li>
-						<ul>
-							<li>Best performance</li>
-							<li>Training is still on ANNs</li>
-						</ul>
-						<li>Adapted backpropagation <small>[Kaiser2020]</small></li>
-						<ul>
-							<li>Good performance recently</li>
-						</ul>
+						<div class="fragment">
+							<b><li>Unsupervised local learning <small>[Caporale2008]</small>
+							</li></b>
+							<ul>
+								<li>Neuromorphic implementation</li>
+								<li>No annotation</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<b><li>ANN-to-SNN conversion <small>[Cao2015]</small></li></b>
+							<ul>
+								<li>Best performance</li>
+								<li>Training is still on ANNs</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<div class="fragment grow">
+								<b><li>Adapted backpropagation <small>[Kaiser2020]</small></li></b>
+								<ul>
+									<li>Good performance recently</li>
+								</ul>
+							</div>
+						</div>
 					</ol>
 				</section>
 
-				<section data-auto-animate>
-					<h3>Learning Approaches</h3>
-					<ol>
-						<li>Unsupervised local learning <small>[Caporale2008]</small>
-						</li>
-						<ul>
-							<li>Neuromorphic implementation</li>
-							<li>No annotation</li>
-						</ul>
-						<li>ANN-to-SNN conversion <small>[Cao2015]</small></li>
-						<ul>
-							<li>Best performance</li>
-							<li>Training is still on ANNs</li>
-						</ul>
-						<b>
-							<li>Adapted backpropagation <small>[Kaiser2020]</small></li>
-						</b>
-						<ul>
-							<li>Good performance recently</li>
-						</ul>
-					</ol>
+				<section>
+					<h3>State of SNN in Computer Vision</h3>
+					<ul>
+						<li>Simple recognition tasks <small>[Falez2019]</small> <i>(e.g. digit recognition)</i></li>
+						<li>Mostly shallow networks</li>
+						<li>Lack of works towards complex vision tasks</li>
+						<br>
+						<div class="fragment">
+							<b>
+								<li>Proposed contribution :</li>
+							</b>
+							<ul>
+								<li>Exploit recent supervised learning approaches to perform complex vision task</li>
+							</ul>
+						</div>
+					</ul>
 				</section>
-
-				<section data-markdown data-auto-animate>
-					### State of SNN in Computer Vision
-					- Simple recognition tasks *(e.g. digit recognition)*
-					- Mostly shallow networks
-
-					- Lack of works towards complex vision tasks
-				</section>
-
-				<section data-markdown data-auto-animate>
-					### State of SNN in Computer Vision
-
-					- Simple recognition tasks *(e.g. digit recognition)*
-					- Mostly shallow networks
-
-					- Lack of works towards complex vision tasks
-					- **Proposed contribution :**
-						- Exploit recent supervised learning approach to perform complex vision task
-				</section>
-
 			</section>
 
 			<section>
@@ -215,7 +206,7 @@
 				</section>
 
 				<section>
-					<h3>DECOLLE scheme</h3>
+					<h3>Illustration</h3>
 					<img src="img/DECOLLE.png">
 					<small>Kaiser, et al. “Synaptic plasticity dynamics for
 						deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424,
@@ -239,14 +230,15 @@
 						Plasticity for Image Recognition"</small>
 				</section> -->
 
-				<section data-markdown>
-					### Readout Layers
+				<section>
+					<h3>Readout Layers</h3>
+					<ul>
+						<li>A readout layer is attached to each layer</li>
+						<li>It produces a bounding box prediction</li>
+						<li>A DCSNN $s(\mathbf{I})$ composed of $L$ layers outputs $L$ bounding box predictions</li>
+					</ul>
 
-					- A readout layer is attached to each layer
-					- It produces a bounding box prediction
-					- A DCSNN `$s(\mathbf{I})$` composed of `$L$` layers outputs `$L$` bounding box predictions.
-
-					In short, &nbsp;&nbsp;&nbsp; `$s(\mathbf{I}) = \{\mathbf{B}_i\}^{L}_1$`
+					<p class="fragment">In short, &nbsp;&nbsp;&nbsp; $s(\mathbf{I}) = \{\mathbf{B}_i\}^{L}_1$</p>
 				</section>
 
 				<section>
@@ -296,12 +288,13 @@
 				<section>
 					<h3>Results</h3>
 					<p>$63.2$% mIoU</p>
-
-					<img src="img/qualitative_results.png">
-					<ul>
-						<li>Most object are well-localized ($55$ to $75$% mIoU)</li>
-						<li>Small objects are poorly localized ($\le 15$% mIoU)</li>
-					</ul>
+					<div class="fragment">
+						<img src="img/qualitative_results.png">
+						<ul>
+							<li>Most object are well-localized ($55$ to $75$% mIoU)</li>
+							<li>Small objects are poorly localized ($\le 15$% mIoU)</li>
+						</ul>
+					</div>
 				</section>
 
 				<section data-markdown>
@@ -370,6 +363,7 @@
 					<li><small><b>[Cao2015]</b> : <i>Y. Cao, et al. “Spiking deep convolutional neural
 								networks for energy-efficient object recognition,” International Journal
 								of Computer Vision, vol. 113, no. 1, pp. 54–66, 2015.</i></small></li>
+					<li><small><b>[Falez2019]</b> : <i>P. Falez, et al. "Multi-layered spiking neural network with target timestamp threshold adaptation and stdp," in 2019 International Joint Conference on Neural Networks (IJCNN). IEEE, 2019, pp. 1–8.</i></small></li>
 				</ul>
 			</section>
 
