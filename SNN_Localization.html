@@ -110,7 +110,7 @@
 					</ul>
 
 					<img
-						src="img/Spiking_neuron.png" style="height: 400px">
+						class="fragment" src="img/Spiking_neuron.png" style="height: 400px">
 				</section>
 
 				<section>
@@ -236,10 +236,11 @@
 					<ul>
 						<li>A readout layer is attached to each layer</li>
 						<li>It produces a bounding box prediction</li>
-						<li>A DCSNN $s(\mathbf{I})$ composed of $L$ layers outputs $L$ bounding box predictions</li>
+						<br>
+						<li class="fragment" data-fragment-index="1">A DCSNN $s(\mathbf{I})$ composed of $L$ layers outputs $L$ bounding box predictions</li>
 					</ul>
 
-					<p class="fragment">In short, &nbsp;&nbsp;&nbsp; $s(\mathbf{I}) = \{\mathbf{B}_i\}^{L}_1$</p>
+					<p class="fragment" data-fragment-index="1">In short, &nbsp;&nbsp;&nbsp; $s(\mathbf{I}) = \{\mathbf{B}_i\}^{L}_1$</p>
 				</section>
 
 				<section>
@@ -298,14 +299,22 @@
 					</div>
 				</section>
 
-				<section data-markdown>
-					### Hypotheses
-					1. **Common data imbalance problem**
-						- Most images are close-up pictures of pets
-						- The network does not generalize to rare small examples
-					2. **Output Conversion**
-						- Loss of information when using the proposed output conversion *(i.e. last prediction of last
-						layer)*
+				<section>
+					<h3>Hypotheses</h3>
+					<ol>
+						<b><li class="fragment" data-fragment-index="1">Common data imbalance problem</li></b>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Most images are close-up pictures of pets</li>
+							<li>The network does not generalize to rare small examples</li>
+						</ul>
+						<br>
+						<b><li class="fragment" data-fragment-index="2">Output Conversion</li></b>
+						<ul class="fragment" data-fragment-index="2">
+							<li>
+								Loss of information when using the proposed output conversion <i>(i.e. last prediction of last layer)</i>
+							</li>
+						</ul>
+					</ol>
 				</section>
 			</section>
 
