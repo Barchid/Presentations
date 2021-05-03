@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projet &eacute;tudiant en vision artificielle &colon; am&eacute;liorer les performances des r&eacute;seaux de neurones impulsionnels par la simulation des saccades occulaires</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="projet-étudiant-en-vision-artificielle--améliorer-les-performances-des-réseaux-de-neurones-impulsionnels-par-la-simulation-des-saccades-occulaires">Projet étudiant en vision artificielle : améliorer les performances des réseaux de neurones impulsionnels par la simulation des saccades occulaires</h1>
+<h2 id="contexte">Contexte</h2>
+<p>Ce projet est destiné aux étudiants en informatique de L3, intéressés par l'IA, et la vision artificielle. Nous cherchons un étudiant dans le but de travailler au sein de l'équipe FoX du laboratoire CRIStAL (Université de Lille). Ce travail s'inscrit dans la direction de recherche de FoX consacrée aux approches bio-inspirées pour la reconnaissance de forme.</p>
+<h2 id="objectif-du-projet">Objectif du projet</h2>
+<p>L'apparition et la popularisation des réseaux de neurones artificiels (deep learning) ont conduit à d'immenses progrès dans quasiment toutes les tâches d'intelligence artificielle (IA) et de vision par ordinateur. Si bien que, de nos jours, l'usage de ces méthodes est systématique.</p>
+<p>Cependant, le deep learning implique un important coût en capacité de calcul/mémoire et, par conséquent, consomme beaucoup d'énergie. Pour illustrer, on peut mentionner l'entraînement d'une architecture de deep learning actuelle dont l'empreinte carbone est 5 fois plus élevée que celle d'une voiture américaine durant toute sa vie [1].</p>
+<p>L'autre problème du deep learning est la nécessité de disposer d'une grande quantité de données annotées par un expert humain afin de pouvoir l'entraîner à faire de la reconnaissance. C'est pourquoi, la création de cette base de données d'apprentissage est un processus coûteux en temps et en argent.</p>
+<p>Pour répondre à ces problèmes, une piste de solution envisagée est de s'inspirer du fonctionnement de notre cerveau, notamment grâce à l'utilisation de <strong>réseaux de neurones impulsionnels</strong> (ou &quot;<strong>SNN</strong>&quot;, pour &quot;Spiking Neural Network&quot;) [2]. Ils ne sont pas à confondre avec les populaires neurones artificiels. A l'instar de notre cerveau, les SNNs sont ultra-basse consommation [3] et peuvent apprendre des motifs sans avoir besoin d'annotations préalables [4]. Ces neurones impulsionnels restent, en IA et en vision artificielle, un domaine exploratoire dont les performances sont encore en-dessous de celles des méthodes populaires de deep learning [5].</p>
+<p>On constate plusieurs verrous scientifiques limitant l'apprentissage des SNNs. On peut notamment citer : la perte d'activité neuronale dans les réseaux profonds [6], l'encodage neuronal des images numériques [7], ...</p>
+<p>L'objectif de ce projet est de collaborer avec les membres de l'équipe dans le développement des réseaux de neurones impulsionnels pour la vision par ordinateur afin de lever ces verrous scientifiques.</p>
+<h2 id="description-du-projet">Description du projet</h2>
+<p>Le projet s'inspire du système des saccades occulaires que nous retrouvons habituellement dans le système visuel d'une grande partie des êtres-vivant. Il s'agit de rapides mouvements inconscients de l'oeil qui pourraient jouer un rôle important dans les systèmes visuels biologiques [8]. L'idée est de simuler ces mouvements de saccades occulaires afin d'encoder les informations visuelles fournies à un SNN, permettant à celui-ci d'améliorer grandement son apprentissage.</p>
+<p>Le travail de l'étudiant sera d'étudier et d'implémenter ce mouvement de saccade occulaire pour qu'il puisse être exploité dans les modèles de SNN développés par au sein de FoX. Après développement de ce système de saccade, il est également possible de participer aux expériences de ces saccades employées avec les neurones impulsionnels.</p>
+<h2 id="profil-du-candidat">Profil du candidat</h2>
+<p>Le candidat est un étudiant en 3ème année de licence informatique, intéressé par la recherche et désireux de travailler dans un projet au sein d'un laboratoire.</p>
+<p>Concernant les compétences techniques, il est impératif que le candidat ait une bonne maîtrise en programmation orienté objet avec le langage Python. Des notions en traitement d'image et machine learning sont un plus.</p>
+<h2 id="contacts">Contacts</h2>
+<ul>
+<li><strong>José MENNESSON :</strong> <a href="mailto:jose.mennesson@univ-lille.fr">jose.mennesson@univ-lille.fr</a></li>
+<li><strong>Sami BARCHID :</strong> <a href="mailto:sami.barchid@univ-lille.fr">sami.barchid@univ-lille.fr</a></li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p><strong>Training a single AI model can emit as much carbon as five cars in their lifetimes</strong>. Lien : <a href="https://www.technologyreview.com/2019/06/06/239031/training-a-single-ai-model-can-emit-as-much-carbon-as-five-cars-in-their-lifetimes/">https://www.technologyreview.com/2019/06/06/239031/training-a-single-ai-model-can-emit-as-much-carbon-as-five-cars-in-their-lifetimes/</a></p>
+</li>
+<li>
+<p>W. Maass, “Networks of spiking neurons: the third generation of neural
+network models,” Neural networks, vol. 10, no. 9, pp. 1659–1671, 1997.</p>
+</li>
+<li>
+<p>M. Davies et al., &quot;Loihi: A Neuromorphic Manycore Processor with On-Chip Learning,&quot; in IEEE Micro, vol. 38, no. 1, pp. 82-99, January/February 2018, doi: 10.1109/MM.2018.112130359.</p>
+</li>
+<li>
+<p>P. Falez, P. Tirilly, I. M. Bilasco, P. Devienne, and P. Boulet, “Multi-
+layered spiking neural network with target timestamp threshold adap-
+tation and stdp,” in 2019 International Joint Conference on Neural
+Networks (IJCNN). IEEE, 2019, pp. 1–8.</p>
+</li>
+<li>
+<p>Taherkhani, Aboozar, et al. &quot;A review of learning in biologically plausible spiking neural networks.&quot; Neural Networks 122 (2020): 253-272.</p>
+</li>
+<li>
+<p>Falez, Pierre. Improving spiking neural networks trained with spike timing dependent plasticity for image recognition. Diss. Université de Lille, 2019.</p>
+</li>
+<li>
+<p>Rufin Van Rullen, Simon J. Thorpe; Rate Coding Versus Temporal Order Coding: What the Retinal Ganglion Cells Tell the Visual Cortex. Neural Comput 2001; 13 (6): 1255–1283.</p>
+</li>
+<li>
+<p>Masquelier, T., Portelli, G. &amp; Kornprobst, P. Microsaccades enable efficient synchrony-based coding in the retina: a simulation study. Sci Rep 6, 24086 (2016).</p>
+</li>
+</ol>
+
+    </body>
+    </html>
