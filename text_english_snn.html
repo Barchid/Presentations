@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Text for video</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="text-for-video">Text for video</h1>
+<h2 id="title-slide">Title slide</h2>
+<p>Hello. My name is Sami Barchid and in this video, I am going to present our paper at CBMI 2021 called : &quot;Deep Spiking Convolutional Neural Network for Single Object Localization based on Deep Continuous Local Learning&quot;.</p>
+<h2 id="context">Context&quot;</h2>
+<p>First and foremost, let's discuss the context behind our work.</p>
+<h3 id="deep-learning">Deep Learning</h3>
+<p>As you doubtless know, currently Deep Learning is kind of the go-to approach for almost every Computer Vision or Machine learning task, achieving impressive state-of-the-art results in most cases.</p>
+<p>However, such approach require heavy computational and memory capacity, leading to a high energy consumption. To the point that nowadays training state-of-the-art architectures can even emit as much carbon as five cars in their lifetime.</p>
+<h3 id="spiking-neural-networks">Spiking Neural Networks</h3>
+<p>To counter this problem, many works focus on Spiking Neural Networks (or SNN for short).</p>
+<p>It is well-known as the third generation of AI. SNNs consist of Spiking neurons, which are strongly inspired by the neurons of our brain.</p>
+<p>They can be implemented on neuromorphic hardware, which are extremely energy efficient.</p>
+<p><strong>FRAGMENT</strong> Therefore SNNs can be a good candidate to solve the problem.</p>
+<h3 id="challenges">Challenges</h3>
+<p>For now, SNNs performance are still far behind Artificial Neural Networks.</p>
+<p>This can be explained by the non-differentiablity of spiking neurons, <strong>FRAGMENT</strong> which prevents the use of the well-known backpropagation algorithm that unleashed the potential of ANNs.</p>
+<h2 id="snn-for-computer-vision">SNN for Computer Vision</h2>
+<p>Knowing this, we can recap the state of SNNs in computer vision.</p>
+<h3 id="common-process">Common Process</h3>
+<p>Firstly let's take a look at the common process to deal with static images using SNNs.</p>
+<p>The first step of the process is known as the neural coding. Essentially, it converts the image into a series of spikes, which are the data format understandable by the spiking neurons.</p>
+<p>On the second step, the obtained spikes are fed into the SNN in the forward pass.</p>
+<p>Afterwards, the output of the SNN is used to obtain the prediction.</p>
+<h3 id="definition">Definition</h3>
+<p>An SNN is composed of spiking neurons. These neurons communicate asynchronously through discrete events known as spikes. There are numerous models to design the behaviour of spiking neurons, but one of the most popular and simplest model is the Leaky Integrate-and-Fire model, or LIF for short.</p>
+<p><strong>FRAGMENT</strong> A LIF neuron has a membrane potential V that is excited when it receives input spikes from the presynaptic neurons. When the membrane is not excited, it slowly returns to its resting potential, which is equal to 0 here.</p>
+<p>Once the membrane potential exceeds a defined threshold theta, the LIF neuron emits a spike to its post-synaptic neurons and the membrane potential is reset to its resting potential.</p>
+<p>Similarly to ANNs, the presynaptic neurons are weighted by synaptic weights and training an SNN essentially means to change their values to produce a desired prediction.</p>
+<h3 id="image-neural-coding">Image Neural Coding</h3>
+<p>Since SNNs work with spikes instead of numerical values, the first thing to do when working with static images is to convert the numerical values of pixels into spikes.</p>
+<p>This conversion is known as Neural Coding and there are several different methods.</p>
+<p><strong>IMAGE</strong> Here, i'm showing you the frequecy coding (or rate-coding) where a pixel value is represented by a frequency of spikes. It means that a high value involves a high number of spikes and a low numerical value involves a low frequency.</p>
+<p><strong>IMAGE</strong> Among popular neural coding there is also the temporal coding, where values are represented by a single spike that appear early for high values and late for low values.</p>
+<h3 id="running-an-snn">Running an SNN</h3>
+<p>To run an SNN, <strong>FRAGMENT</strong> we can consider neuromorphic hardware that I talked about earlier. However, neuromorphic hardware are still limited in term of neuron capacity and they are not easily available.</p>
+<p><strong>FRAGMENT</strong> That's why it is much more convenient to simulate SNNs on common synchronous architectures like CPU or GPU. This kind of simulation requires to discretize the continuous dynamics of spiking neurons into a certain number of T successive timesteps.</p>
+<h3 id="learning-approaches">Learning Approaches</h3>
+<p>To train an SNN, there are three popular strategies nowadays :</p>
+<p><strong>FRAGMENT</strong> The first and oldest approach is to use unsupervised bio-plausible learning rules observed in our brain such as Spike-Timing Dependent Plasticity. These approaches are local, which means that it can be implemented on neuromorphic hardware and, of course, do not require any annotation.</p>
+<p><strong>FRAGMENT</strong> The second one focus on converting a trained ANN into a functional SNN. This approach achieves the best performance and there already exist converted SNNs that can deal with modern computer vision tasks. However, the SNN is not trained directly and training the ANN remains energy intensive. I tend to consider this approach as an ANN optimization rather than an SNN training algorithm.</p>
+<p><strong>FRAGMENT</strong> The third strategy is to adapt the original backpropagation to enable supervised learning on SNNs. This is a recent approach that achieves promising results currently.</p>
+<p><strong>FRAGMENT</strong> That's why we focus on this approach for our contribution.</p>
+<h3 id="state-of-snn-in-computer-vision">State of SNN in Computer Vision</h3>
+<p>As we review the recent works on SNNs for Computer Vision, we notice that most papers still focus on simple recognition tasks such as digit recognition and mostly use shallow networks composed of 2 or 3 layers. Consequently we observe a lack of works towards complex vision tasks like object detection.</p>
+<p><strong>FRAGMENT</strong> Our contribution aims at tackling these problems. Our objective is to exploit recent supervised learning approaches to perform complex vision tasks with SNNs and see if these approaches are currently relevant.</p>
+<h2 id="deep-continuous-local-learning">Deep Continuous Local Learning</h2>
+<p>Now let's focus on the supervised learning model we employ. We use Deep Continuous Local Learning (or DECOLLE, for short). It is a state-of-the-art approach based on surrogate gradient learning for SNNs.</p>
+<h3 id="overview">Overview</h3>
+<p>We are not going to extensively describe the method here because it is not the scope of this work. Instead we simply recap the specific properties of DECOLLE.</p>
+<p>So DECOLLE is an online surrogate gradient learning method, which means that synaptic weights are updated continuously after each timestep.</p>
+<p>The learning rule is local, and we've seen that locality is an important feature to be implementable on neuromorphic hardware.</p>
+<p>Another significant advantage is the low memory complexity required to simulate DECOLLE on GPU, which enables the simulation of deep spiking networks.</p>
+<h3 id="illustration">Illustration</h3>
+<p>The overall architecture of a DECOLLE SNN can be described like this.</p>
+<p><strong>IMAGE</strong> Similarly to ANNs, an SNN consists of successive layers like fully connected or convolutional layers for example. And, like ANNs, these successive layers create deep hierarchical representations that increase the expressivity of the model.</p>
+<p><strong>IMAGE</strong> In DECOLLE, a readout layer initialized with fixed random weights is attached to each layer of spiking neurons. At each timestep, a readout layer multiplies the neural activation of its related spiking layer with its fixed random weights.</p>
+<p><strong>IMAGE</strong> The output of a readout layer is a prediction that is used to solve the targeted task and compute a local error. Consequently, each layer minimizes its own local error function.</p>
+<p><strong>IMAGE</strong> LIF layers build on the features of the previous layers trained with their own local error function. The layers indirectly learn features that are useful for their successors.</p>
+<h2 id="contributions">Contributions</h2>
+<p>Now, let's see how we can deal with computer vision problems with SNNs on DECOLLE.</p>
+<h3 id="formulation">Formulation</h3>
+<p>The vision task is formulated as follows :</p>
+<p><strong>IMAGE</strong> given a grayscale image I that contains stricly one object,</p>
+<p><strong>IMAGE</strong> the objective is to predict the bounding box B that surrounds this object.</p>
+<p><strong>IMAGE</strong> To do so, we first encode the image I using rate coding.</p>
+<p><strong>IMAGE</strong> The resulting input spikes are fed in s(I), a deep convolutional spiking neural network (or DCSNN for short).</p>
+<h3 id="readout-layers">Readout Layers</h3>
+<p>As said previously, in DECOLLE, a readout layer is attached to each spiking layer. In our model, these readout layers are used to predict the targeted bounding box.</p>
+<p>It means that a DCSNN s(I) composed of L layers outputs L bounding box predictions.</p>
+<h3 id="architecture">Architecture</h3>
+<p>The architecture of our proposed DCSNN follows the encoder-decoder paradigm, which is quite common in the deep learning community.</p>
+<p><strong>IMAGE</strong> It consists of an encoder composed of 3 convolutional LIF layers. The role of the encoder is to increase the semantic information of the extracted spiking feature maps while decreasing the spatial information.</p>
+<p><strong>IMAGE</strong> The lost spatial information is then recovered in a 3-layered decoder, where the output spikes from the encoder’s layers are passed to the decoder through residual connections. The residual connections are essentially addition operations between two spiking feature maps.</p>
+<p><strong>IMAGE</strong> Note that, for readability, the readout layers are not shown in this illustration.</p>
+<h3 id="output-conversion-strategy">Output Conversion Strategy</h3>
+<p>A major issue in our model is to obtain the final bounding box prediction. Indeed, an output prediction is produced for each of the T timesteps. in addition, each readout layer produces a prediction. To summarize, it means that we have T predictions for each of the L layers in our model.</p>
+<p><strong>FRAGMENT</strong> So, the problem is : which prediction should we choose ?</p>
+<h3 id="output-conversion-strategy-1">Output Conversion Strategy</h3>
+<p><strong>FRAGMENT</strong> Firstly, because of the hierarchical representation of succesive layers in a deep neural network, we assume that the last layer contains the best prediction of our model.</p>
+<p><strong>FRAGMENT</strong> Secondly, we know that the neural coding used is the rate coding. which means the rate-coded image delivers its total information after all the T timesteps. Consequently, a bounding box prediction produced in the last timestep may contain the maximal information.</p>
+<p>Consequently, the final prediction of our model is the prediction of the last readout layer obtained at the last timestep.</p>
+<h2 id="experiments">Experiments</h2>
+<p>To validate our model and, more generally, to validate the use of SNNs for modern computer vision tasks, we conducted an experimental proof-of-concept.</p>
+<h3 id="oxford-iiit-pet-dataset">OXFORD-IIIT-PET dataset</h3>
+<p>We used the OXFORD-IIIT-Pet dataset, which is composed of color images containing stricly one cat or one dog and an associated segmentation mask.</p>
+<p><strong>IMAGE</strong> For our experiment, we modified the dataset to obtain grayscale images and used the segmentation mask to obtain the bounding box coordinates.</p>
+<h3 id="results">Results</h3>
+<p>In the end, our model achieves promising results, with 63.2% in mean intersection over Union (which is a standard metric to evaluate the performance in object localization).</p>
+<p><strong>FRAGMENT</strong> We also analyzed the results qualitatively. Here, I show you representative samples. In most cases, objects are well localized with 55 to 75%. However, we observed that small objects are poorly localized, with less than 15% mIoU.</p>
+<h3 id="hypotheses">Hypotheses</h3>
+<p>To explain these poor performance with small objects, we have two hypotheses :</p>
+<p><strong>FRAGMENT</strong> The first one is a data imabalance problem, which is unfortunately common in machine learning. Indeed, most images in OXFORD-IIIT-PET are close-up pictures of cats and dogs. Consequently, our model does not generalize to the rare, small objects.</p>
+<p><strong>FRAGMENT</strong> The second one is related to the output conversion strategy. Even if taking the last prediction of the last layer is justified, we suspect a loss of information when using this strategy.</p>
+<h2 id="conclusion-and-perspectives">Conclusion and perspectives</h2>
+<p>So, let's recap and dicuss the presented work.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>We designed a single object localization model using Deep spiking neural network.</p>
+<p>The promising proof-of-concept results show the applicability of supervised learning SNN for more complex vision tasks.</p>
+<p>To the best of our knowledge, this is the first work on supervised SNNs for complex vision task.</p>
+<p>Finally, we think that this work can be a first step towards modern computer vision solutions using SNNs.</p>
+<h3 id="perspectives">Perspectives</h3>
+<p>As a first step, this work can pave the way to many perspectives.</p>
+<p>Even though our DCSNN is used for static images, it can be intersting to exploit event-based cameras instead of static images.</p>
+<p>Switching to this sensor would lead to a sparser and fully spike-based computer vision solution.</p>
+<p>Another interesting perspective is simply to increase the complexity of the vision task, with a multiple object localization.</p>
+<p>Or, more generally, diversify our future works on supervised SNNs towards other popular vision tasks such as semantic segmentation or object detection.</p>
+<h2 id="thanks">Thanks</h2>
+<p>This concludes my presentation. I hope it was interesting for you and I'll be glad to answer your questions. Thank your for listening.</p>
+
+    </body>
+    </html>
