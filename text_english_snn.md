@@ -18,10 +18,12 @@ It is well-known as the third generation of AI. SNNs consist of Spiking neurons,
 
 They can be implemented on neuromorphic hardware, which are extremely energy efficient.
 
-Therefore SNNs can be a good candidate to solve the problem.
+**FRAGMENT** Therefore SNNs can be a good candidate to solve the problem.
 
 ### Challenges
-For now, SNNs performance are still far behind Artificial Neural Networks. This can be explained by the non-differentiablity of spiking neurons, which prevent the use of the standard backpropagation algorithm that unleashed the potential of ANNs.
+For now, SNNs performance are still far behind Artificial Neural Networks.
+
+**FRAGMENT** This can be explained by the non-differentiablity of spiking neurons, which prevent the use of the standard backpropagation algorithm that unleashed the potential of ANNs.
 
 ## SNN for Computer Vision
 Knowing this, we can recap the state of SNNs in computer vision.
@@ -29,7 +31,7 @@ Knowing this, we can recap the state of SNNs in computer vision.
 ### Definition
 An SNN is composed of spiking neurons. These neurons communicate asynchronously through discrete events known as spikes. There are numerous models to design the behaviour of spiking neurons, but one of the most popular and simplest model is the Leaky Integrate-and-Fire model, or LIF for short.
 
-A LIF neuron has a membrane potential V that is excited when it receives input spikes from the presynaptic neurons. When the membrane is not excited, it slowly returns to its resting potential, which is equal to 0 here.
+**FRAGMENT** A LIF neuron has a membrane potential V that is excited when it receives input spikes from the presynaptic neurons. When the membrane is not excited, it slowly returns to its resting potential, which is equal to 0 here.
 
 Once the membrane potential exceeds a defined threshold theta, the LIF neuron emits a spike to its post-synaptic neurons and the membrane potential is reset to its resting potential.
 
@@ -40,9 +42,9 @@ Since SNNs work with spikes instead of numerical values, the first thing to do w
 
 This conversion is known as Neural Coding and there are several different methods.
 
-Here, i'm showing you the frequecy coding (or rate-coding) where a pixel value is represented by a frequency of spikes. It means that a high value involves a high number of spikes and a low numerical value involves a low frequency.
+**IMAGE** Here, i'm showing you the frequecy coding (or rate-coding) where a pixel value is represented by a frequency of spikes. It means that a high value involves a high number of spikes and a low numerical value involves a low frequency.
 
-Among popular neural coding there is also the temporal coding, where values are represented by a single spike that appear early for high values and late for low values.
+**IMAGE** Among popular neural coding there is also the temporal coding, where values are represented by a single spike that appear early for high values and late for low values.
 
 
 ### Running an SNN
