@@ -27,14 +27,14 @@
 				<small><b>Sami BARCHID</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; José MENNESSON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					Chaabane DJÉRABA</small>
 				<img src="img/Review_RGBD_Seg/logos_cbmi.png">
-				<p><small id="js-current-date"></small></p>
+				<!-- <p><small id="js-current-date"></small></p>
 				<script>
 					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
-				</script>
+				</script> -->
 			</section>
 
 			<section>
-				<h1>Objective</h1>
+				<h3>Objective</h3>
 				<ul>
 					<li class="fragment">
 						<b>Condensed introduction</b> to the field of RGBD semantic segmentation
@@ -49,110 +49,279 @@
 			</section>
 
 			<section>
-				<h1>Formulation</h1>
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview.png">
+				</section>
 
-				<img src="img/Review_RGBD_Seg/seg_overview.png" alt="Segmentation Overview">
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview_1.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview_2.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview_3.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview_4.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview_5.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>
+						Formulation
+						<!-- <small style="text-transform: none; font-size: 35px;">[Long2015]</small> -->
+					</h3>
+					<img alt="Segmentation Overview" src="img/Review_RGBD_Seg/seg_overview_6.png">
+				</section>
 			</section>
 
 			<section>
 				<section>
-					<h1>Approaches</h1>
+					<h3>Overview of current models</h3>
+
+					<ul>
+						<li class="fragment">No established method to perfectly exploit RGB and Depth data together</li>
+						<br>
+						<li class="fragment">Models vary depending on how the depth features are incorporated into the
+							DCNN</li>
+						<br>
+						<b>
+							<li class="fragment">Three strategies found</li>
+						</b>
+					</ul>
 				</section>
+
 				<section>
-					<img src="img/Review_RGBD_Seg/seg_approaches.png" alt="Segmentation approaches" style="height: 650px;">
+					<h3>
+						Depth as Input ( <span style="font-style: italic; text-transform: none;">DaI</span> )
+						<small style="text-transform: none;">[Seichter2020]</small>
+					</h3>
+					<img src="img/Review_RGBD_Seg/approach_DaI.png" alt="DaI_Approach">
+					<ul>
+						<li>Most popular</li>
+						<li>Duplicated parts</li>
+						<li>Increased computational and memory complexity</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>
+						Depth as Operation ( <span style="font-style: italic; text-transform: none;">DaO</span> )
+						<small style="text-transform: none;">[Wang2018]</small>
+					</h3>
+					<img src="img/Review_RGBD_Seg/approach_DaO.png" alt="Approach DaO">
+					<ul>
+						<li>Operation modified w.r.t. depth map</li>
+						<li>No duplicated parts</li>
+						<li>Reduced complexity</li>
+						<li>Adapted to low-cost indoor devices</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>
+						Depth as Prediction ( <span style="font-style: italic; text-transform: none;">DaP</span> )
+						<small style="text-transform: none;">[Jiao2019]</small>
+					</h3>
+					<img src="img/Review_RGBD_Seg/approach_DaP.png" alt="Approach DaP">
+					<ul>
+						<li>Depth only during training</li>
+						<li>Predicts segmentation AND depth map</li>
+						<li>Enable the use of cheaper RGB cameras</li>
+					</ul>
 				</section>
 			</section>
 
 			<section>
-				<h1>Metrics</h1>
-				<ul>
-					<li><b>Pixel Accuracy :</b> ratio of pixels that are well classified.</li>
-					<br>
-					<li class="fragment grow"><b>Mean Intersection over Union </b> <span
-							style="font-style: italic;">(mIoU)</span> <b>:</b> mean value of all the intersections
-						between the predicted
-						$\mathbf{S}$ and the ground truth over their unions.</li>
+				<h3>Mean Intersection over Union <span style="text-transform: none;">(mIoU)</span></h3>
+				<p>The mean value of all the intersections
+					between the predicted
+					$\mathbf{S}$ and the ground truth over their unions.</p>
+				<img src="img/Review_RGBD_Seg/IoU.png" alt="IOU" style="height: 400px;">
+			</section>
+			<section>
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_init.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_wo_notes_0.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_wo_notes_1.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_wo_notes_2.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_wo_notes_3.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_wo_notes_4.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img src="img/Review_RGBD_Seg/benchmarks_wo_notes_5.png" alt="Benchmarks">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img alt="Benchmarks" src="img/Review_RGBD_Seg/benchmarks_0.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img alt="Benchmarks" src="img/Review_RGBD_Seg/benchmarks_1.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img alt="Benchmarks" src="img/Review_RGBD_Seg/benchmarks_2.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Existing Benchmarks</h3>
+					<img alt="Benchmarks" src="img/Review_RGBD_Seg/benchmarks_3.png">
+				</section>
+
+				<section>
+					<img src="img/Review_RGBD_Seg/depth_examples.png" alt="depth examples">
+				</section>
 			</section>
 
 			<section>
-				<h3>Existing Benchmarks</h3>
-				<table>
-					<thead>
-						<tr>
-							<th></th>
-							<th>NYUv2</th>
-							<th>SUN-RGBD<br></th>
-							<th>2D-3D-S</th>
-							<th>Matterport3D</th>
-							<th>SceneNet RGB-D</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Year</td>
-							<td>2012</td>
-							<td>2015</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td># Images</td>
-							<td>1 449</td>
-							<td>10 335</td>
-							<td>70 000</td>
-							<td>194 000</td>
-							<td>5M</td>
-						</tr>
-						<tr>
-							<td>Usual<br>class settings<br></td>
-							<td>40</td>
-							<td>37</td>
-							<td></td>
-							<td></td>
-							<td>13</td>
-						</tr>
-						<tr>
-							<td>Dimension<br>( H x W )<br></td>
-							<td>480 x 640</td>
-							<td></td>
-							<td>1080 x 1080</td>
-							<td>1080 x 1080</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Usage</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_0.png" alt="Performance Analysis Table">
+				</section>
 
-			<section>
-				<h3>Performance Analysis</h3>
-				<p>Table of methods</p>
-				<p></p>
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_1.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_2.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_3.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_4.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_5.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_6.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_7.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_8.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_9.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_10.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_11.png" alt="Performance Analysis Table">
+				</section>
+
+				<section data-transition="none">
+					<h3>Performance Analysis</h3>
+					<img src="img/Review_RGBD_Seg/performances_12.png" alt="Performance Analysis Table">
+				</section>
 			</section>
 
 			<section>
 				<h3>Challenges</h3>
 				<ul>
-					<li>SOTA models are not adapted to edge devices.</li>
+					<li class="fragment">SOTA models are not adapted to edge devices.</li>
 					<br />
-					<li>Performance are still evaluated on older and smaller datasets (NYU-Dv2, SUN-RGBD)</li>
+					<li class="fragment">Performance are still evaluated on older and smaller datasets (NYUv2, SUN-RGBD)
+					</li>
 					<br />
-					<li><b>DaI</b> still remains the way-to-go despite its drawbacks</li>
+					<li class="fragment"><b>DaI category</b> still remains the way-to-go despite its drawbacks</li>
 				</ul>
 			</section>
 
 			<section>
 				<h3>Perspectives</h3>
 				<ul>
-					<li></li>
+					<li class="fragment">Future works should evaluate their performance on recent and larger datasets
+						<span style="font-style: italic;">(2D-3D-S, Matterport3D)</span>
+					</li>
+					<br>
+					<li class="fragment">Focusing on <b>DaP</b> and <b>DaO</b> categories to fully exploit their
+						advantages </li>
+					<br>
+					<li class="fragment">Models based on lightweight backbone networks would enable the use of low-cost
+						devices for indoor applications</li>
 				</ul>
 			</section>
 
@@ -163,8 +332,31 @@
 			<section>
 				<h5>References</h5>
 				<ul>
-					<li><small><b>[Davies2018]</b> : <i>Davies, Mike, et al. "Loihi: A neuromorphic manycore processor
-								with on-chip learning." Ieee Micro 38.1 (2018): 82-99.</i></small></li>
+					<!-- <li><small><b>[Long2015]</b> : <i>Long et al. “Fully convolutional networks	for semantic segmentation,” in Proceedings of the IEEE conference on computer vision and pattern recognition, 2015, pp. 3431–3440.</i></small></li> -->
+					<li><small><b>[Wang2018]</b> : <i>Wang et al. “Depth-aware cnn for rgb-d segmentation,” in
+								Proceedings of the European Conference on Computer Vision (ECCV), 2018, pp.
+								135–150.</i></small></li>
+					<li><small><b>[Seichter2020]</b> : <i>Seichter et al. “Efficient rgb-d semantic segmentation for
+								indoor scene analysis,” arXiv preprint arXiv:2011.06961, 2020.</i></small></li>
+					<li><small><b>[Wang2018]</b> : <i>Wang et al. “Depth-aware cnn for rgb-d segmentation,” in
+								Proceedings of the European Conference on Computer Vision (ECCV), 2018, pp.
+								135–150.</i></small></li>
+					<li><small><b>[Jiao2019]</b> : <i>Jiao et al. “Geometry-aware distillation for indoor semantic
+								segmentation,” in Proceedings of the IEEE Conference on Computer Vision and Pattern
+								Recognition, 2019, pp. 2869–2878.</i></small></li>
+					<li><small><b>[Silberman2012]</b> : <i>Silberman et al. “Indoor segmentation
+								and support inference from rgbd images,” in European conference on computer vision.
+								Springer, 2012, pp. 746–760.</i></small></li>
+					<li><small><b>[Song2015]</b> : <i>Song et al. “Sun rgb-d: A rgb-d scene understanding benchmark
+								suite,” in Proceedings of the IEEE conference on computer vision and pattern
+								recognition, 2015, pp. 567–576.</i></small></li>
+					<li><small><b>[Armeni2017]</b> : <i>Armeni et al. “Joint 2d-3d-semantic data for indoor scene
+								understanding,” arXiv preprint arXiv:1702.01105, 2017.</i></small></li>
+					<li><small><b>[Chang2017]</b> : <i>Chang et al. “Matterport3d: Learning from rgb-d data in indoor
+								environments,” arXiv preprint arXiv:1709.06158, 2017.</i></small></li>
+					<li><small><b>[McCormac2016]</b> : <i>McCormac et al. “Scenenet rgb-d: 5m photorealistic images of
+								synthetic indoor trajectories with ground truth,” arXiv preprint arXiv:1612.05079,
+								2016.</i></small></li>
 				</ul>
 			</section>
 		</div>
