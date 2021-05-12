@@ -126,7 +126,7 @@ The architecture of our proposed DCSNN follows the encoder-decoder paradigm, whi
 
 **IMAGE** The lost spatial information is then recovered in a 3-layered decoder, where the output spikes from the encoder’s layers are passed to the decoder through residual connections. The residual connections are essentially addition operations between two spiking feature maps.
 
-**IMAGE** Note that, for readability, the readout layers are not shown in this illustration.
+**IMAGE** Note that, for readability, the readout layers are not shown in this illustration..
 
 ### Output Conversion Strategy
 A major issue in our model is to obtain the final bounding box prediction. Indeed, an output prediction is produced for each of the T timesteps. in addition, each readout layer produces a prediction. To summarize, it means that we have T predictions for each of the L layers in our model.

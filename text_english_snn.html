@@ -96,7 +96,7 @@
 <p>The architecture of our proposed DCSNN follows the encoder-decoder paradigm, which is quite common in the deep learning community.</p>
 <p><strong>IMAGE</strong> It consists of an encoder composed of 3 convolutional LIF layers. The role of the encoder is to increase the semantic information of the extracted spiking feature maps while decreasing the spatial information.</p>
 <p><strong>IMAGE</strong> The lost spatial information is then recovered in a 3-layered decoder, where the output spikes from the encoder’s layers are passed to the decoder through residual connections. The residual connections are essentially addition operations between two spiking feature maps.</p>
-<p><strong>IMAGE</strong> Note that, for readability, the readout layers are not shown in this illustration.</p>
+<p><strong>IMAGE</strong> Note that, for readability, the readout layers are not shown in this illustration..</p>
 <h3 id="output-conversion-strategy">Output Conversion Strategy</h3>
 <p>A major issue in our model is to obtain the final bounding box prediction. Indeed, an output prediction is produced for each of the T timesteps. in addition, each readout layer produces a prediction. To summarize, it means that we have T predictions for each of the L layers in our model.</p>
 <p><strong>FRAGMENT</strong> So, the problem is : which prediction should we choose ?</p>
