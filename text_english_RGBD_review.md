@@ -43,13 +43,70 @@ The "Depth as Operation" strategy does not use depth as an additional input, but
 As opposed to the two other strategies, "Depth as Prediction" only uses depth during training, because the objective of this strategy is to predict both the segmentation AND the depth maps. In this way, the model implicitly learns the geometric information from depth data by learning how to produce one. Because depth is not required during inference, a "Depth as Prediction" can run on cheaper RGB cameras.
 
 
-## Existing Benchmarks
-Now let's see the major benchmarks used in the field.
+## Existing Datasets
+Now let's see the major datasets used in the field.
 
-**IMAGE** The useful information here is the year of publication, the number of images in the dataset, the usual class number and, of cours, the dimension of the images.
+**IMAGE** We can divide the existing datasets on three different categories.
 
-**IMAGE** The most popular (and oldest) one is NYUv2. It has been created quite long ago now, which explains the small number of images. The usual setting
+**IMAGE** The first one consists of NYUv2 and SUN RGBD.
+**IMAGE** They are the oldest datasets in the list and are not perfectly suitable for data-hungry algorithms like deep learning.
+**IMAGE** Indeed, NYUv2 and SUN-RGBD have a very small number of samples and 
+**IMAGE** the images have a low resolution.
+
+**IMAGE** The problems of this first category have been solved in 
+**IMAGE** 2017 with the release of two more recent benchmarks, namely 2D-3D-S and Matterport3D.
+**IMAGE** They are composed of a higher number of images with higher dimensions. Therefore these new datasets are much more adapted to current deep learning models.
+
+**IMAGE** The last category contains SceneNet-RGBD and focus on synthetic data.
+
+**IMAGE** In SceneNet RGB-D, 3D indoor scenes are generated automatically to create a huge quantity of annotated data. Using a synthetic dataset is a good option for pretraining in order to boost the performance. Thus this can be used in addition to the two other categories of datasets.
 
 ## Depth Map Examples
-On the other hand, the quality of depth sensors is another important feature to take into account. Compared to the current depth sensor’s performance, the depth maps collected by less recent datasets are not as accurate. As seen in the NYUv2 example, the early depth sensors provide non-smooth depth maps with many artifacts, as opposed to the more recent 2D-3D-S example. The perfectly-annotated example of SceneNet RGB-D is unreachable in practice because of the synthetic nature of the data. Therefore it can lead to poor feature extraction.
+On the other hand, the quality of depth sensors is another important feature to take into account.
 
+**IMAGE** as you can see here, in old datasets like NYUv2, we observe many artifacts in non-smooth depth. These problems may lead to poor feature extraction by a deep learning model. 
+
+**IMAGE** On the other hand, more recent datasets like 2D-3D-S were captured by recent depth sensors with better accuracy.
+
+**IMAGE** However, the perfectly-annotated example of SceneNet RGB-D is unreachable in practice because of the synthetic nature of the data.
+
+## Performance analysis
+Now let's analyze the current state-of-the-art models by comparing the results reported in the litterature. Here, I will mainly focus on complexity comparison because it leads to the main challenges for future works but feel free to pause the video or read our paper to have the full analysis.
+
+We evaluate the models using the following metrics :
+**IMAGE** the mean intersection over union on NYUv2 and SUN-RGBD datasets.
+**IMAGE** the inference speed in frame per second reported in the paper of ESANet.
+**IMAGE** the backbone networks used in the encoder
+**IMAGE** and finally we sort the models by the adopted strategy 
+**IMAGE**
+**IMAGE** Let's begin with depth as input, which composes the majority of current works.
+
+**IMAGE** As said before, this strategy involves duplicated parts of a model, which can be seen here with the use of two heavy backbone networks.
+
+**IMAGE**
+**IMAGE** In comparison, depth as Operation models are much lighter, only needing one encoder part and still achieves competitive results.
+
+**IMAGE** the least popular approach is depth as prediction, with only one model in state-of-the-art. We can notice an important improviement in term of performance but **IMAGE** this approach usually comes with the same drawbacks of heavy duplicated parts in the neural network's design.
+
+An important observation here is that, in general, the backbone networks used are all deep ResNets, which leads to heavy models that require expensive hardware. 
+
+## Challenges
+So, now we know the main information about RGBD semantic segmentation, we can summarize the main challenges of the field ?
+
+**FRAGMENT** firstly, we noticed the heaviness of the current models in State-of-the-art. These models use large and deep backbone encoders which make them unsuitable for use in edge devices.
+
+**FRAGMENT** Secondly, despite the release of larger indoor RGBD datasets, current models are still evaluated on NYUv2 and SUN RGBD. We argue that these datasets limit the performance of modern RGBD semantic segmentation models due to the small number of samples.
+
+**FRAGMENT** Nowadays, new models still adopt the Depth as Input strategy even if it comes with a high computational cost.
+
+## Perspectives
+These challenges create some interesting perspectives for future works.
+
+**FRAGMENT** The most obvious improvement is to start evaluating future models on recent datasets like 2D-3D-S. We believe that the higher number of samples can increase the accuracy performance of future models.
+
+**FRAGMENT** Working on Depth as Prediction and Depth as Operation strategies is an interesting direction to design innovative models and exploit the advantages of such strategies like reduced complexity.
+
+**FRAGMENT** Finally, focusing on lightweight backbone networks would enable the creation of applications running on low-cost devices since existing models are still heavy.
+
+## Thanks
+This concludes my presentation. I hope it was interesting for you and I'll be glad to answer your questions. Thank your for listening.

@@ -111,9 +111,9 @@
 					<h3>Overview of current models</h3>
 
 					<ul>
-						<li class="fragment">No established method to perfectly exploit RGB and Depth data together</li>
+						<li class="fragment"><b>No established method</b> to perfectly exploit RGB and Depth data together</li>
 						<br>
-						<li class="fragment">Models vary depending on how the depth features are incorporated into the
+						<li class="fragment"><b>Models vary</b> depending on how the depth features are incorporated into the
 							DCNN</li>
 						<br>
 						<b>
@@ -163,18 +163,18 @@
 				</section>
 			</section>
 
-			<section>
+			<!-- <section>
 				<h3>Mean Intersection over Union <span style="text-transform: none;">(mIoU)</span></h3>
 				<p>The mean value of all the intersections
 					between the predicted
 					$\mathbf{S}$ and the ground truth over their unions.</p>
 				<img src="img/Review_RGBD_Seg/IoU.png" alt="IOU" style="height: 400px;">
-			</section>
+			</section> -->
 			<section>
-				<section data-transition="none">
+				<!-- <section data-transition="none">
 					<h3>Existing Datasets</h3>
 					<img src="img/Review_RGBD_Seg/benchmarks_init.png" alt="Benchmarks">
-				</section>
+				</section> -->
 
 				<section data-transition="none">
 					<h3>Existing Datasets</h3>
@@ -256,8 +256,17 @@
 					<img alt="Benchmarks" src="img/Review_RGBD_Seg/benchmarks_3_1.png">
 				</section>
 
-				<section>
+				<section data-transition="none">
 					<img src="img/Review_RGBD_Seg/depth_examples.png" alt="depth examples">
+				</section>
+				<section data-transition="none">
+					<img src="img/Review_RGBD_Seg/depth_examples_0.png" alt="depth examples">
+				</section>
+				<section data-transition="none">
+					<img src="img/Review_RGBD_Seg/depth_examples_1.png" alt="depth examples">
+				</section>
+				<section data-transition="none">
+					<img src="img/Review_RGBD_Seg/depth_examples_2.png" alt="depth examples">
 				</section>
 			</section>
 
@@ -331,9 +340,9 @@
 			<section>
 				<h3>Challenges</h3>
 				<ul>
-					<li class="fragment">SOTA models are not adapted to edge devices.</li>
+					<li class="fragment">SOTA models are <b>not adapted to edge devices</b>.</li>
 					<br />
-					<li class="fragment">Performance are still evaluated on older and smaller datasets (NYUv2, SUN-RGBD)
+					<li class="fragment">Performance are still evaluated on <b>older and smaller datasets</b> (NYUv2, SUN-RGBD)
 					</li>
 					<br />
 					<li class="fragment"><b>DaI strategy</b> still remains the way-to-go despite its drawbacks</li>
@@ -343,14 +352,14 @@
 			<section>
 				<h3>Perspectives</h3>
 				<ul>
-					<li class="fragment">Future works should evaluate their performance on recent and larger datasets
+					<li class="fragment">Future works should evaluate their performance on <b>recent and larger datasets</b>
 						<span style="font-style: italic;">(2D-3D-S, Matterport3D)</span>
 					</li>
 					<br>
 					<li class="fragment">Focusing on <b>DaP</b> and <b>DaO</b> strategies to fully exploit their
 						advantages </li>
 					<br>
-					<li class="fragment">Models based on lightweight backbone networks would enable the use of low-cost
+					<li class="fragment">Models based on <b>lightweight backbone networks</b> would enable the use of low-cost
 						devices for indoor applications</li>
 				</ul>
 			</section>
