@@ -61,14 +61,14 @@ Now let's see the major datasets used in the field.
 
 **IMAGE** In SceneNet RGB-D, 3D indoor scenes are generated automatically to create a huge quantity of annotated data. Using a synthetic dataset is a good option for pretraining in order to boost the performance. Thus this can be used in addition to the two other categories of datasets.
 
-## Depth Map Examples
+<!-- ## Depth Map Examples
 On the other hand, the quality of depth sensors is another important feature to take into account.
 
 **IMAGE** as you can see here, in old datasets like NYUv2, we observe many artifacts in non-smooth depth. These problems may lead to poor feature extraction by a deep learning model. 
 
 **IMAGE** On the other hand, more recent datasets like 2D-3D-S were captured by recent depth sensors with better accuracy.
 
-**IMAGE** However, the perfectly-annotated example of SceneNet RGB-D is unreachable in practice because of the synthetic nature of the data.
+**IMAGE** However, the perfectly-annotated example of SceneNet RGB-D is unreachable in practice because of the synthetic nature of the data. -->
 
 ## Performance analysis
 Now let's analyze the current state-of-the-art models by comparing the results reported in the litterature. Here, I will mainly focus on complexity comparison because it leads to the main challenges for future works but feel free to pause the video or read our paper to have the full analysis.
