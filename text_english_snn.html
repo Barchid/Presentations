@@ -47,10 +47,10 @@
 <p>On the second step, the obtained spikes are fed into the SNN in the forward pass.</p>
 <p>Afterwards, the output of the SNN is used to obtain the prediction.</p>
 <h3 id="definition">Definition</h3>
-<p>An SNN is composed of spiking neurons. These neurons communicate asynchronously through discrete events known as spikes. There are numerous models to design the behaviour of spiking neurons, but one of the most popular and simplest model is the Leaky Integrate-and-Fire model, or LIF for short.</p>
-<p><strong>FRAGMENT</strong> A LIF neuron has a membrane potential V that is excited when it receives input spikes from the presynaptic neurons. When the membrane is not excited, it slowly returns to its resting potential, which is equal to 0 here.</p>
-<p>Once the membrane potential exceeds a defined threshold theta, the LIF neuron emits a spike to its post-synaptic neurons and the membrane potential is reset to its resting potential.</p>
-<p>Similarly to ANNs, the presynaptic neurons are weighted by synaptic weights and training an SNN essentially means to change their values to produce a desired prediction.</p>
+<p>An SNN is composed of spiking neurons. These neurons communicate asynchronously through discrete events known as spikes. There are numerous models to design the behaviour of spiking neurons, but one of the most popular and <strong>FRAGMENT</strong> simplest model is the Leaky Integrate-and-Fire model, or LIF for short.</p>
+<p><strong>IMAGE</strong> A LIF neuron has a membrane potential V that <strong>IMAGE</strong> is excited when it receives input spikes <strong>IMAGE</strong> from the presynaptic neurons. When the membrane is not excited, it slowly returns to <strong>IMAGE</strong> its resting potential, which is equal to 0 here.</p>
+<p><strong>IMAGE</strong> Once the membrane potential exceeds a defined threshold theta, the LIF neuron <strong>IMAGE</strong> emits a spike to its post-synaptic neurons and <strong>IMAGE</strong> the membrane potential is reset to its resting potential.</p>
+<p><strong>IMAGE</strong> Similarly to ANNs, the presynaptic neurons are weighted by synaptic weights and training an SNN essentially means to change their values to produce a desired prediction.</p>
 <h3 id="image-neural-coding">Image Neural Coding</h3>
 <p>Since SNNs work with spikes instead of numerical values, the first thing to do when working with static images is to convert the numerical values of pixels into spikes.</p>
 <p>This conversion is known as Neural Coding and there are several different methods.</p>

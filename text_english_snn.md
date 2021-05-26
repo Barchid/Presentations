@@ -25,6 +25,22 @@ For now, SNNs performance are still far behind Artificial Neural Networks.
 
 This can be explained by the non-differentiablity of spiking neurons, **FRAGMENT** which prevents the use of the well-known backpropagation algorithm that unleashed the potential of ANNs.
 
+### Our Research Direction
+In our research group, we aim at leveraging the potential of bio-inspired techniques to perform computer vision tasks for scene understanding.
+
+**FRAGMENT** It includes many well-known tasks such as object detection, tracking, localization and so on.
+
+**IMAGES** To do so, we focus on Spiking Neural Networks as the main bio-inspired technique in our researches.
+
+### Targeted Task
+In this work, we aim at exploring the use of SNNs for a low-level vision task, which is
+
+**FRAGMENT** the localization of a single object in a static image.
+
+**FRAGMENT** This task seems quite simple for state-of-the-art approaches like ANNs but remains challenging for emerging bio-inspired methods such as SNNs. Therefore, this work is the first step towards modern computer vision with SNNs and static images.
+
+**FRAGMENT** In addition, Object Localization allows to design deeper architectures following state-of-the-art design paradigm that are very popular in deep learning.
+
 ## SNN for Computer Vision
 Knowing this, we can recap the state of SNNs in computer vision.
 
@@ -38,13 +54,13 @@ On the second step, the obtained spikes are fed into the SNN in the forward pass
 Afterwards, the output of the SNN is used to obtain the prediction.
 
 ### Definition
-An SNN is composed of spiking neurons. These neurons communicate asynchronously through discrete events known as spikes. There are numerous models to design the behaviour of spiking neurons, but one of the most popular and simplest model is the Leaky Integrate-and-Fire model, or LIF for short.
+An SNN is composed of spiking neurons. These neurons communicate asynchronously through discrete events known as spikes. There are numerous models to design the behaviour of spiking neurons, but one of the most popular and **FRAGMENT** simplest model is the Leaky Integrate-and-Fire model, or LIF for short.
 
-**FRAGMENT** A LIF neuron has a membrane potential V that is excited when it receives input spikes from the presynaptic neurons. When the membrane is not excited, it slowly returns to its resting potential, which is equal to 0 here.
+**IMAGE** A LIF neuron has a membrane potential V that **IMAGE** is excited when it receives input spikes **IMAGE** from the presynaptic neurons. When the membrane is not excited, it slowly returns to **IMAGE** its resting potential, which is equal to 0 here.
 
-Once the membrane potential exceeds a defined threshold theta, the LIF neuron emits a spike to its post-synaptic neurons and the membrane potential is reset to its resting potential.
+**IMAGE** Once the membrane potential exceeds a defined threshold theta, the LIF neuron **IMAGE** emits a spike to its post-synaptic neurons and the membrane potential is reset to its resting potential.
 
-Similarly to ANNs, the presynaptic neurons are weighted by synaptic weights and training an SNN essentially means to change their values to produce a desired prediction.
+**IMAGE** Similarly to ANNs, the presynaptic neurons are weighted by synaptic weights and training an SNN essentially means to change their values to produce a desired prediction.
 
 ### Image Neural Coding
 Since SNNs work with spikes instead of numerical values, the first thing to do when working with static images is to convert the numerical values of pixels into spikes. 
