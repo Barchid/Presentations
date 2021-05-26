@@ -39,10 +39,10 @@ In this work, we aim at exploring the use of SNNs for a low-level vision task, w
 
 **FRAGMENT** This task seems quite simple for state-of-the-art approaches like ANNs but remains challenging for emerging bio-inspired methods such as SNNs. Therefore, this work is the first step towards modern computer vision with SNNs and static images.
 
-**FRAGMENT** In addition, Object Localization allows to design deeper architectures following state-of-the-art design paradigm that are very popular in deep learning.
+**FRAGMENT** In addition, Object Localization allows to create deeper architectures following state-of-the-art design paradigm that are already very popular in for ANNs.
 
 ## SNN for Computer Vision
-Knowing this, we can recap the state of SNNs in computer vision.
+Knowing this, we can recap the state of SNNs in computer vision and go into detail on the existing challenges for SNNs.
 
 ### Common Process
 Firstly let's take a look at the common process to deal with static images using SNNs. 
