@@ -25,21 +25,16 @@ For now, SNNs performance are still far behind Artificial Neural Networks.
 
 This can be explained by the non-differentiablity of spiking neurons, **FRAGMENT** which prevents the use of the well-known backpropagation algorithm that unleashed the potential of ANNs.
 
-### Our Research Direction
-In our research group, we aim at leveraging the potential of bio-inspired techniques to perform computer vision tasks for scene understanding.
-
-**FRAGMENT** It includes many well-known tasks such as object detection, tracking, localization and so on.
-
-**IMAGES** To do so, we focus on Spiking Neural Networks as the main bio-inspired technique in our researches.
-
 ### Targeted Task
-In this work, we aim at exploring the use of SNNs for a low-level vision task, which is
+In this work, we aim at exploring the use of SNNs for a modern computer vision task, which is
 
 **FRAGMENT** the localization of a single object in a static image.
 
 **FRAGMENT** This task seems quite simple for state-of-the-art approaches like ANNs but remains challenging for emerging bio-inspired methods such as SNNs. Therefore, this work is the first step towards modern computer vision with SNNs and static images.
 
 **FRAGMENT** In addition, Object Localization allows to create deeper architectures following state-of-the-art design paradigm that are already very popular in for ANNs.
+
+**FRAGMENT** The aim of this work is to realize a proof-of-concept experiment with this task to validate the applicability of SNNs for modern computer vision.
 
 ## SNN for Computer Vision
 Knowing this, we can recap the state of SNNs in computer vision and go into detail on the existing challenges for SNNs.

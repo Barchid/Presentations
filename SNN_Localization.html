@@ -53,7 +53,7 @@
 					<ul>
 						<li>Third-generation of AI <small>[Maass1997]</small></li>
 						<br>
-						<li>Spiking neurons : <b>strongly inspired</b> by the neurons of our brain</li>
+						<li>Spiking neurons: <b>strongly inspired</b> by the neurons of our brain</li>
 						<br>
 						<li>Implementable on low-power <b>neuromorphic hardware</b> <small>[Davies2018]</small></li>
 						<br>
@@ -74,32 +74,20 @@
 					</ul>
 				</section>
 				<section>
-					<h3>Our Research Direction</h3>
-					<ul>
-						<li><b>Bio-Inspired Scene Understanding and Object Recognition</b></li>
-						<ul>
-							<br>
-							<li class="fragment">Detection, tracking, localization, segmentation, ...</li>
-							<br>
-							<li class="fragment">Use bio-inspired techniques, i.e. <b>Spiking Neural Networks</b></li>
-						</ul>
-					</ul>
-				</section>
-
-				<section>
 					<h3>Targeted Task</h3>
 					<ul>
 						<li class="fragment" data-fragment-index="1">Single Object Localization using static image</li>
 						<img class="fragment" data-fragment-index="1" src="img/SNN_localization/Single_Object_Localization.png" alt="Task">
-						<li class="fragment" data-fragment-index="2">First step towards modern computer vision tasks using SNNs</li>
+						<li class="fragment" data-fragment-index="2">First step towards modern computer vision tasks using SNNs with static images</li>
 						<li class="fragment" data-fragment-index="3">Requires deep architecture design</li>
+						<li class="fragment" data-fragment-index="4"><b>Proof-of-concept experiments</b></li>
 					</ul>
 				</section>
 			</section>
 
 			<section>
-				<section data-markdown>
-					# SNN for Computer Vision
+				<section>
+					<h1 style="text-transform: none;">SNNs FOR COMPUTER VISION</h1>
 				</section>
 
 				<section>
@@ -118,7 +106,7 @@
 							spatio-temporal events called <b>spikes</b>.
 						</li>
 						<li>
-							Leaky Integrate and Fire (LIF) neuron model
+							Leaky Integrate-and-Fire (LIF) neuron model
 						</li>
 					</ul>
 
@@ -226,36 +214,36 @@
 					<h3>Image neural Coding</h3>
 
 					<ul>
-						<li><b>Definition : </b> converts the numerical values of pixels into spikes.</li>
+						<li><b>Definition: </b> converts the numerical values of pixels into spikes.</li>
 						<li>No established methods</li>
 					</ul>
 					<img style="height: 325px" src="img/SNN_localization/frequency_coding_0.png" alt="Neural Coding examples">
 					<small>Falez, Pierre. Improving spiking neural networks trained with spike timing dependent
-						plasticity for image recognition. Diss. Université de Lille, 2019.</small>
+						plasticity for image recognition. PhD Diss. Université de Lille, 2019.</small>
 				</section>
 
 				<section data-transition="none">
 					<h3>Image neural Coding</h3>
 
 					<ul>
-						<li><b>Definition : </b> converts the numerical values of pixels into spikes.</li>
+						<li><b>Definition: </b> converts the numerical values of pixels into spikes.</li>
 						<li>No established methods</li>
 					</ul>
 					<img style="height: 325px" src="img/SNN_localization/frequency_coding_1.png" alt="Neural Coding examples">
 					<small>Falez, Pierre. Improving spiking neural networks trained with spike timing dependent
-						plasticity for image recognition. Diss. Université de Lille, 2019.</small>
+						plasticity for image recognition. PhD Diss. Université de Lille, 2019.</small>
 				</section>
 
 				<section data-transition="none">
 					<h3>Image neural Coding</h3>
 
 					<ul>
-						<li><b>Definition : </b> converts the numerical values of pixels into spikes.</li>
+						<li><b>Definition: </b> converts the numerical values of pixels into spikes.</li>
 						<li>No established methods</li>
 					</ul>
 					<img style="height: 325px" src="img/SNN_localization/frequency_coding.png" alt="Neural Coding examples">
 					<small>Falez, Pierre. Improving spiking neural networks trained with spike timing dependent
-						plasticity for image recognition. Diss. Université de Lille, 2019.</small>
+						plasticity for image recognition. PhD Diss. Université de Lille, 2019.</small>
 				</section>
 
 				<section>
@@ -315,11 +303,11 @@
 					<ul>
 						<li>Simple recognition tasks <small>[Falez2019]</small> <i>(e.g. digit recognition)</i></li>
 						<li>Mostly shallow networks</li>
-						<li>Lack of works towards complex vision tasks</li>
+						<li>Lack of work towards complex vision tasks</li>
 						<br>
 						<div class="fragment">
 							<b>
-								<li>Proposed contribution :</li>
+								<li>Proposed contribution:</li>
 							</b>
 							<ul>
 								<li>Exploit <b>recent supervised learning</b> approaches to perform <b>complex vision task</b></li>
@@ -344,7 +332,7 @@
 					### Overview
 					- Supervised surrogate gradient learning
 					- Online learning
-						- Synaptic weights are updated at each time-step
+						- Synaptic weights are updated at each timestep
 					- Local error optimization
 						- Implementable on neuromorphic computers
 					- Low memory complexity
@@ -471,13 +459,13 @@
 					</ul>
 					<br>
 					<br>
-					<p class="fragment"><b>Which prediction should we choose ?</b></p>
+					<p class="fragment"><b>Which prediction should we choose?</b></p>
 				</section>
 
 				<section>
 					<h3>Output Conversion Strategy</h3>
 					<ul>
-						<li class="fragment" data-fragment-index="1">Hierarchical rerpesentation of successive layers</li>
+						<li class="fragment" data-fragment-index="1">Hierarchical representation of successive layers</li>
 						<ul class="fragment" data-fragment-index="1">
 							<b><li>Keep the prediction of the last layer, $\mathbf{B}_L$</li></b>
 						</ul>
@@ -548,13 +536,13 @@
 				<section data-markdown>
 					### Futher experiments
 					- Use harder datasets (small examples, etc.)
-					- Test other output conversion :
+					- Test other output conversion:
 					- Mean of all predictions
 					- Median value of all predictions
 					- Test other neural coding
 					- Temporal coding, rank order, etc.
 
-					Paper extension ?
+					Paper extension?
 				</section>
 			</section> -->
 
@@ -566,7 +554,7 @@
 					### Conclusion
 					- **Proof-of-concept results** show the applicability of recent supervised approaches
 
-					- First work on **Supervised DCSNN** for complex vision tasks
+					- First work on **Supervised DCSNN** for complex vision tasks with static images
 
 					- First step towards **more complex vision tasks**
 				</section>
@@ -574,32 +562,32 @@
 					### Perspectives
 					- Use **event-based** input instead of static images
 
-					- Leads to a fully spike-based **object tracking** solution
+						- Leads to a fully spike-based **object tracking** solution
 					- Multiple object localization
 					- Other tasks (object detection, segmentation, etc.)
 				</section>
 			</section>
 
 			<section>
-				<h1>Thanks !</h1>
+				<h1>Thanks!</h1>
 			</section>
 
 			<section>
 				<h5>References</h5>
 				<ul>
-					<li><small><b>[Davies2018]</b> : <i>Davies, Mike, et al. "Loihi: A neuromorphic manycore processor
+					<li><small><b>[Davies2018]</b>: <i>Davies, Mike, et al. "Loihi: A neuromorphic manycore processor
 								with on-chip learning." Ieee Micro 38.1 (2018): 82-99.</i></small></li>
-					<li><small><b>[Maass1997]</b> : <i>W. Maass, “Networks of spiking neurons: the third generation of
+					<li><small><b>[Maass1997]</b>: <i>W. Maass, “Networks of spiking neurons: the third generation of
 								neural network
 								models,” Neural networks, vol. 10, no. 9, pp. 1659–1671, 1997.</i></small></li>
-					<li><small><b>[Kaiser2020]</b> : <i> Kaiser, et al. “Synaptic plasticity dynamics for
+					<li><small><b>[Kaiser2020]</b>: <i> Kaiser, et al. “Synaptic plasticity dynamics for
 								deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424,
 								2020.</i></small></li>
-					<li><small><b>[Caporale2008]</b> : <i> N. Caporale and Y. Dan, "Spike timing-dependent plasticity: a Hebbian learning rule" Annu. Rev. Neurosci., vol. 31, pp. 25–46, 2008.</i></small></li>
-					<li><small><b>[Cao2015]</b> : <i>Y. Cao, et al. “Spiking deep convolutional neural
+					<li><small><b>[Caporale2008]</b>: <i> N. Caporale and Y. Dan, "Spike timing-dependent plasticity: a Hebbian learning rule" Annu. Rev. Neurosci., vol. 31, pp. 25–46, 2008.</i></small></li>
+					<li><small><b>[Cao2015]</b>: <i>Y. Cao, et al. “Spiking deep convolutional neural
 								networks for energy-efficient object recognition,” International Journal
 								of Computer Vision, vol. 113, no. 1, pp. 54–66, 2015.</i></small></li>
-					<li><small><b>[Falez2019]</b> : <i>P. Falez, et al. "Multi-layered spiking neural network with target timestamp threshold adaptation and stdp," in 2019 International Joint Conference on Neural Networks (IJCNN). IEEE, 2019, pp. 1–8.</i></small></li>
+					<li><small><b>[Falez2019]</b>: <i>P. Falez, et al. "Multi-layered spiking neural network with target timestamp threshold adaptation and stdp," in 2019 International Joint Conference on Neural Networks (IJCNN). IEEE, 2019, pp. 1–8.</i></small></li>
 				</ul>
 			</section>
 
