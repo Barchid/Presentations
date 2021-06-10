@@ -1,0 +1,554 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Development of Spiking Neural Networks for Modern Computer Vision</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h5 style="text-transform: none;">Development of Spiking Neural Networks (SNN)</span> for Modern
+					Computer Vision</h5>
+				<br>
+				<br>
+				<small><b>Sami BARCHID</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; José MENNESSON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Chaabane DJÉRABA</small>
+				<img src="img/Review_RGBD_Seg/logos_cbmi.png">
+				<p><small>24/06/2021</small></p>
+				<!--<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+
+			<!-- <section>
+				<h1>Sommaire</h1>
+				<ul>
+					<li>Présentation du Doctorant</li>
+					<li>Contexte</li>
+					<li>État de l'art</li>
+					<li>Progression</li>
+					<li>Planification</li>
+					<li>Publications</li>
+					<li>Formations Doctorales</li>
+					<li>Projet Professionnel</li>
+				</ul>
+			</section> -->
+
+			<section>
+				<section>
+					<h1>Présentation du Doctorant</h1>
+				</section>
+				<section>
+					<h3 style="text-transform: none;">Sami BARCHID</h3>
+					<ul>
+						<li><b>Domaines :</b> Vision artificielle, Spiking Neural Networks, Scene Understanding</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Contexte</h1>
+				</section>
+				<section>
+					<h3>Deep Learning</h3>
+					<ul>
+						<li>Constitue <b>l'état de l'art</b> dans la majorité des tâches de vision artificielle</li>
+						<li>Coûts en calcul, mémoire et énergie <b>grandissant</b></li>
+						<img src="img/SNN_localization/carbon-footprint.png" alt="Carbon Footprint">
+					</ul>
+				</section>
+
+				<section>
+					<h3>Spiking Neural Networks <span style="text-transform: none; font-style: italic;">(SNNs)</span>
+					</h3>
+					<ul>
+						<li>IA de <b>troisième génération</b> <small>[Maass1997]</small></li>
+						<br>
+						<li>Neurones impulsionnels : <b>fortement inspirés</b> des neurones biologiques</li>
+						<br>
+						<li>Implémentation sur du <b>hardware neuromorphique</b> de très basse consommation
+							<small>[Davies2018]</small>
+						</li>
+						<br>
+						<li class="fragment"><b>Une solution potentielle</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Verrous scientifiques</h3>
+					<ul>
+						<li>Performances <b>loin derrière</b> celles des réseaux de neurones artificiels <span
+								style="font-style: italic;">(ANNs)</span></li>
+						<br>
+						<li>Les neurones impulsionnels ne sont <b>pas différentiables</b> <small>[Kaiser2020]</small>
+						</li>
+						<ul>
+							<li class="fragment"><b>Pas de rétro-propagation</b></li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3><span style="text-transform: none;">SNNs</span> en Vision Artificielle</h3>
+					<ul>
+						<li>Tâches très <b>simplistes</b></li>
+						<br>
+						<li class="fragment"><b>Peu de travaux pour des tâches complexes</b> <span
+								style="font-style: italic;">(détection d'objets, segmentation sémantique)</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Objectif Principal</h3>
+					<ul>
+						<li>Traiter des tâches de vision complexes avec ces SNNs</li>
+						<br>
+						<li>Dans le cadre de la <b>compréhension de scène</b> <span
+								style="font-style: italic;">(Segmentation, Détection, Tracking)</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>État de l'Art</h1>
+				</section>
+
+				<section>
+					<h3>Contenu</h3>
+					<ol>
+						<li class="fragment grow">Neurone impulsionnel</li>
+						<br>
+						<li>Apprentissage avec SNNs</li>
+						<br>
+						<li>Vision bio-inspirée</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Neurone impulsionnel</h3>
+					<ul>
+						<li>Communication asynchrone en événements discrets appelés "<b>impulsions</b>" ou <span
+								style="font-style: italic;">"spikes"</span></li>
+						<br>
+						<li>Fort similaire aux ANNs <span style="font-style: italic;">(poids synaptiques, organisation
+								en couches, CNN, RNN, ...)</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Neurones impulsionnels</h3>
+					<video src="img/1st_CST/SNN_Visu.mp4" controls></video>
+					<small style="font-style: italic;">https://www.youtube.com/watch?v=kPCZESVfHoQ</small>
+				</section>
+
+				<section>
+					<h3>Contenu</h3>
+					<ol>
+						<li>Neurones impulsionnels</li>
+						<br>
+						<li class="fragment grow">Apprentissage avec SNNs</li>
+						<br>
+						<li>Vision bio-inspirée</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Apprentissage avec SNNs</h3>
+					<ul>
+						<li>Conversion ANN vers SNN <small>[Cao2015]</small></li>
+						<br>
+						<li>Apprentissage biologique non-supervisé <small>[Caporale2008]</small></li>
+						<br>
+						<li>Surrogate gradient learning <small>[Kaiser2020]</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Conversion ANN vers SNN</h3>
+					<ul>
+						<li>Entraîner un ANN et le convertir en SNN</li>
+						<br>
+						<li><b>Avantage :</b> meilleures performances, inférence sur hardware neuromorphique</li>
+						<br>
+						<li><b>Inconvénient :</b> entraînement sur ANN, latence du SNN élevée</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Apprentissage biologique non-supervisé</h3>
+					<ul>
+						<li>Règles d'apprentissage biologiques <span style="font-style: italic;">(STDP, ...)</span></li>
+						<br>
+						<li><b>Avantage :</b> localité, non-supervisé</li>
+						<br>
+						<li><b>Inconvénient :</b> immature, réseaux très peu profonds, tâches très simplistes</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Surrogate gradient learning</h3>
+					<ul>
+						<li><b>Approximation du gradient</b> des spikes non-différentiables</li>
+						<br>
+						<li>Bons résultats sur des tâches simples</li>
+						<br>
+						<li class="fragment"><b>Approche prometteuse</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Contenu</h3>
+					<ol>
+						<li>Neurones impulsionnels</li>
+						<br>
+						<li>Apprentissage avec SNNs</li>
+						<br>
+						<li class="fragment grow">Vision bio-inspirée</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Vision bio-inspirée <small
+							style="font-weight: normal; text-transform: none; font-style: italic;">[Gallego2019]</small></h3>
+					<p><b>Caméra DVS :</b> caméra asynchrone inspirée de la voie optique dorsale</p>
+					<video id="js-vid1" controls style="height: 400px;" data-fragment-index="1" class="fragment"
+						src="img/1st_CST/Event_vs_FPS.mp4"></video>
+					<p data-fragment-index="1" class="fragment" style="font-style: italic;">
+						<small>https://www.youtube.com/watch?v=lQCPCNDo22s</small>
+					</p>
+				</section>
+				<section>
+					<h3>Comparaison</h3>
+					<video controls src="img/1st_CST/event_based_ball.mp4#t=4"></video>
+					<small style="font-style: italic;">https://www.youtube.com/watch?v=kPCZESVfHoQ</small>
+				</section>
+				<section>
+					<h3>SNN et caméra DVS</h3>
+					<ul>
+						<li>Événements asynchrones spatio-temporels</li>
+						<br>
+						<li>Traitement brut du flux DVS <b>parfaitement adapté</b></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Progression</h1>
+				</section>
+
+				<section>
+					<h3>Initiation au projet</h3>
+					<ul>
+						<li><b>Introduction aux fondamentaux</b> avec la thèse de Pierre Falez
+							<small>[Falez2019]</small>
+						</li>
+						<br>
+						<li>Bibliographie et identification des <b>verrous scientifiques</b></li>
+						<br>
+						<li>Choix de la <b>direction à prendre</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Localisation d'objets</h3>
+					<ul>
+						<li><b>Travail préliminaire</b> pour valider la direction de la thèse</li>
+						<br>
+						<li>Encodeur-decodeur profond à <b>plusieurs couches</b></li>
+						<br>
+						<li>SNN supervisé pour de la <b>vision complexe</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Localisation d'objets</h3>
+					<img src="img/SNN_localization/FPN_DECOLLE_Overview.png" alt="overview">
+					<ul>
+						<li>Résultats prometteurs</li>
+						<li>Problèmes identifiés et hypothèses émises</li>
+						<li class="fragment"><b>Publication à CBMI 2021</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Génération d'un dataset synthétique de séquences DVS</h3>
+					<ul>
+						<li>Très peu de datasets DVS et tâches simplistes</li>
+						<br>
+						<li>Monter un dataset vidéo d'envergure est <b>trop lourd</b></li>
+						<br>
+						<li><b>Solution :</b> générer des environnements 3D et faire une capture DVS</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Génération d'un dataset synthétique de séquences DVS</h3>
+					<ul>
+						<li><b>Stage de M2 :</b> Implémentation du générateur par <b>Kevin Dupont</b></li>
+						<li><b>Outils :</b> UnrealEngine 4, UnrealCV <small>[Weichao2017]</small>, V2E <small>[Delbruck2020]</small>
+						</li>
+					</ul>
+					<br>
+					<br>
+					<video src="img/1st_CST/ESIM.mp4" controls style="height: 340px;"></video>
+				</section>
+
+				<section>
+					<h3>Segmentation Sémantique RGB-D <span style="text-transform: none; font-weight: normal;">(Travail
+							annexe)</span></h3>
+					<ul>
+						<li>Travail du stage de recherche</li>
+						<br>
+						<li>Développement d'un CNN pour la segmentation sémantique RGB-D</li>
+					</ul>
+					<img src="img/Review_RGBD_Seg/approach_DaP.png" style="height: 300px;" alt="dap">
+				</section>
+
+				<section>
+					<h3>Segmentation Sémantique RGB-D <span style="text-transform: none; font-weight: normal;">(Travail
+							annexe)</span></h3>
+					<br>
+					<ul>
+						<li>Revue publiée (poster) à CBMI 2021</li>
+						<br>
+						<li><b>Actuellement :</b> phase d'expérimentations</li>
+						<br>
+						<li>Valorisation prochaine</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Planification</h1>
+				</section>
+
+				<section>
+					<h3>Vue d'ensemble</h3>
+					<img src="img/1st_CST/Planification.png" alt="planning">
+				</section>
+
+				<section>
+					<h3>Telluride Neuromorphic Engineering Workshop</h3>
+					<ul>
+						<li>Workshop de trois semaines</li>
+						<br>
+						<li>Projet en vision bio-inspirée</li>
+						<br>
+						<li>Apprendre à utiliser du hardware neuromorphique de pointe <span
+								style="font-style: italic;">(Intel Loihi)</span><small>[Davies2018]</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Extension de Localisation d'Objets</h3>
+					<ul>
+						<li><b>Objectif :</b> approfondir le travail préliminaire réalisé</li>
+						<br>
+						<li style="font-style: italic;">Analyses quantitatives, tests sur des variantes, étude
+							comparative, etc.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Mécanismes d'attention pour les <span style="text-transform: none;">SNNs</span></h3>
+					<ul>
+						<li><b>Deep Learning :</b> apparition de l'attention et des Vision Transformers (ViTs)
+						</li>
+						<br>
+						<li><b>Idée :</b> transposer les ViTs pour SNNs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>SNN pour la segmentation sémantique DVS</h3>
+					<ul>
+						<li><b>Segmentation sémantique :</b></li>
+						<ul>
+							<li>Tâche primordiale en compréhension de scènes</li>
+							<li>Objets immobiles non captés par une caméra DVS</li>
+						</ul>
+						<br>
+						<li class="fragment">
+							<b>Solution :</b> implémenter les microsaccades de l'oeil humain pour les caméras DVS
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- <section>
+				<section>
+					<h1>Publications</h1>
+				</section>
+
+				<section>
+					<h3>Articles acceptés</h3>
+					<ul>
+						<li>Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning (<b>CBMI 2021</b>) <small>[TODO]</small></li>
+						<br>
+						<li>Review on Indoor RGB-D Semantic Segmentation with Deep Convolutional Neural Networks <b>(CBMI 2021)</b> <small>[TODO]</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Articles en cours</h3>
+					<ul>
+						<li>Extension de [Barchid2021-SNN]</li>
+						<br>
+						<li>Travail du stage de recherche</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Articles prévus</h3>
+					<ul>
+						<li></li>
+						<br>
+						<li></li>
+						<br>
+						<li></li>
+					</ul>
+				</section>
+			</section> -->
+
+			<section>
+				<section>
+					<h1>Formations doctorales</h1>
+				</section>
+				<section>
+					<h3>Conditions de validation</h3>
+					<ul>
+						<li>Valider <b>60 crédits ECTS</b></li>
+						<ul>
+							<li>... dont 20 crédits en <b>professionnalisation</b></li>
+						</ul>
+						<br>
+						<li>Suivre une <b>formation à l'éthique</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Situation actuelle</h3>
+					<img src="img/1st_CST/formation_doctorale.png" alt="formations doctorales">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Projet professionnel</h1>
+				</section>
+
+				<section>
+					<h3>Questionnement</h3>
+					<ul>
+						<li>Différentes options envisagées <span style="font-style: italic;">(3)</span></li>
+						<br>
+						<li>Activités prévues seront <b>décisives</b> dans mon choix</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Poursuite académique</h3>
+					<ul>
+						<li>Continuer mes travaux de thèse</li>
+						<br>
+						<li><b>Doute :</b> attrait pour l'enseignement</li>
+						<br>
+						<li><b>Activité prévue :</b> charge d'enseignement</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Entrepreneuriat</h3>
+					<ul>
+						<li><b>Ingénierie neuromorphique :</b> secteur prometteur en plein boum</li>
+						<br>
+						<li><b>Doute :</b> quotidien d'un entrepreneur inconnu</li>
+						<br>
+						<li><b>Activité prévue :</b> Doctoriales/Challenge Doc</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>R&D en entreprise</h3>
+					<ul>
+						<li>Faire de la recherche sur des applications concrètes</li>
+						<br>
+						<li><b>Doute :</b> les autres options ne me correspondraient-elles pas mieux ?</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h1>Thanks!</h1>
+			</section>
+
+			<section>
+				<h5>References</h5>
+				<ul>
+					<li><small><b>[Davies2018]</b>: <i>Davies, Mike, et al. "Loihi: A neuromorphic manycore processor
+								with on-chip learning." Ieee Micro 38.1 (2018): 82-99.</i></small></li>
+					<li><small><b>[Maass1997]</b>: <i>W. Maass, “Networks of spiking neurons: the third generation of
+								neural network
+								models,” Neural networks, vol. 10, no. 9, pp. 1659–1671, 1997.</i></small></li>
+					<li><small><b>[Kaiser2020]</b>: <i> Kaiser, et al. “Synaptic plasticity dynamics for
+								deep continuous local learning (decolle),” Frontiers in Neuroscience, vol. 14, p. 424,
+								2020.</i></small></li>
+					<li><small><b>[Caporale2008]</b>: <i> N. Caporale and Y. Dan, "Spike timing-dependent plasticity: a
+								Hebbian learning rule" Annu. Rev. Neurosci., vol. 31, pp. 25–46, 2008.</i></small></li>
+					<li><small><b>[Cao2015]</b>: <i>Y. Cao, et al. “Spiking deep convolutional neural
+								networks for energy-efficient object recognition,” International Journal
+								of Computer Vision, vol. 113, no. 1, pp. 54–66, 2015.</i></small></li>
+					<li><small><b>[Falez2019]</b>: <i>P. Falez, et al. "Multi-layered spiking neural network with target
+								timestamp threshold adaptation and stdp," in 2019 International Joint Conference on
+								Neural Networks (IJCNN). IEEE, 2019, pp. 1–8.</i></small></li>
+					<li><small><b>[Gallego2019]</b>: <i>G. Gallego et al. "Event-based vision: A survey". arXiv
+								preprint arXiv:1904.08405, 2019</i></small></li>
+					<li><small><b>[Weichao2017]</b>: <i>Q. Weichao et al. "Unrealcv: Virtual worlds for computer vision." ACM Multimedia Open Source Software Competition, 2017</i></small></li>
+					<li><small><b>[Delbruck2020]</b>: <i>T. Delbruck et al. "V2E: From video frames to realistic DVS event camera streams." arxiv, June 2020</i></small></li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
