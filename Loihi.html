@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Neuromorphic advances : the Intel Loihi</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h1 style="text-transform: capitalize;">Intel Loihi</h1>
+				<br>
+				<p>Current State of Neuromorphic Hardware</p>
+				<img src="img/SNN_localization/logos_cbmi.png">
+				<p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script>
+			</section>
+
+			<section>
+				<section>
+					<h1>Context</h1>
+				</section>
+
+				<section>
+					<h3>Spiking Neural Networks <span style="text-transform: none;">(SNNs)</span></h3>
+					<ul>
+						<li>Bio-inspired neurons with communication through asynchronous discrete events called <b>"spikes"</b></li>
+						<br>
+						<li class="fragment highlight-red" data-fragment-index="1"><b>Energy-efficient</b></li>
+						<br>
+						<li class="fragment highlight-red" data-fragment-index="1"><b>Faster</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>The killer question</h3>
+					<p class="fragment r-fit-text"><b>How much ?</b></p>
+				</section>
+
+				<section>
+					<h3>The previous answers</h3>
+					<ul>
+						<li>Theorically more efficient <span style="font-style: italic;">(sparser communication, ...)</span></li>
+						<br>
+						<li>Neuromorphic hardware is still immature</li>
+						<br>
+						<li>Developing SNNs solutions to implement them in the future</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Wrong</h1>
+				</section>
+
+				<section>
+					<h3>Intel Loihi</h3>
+					<ul>
+						<li>Large-scale neuromorphic chip</li>
+						<br>
+						<li>On-chip learning available</li>
+						<br>
+						<li>Bechmarking advanced neurmorphic approaches <span style="font-style: italic;">(Vision and many others)</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Goal of this presentation</h3>
+					<ul>
+						<li>Condensed introduction of current capabilities of this chip</li>
+						<br>
+						<li>Showing the efficiency of large-scale neuromorphic hardware</li>
+						<br>
+						<li class="fragment"><b>Answering the killer question</b></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Introduction of Loihi</h1>
+				</section>
+
+				<section>
+					<h3>Available Hardware</h3>
+					<img src="img/1st_CST/Sami.jpg" alt="TODO">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Benchmark</h1>
+				</section>
+
+				<section>
+					<h3>Protocole</h3>
+					<ol>
+						<li>Select the <b>neuromorphic algorithm</b></li>
+						<br>
+						<li>Select its <b>standard counterpart</b> on the most relevant <b>device</b> (<span style="font-style: italic;">GPU, CPU, Movidius, ...</span>)</li>
+						<br>
+						<li>Calculate the ratio of <b>energy gain</b></li>
+						<br>
+						<li>Calculate the ratio of <b>speed grain</b></li>
+						<br>
+						<li>Product of gains gives the <b>EDP</b></li>
+					</ol>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
