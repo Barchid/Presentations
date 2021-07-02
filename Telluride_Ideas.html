@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Telluride Ideas</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		span {
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h1 style="text-transform: none;">Sensory Motor Integration</h1>
+				<br>
+				<h3 style="text-transform: none;">Some ideas and questions</h3>
+				<br>
+				<p>Sami BARCHID</p>
+				<br>
+				<p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script>
+			</section>
+
+			<section>
+				<section>
+					<h1>Topic Area Recap</h1>
+				</section>
+				<section>
+					<h3>Final objective</h3>
+					<ul>
+						<li><b>Robot navigation through a maze using:</b></li>
+						<ul>
+							<li>Event-based camera sensor</li>
+							<li>Bio-inspired vision model <span>(Spike-based VOneNet)</span></li>
+							<li>Deep Reinforcement Learning for closing the loop</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Tools</h3>
+					<ul>
+						<li>Neurorobotics Platform (<span>NRP</span>)</li>
+						<br>
+						<li>V2E converter <span>for DVS simulation</span></li>
+						<br>
+						<li>VOneNet architecture</li>
+						<br>
+						<li>Loihi integration</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Incremental projects</h3>
+					<ol>
+						<li class="fragment">Set up the pipeline with a DNN + DQN</li>
+						<li class="fragment">Integration of VOneNet as the DNN extractor</li>
+						<li class="fragment">DVS input instead of the frame-based RGB Image</li>
+						<li class="fragment">Spike-based VOneNet</li>
+						<li class="fragment">Loihi integration</li>
+						<li class="fragment">Real world integration</li>
+					</ol>
+					<img class="fragment" src="img/Telluride_Ideas/Overall.png" alt="Overall">
+				</section>
+
+				<section>
+					<h3>The great unknown</h3>
+					<p>The visual features extractor</p>
+					<ul>
+						<li class="fragment" data-fragment-index="1"><b>Because:</b></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Everyone will work on it</li>
+							<li>Incremental evolutions of it</li>
+						</ul>
+						<li class="fragment" data-fragment-index="2">We need to quickly define it</li>
+						<br>
+						<li class="fragment" data-fragment-index="3">
+							<b>
+								Start a discussion about it
+							</b>
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Suggestion</h1>
+					<h3 style="text-transform: none;">Using RGB Image as Visual Input for Mapless Robot Navigation</h3>
+					<p><a href="https://arxiv.org/pdf/1903.09927.pdf">Liulong Ma, Yanjie Liu and Jiao Chen (2019)</a>
+				</section>
+
+				<section>
+					<h3>Project 1 solved</h3>
+					<ul>
+						<li>DNN as a visual features extractor</li>
+						<li>Deep reinforcement learning to navigate through the maze</li>
+					</ul>
+					<img style="height: 400px;" src="img/Telluride_Ideas/paper_traj.png" alt="traj">
+				</section>
+
+				<section>
+					<h3>Method</h3>
+					<ul>
+						<li>Training a variational auto-encoder (VAE)</li>
+						<br>
+						<li>Keeping the encoder to obtain a feature extractor</li>
+						<br>
+						<li>Using it as input to the DQN</li>
+					</ul>
+				</section>
+
+				<section data-transition="none">
+					<img src="img/Telluride_Ideas/paper_model.png" alt="paper" style="height: 650px;">
+				</section>
+
+				<section data-transition="none">
+					<img src="img/Telluride_Ideas/paper_model_1.png" alt="paper" style="height: 650px;">
+				</section>
+
+				<section data-transition="none">
+					<img src="img/Telluride_Ideas/paper_model_2.png" alt="paper" style="height: 650px;">
+				</section>
+
+				<section data-transition="none">
+					<img src="img/Telluride_Ideas/paper_model_3.png" alt="paper" style="height: 650px;">
+				</section>
+				<section>
+					<h3>Suggestion</h3>
+					<ul>
+						<li><b>Feature extractor:</b> Auto-Encoder (AE)</li>
+						<br>
+						<li>Maybe merge with robot's measures <span>(e.g. right and left wheels velocities)</span></li>
+						<br>
+						<li>Feed it into deep RL model (Project 1)</li>
+						<br>
+						<li><b>Advantage: </b> we can build a dataset of the maze environment and train the AE separately</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Warnings</h3>
+					<ul>
+						<li>Preprint, not peer-reviewed</li>
+						<br>
+						<li>Code available, </li>
+						<br>
+						<li>Intuitive and simple method</li>
+						<br>
+						<li class="fragment"><b>Good baseline to begin with</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Auto-Encoder in the projects</h3>
+					<ol>
+						<li class="fragment">Standard AE</li>
+						<br>
+						<li class="fragment">AE with VOneNet as Encoder</li>
+						<br>
+						<li class="fragment">Event-based AE <b style="color: red;">OR</b> DVS reconstruction</li>
+						<br>
+						<li class="fragment">Spike-based AE <b class="fragment">⚠️⚠️⚠️</b> </li>
+						<br>
+						<li class="fragment">Loihi integration of the Encoder</li>
+						<br>
+						<li class="fragment">Real world integration</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Questions</h3>
+					<ul>
+						<li>How will the Brain-Score react ?</li>
+						<br>
+						<li>How will VOneNet perform ?</li>
+						<br>
+						<li>Is it even possible to make a spike-based deep AE trained with 3-factor rules ?</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1 style="text-transform: none;">What do you think about it?</h1>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
