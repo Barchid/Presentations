@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Telluride Progress of Sami BARCHID</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		span {
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h1 style="text-transform: none;">Sensory Motor Integration</h1>
+				<br>
+				<h3 style="text-transform: none;">Progress</h3>
+				<br>
+				<p>Sami BARCHID</p>
+				<br>
+				<p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script>
+			</section>
+
+			<section>
+				<section>
+					<h3>NRP Repository</h3>
+					<ul>
+						<li>Installation into Docker NRP</li>
+						<li>Regroup quick guides and other tips found by everyone</li>
+						<li>Collaboration with git</li>
+						<li><b>No iba_multimodule</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>AutoEncoder repository</h3>
+					<ul>
+						<li>Basic AutoEncoder implemented</li>
+						<li><a href="https://pytorch.org/vision/stable/models.html">Standard backbone networks available</a> (TorchVision)</li>
+						<li>VOneNet backbones also available</a></li>
+						<li>First version tomorrow</li>
+						<ul class="fragment">
+							<li>README w/ instructions</li>
+							<li>Training w/ <a href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">Cars Dataset</a></li>
+							<li>Notebook to launch GPU training on Colab</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>AutoEncoder repository</h3>
+					<ul>
+						<li>Maybe a short classification task to test the feature extraction performance</li>
+						<li>Integration of the "Telluride Maze Dataset"	when available</li>
+						<li>Export the trained Encoder</li>
+						<li><b>Nengo conversion script</b></li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>

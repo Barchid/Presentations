@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Telluride SMI Project 1Progress</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		span {
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h1 style="text-transform: none;">Sensory Motor Integration</h1>
+				<br>
+				<h3 style="text-transform: none;">Project 1: Setup RL pipeline</h3>
+				<br>
+				<p><b>Sami BARCHID</b>, Xuanyu Wu</p>
+				<br>
+				<p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script>
+			</section>
+
+			<section>
+				<section>
+					<h1>Project recap</h1>
+				</section>
+
+				<section>
+					<h3>Mapless robot navigation</h3>
+					<ul>
+						<li>A husky robot equipped with a vision sensor navigates through a maze</li>
+					</ul>
+					<img src="img/Telluride_SMI_Project1/husky.png" alt="husky robot" style="height: 400px">
+				</section>
+
+				<section data-transition="none">
+					<h3>The maze</h3>
+					<img src="img/Telluride_SMI_Project1/environment_0.png" alt="Environment">
+				</section>
+
+				<section data-transition="none">
+					<h3>The maze</h3>
+					<img src="img/Telluride_SMI_Project1/environment_1.png" alt="Environment">
+				</section>
+
+				<section data-transition="none">
+					<h3>The maze</h3>
+					<img src="img/Telluride_SMI_Project1/environment_2.png" alt="Environment">
+				</section>
+
+				<section data-transition="none">
+					<h3>The maze</h3>
+					<img src="img/Telluride_SMI_Project1/environment_3.png" alt="Environment">
+				</section>
+
+				<section data-transition="none">
+					<h3>Tools</h3>
+					<ul>
+						<li>NeuroRobotics Platform (NRP)</li>
+						<li>Visual feature extractor (VOneNet)</li>
+						<li>Reinforcement Learning (DQN)</li>
+					</ul>
+					<img src="img/Telluride_SMI_Project1/process_0.png" alt="process">
+				</section>
+
+				<section data-transition="none">
+					<h3>Tools</h3>
+					<ul>
+						<li><b>NeuroRobotics Platform (NRP)</b></li>
+						<li>Visual feature extractor (VOneNet)</li>
+						<li>Reinforcement Learning (DQN)</li>
+					</ul>
+					<img src="img/Telluride_SMI_Project1/process_1.png" alt="process">
+				</section>
+
+				<section data-transition="none">
+					<h3>Tools</h3>
+					<ul>
+						<li>NeuroRobotics Platform (NRP)</li>
+						<li><b>Visual feature extractor (VOneNet)</b></li>
+						<li>Reinforcement Learning (DQN)</li>
+					</ul>
+					<img src="img/Telluride_SMI_Project1/process_2.png" alt="process">
+				</section>
+
+				<section data-transition="none">
+					<h3>Tools</h3>
+					<ul>
+						<li>NeuroRobotics Platform (NRP)</li>
+						<li>Visual feature extractor (VOneNet)</li>
+						<li><b>Reinforcement Learning (DQN)</b></li>
+					</ul>
+					<img src="img/Telluride_SMI_Project1/process_3.png" alt="process">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>RL Pipeline</h1>
+					<img src="img/Telluride_SMI_Project1/process.png" alt="process">
+				</section>
+
+				<section>
+					<h3>Reinforcement Learning in the NRP</h3>
+					<ul>
+						<li><b>Environment:</b> Maze Experiment</li>
+						<br>
+						<li><b>Agent:</b> Husky Robot</li>
+						<br>
+						<li><b>Actions:</b> right and left wheel velocities</li>
+						<br>
+						<li><b>Observations:</b> RGB image at each timestep</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Visual Feature Extractor</h3>
+					<ul>
+						<li><b>Sensor:</b> embedded RGB camera</li>
+						<br>
+						<li><b>Model:</b> VOneNet</li>
+						<ul>
+							<li>Robust and bio-inspired DCNN</li>
+							<li>Pre-trained on ImageNet</li>
+							<li>First part of the DQN</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Reinforcement Learning Model</h3>
+					<img src="img/Telluride_SMI_Project1/RL.png" alt="RL">
+				</section>
+
+				<section>
+					<h3>Reward</h3>
+					<ul>
+						<li>Positive reward $r_{arrival}$ when the agent arrives at the target position.</li>
+						<br>
+						<li>Negative reward $r_{collision}$ if collision</li>
+						<br>
+						<li>Otherwise, reward proportional to the distance between agent and target (with a time penalty)</li>
+					</ul>
+				</section>
+			</section>
+			
+			<section>
+				<section>
+					<h1>Achievements</h1>
+				</section>
+
+				<section>
+					<h3>Pipeline is done</h3>
+					<ul>
+						<li>Agent implementation</li>
+						<li>Retrieve observations</li>
+						<li>Reward system</li>
+						<li>One simulation in the NRP = one episode</li>
+						<li>RL statistics, ...</li>
+						<br>
+						<li><b>TODO:</b> train the agent</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Personal feedbacks</h3>
+					<ul>
+						<li>Learning RL on the fly</li>
+						<br>
+						<li><b>NRP is challenging</b></li>
+					</ul>
+				</section>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+
+		Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+	</script>
+</body>
+
+</html>
