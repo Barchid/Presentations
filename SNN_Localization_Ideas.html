@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>SNN localization</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		span {
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h5 style="text-transform: capitalize;">SNN-based Object Localization: discussions</h5>
+				<br>
+				<!-- <p>CBMI 2021</p> -->
+				<!-- <br> -->
+				<small><b>Sami BARCHID</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; José MENNESSON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Chaabane DJÉRABA</small>
+				<img src="img/SNN_localization/logos_cbmi.png">
+				<!-- <p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+
+			<section>
+				<section>
+					<h1>Existing Method</h1>
+				</section>
+
+				<section data-transition="none">
+					<h3>Formulation</h3>
+					<img src="img/SNN_localization/FPN_DECOLLE_Overview.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Formulation</h3>
+					<img src="img/SNN_localization/FPN_DECOLLE_Overview_1.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Formulation</h3>
+					<img src="img/SNN_localization/FPN_DECOLLE_Overview_2.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Formulation</h3>
+					<img src="img/SNN_localization/FPN_DECOLLE_Overview_3.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Formulation</h3>
+					<img src="img/SNN_localization/FPN_DECOLLE_Overview_4.png">
+				</section>
+
+				<section>
+					<h3>For short</h3>
+					<ul>
+						<li>Supervised online learning w/ DECOLLE</li>
+						<br>
+						<li>Preliminary experiments on OXFORD-IIIT-Pet dataset: <b>63.2 % mIoU</b></li>
+					</ul>
+					<img src="img/SNN_localization/qualitative_results.png">
+				</section>
+
+				<section>
+					<h3>Observations</h3>
+					<p><span style="font-style: italic;">Rare small objects are poorly localized</span></p>
+					<br>
+					<ul>
+						<li><b>Reason 1:</b> dataset imbalance problem</li>
+						<br>
+						<li><b>Reason 2:</b> output conversion strategy</li>
+						<!-- <br>
+						<li><b>Reason 3:</b> catastrophic forgetting, etc..</li> -->
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Suggestions</h1>
+				</section>
+			</section>
+			<section>
+				<h3>Network Architecture</h3>
+				<ul>
+					<li>Try deeper architecture</li>
+					<br>
+					<li>FC layer at the end</li>
+					<br>
+					<li>...</li>
+				</ul>
+
+				<img style="height:300px" src="img/SNN_localization/architecture.png" alt="archi">
+			</section>
+
+			<section>
+				<section>
+					<h3>More Datasets</h3>
+					<p><span style="font-style: italic;">Adapt datasets from Saliency Object Detection</span></p>
+					<ul>
+						<li>MSRA-1000</li>
+						<li>MSRA-B</li>
+						<li>ECSSD</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="img/SNN_localization_Ideas/ECSSD.png" alt="ECSSD">
+				</section>
+			</section>
+
+			<section>
+				<h3>Preprocessing</h3>
+				<ul>
+					<li>On-Off filters or DoG filters before neural coding</li>
+				</ul>
+				<img src="img/SNN_localization_Ideas/OnOffFilters.png" alt="onoff">
+			</section>
+
+			<section>
+				<section>
+					<h3>Neural Coding</h3>
+					<ul>
+						<li>Rate coding</li>
+						<br>
+						<li>Time-To-First Spike (TTFS)</li>
+						<br>
+						<li>Phase coding</li>
+						<br>
+						<li>"Saccade-based" coding</li>
+						<br>
+						<li>Synchrony coding</li>
+					</ul>
+				</section>
+				<section>
+					<h5>Illustration</h5>
+					<img src="img/SNN_localization_Ideas/mage_batch0.png" alt="ma" style="height: 350px;">
+				</section>
+
+				<section>
+					<h5>Rate Coding</h5>
+					<video src="img/SNN_localization_Ideas/spike_rate.mp4" controls></video>
+				</section>
+
+				<section>
+					<h5>TTFS</h5>
+					<video src="img/SNN_localization_Ideas/spike_ttfs.mp4" controls></video>
+				</section>
+
+				<section>
+					<h5>Phase Coding</h5>
+					<video src="img/SNN_localization_Ideas/spike_phase.mp4" controls></video>
+				</section>
+
+				<section>
+					<h5>Saccade-based coding</h5>
+					<video src="img/SNN_localization_Ideas/spike_saccades.mp4" controls></video>
+				</section>
+
+				<section>
+					<h5>Synchrony Coding</h5>
+					<video src="img/SNN_localization_Ideas/spike_synchro.mp4" controls></video>
+				</section>
+			</section>
+
+			<section>
+				<h3>Energy efficiency study</h3>
+				<ul>
+					<li>Spike-Flownet's study (based on spike activity, etc)</li>
+					<br>
+					<li>Or simpler: Synaptic Operations & Spike Activity</li>
+					<br>
+					<li>Impact of quadratic spike penalization loss</li>
+				</ul>
+				<img src="img/SNN_localization_Ideas/flownet_efficiency.png" alt="flownet">
+			</section>
+
+			<section>
+				<h3>Empirical study on features</h3>
+				<ul>
+					<li>Using Spiking Activation Maps (SAM)</li>
+					<li>Neural coding comparison</li>
+				</ul>
+				<br>
+				<img src="img/SNN_localization_Ideas/SAM.png" alt="SAM">
+			</section>
+
+			<section>
+				<h3>Output Conversion Strategy</h3>
+				<ul>
+					<li>Identify the best method (for each neural coding) to obtain an optimal prediction among all
+						timesteps</li>
+					<br>
+					<li>Comparison of inference latency</li>
+				</ul>
+				<img style="height:350px" src="img/SNN_localization_Ideas/Latencies.png" alt="latencies">
+			</section>
+
+			<section>
+				<h3>Robustness</h3>
+				<p><span style="font-style: italic;">Apply additive gaussian noise and check the model's performance</span></p>
+				<ul>
+					<li>Comparison on neural codings</li>
+					<br>
+					<li>...</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
