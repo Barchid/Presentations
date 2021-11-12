@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>A Quick Introduction to Spiking Neural Networks</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h5 style="text-transform: none;">An Introduction to Spiking Neural Networks <span style="font-weight: normal;">(SNN)</span> for Deep Learners</h5>
+				<br>
+				<small><b>Sami BARCHID</b></small>
+				<br>
+				<img src="img/Review_RGBD_Seg/logos_cbmi.png">
+				<p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script>
+			</section>
+
+			<section>
+				<section>
+					<h1>Context</h1>
+				</section>
+
+				<section>
+					<h3>Deep learning</h3>
+					<ul>
+						<li><b>State-of-the-art</b> in almost all Computer Vision and Machine Learning tasks</li>
+						<li><b>Growing</b> computational, memory and energy costs</li>
+					</ul>
+					<img src="img/SNN_localization/carbon-footprint.png">
+				</section>
+
+				<section>
+					<h3>Spiking Neural Networks <span
+							style="text-transform:none; font-weight: normal; font-style: italic;">(SNNs)</span> </h3>
+					<ul>
+						<li>Third-generation of AI <small>[Maass1997]</small></li>
+						<br>
+						<li>Spiking neurons: <b>strongly inspired</b> by the neurons of our brain</li>
+						<br>
+						<li>Implementable on low-power <b>neuromorphic hardware</b> <small>[Davies2018]</small></li>
+						<br>
+						<li class="fragment"><b>A potential solution</b></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h1>Summary</h1>
+				<ol>
+					<li>What is a Spiking Neuron ?</li>
+					<br>
+					<li>How to train an SNN ?</li>
+					<br>
+					<li>How to run an SNN ?</li>
+					<br>
+					<li>Discussions</li>
+				</ol>
+			</section>
+
+			<section>
+				<section>
+					<h1>What is a Spiking Neuron ?</h1>
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_0.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_1.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_2.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_3.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_4.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_5.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_6.png" alt="bioneur">
+				</section>
+
+				<section data-transition="none">
+					<h3>Leaky Integrate-and-Fire neuron</h3>
+					<img src="img/intro_SNN/bioneur_synapses.png" alt="bioneur">
+				</section>
+
+				<section>
+					<h3>Animation</h3>
+					<video src="img/1st_CST/SNN_Visu.mp4" controls></video>
+					<small style="font-style: italic;">https://www.youtube.com/watch?v=kPCZESVfHoQ</small>
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img class="fragment" src="img/intro_SNN/math_00.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_1.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_2.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_3.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_4.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_5.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_6.png" alt="math">
+				</section>
+
+				<section data-transition="none">
+					<h3>Mathematically</h3>
+					<img src="img/intro_SNN/math_8.png" alt="math">
+				</section>
+
+				<section>
+					<h3>Mathematically</h3>
+					<p>
+						The relationship between $S$ and $U$ is the <b>Heaviside step function</b>
+					</p>
+					<br>
+					<p>
+						$S[t] = \Theta (U[t] - \theta)$
+					</p>
+					<img src="img/intro_SNN/Heaviside.png" alt="heaviside">
+				</section>
+
+				
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_init_0.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_init_1.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_init_2.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_init_3.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_fwd_0.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_fwd_1.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_fwd_2.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_fwd_3.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_fwd_4.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Code</h3>
+
+					<img src="img/intro_SNN/code_fwd_5.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>How to use it?</h3>
+					<img src="img/intro_SNN/code_use.png" alt="use">
+				</section>
+
+				<section>
+					<h3>What we know</h3>
+					<ul>
+						<li>A spiking neuron has <b>an internal state</b> <span style="font-style: italic;">(i.e. membrane potential)</span>...</li>
+						<li> that evolves in time to create a certain <b>output</b> <span style="font-style: italic;">(i.e. the spike)</span></li>
+					</ul>
+
+					<br>
+					<br>
+
+					<h3 class="fragment" style="text-transform: none;">SNNs are Recurrent Neural Networks</h3>
+				</section>
+
+				<section>
+					<h3>Computational Graph</h3>
+					<img src="img/intro_SNN/rnn.png" alt="rnn">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>How to train an SNN ?</h1>
+				</section>
+
+				<section>
+					<h3>Learning Approaches</h3>
+					<ol>
+						<div class="fragment">
+							<b><li>Unsupervised local learning <small>[Caporale2008]</small>
+							</li></b>
+							<ul>
+								<li>Neuromorphic implementation</li>
+								<li>No annotation</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<b><li>ANN-to-SNN conversion <small>[Cao2015]</small></li></b>
+							<ul>
+								<li>Best performance</li>
+								<li>Training is still on ANNs</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<div class="fragment grow">
+								<b><li>Adapted Backpropagation <small>[Kaiser2020]</small></li></b>
+								<ul>
+									<li>Good performance recently</li>
+								</ul>
+							</div>
+						</div>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Backpropagation with SNNs</h3>
+					<ul>
+						<li>Same as RNNs: <b>BackProp through time (BPTT)</b></li>
+					</ul>
+					<p><img src="img/intro_SNN/bptt.png" alt="bptt"></p>
+				</section>
+
+				<section data-transition="none">
+					<h3>Spikes are not differentiable</h3>
+					<img src="img/intro_SNN/nondiff_0.png" alt="nondiff">
+				</section>
+
+				<section data-transition="none">
+					<h3>Spikes are not differentiable</h3>
+					<img src="img/intro_SNN/nondiff_1.png" alt="nondiff">
+				</section>
+
+				<section data-transition="none">
+					<h3>Spikes are not differentiable</h3>
+					<img src="img/intro_SNN/nondiff_2.png" alt="nondiff">
+				</section>
+
+				<section data-transition="none">
+					<h3>Spikes are not differentiable</h3>
+					<img src="img/intro_SNN/nondiff_3.png" alt="nondiff">
+				</section>
+
+				<section data-transition="none">
+					<h3>Spikes are not differentiable</h3>
+					<img src="img/intro_SNN/nondiff_4.png" alt="nondiff">
+				</section>
+
+				<section data-transition="none">
+					<h3>Surrogate Gradient</h3>
+					<img src="img/intro_SNN/solu_0.png" alt="">
+				</section>
+
+				<section data-transition="none">
+					<h3>Surrogate Gradient</h3>
+					<img src="img/intro_SNN/solu_1.png" alt="">
+				</section>
+
+				<section>
+					<h3>Surrogate Gradient Descent</h3>
+					<ul>
+						<li>Can train deep SNNs</li>
+						<br>
+						<li>Can deal with more complex tasks recently</li>
+						<ul>
+							<li>Localization <small>[Barchid2021]</small></li>
+							<li>Semantic Segmentation <small>[Youngeun2021]</small></li>
+							<li>Classification on ImageNet <small>[Fang2021]</small></li>
+						</ul>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>How to run an SNN</h1>
+				</section>
+
+				<section>
+					<h3>Methods</h3>
+					<ul>
+						<li>Easy way: <b>Simulation on CPU/GPU</b></li>
+						<br>
+						<li>Hard way: <b>Neuromorphic Hardware</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Simulation</h3>
+					<ul>
+						<li><b style="color: green;">Pros:</b></li>
+						<ul>
+							<li>Hardware easily available</li>
+							<li>Easy to implement and test <b>ANY</b> algorithm</li>
+						</ul>
+						<br>
+						<li><b style="color: red;">Cons:</b></li>
+						<ul>
+							<li>Inefficient</li>
+							<li>Abreviation of the real performance on Neuromorphic Hardware</li>
+							<li>Neuromorphic hardware limitations bypassed</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Simulation</h3>
+					<ul>
+						<li>PyTorch: <span style="font-style: italic;">(mainly Surrogate Gradient)</span></li>
+						<ul>
+							<li><code><a href="https://snntorch.readthedocs.io/en/latest/index.html">snntorch</a></code> </li>
+							<li><code><a href="https://github.com/fangwei123456/spikingjelly">spikingjelly</a></code></li>
+							<li><b><a href="https://github.com/lava-nc"><code>Lava</code></a></b></li>
+						</ul>
+						<br>
+						<li>Specialized</li>
+						<ul>
+							<li><code><a href="https://gitlab.univ-lille.fr/bioinsp/falez-csnn-simulator/-/tree/master/src">CSNNs</a></code> (STDP)</li>
+							<li>...</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Neuromorphic Hardware</h3>
+					<ul>
+						<li><b style="color: green;">Pros:</b></li>
+						<ul>
+							<li>Efficient</li>
+							<li>Valuable measures on Neuromorphic Hardware</li>
+							<li>Neuromorphic hardware limitations</li>
+						</ul>
+						<br>
+						<li><b style="color: red;">Cons:</b></li>
+						<ul>
+							<li>No commercialization</li>
+							<li>Immature <b>(but...)</b></li>
+							<li>Neuromorphic hardware limitations</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Neuromorphic Hardware</h3>
+					<ul>
+						<li>Spinnaker</li>
+						<br>
+						<li>IBM TrueNorth</li>
+						<br>
+						<li class="fragment grow"><b>Intel Loihi</b></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Discussions</h1>
+				</section>
+
+				<section>
+					<h3>Intel Loihi</h3>
+					<ul>
+						<li>Accessible through partnership</li>
+						<br>
+						<li>Ready for computer vision and more</li>
+						<br>
+						<li>Bridges the gap between simulation and neuromorphic hardware <span style="font-style: italic;">(Lava Framework)</span></li>
+						<br>
+						<li>Shows the promises of neuromorphic hardware</li>
+					</ul>
+				</section>
+
+				<section data-transition="none">
+					<h3>Energy Efficiency</h3>
+					<img src="img/Loihi/deep_learning_1.png" alt="DL" style="height: 550px;">
+				</section>
+
+				<section data-transition="none">
+					<h3>Energy Efficiency</h3>
+					<img src="img/Loihi/deep_learning_2.png" alt="DL" style="height: 550px;">
+				</section>
+
+				<section data-transition="none">
+					<h3>Energy Efficiency</h3>
+					<img src="img/Loihi/deep_learning_3.png" alt="DL" style="height: 550px;">
+				</section>
+
+				<section data-transition="none">
+					<h3>Energy Efficiency</h3>
+					<img src="img/Loihi/deep_learning_4.png" alt="DL" style="height: 550px;">
+				</section>
+
+				<section data-transition="none">
+					<h3>Energy Efficiency</h3>
+					<img src="img/Loihi/deep_learning_5.png" alt="DL" style="height: 550px;">
+				</section>
+			</section>
+
+			<section>
+				<h3>Research Interests</h3>
+				<ul>
+					<li>Event-based cameras</li>
+					<br>
+					<li>Surrogate Gradient Descent</li>
+					<br>
+					<li>Embedded Vision</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
