@@ -20,7 +20,7 @@
 		<div class="slides">
 			<!-- Titre -->
 			<section>
-				<h5 style="text-transform: none;">An Introduction to Spiking Neural Networks <span style="font-weight: normal;">(SNN)</span> for Deep Learners</h5>
+				<h5 style="text-transform: none;">The Most Comprehensive Introduction to Spiking Neural Networks for Deep Learners</h5>
 				<br>
 				<small><b>Sami BARCHID</b></small>
 				<br>
@@ -58,6 +58,18 @@
 						<li class="fragment"><b>A potential solution</b></li>
 					</ul>
 				</section>
+
+				<section>
+					<h3>Objectives of this tutorial</h3>
+					<ul>
+						<li class="fragment">Give the tools to understand SNNs <b>for Computer Vision (CV) adepts</b></li>
+						<br>
+						<li class="fragment">Introduction of <b>how to work with SNNs on CV</b> to produce state-of-the-art works
+						</li>
+						<br>
+						<li class="fragment">Discussion about <b>the current research interests </b>in the CV community</li>
+					</ul>
+				</section>
 			</section>
 
 			<section>
@@ -76,6 +88,16 @@
 			<section>
 				<section>
 					<h1>What is a Spiking Neuron ?</h1>
+				</section>
+
+				<section>
+					<h3>Biological Neurons</h3>
+					<ul>
+						<li>Communicate with short impulses called <b>spikes</b></li>
+						<br>
+						<li>Various computational models from neuroscience</li>
+					</ul>
+
 				</section>
 
 				<section data-transition="none">
@@ -122,6 +144,19 @@
 					<h3>Animation</h3>
 					<video src="img/1st_CST/SNN_Visu.mp4" controls></video>
 					<small style="font-style: italic;">https://www.youtube.com/watch?v=kPCZESVfHoQ</small>
+				</section>
+
+				<section>
+					<h3>4 concepts</h3>
+					<ol>
+						<li class="fragment">Integrate input spikes <b>weighted by synapses</b></li>
+						<br>
+						<li class="fragment">Membrane potential that <b>leaks over time</b></li>
+						<br>
+						<li class="fragment">Emit a spike when <b>a threshold is exceeded</b></li>
+						<br>
+						<li class="fragment">Reset the membrane potential <b>after a spike</b></li>
+					</ol>
 				</section>
 
 				<section data-transition="none">
@@ -176,7 +211,7 @@
 					<img src="img/intro_SNN/Heaviside.png" alt="heaviside">
 				</section>
 
-				
+
 				<section data-transition="none">
 					<h3>Code</h3>
 
@@ -245,8 +280,10 @@
 				<section>
 					<h3>What we know</h3>
 					<ul>
-						<li>A spiking neuron has <b>an internal state</b> <span style="font-style: italic;">(i.e. membrane potential)</span>...</li>
-						<li> that evolves in time to create a certain <b>output</b> <span style="font-style: italic;">(i.e. the spike)</span></li>
+						<li>A spiking neuron has <b>an internal state</b> <span style="font-style: italic;">(i.e.
+								membrane potential)</span>...</li>
+						<li> that evolves in time to create a certain <b>output</b> <span
+								style="font-style: italic;">(i.e. the spike)</span></li>
 					</ul>
 
 					<br>
@@ -270,15 +307,19 @@
 					<h3>Learning Approaches</h3>
 					<ol>
 						<div class="fragment">
-							<b><li>Unsupervised local learning <small>[Caporale2008]</small>
-							</li></b>
+							<b>
+								<li>Unsupervised local learning <small>[Caporale2008]</small>
+								</li>
+							</b>
 							<ul>
 								<li>Neuromorphic implementation</li>
 								<li>No annotation</li>
 							</ul>
 						</div>
 						<div class="fragment">
-							<b><li>ANN-to-SNN conversion <small>[Cao2015]</small></li></b>
+							<b>
+								<li>ANN-to-SNN conversion <small>[Cao2015]</small></li>
+							</b>
 							<ul>
 								<li>Best performance</li>
 								<li>Training is still on ANNs</li>
@@ -286,7 +327,9 @@
 						</div>
 						<div class="fragment">
 							<div class="fragment grow">
-								<b><li>Adapted Backpropagation <small>[Kaiser2020]</small></li></b>
+								<b>
+									<li>Adapted Backpropagation <small>[Kaiser2020]</small></li>
+								</b>
 								<ul>
 									<li>Good performance recently</li>
 								</ul>
@@ -390,14 +433,18 @@
 					<ul>
 						<li>PyTorch: <span style="font-style: italic;">(mainly Surrogate Gradient)</span></li>
 						<ul>
-							<li><code><a href="https://snntorch.readthedocs.io/en/latest/index.html">snntorch</a></code> </li>
-							<li><code><a href="https://github.com/fangwei123456/spikingjelly">spikingjelly</a></code></li>
-							<li><b><a href="https://github.com/lava-nc"><code>Lava</code></a></b></li>
+							<li><code><a href="https://snntorch.readthedocs.io/en/latest/index.html">snntorch</a></code>
+							</li>
+							<li><code><a href="https://github.com/fangwei123456/spikingjelly">spikingjelly</a></code>
+							</li>
+							<li>...</li>
 						</ul>
 						<br>
 						<li>Specialized</li>
 						<ul>
-							<li><code><a href="https://gitlab.univ-lille.fr/bioinsp/falez-csnn-simulator/-/tree/master/src">CSNNs</a></code> (STDP)</li>
+							<li><code><a href="https://gitlab.univ-lille.fr/bioinsp/falez-csnn-simulator/-/tree/master/src">CSNNs</a></code>
+								(STDP)</li>
+							<li><b><a href="https://github.com/lava-nc"><code>Lava</code></a></b></li>
 							<li>...</li>
 						</ul>
 					</ul>
@@ -446,7 +493,8 @@
 						<br>
 						<li>Ready for computer vision and more</li>
 						<br>
-						<li>Bridges the gap between simulation and neuromorphic hardware <span style="font-style: italic;">(Lava Framework)</span></li>
+						<li>Bridges the gap between simulation and neuromorphic hardware <span
+								style="font-style: italic;">(Lava Framework)</span></li>
 						<br>
 						<li>Shows the promises of neuromorphic hardware</li>
 					</ul>
@@ -485,6 +533,17 @@
 						<li>Surrogate Gradient Descent</li>
 						<br>
 						<li>Embedded Vision (e.g. robotics)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>To go further...</h3>
+					<ul>
+						<li> <a href="https://snntorch.readthedocs.io/en/latest/tutorials/tutorial_1.html">Jason Eshraghian's tutorials (<code>snntorch</code>)</a></li>
+						<br>
+						<li> <a href="https://www.youtube.com/channel/UCiBWAKR7VwiuAp9dh2QechA/videos">Telluride Workshop's Youtube Channel</a></li>
+						<br>
+						<li></li>
 					</ul>
 				</section>
 			</section>
