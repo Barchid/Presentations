@@ -66,12 +66,16 @@
 					<h3>Challenges</h3>
 					<ul>
 						<li>Performance still behind Artificial Neural Networks (ANNs)</li>
+						<ul>
+							<li class="fragment">Hard to train, not adapted to numeric images, ...</li>
+						</ul>
 						<br>
+						<li class="fragment"> <b>What can we do with SNNs in computer vision ?</b></li>
 
-						<li>Spiking neurons are not differentiable <small>[Kaiser2020]</small></li>
+						<!-- <li>Spiking neurons are not differentiable <small>[Kaiser2020]</small></li>
 						<ul>
 							<li class="fragment"><b>No backpropagation</b></li>
-						</ul>
+						</ul> -->
 					</ul>
 				</section>
 				<section>
@@ -311,11 +315,18 @@
 
 				<section>
 					<h3>Surrogate Gradient Learning</h3>
-					<ul>
+					
+					<img src="img/intro_SNN/rnn.png" alt="rnn" style="height: 300px;">
+					<!-- <ul>
 						<li>Train with backpropagation...</li>
 						<br>
 						<li>...and deal with the non-differentiability of spikes</li>
-					</ul>
+					</ul> -->
+				</section>
+				<section>
+					<h3>Surrogate Gradient Learning</h3>
+					<p>Train w/ Backpropagation through time (BPTT)</p>
+					<p><img src="img/intro_SNN/bptt.png" alt="bptt"></p>
 				</section>
 
 				<section data-transition="none">
@@ -328,6 +339,22 @@
 					<h3>Surrogate Gradient Learning</h3>
 					<p>Relation between the membrane potential ($U$) and the spike $S$ is a <b>Heaviside Step Function</b></p>
 					<img src="img/intro_SNN/solu_1.png" alt="">
+				</section>
+
+				<section>
+					<h3>Surrogate Gradient Learning</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Spikes are not needed to learn</li>
+						<ul>
+							<li class="fragment" data-fragment-index="1">Solves the dead neuron problem</li>
+							<li class="fragment" data-fragment-index="1"><b class="fragment highlight-red" data-fragment-index="2">We can train deep SNNs</b></li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="3">Not adapted to neuromorphic hardware</li>
+						<ul class="fragment" data-fragment-index="3">
+							<li>Non-local operations, ...</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
