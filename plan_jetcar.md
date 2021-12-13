@@ -21,20 +21,20 @@ L'objectif de cette partie est de se familiariser avec la tâche de vision à r�
 - [Regarder cette vidéo](https://www.youtube.com/watch?v=6Sn9-M7qXLk) expliquant ce qu'est une **caméra DVS**. Quelles sont ses particularités par rapport à une caméra RGB classique (spécificités, avantages, inconvénients, ...) ?
 <!-- - Lire les tutoriels sur les **Spiking Neural Networks (SNN)**. Expliquez la différence entre un ANN standard et un SNN. -->
 
-<!-- ### 1.2. Installation du projet d'entraînement
+### 1.2. Installation du projet d'entraînement
 **Objectif :** Installer et se familiariser avec les ressources fournies pour la suite du projet.
 
 #### Étapes
 
 - ***Préalablement :** choisir une personne responsable de ce point. L'autre binôme aura pour responsabilité le point 1.3.*
-- Un code de base est disponible sous forme de git à [l'url suivante](https://TODO). Il s'agit d'un projet de base permettant de faire un entraînement sur une petite base de données d'images captées dans une voiture. Installer le projet et créer un repository sur le serveur GitLab de l'IMT. Ajouter les encadrants.
+- Un code de base est disponible sous forme de git à [l'url suivante (BIENTÔT DISPONIBLE)](https://google.com). Il s'agit d'un projet de base permettant de faire un entraînement sur une petite base de données d'images captées dans une voiture. Installer le projet et créer un repository sur le serveur GitLab de l'IMT. Ajouter les encadrants.
   - **Note :** Ce code présente un notebook que vous pouvez upload sur Google Colab pour réaliser des entraînements sur GPU.
-- Implémenter le CNN classique décrit sur l'image suivante dans le fichier **TODO** :
+- Implémenter le CNN classique décrit sur l'image suivante dans le fichier **TBD** :
 
 ![image_CNN_carpred](https://miro.medium.com/max/500/1*VB_OYZu4DDlNIT7mdSstcg.png)
 
 - Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation.
-- Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc). -->
+- Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc).
 
 ### 1.2. Installation de la JetRacer
 
