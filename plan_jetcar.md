@@ -36,7 +36,7 @@ L'objectif de cette partie est de se familiariser avec la tâche de vision à r�
 - Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation.
 - Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc).
 
-### 1.2. Installation de la JetRacer
+### 1.3. Installation de la JetRacer
 
 **Objectif :** installer les ressources pour travailler avec la voiture JetRacer et suivre la documentation disponible. Cette documentation permet déjà de capter des images et d'entraîner un modèle CNN dessus, ainsi que de faire rouler la voiture avec ce modèle entraîné.
 
