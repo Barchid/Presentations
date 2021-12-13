@@ -19,9 +19,9 @@ L'objectif de cette partie est de se familiariser avec la tâche de vision à r�
 - [Lire le tutoriel suivant](https://medium.com/@pathak.kapil/self-driving-car-steering-angle-prediction-304517df69d0) et [celui-ci également](https://towardsdatascience.com/teaching-cars-to-drive-using-deep-learning-steering-angle-prediction-5773154608f2) pour comprendre davantage la tâche de vision à réaliser.
   - Regarder rapidement le CNN-type utilisé pour résoudre cette tâche de vision. Qu'est-ce qui diffère par rapport à un CNN utilisé en classification (répondre en une ou deux phrase(s)) ?
 - [Regarder cette vidéo](https://www.youtube.com/watch?v=6Sn9-M7qXLk) expliquant ce qu'est une **caméra DVS**. Quelles sont ses particularités par rapport à une caméra RGB classique (spécificités, avantages, inconvénients, ...) ?
-- Lire les tutoriels sur les **Spiking Neural Networks (SNN)**. Expliquez la différence entre un ANN standard et un SNN.
+<!-- - Lire les tutoriels sur les **Spiking Neural Networks (SNN)**. Expliquez la différence entre un ANN standard et un SNN. -->
 
-### 1.2. Installation du projet d'entraînement
+<!-- ### 1.2. Installation du projet d'entraînement
 **Objectif :** Installer et se familiariser avec les ressources fournies pour la suite du projet.
 
 #### Étapes
@@ -34,16 +34,16 @@ L'objectif de cette partie est de se familiariser avec la tâche de vision à r�
 ![image_CNN_carpred](https://miro.medium.com/max/500/1*VB_OYZu4DDlNIT7mdSstcg.png)
 
 - Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation.
-- Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc).
+- Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc). -->
 
-### 1.3. Installation de la JetRacer
+### 1.2. Installation de la JetRacer
 
 **Objectif :** installer les ressources pour travailler avec la voiture JetRacer et suivre la documentation disponible. Cette documentation permet déjà de capter des images et d'entraîner un modèle CNN dessus, ainsi que de faire rouler la voiture avec ce modèle entraîné.
 
 **Rendu :** une petite base de données d'images peut être captée. La JetRacer est capable de rouler de manière autonome en utilisant le modèle CNN fourni dans le tutoriel.
 
 #### Étapes
-- ***Préalablement :** choisir une personne responsable de ce point. L'autre binôme aura pour responsabilité le point 1.2.*
+<!-- - ***Préalablement :** choisir une personne responsable de ce point. L'autre binôme aura pour responsabilité le point 1.2.* -->
 - [Prendre connaissance du wiki officiel pour la JetRacer et procéder à l'installation sur la Jetson Nano embarquée.](https://www.waveshare.com/wiki/JetRacer_AI_Kit)
 - [Le projet disponible à l'url suivante](https://github.com/waveshare/jetracer) fournit une API/des notebooks pour commander la voiture JetRacer avec un ordinateur local, capter des images d'apprentissage, etc. Installer le projet et suivre les tutoriels.
   - [Documentation pour l'installation](https://github.com/waveshare/jetracer/blob/master/docs/software_setup.md)
@@ -91,7 +91,7 @@ Jusqu'ici, nous avons utilisé un CNN classique avec des frames (RGB ou DVS). Il
   - **Difficulté :** lier la ground truth des angles de steering avec le flux DVS capté n'est pas aussi intuitif qu'avec des frames. Il va falloir réfléchir à une bonne méthode et en discuter avec les encadrants.
 
 
-## 4. Spiking Neural Networks
+<!-- ## 4. Spiking Neural Networks
 **Objectif :** utiliser la base de données de vidéos DVS captée en [partie 3](#3-base-de-données-vidéo-dvs) pour entraîner un SNN.
 
-#### Intuitions
+#### Intuitions -->
