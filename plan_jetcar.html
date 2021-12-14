@@ -67,18 +67,25 @@
 <p><strong>Objectif :</strong> Installer et se familiariser avec les ressources fournies pour la suite du projet.</p>
 <h4 id="étapes-1">Étapes</h4>
 <ul>
-<li><em><strong>Préalablement :</strong> choisir une personne responsable de ce point. L'autre binôme aura pour responsabilité le point 1.3.</em></li>
-<li>Un code de base est disponible sous forme de git à <a href="https://google.com">l'url suivante (BIENTÔT DISPONIBLE)</a>. Il s'agit d'un projet de base permettant de faire un entraînement sur une petite base de données d'images captées dans une voiture. Installer le projet et créer un repository sur le serveur GitLab de l'IMT. Ajouter les encadrants.
+<li>Un code de base est disponible sous forme de git à <a href="https://github.com/Barchid/car-steering">l'url suivante</a>. Il s'agit d'un projet de base permettant de faire un entraînement sur une petite base de données d'images captées dans une voiture. Installer le projet et créer un repository sur le serveur GitLab de l'IMT. Ajouter les encadrants.
 <ul>
 <li><strong>Note :</strong> Ce code présente un notebook que vous pouvez upload sur Google Colab pour réaliser des entraînements sur GPU.</li>
 </ul>
 </li>
-<li>Implémenter le CNN classique décrit sur l'image suivante dans le fichier <strong>TBD</strong> :</li>
+<li>Comprendre la logique dans le code du fichier <code>project/driving_module.py</code>. Aidez-vous de la documentation de <code>pytorch-lightning</code>.</li>
+<li>Comprendre la logique dans le code du fichier <code>project/datamodules/driving_dataset.py</code>. Ce script utilise la logique de dataloader de <code>pytorch pour charger un dataset d'apprentissage/validation, ainsi que la logique de DataModule de </code>pytorch-lightning` pour organiser ces dataloaders de la manière la plus propre possible. Aidez-vous des différentes documentations des librairies.</li>
+<li>Comprendre la logique dans le code du fichier <code>main.py</code>.</li>
+<li>Comprendre l'utilisation du notebook <code>notebook.ipynb</code> ainsi que les différents paramètres du script de base.</li>
+<li>Implémenter le CNN classique décrit sur l'image suivante dans le fichier <strong><code>project/models/pilotnet.py</code></strong> :</li>
 </ul>
 <p><img src="https://miro.medium.com/max/500/1*VB_OYZu4DDlNIT7mdSstcg.png" alt="image_CNN_carpred"></p>
 <ul>
-<li>Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation.</li>
-<li>Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc).</li>
+<li>Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation. Ne pas oublier de récupérer le dossier de logs après une expérimentation.</li>
+<li>Faire une liste de ce que vous avez appris du code de base. Le but est que vous compreniez parfaitement ce qu'il fait.
+<ul>
+<li>Exemple : qu'est-ce qu'un dataloader ? Comment a été séparé le dataset pour le <code>train set</code> et le <code>val set</code> ? Que fais l'argument --mode=&quot;lr_find&quot; ?</li>
+</ul>
+</li>
 </ul>
 <h3 id="13-installation-de-la-jetracer">1.3. Installation de la JetRacer</h3>
 <p><strong>Objectif :</strong> installer les ressources pour travailler avec la voiture JetRacer et suivre la documentation disponible. Cette documentation permet déjà de capter des images et d'entraîner un modèle CNN dessus, ainsi que de faire rouler la voiture avec ce modèle entraîné.</p>

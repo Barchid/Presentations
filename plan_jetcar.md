@@ -26,15 +26,19 @@ L'objectif de cette partie est de se familiariser avec la tâche de vision à r�
 
 #### Étapes
 
-- ***Préalablement :** choisir une personne responsable de ce point. L'autre binôme aura pour responsabilité le point 1.3.*
-- Un code de base est disponible sous forme de git à [l'url suivante (BIENTÔT DISPONIBLE)](https://google.com). Il s'agit d'un projet de base permettant de faire un entraînement sur une petite base de données d'images captées dans une voiture. Installer le projet et créer un repository sur le serveur GitLab de l'IMT. Ajouter les encadrants.
+- Un code de base est disponible sous forme de git à [l'url suivante](https://github.com/Barchid/car-steering). Il s'agit d'un projet de base permettant de faire un entraînement sur une petite base de données d'images captées dans une voiture. Installer le projet et créer un repository sur le serveur GitLab de l'IMT. Ajouter les encadrants.
   - **Note :** Ce code présente un notebook que vous pouvez upload sur Google Colab pour réaliser des entraînements sur GPU.
-- Implémenter le CNN classique décrit sur l'image suivante dans le fichier **TBD** :
+- Comprendre la logique dans le code du fichier `project/driving_module.py`. Aidez-vous de la documentation de `pytorch-lightning`.
+- Comprendre la logique dans le code du fichier `project/datamodules/driving_dataset.py`. Ce script utilise la logique de dataloader de `pytorch pour charger un dataset d'apprentissage/validation, ainsi que la logique de DataModule de `pytorch-lightning` pour organiser ces dataloaders de la manière la plus propre possible. Aidez-vous des différentes documentations des librairies.
+- Comprendre la logique dans le code du fichier `main.py`.
+- Comprendre l'utilisation du notebook `notebook.ipynb` ainsi que les différents paramètres du script de base.
+- Implémenter le CNN classique décrit sur l'image suivante dans le fichier **`project/models/pilotnet.py`** :
 
 ![image_CNN_carpred](https://miro.medium.com/max/500/1*VB_OYZu4DDlNIT7mdSstcg.png)
 
-- Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation.
-- Communiquer avec l'autre binôme sur le travail réalisé (expliquer la structure du projet, ce qui a été fait, etc).
+- Entraîner le modèle implémenté sur Google Colab et rapporter les performances du CNN en training/validation. Ne pas oublier de récupérer le dossier de logs après une expérimentation.
+- Faire une liste de ce que vous avez appris du code de base. Le but est que vous compreniez parfaitement ce qu'il fait.
+  - Exemple : qu'est-ce qu'un dataloader ? Comment a été séparé le dataset pour le `train set` et le `val set` ? Que fais l'argument --mode="lr_find" ?
 
 ### 1.3. Installation de la JetRacer
 
