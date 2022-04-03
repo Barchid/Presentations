@@ -31,7 +31,7 @@ Le but de cette partie est de prendre en main et comprendre les technologies uti
 ### 1.2. Installation Intel Movidius
 Un accélérateur neuronal "Intel Movidius Neural Compute Stick" est disponible pour accélérer l'inférence des réseaux de neurones utilisés (afin qu'il soit possible de faire du temps réel sur un Raspberry).
 
-- Installer la Movidius sur le Raspberry en suivant le tutoriel sur le site de Intel
+- Installer la Movidius sur le Raspberry en suivant le tutoriel sur le site de Intel https://www.intel.com/content/www/us/en/developer/articles/guide/raspberry-pi-4-and-intel-neural-compute-stick-2-setup.html
 - Vérifier que cette installation fonctionne.
 - Prendre un tutoriel du bras robot basé sur un réseau de neurones et y intégrer la Movidius.
 
