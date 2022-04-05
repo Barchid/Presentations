@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>GT Image 07/04/2022</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section data-background-color="#ae2573">
+				<h3 style="text-transform: capitalize;">Development of Spiking Neural Networks for Modern Computer Vision</h3>
+				<img src="img/logo_udl_blanc.png">
+				<p><b>Sami BARCHID</b></p>
+				<p>José MENNESSON</p>
+				<p>Chaabane DJÉRABA</p>
+				<!-- <p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+
+			<section>
+				<h3>Artificial Neural Networks</h3>
+				<ul>
+					<li>State-of-the-art almost everywhere</li>
+					<br>
+					<li>High energy consumption</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Spiking Neural Networks</h3>
+				<ul>
+					<li>Inspired from biological neurons</li>
+					<br>
+					<li>Asynchronous processing through spikes</li>
+					<br>
+					<li>Energy-efficiency 📈</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Event Cameras</h3>
+				<img style="height: 300px;" src="img/GT_Image/origin.jpg" alt="dvs">
+				<ul>
+					<li>no motion blur, no redundancy, higher dynamic range</li>
+					<li>asynchronous spike trains when intensity change</li>
+					<li><b>Event camera 🤝 SNN</b></li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Limitations</h3>
+				<ul>
+					<li>Performance still behind standard Deep Learning methods</li>
+					<br>
+					<li>Limited to simple use cases</li>
+					<br>
+					<li>Little to no works on modern vision tasks <span style="font-style: italic;">(e.g. object detection, ...) </span></li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Objectives</h3>
+				<br>
+				<h3 style="text-transform: none;"><b>Develop approaches based on SNNs to explore modern vision tasks</b></h3>
+			</section>
+
+			<section>
+				<h3>Finished works</h3>
+				<ul>
+					<li>Object Localizations <span style="font-style: italic;">(CBMI 2021)</span></li>
+					<br>
+					<li>New representation for Event cameras <span style="font-style: italic;">(ICIP 2022 - submitted)</span></li>
+					<br>
+					<li>Analysis on supervised SNNs for localization <span style="font-style: italic;">(ECCV 2022 - submitted)</span></li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Under development</h3>
+				<ul>
+					<li>Neuromorphic robot arm control</li>
+					<br>
+					<li>Neuromorphic autonomous car</li>
+					<br>
+					<li>Event-based ball detection in sport applications</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>

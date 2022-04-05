@@ -39,4 +39,4 @@ Un accélérateur neuronal "Intel Movidius Neural Compute Stick" est disponible 
 - Suivre cette vidéo pour comprendre ce qu'est une caméra DVS et le domaine de l' "event-based computer vision" : https://www.youtube.com/watch?v=6Sn9-M7qXLk 
 
 
-### ... Suite bientôt
+## Connexion bras robot
