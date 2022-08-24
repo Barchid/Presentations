@@ -1,0 +1,3 @@
+# Projet: SNN - Event Camera (DVS) - SSL (= Self-Supervised Learning)
+
+Nous travaillons déjà avec les SNNs entraînés par Surrogate Gradient *("SG-trained")*, et avons démontré leurs supériorités face aux ANNs pour traiter des flux de caméra event-based. Cependant, domaine émergent oblige, il existe peu de datasets annotés disponibles pour les diverses tâches de vision existantes pour les caméras frame-based. Une autre difficulté est que les datasets DVS qui existent peuvent contenir peu de données, ce qui complique l'apprentissage de réseaux de neurones profonds. Pour pallier à ce problème, une solution intéressante (et déjà employée pour les ANNs) est de pré-entraîner le modèle grâce au SSL.
