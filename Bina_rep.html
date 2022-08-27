@@ -36,19 +36,6 @@
 			</section>
 
 			<section>
-				<h3>
-					Outline
-				</h3>
-				<ul>
-					<li class="fragment grow">Introduction</li>
-					<li>Event Representation</li>
-					<li>Bina-Rep Event Frames</li>
-					<li>Experiments</li>
-					<li>Conclusion</li>
-				</ul>
-			</section>
-
-			<section>
 				<section>
 					<h1>Introduction</h1>
 				</section>
@@ -63,15 +50,15 @@
 				<section>
 					<h3>Advantages</h3>
 					<ul>
-						<li><b>Sparser representation</b> (no redundancy)</li>
+						<li class="fragment"><b>Sparser representation</b> (no redundancy)</li>
 						<br>
-						<li><b>Low latency</b> (~1 µs)</li>
+						<li class="fragment"><b>Low latency</b> (~1 µs)</li>
 						<br>
-						<li><b>No motion blur</b></li>
+						<li class="fragment"><b>No motion blur</b></li>
 						<br>
-						<li><b>High Dynamic Range</b> (60dB vs 140 dB for standard cameras)</li>
+						<li class="fragment"><b>High Dynamic Range</b> (60dB vs 140 dB for standard cameras)</li>
 						<br>
-						<li><b>Low energy consumption</b></li>
+						<li class="fragment"><b>Low energy consumption</b></li>
 					</ul>
 				</section>
 
@@ -184,7 +171,7 @@
 					<img src="img/Bina_rep/event_frame.png" height="120px" alt="Binary event frames">
 					<p><small>Example of binary event frame [Kogler2009]</small></p>
 					<ul>
-						<li><b>Accumulates</b> events into 2D frames to feed conventional algorithms</li>
+						<li><b>Accumulate</b> events into 2D frames to feed conventional algorithms</li>
 						<li style="color: green;">Popular due to an intuitive representation of edge maps</li>
 						<li class="fragment" data-fragment-index="1" style="color: red;">Absence of explicit temporal
 							information</li>
@@ -280,17 +267,20 @@
 					<h3>Implementation Details</h3>
 					<ul>
 						<li>PyTorch 1.8 on one NVIDIA Tesla P100 GPU</li>
-						<li>Frames Resolution: $224 \times 224$</li>
-						<li>CNN used: <b>ResNet-18</b><small>[Kaiming2016]</small></li>
+						<li class="fragment highlight-red">Frames Resolution: $224 \times 224$</li>
+						<li class="fragment highlight-red">CNN used: <b>ResNet-18</b><small>[Kaiming2016]</small></li>
 						<li>Trained during <b>60 epochs</b> using <b>Adam optimizer</b> with a <b>learning rate of
 								$0.001$</b></li>
-						<li>8-bit <code>uint</code> representation used for Bina-Rep (i.e. $N=8$)</li>
+						<li class="fragment highlight-red">8-bit <code>uint</code> representation used for Bina-Rep (i.e. $N=8$)</li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>Comparison with Event Representations (1)</h3>
-					<img src="img/Bina_rep/table2.png" alt="Table 2">
+					<div class="r-stack">
+						<img src="img/Bina_rep/table2.png" alt="Table 2">
+						<img class="fragment" src="img/Bina_rep/table2_1.png" alt="Table 2">
+					</div>
 				</section>
 
 				<section>
@@ -311,6 +301,7 @@
 						<img class="fragment" src="img/Bina_rep/example_corruptions_1.png" alt="Corruptions example">
 						<img class="fragment" src="img/Bina_rep/example_corruptions.png" alt="Corruptions example">
 					</div>
+					<p><b>Dataset used</b>: N-Cars<small>[Sironi2018]</small></p>
 				</section>
 
 				<section>
@@ -322,7 +313,7 @@
 						<li><b>Background Activity</b>: adds a percentage of noisy events</li>
 						<li><b>Occlusion</b>: increases the occlusion area (percentage of original resolution)</li>
 					</ul>
-					<img class="fragment" src="img/Bina_rep/table5.png" alt="Table 5">
+					<img src="img/Bina_rep/table5.png" alt="Table 5">
 				</section>
 
 				<section>
@@ -336,8 +327,8 @@
 						100$</p>
 					<br>
 					<ul>
-						<li class="fragment">$acc_0$ = the accuracy score on clean data</li>
-						<li class="fragment">$acc_i$ = the accuracy score on data corrupted by severity level $i$</li>
+						<li>$acc_0$ = the accuracy score on clean data</li>
+						<li>$acc_i$ = the accuracy score on data corrupted by severity level $i$</li>
 					</ul>
 				</section>
 
