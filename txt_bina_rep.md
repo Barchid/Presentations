@@ -6,7 +6,8 @@ Let's get started by introducing our context.
 
 # Slide 3
 Firstly let's talk about the specific type of sensor we use in this work, which is called Event Cameras.
-TODO
+
+Event cameras are bio-inspired sensor that are very different from conventional cameras. They do not capture images at a fixed rate, but asynchronously measure bright changes at pixel level, and output a stream of events. Logically, these brightness changes appear when there is movement in the scene. Each emitted event encodes the pixel coordinates, the time-stamp and the sign of the related brightness change.
 
 # Slide 4
 Event-based sensors have a lot of advantages over conventional cameras.
@@ -147,7 +148,6 @@ Bina-Rep also shows better performance on the multiple frames settings in genera
 --
 DVS-Gesture is an interesting case to analyze, because it has been shown in previous works that it can be considered as truly exposing temporal information contrary to the others. so It allows us to investigate the capacity of an event representation method to handle temporal information.
 
---
 The reported results vary importantly across the compared approaches, which shows a significant difference in the capacity to handle temporal information.
 --
 Our Bina-Rep event frames with 3 frames achieves second-best accuracy, which highlights its efficiency to deal with temporal information.
