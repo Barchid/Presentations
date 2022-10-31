@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Rapport ICIP</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h3>Retours d'expérience</h3>
+				<br>
+				<img src="img/Bina_rep/icip22.png" alt="ICIP22">
+				<br>
+				<p><small>Sami BARCHID</small></p>
+				<img src="img/Bina_rep/logos_cbmi.png">
+				<!-- <p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+
+			<section>
+				<section>
+					<h1>Résumé</h1>
+				</section>
+				<section>
+					<h3>Conférence</h3>
+					<ul>
+						<li><b>Thèmes:</b> Image Processing, Computer Vision (<span style="font-style: italic;">Deep Learning</span>), <span class="fragment strike">compression, transmission, ..</span></li>
+						<br>
+						<li><b>4 pages</b></li>
+						<ul class="fragment">
+							<li>⬇️ Innovation limitée</li>
+						</ul>
+						<br>
+						<li>Spécificité 2022: <b class="fragment highlight-red">session spéciale neuromorphique</b></li>
+						<ul class="fragment">
+							<li>🎉 Communauté</li>
+							<li>❓ Pertinence</li>
+							<li>...</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h3>Organisation</h3>
+					<div class="r-stack">
+						<img src="img/icip_resume/horaire.png" alt="horaire">
+						<img class="fragment" src="img/icip_resume/horaire_0.png" alt="horaire">
+						<img class="fragment" src="img/icip_resume/horaire_1.png" alt="horaire">
+						<img class="fragment" src="img/icip_resume/horaire_3.png" alt="horaire">
+						<img class="fragment" src="img/icip_resume/horaire_4.png" alt="horaire">
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Ressentis</h1>
+				</section>
+				<section>
+					<h3>Contenu scientifique</h3>
+					<ul>
+						<li>❌ grandes contributions</li>
+						<li>✔️ applications de techniques dans des contextes particuliers</li>
+						<li>✔️ datasets spécifiques</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Session Neuromorphique</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="0">🤯 Le monde est petit</li>
+						<br>
+						<li class="fragment" data-fragment-index="1">✔️ expertise de l'assemblée</li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>🪡 Débats pointus</li>
+							<li>⚡ Idées fusent</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="2">❌ Très (trop) varié</li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>Electronics, neurosciences, ...</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Note finale</h3>
+					<ul>
+						<li>Posters $>$ Oraux</li>
+						<ul>
+							<li>Facilité d'accès des auteurs</li>
+							<li>Questions</li>
+							<li>Parler</li>
+						</ul>
+						<br>
+						<li>Networking 📈</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,496 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Gdr-ISIS: event cameras</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		.ital {
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h5 style="text-transform: capitalize;">Camera événementielles: <br> une vision artificielle haute
+					performance et basse consommation, inspirée de la biologie</h5>
+				<br>
+				<!-- <img src="img/Bina_rep/icip22.png" alt="ICIP22"> -->
+				<br>
+				<small><b>Sami BARCHID</b></small>
+				<img src="img/Bina_rep/logos_cbmi.png">
+				<!-- <p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+
+			<section>
+				<section>
+					<h1>Caméra événementielle</h1>
+				</section>
+				<section>
+					<h3>Caméra conventionnelle</h3>
+					<ul>
+						<li>Résolution 📈</li>
+						<li>FPS 📈</li>
+						<li class="fragment">Mémoire et puissance de calcul <b class="fragment"
+								style="font-size: 75px;">📈</b></li>
+					</ul>
+					<p class="fragment" style="color: red;">
+						Consommation énergétique en vision <b style="font-size: 100px;">📈</b>
+					</p>
+				</section>
+				<section>
+					<h3>Caméra événementielle <span style="font-weight: normal;">(DVS)<small style="text-transform: none;">[Gallego2020]</small></span></h3>
+					<ul>
+						<li>Inspirée de la biologie</li>
+						<br>
+						<li>Événements <b>asynchrones</b> lors d'un changement d'intensité du pixel</li>
+						<!-- <br> -->
+						<ul style="list-style-type: none;">
+							<li class="fragment">➡️ <b>Mouvement</b></li>
+						</ul>
+					</ul>
+					<img height="300px" src="img/Bina_rep/binary_event_frame_lol.png" alt="fomrulation">
+				</section>
+
+				<section>
+					<h3>Exemple</h3>
+					<img src="img/Bina_rep/hand_clap.gif" alt="handclap">
+				</section>
+
+				<section>
+					<h3>DVS ⚔️ Frame</h3>
+					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video>
+					<p><small>From video here: <a
+								href="https://www.youtube.com/watch?v=LauQ6LWTkxM">https://www.youtube.com/watch?v=LauQ6LWTkxM</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Avantages</h3>
+					<ul>
+						<li>Représentation "sparse"</li>
+						<br>
+						<li>🚀 Latence plus basse (microseconde)</li>
+						<br>
+						<li style="text-decoration: line-through;">Flou cinétique</li>
+						<br>
+						<li> 🛡️ Conditions d'illumination extrêmes</li>
+						<br>
+						<li> 🌍 <b>Efficacité énergétique</b></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Event-based Vision</h1>
+				</section>
+				<section>
+					<h3>Changement de paradigme</h3>
+					<p>🚫 &nbsp;&nbsp; <b style="color: red">Algorithme de vision conventionnel &nbsp;&nbsp; 🚫</b></p>
+					<br>
+					<ol>
+						<li class="fragment"><b>Événements asynchrones</b> <span style="font-style: italic">au lieu
+								de</span> <b>frames</b></li>
+						<br>
+						<li class="fragment"><b>Changements binaires</b> <span style="font-style: italic">au lieu
+								de</span>
+							<b>intensité</b>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Event representation</h3>
+					<div class="r-stack">
+						<img data-fragment-index="0" src="img/Bina_rep/event_representation_0.png"
+							alt="Event representation">
+						<img data-fragment-index="1" class="fragment" src="img/Bina_rep/event_representation_1.png"
+							alt="Event representation">
+						<img data-fragment-index="2" class="fragment" src="img/Bina_rep/event_representation.png"
+							alt="Event representation">
+					</div>
+					<p><b>Définition : </b> méthode qui transforme des <span data-fragment-index="1"
+							class="fragment highlight-red">événements asynchrones</span> (input) en une <span
+							data-fragment-index="2" class="fragment highlight-blue">représentation alternative</span>
+						(output).</p>
+				</section>
+
+				<section>
+					<h3>Plusieurs stratégies</h3>
+					<ul>
+						<li>Event Frames <span class="fragment">1️⃣</span> </li>
+						<br>
+						<li>Spiking Neural Networks <span class="ital">(SNNs)</span> <span class="fragment">2️⃣</span>
+						</li>
+						<br>
+						<li>...</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Event Frames</h1>
+				</section>
+
+				<section>
+					<h3>Aperçu</h3>
+					<img src="img/Bina_rep/event_frame.png" height="120px" alt="Binary event frames">
+					<p><small>Example of binary event frame [Kogler2009]</small></p>
+					<ul>
+						<li><b>Accumule</b> des événements pour reconstruire des frames utilisables par des algorithmes
+							conventionnels</li>
+						<li style="color: green;">Très populaire car très intuitif</li>
+						<li class="fragment" data-fragment-index="1" style="color: red;">Perte de l'information
+							temporelle</li>
+						<ul class="fragment" data-fragment-index="1">
+							<li style="color: green;"><b>🏅 Performances</b></li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Bina-Rep <span style="font-style: normal; font-weight: normal;">(ICIP 2022)</span></h3>
+					<ul>
+						<li>Event Frames mais avec <b>information temporelle ⏳</b></li>
+						<br>
+						<li>Plus <span class="ital">"sparse"</span></li>
+						<br>
+						<li>Résultats compétitifs 🥈 voire état de l'art 🥇 en <span class="ital">event-based
+								recognition</span></li>
+						<ul>
+							<li>Précision</li>
+							<li>Robustesse</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Binary Event Frames</h3>
+					<div class="r-stack">
+						<img src="img/Bina_rep/binary_event_frame_0.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/binary_event_frame_1.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/binary_event_frame_2.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/binary_event_frame_3.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/binary_event_frame_4.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/binary_event_frame_5.png" alt="fomrulation">
+					</div>
+				</section>
+
+				<section>
+					<h3>Bina-Rep Event Frames</h3>
+					<div class="r-stack">
+						<img src="img/Bina_rep/bina_rep_frame.drawio_0.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_1.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_2.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_3.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_4.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_5.png" alt="fomrulation">
+						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_6.png" alt="fomrulation">
+					</div>
+				</section>
+
+				<section>
+					<h3>Séquence de Bina-Rep Frames</h3>
+					<img src="img/Bina_rep/binarep_sequence.drawio.png" alt="seq binarep">
+					<ul>
+						<li><b style="color: green;">Sparse</b> : $T$ bina-rep frames of $N$-bit numbers $ = T \times
+							N$ binary event frames</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Résultats</h3>
+					<p><b>Expérience:</b><br> classification avec ResNet-18 + <span class="ital">event
+							representation</span></p>
+					<div class="r-stack">
+						<img src="img/Bina_rep/table3.png" alt="Table 3">
+						<img src="img/Bina_rep/table3_1.png" alt="table3" class="fragment">
+						<img src="img/Bina_rep/table3_2.png" alt="table3" class="fragment">
+						<img src="img/Bina_rep/table3_3.png" alt="table3" class="fragment">
+						<img src="img/Bina_rep/table3_4.png" alt="table3" class="fragment">
+						<img src="img/Bina_rep/table3_5.png" alt="table3" class="fragment">
+						<img src="img/Bina_rep/table3_6.png" alt="table3" class="fragment">
+						<img src="img/Bina_rep/table3_7.png" alt="table3" class="fragment">
+					</div>
+				</section>
+
+				<section>
+					<h3>État de l'art</h3>
+					<div class="r-stack">
+						<img src="img/Bina_rep/table4.png" alt="Table 4">
+						<!-- <img src="img/Bina_rep/table4_1.png" class="fragment" alt="Table 4">
+						<img src="img/Bina_rep/table4_2.png" class="fragment" alt="Table 4"> -->
+					</div>
+				</section>
+
+				<section>
+					<h3>Robustesse</h3>
+					<div class="r-stack">
+						<img src="img/Bina_rep/example_corruptions_0.png" alt="Corruptions example">
+						<img class="fragment" src="img/Bina_rep/example_corruptions_1.png" alt="Corruptions example">
+						<img class="fragment" src="img/Bina_rep/example_corruptions.png" alt="Corruptions example">
+					</div>
+					<ul>
+						<li>Robustesse comparable</li>
+						<li>Plus de bina-rep frames est meilleur</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Spiking Neural Networks</h1>
+				</section>
+
+				<section>
+					<h3>Aperçu</h3>
+					<div><video src="img/Bina_rep/snn_visu.mp4" muted autoplay height="240px" /></div>
+					<p><small>From here: <a
+								href="https://www.youtube.com/watch?v=oG0PTP3ogCA">https://www.youtube.com/watch?v=oG0PTP3ogCA</a></small>
+					</p>
+					<ul>
+						<li>Bio-inspirés <span class="ital">(neurones impulsionnels)</span></li>
+						<li>Neurones communiquent par <b>impulsions asynchrones</b></li>
+						<li>Nativement spatio-temporel</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Avantages</h3>
+					<ul>
+						<li>SNN 🤝 DVS </li>
+						<br>
+						<li>Implémentation sur <b>hardware neuromorphique</b> <small>[Davies2021]</small></li>
+						<ul>
+							<li style="color: green;">Ultra-basse consommation</li>
+						</ul>
+						<br>
+						<li>Récentes avances sur l'apprentissage <b>profond</b> pour les SNNs 🧠 <small>[Neftci2019]</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Domaine exploratoire</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Hardware neuromorphique 👶</li>
+						<br>
+						<li class="fragment" data-fragment-index="2">Principalement <b>simulation sur GPU</b></li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>Trop lourds pour les puces neuromorphiques actuelles</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="3">Tâches peu complexes</li>
+						<ul class="fragment" data-fragment-index="3">
+							<li class="ital">N-MNIST, CIFAR10-DVS, DVS-Gesture, ...</li>
+							<li class="fragment" data-fragment-index="4"><b>Ca commence à changer</b></li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Opportunités</h3>
+					<ul>
+						<li>Tout est à faire ⚒️</li>
+						<br>
+						<li>Analyses nécessaires 👁️‍🗨️</li>
+						<br>
+						<li>Prévoir le futur de la <b>vision embarquée</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Object Localization <span style="font-style: normal; font-weight: normal;">(CBMI 2021 &
+							...)</span></h3>
+					<ul>
+						<li>SNNs supervisés pour des tâches de vision "modernes"</li>
+						<ul class="fragment" data-fragment-index="0">
+							<li style="color: green;">Parmis les premiers travaux disponibles</li>
+						</ul>
+						<br>
+						<li>Caméras <span class="fragment highlight-blue" data-fragment-index="1">événementielles</span> <b>et</b> <span data-fragment-index="1" class="fragment strike">conventionnelles</span></li>
+						<br>
+						<li>Analyses contre ANN</li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>Précision 🎯</li>
+							<li>Robustesse 💪</li>
+							<li>Consommation énergétique 🔋</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Aperçu</h3>
+					<img src="img/icip_resume/Localization_Overview.drawio.png" alt="Loc">
+					<ul>
+						<li>Deep architecture: <b>ResNet-18</b></li>
+						<li>Backprop-trained SNN</li>
+						<li>DVS Localization Dataset: <b>N-Caltech101</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Résultats qualitatifs</h3>
+					<ul>
+						<li>Ground truth en <b>Gris foncé</b></li>
+						<li>Prédiction en <b>Gris clair</b></li>
+					</ul>
+					<p><img src="img/icip_resume/qualitative.gif" alt="qual" height="350px"></p>
+					<p style="color:green;" class="fragment">
+						<b>🎉 Succès :</b> utilisation du SNN validée 🎉
+					</p>
+				</section>
+
+				<section>
+					<h3>SNN ⚔️ ANN</h3>
+					<h5>Précision 🎯</h5>
+					<img src="img/icip_resume/precision.png" alt="precision">
+					<ul class="fragment">
+						<li style="color: green;"><b>SNN 🥇</b> à faible latence</li>
+						<li>ANN reste constant</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>SNN ⚔️ ANN</h3>
+					<h5>Robustesse 💪 (1)</h5>
+					<div class="r-stack">
+						<img src="img/icip_resume/hotpixel.gif" alt="hotpix" class="fragment fade-in-then-out" data-fragment-index="0">
+						<img src="img/icip_resume/background_activity.gif" alt="ba" class="fragment" data-fragment-index="1">
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0">Hot Pixels Noise</p>
+						<p class="fragment" data-fragment-index="1">Background Activity Noise</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>SNN ⚔️ ANN</h3>
+					<h5>Robustesse 💪 (2)</h5>
+					<div class="r-stack">
+						<img class="fragment" src="img/icip_resume/robustess_0.png" alt="robu">
+						<img class="fragment" src="img/icip_resume/robustess_1.png" alt="robu">
+						<img class="fragment" src="img/icip_resume/robustess_2.png" alt="robu">
+						<img class="fragment" src="img/icip_resume/robustess_3.png" alt="robu">
+					</div>
+					<ul class="fragment">
+						<li style="color: red;">SNN sensible aux corruptions</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>SNN ⚔️ ANN</h3>
+					<h5>Consommation énergétique 🔋</h5>
+					<ul>
+						<li>Simulation sur puce CMOS de 45nm <small>[Kim2021]</small></li>
+						<li>Latence SNN &nbsp; $T=8$</li>
+					</ul>
+					<div class="r-stack">
+						<img data-fragment-index="1" class="fragment" src="img/icip_resume/consumption_0.png"
+							alt="consum">
+						<img class="fragment" data-fragment-index="2" src="img/icip_resume/consumption.png"
+							alt="consum">
+					</div>
+					<p class="fragment" data-fragment-index="1"><b style="color: green;">SNN consomme
+							&nbsp;$45.48\times$ moins</b></p>
+					<p class="fragment" data-fragment-index="2"><b style="color: green;">Encore mieux sur des frames</b></p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Conclusion</h1>
+				</section>
+
+				<section>
+					<h3>Discussion</h3>
+					<p>Caméras événementielles introduisent un <b>tout nouveau paradigme</b> en vision artificielle</p>
+					<br>
+					<ul>
+						<li>📋 Adaptation d'algorithme existant <span class="ital">(Event Frames)</span></li>
+						<li class="fragment grow">🆕 Approches émergentes <span class="ital">(Spiking Neural Networks)</span></li>
+					</ul>
+					<br>
+					<br>
+					<br>
+					<p class="fragment r-fit-text"> <b>Fort impact pour la communauté</b></p>
+				</section>
+
+				<section>
+					<h5>Références</h5>
+					<ul style="font-size: 20px;">
+						<li>
+							<b>[Gallego2020]</b>: G. Gallego, T. Delbrück, G. Orchard, C. Bartolozzi, B. Taba, A. Censi, S. Leutenegger, A. J. Davison, J. Conradt, K. Daniilidis et al., “Event-based vision: A survey,” IEEE transactions on pattern analysis and machine intelligence, vol. 44, no. 1, pp. 154–180, 2020. 
+						</li>
+						<li>
+							<b>[Kim2021]</b>: Y. Kim, J. Chough, and P. Panda, “Beyond classification: Directly training spiking neural networks for semantic segmentation,” arXiv preprint arXiv:2110.07742, 2021.
+						</li>
+						<li>
+							<b>[Kogler2009]: </b>Kogler, et al. "Bio-inspired stereo vision system with silicon retina imagers." International Conference on Computer Vision Systems. Springer, Berlin, Heidelberg, 2009
+						</li>
+						<li>
+							<b>[Davies2021]: </b>M. Davies, A. Wild, G. Orchard, Y. Sandamirskaya, G. A. F. Guerra, P. Joshi, P. Plank, and S. R. Risbud, “Advancing neuromorphic computing with loihi: A survey of results and outlook,” Proceedings of the IEEE, vol. 109, no. 5, pp. 911–934, 2021.
+						</li>
+						<li>
+							<b>[Neftci2019]: </b> E. O. Neftci, H. Mostafa, and F. Zenke, “Surrogate gradient learning in spiking neural networks: Bringing the power of gradient-based optimization to spiking neural networks,” IEEE Signal Processing Magazine, vol. 36, no. 6, pp. 51–63, 2019.
+						</li>
+					</ul>
+					<h5>Publications</h5>
+					<ul style="font-size: 20px;">
+						<li>
+							S. Barchid, J. Mennesson and C. Djéraba, <b>"Bina-Rep Event Frames: A Simple and Effective Representation for Event-Based Cameras,"</b> 2022 IEEE International Conference on Image Processing (ICIP), 2022, pp. 3998-4002, doi: 10.1109/ICIP46576.2022.9898061.
+						</li>
+						<li>
+							Barchid, Sami, José Mennesson, and Chaabane Djéraba. <b>"Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning."</b> 2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.
+						</li>
+						<li>
+							Barchid, Sami, et al. <b>"Spiking neural networks for frame-based and event-based single object localization."</b> arXiv preprint arXiv:2206.06506 (2022).
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
