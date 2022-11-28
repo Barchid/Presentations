@@ -26,7 +26,7 @@
 				<!-- <img src="img/Bina_rep/icip22.png" alt="ICIP22"> -->
 				<!-- <br> -->
 				<p class="fragment" style="font-style: italic;">
-					Lay the foundation of Self-Supervised Learning (SSL) in Event-based Vision
+					Lay the foundation of Self-Supervised Learning (SSL) applied to event-cameras
 				</p>
 
 				<br>
@@ -42,6 +42,11 @@
 			<section>
 				<section>
 					<h1>Introduction</h1>
+					<!-- <ol class="fragment">
+						<li>Event-based Vision</li>
+						<br>
+						<li>Self-Supervised Learning</li>
+					</ol> -->
 				</section>
 				<section>
 					<h3>Event Cameras</h3>
@@ -52,7 +57,7 @@
 					</p>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Advantages</h3>
 					<p id="js-pros-choice" style="font-weight: bold;"></p>
 					<p><button id="js-pros" class="w3-button w3-block w3-blue">Play</button></p>
@@ -83,6 +88,21 @@
 						}
 
 					</script>
+				</section> -->
+
+				<section>
+					<h3>Avantages</h3>
+					<ul>
+						<li>Représentation "sparse"</li>
+						<br>
+						<li>🚀 Latence plus basse (microseconde)</li>
+						<br>
+						<li style="text-decoration: line-through;">Flou cinétique</li>
+						<br>
+						<li> 🛡️ Conditions d'illumination extrêmes</li>
+						<br>
+						<li> 🌍 <b>Efficacité énergétique</b></li>
+					</ul>
 				</section>
 
 				<section>
@@ -130,8 +150,32 @@
 				</section>
 
 				<section>
-					<h3>Research Intuitions</h3>
+					<h3>Self-Supervised Learning</h3>
 					<ul>
+						<li><b>🔎 : </b> learn useful representation of the data <b>without supervision</b></li>
+						<br>
+						<li><b>Pre-training</b> (SSL) ➡️ <b>downstream task</b> (fine-tuning)</li>
+						<br>
+						<li class="fragment" data-fragment-index="1" style="color: green;"><b>Pros</b></li>
+						<ul class="fragment" data-fragment-index="1" style="color: green;">
+							<li>Data efficiency</li>
+							<li>Great progress in frame-based vision recently</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Intuition</h3>
+					<p><b style="color: red;">SSL is not explored in event-based vision</b></p>
+					<ul class="fragment">
+						<li>No baseline</li>
+						<li>No benchmark</li>
+						<li>No investigation</li>
+						<li>...</li>
+					</ul>
+					<br>
+					<p class="fragment" style="color: green"><b>🎯 Foundational study of event-based SSL 🎯</b></p>
+					<!-- <ul>
 						<li class="fragment" data-fragment-index="0">Public event-based datasets are often small</li>
 						<br>
 						<li class="fragment" data-fragment-index="1"><b>SSL for frame-based vision</b></li>
@@ -145,37 +189,24 @@
 						<ul class="fragment" data-fragment-index="5">
 							<li> <b>Solid context to study fundamental techniques</b> (e.g. data augmentation)</li>
 						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Objective of this work</h3>
-					<ul>
-						<li>Lay the foundation of event-based SSL</li>
-						<br>
-						<li></li>
-					</ul>
+					</ul> -->
 				</section>
 
 				<section>
 					<h3>Contributions</h3>
 					<ol>
-						<li class="fragment" data-fragment-index="1"><b>Bina-Rep</b>, a simple and efficient event
-							representation to obtain a sequence of event frames that are:</li>
-						<ul class="fragment" data-fragment-index="1">
-							<li>sparse</li>
-							<li>more expressive</li>
-						</ul>
+						<li>First evaluation protocols</li>
 						<br>
-						<li class="fragment" data-fragment-index="2"><b>A comparative study</b> on object recognition
-							against other SOTA event representation methods that:</li>
-						<ul class="fragment" data-fragment-index="2">
-							<li>reports competitive results in terms of <b>accuracy</b> and <b>robustness</b> </li>
+						<li>First baseline methods</li>
+						<br>
+						<li>Impact of transformation techniques on contrastive learning efficiency</li>
+						<br>
+						<ul class="fragment">
+							<li>Propose new distortion methods to supplement the existing approaches</li>
 						</ul>
 					</ol>
 				</section>
 			</section>
-
 			<section>
 				<section>
 					<h1>Event Representation Methods</h1>
