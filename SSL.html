@@ -26,7 +26,7 @@
 				<!-- <img src="img/Bina_rep/icip22.png" alt="ICIP22"> -->
 				<!-- <br> -->
 				<p class="fragment" style="font-style: italic;">
-					Lay the foundation of Self-Supervised Learning (SSL) applied to event-cameras
+					Laying the foundation of Self-Supervised Learning (SSL) applied to event-cameras
 				</p>
 
 				<br>
@@ -91,17 +91,17 @@
 				</section> -->
 
 				<section>
-					<h3>Avantages</h3>
+					<h3>Advantages</h3>
 					<ul>
-						<li>Représentation "sparse"</li>
+						<li>Sparser representation</li>
 						<br>
-						<li>🚀 Latence plus basse (microseconde)</li>
+						<li>🚀 Low latency (~1 µs)</li>
 						<br>
-						<li style="text-decoration: line-through;">Flou cinétique</li>
+						<li style="text-decoration: line-through;">Motion blur</li>
 						<br>
-						<li> 🛡️ Conditions d'illumination extrêmes</li>
+						<li> 🛡️ Higher dynamic range</li>
 						<br>
-						<li> 🌍 <b>Efficacité énergétique</b></li>
+						<li> 🌍 <b>Energy efficiency</b></li>
 					</ul>
 				</section>
 
@@ -159,7 +159,8 @@
 						<li class="fragment" data-fragment-index="1" style="color: green;"><b>Pros</b></li>
 						<ul class="fragment" data-fragment-index="1" style="color: green;">
 							<li>Data efficiency</li>
-							<li>Great progress in frame-based vision recently</li>
+							<li>Great progress in frame-based vision recently <span
+									style="font-style: italic;">(Contrastive Learning, ...)</span></li>
 						</ul>
 					</ul>
 				</section>
@@ -199,137 +200,324 @@
 						<br>
 						<li>First baseline methods</li>
 						<br>
-						<li>Impact of transformation techniques on contrastive learning efficiency</li>
+						<li>Impact of event-based distortions on contrastive learning efficiency</li>
 						<br>
 						<ul class="fragment">
-							<li>Propose new distortion methods to supplement the existing approaches</li>
+							<li>New data augmentation methods to supplement the existing approaches</li>
 						</ul>
 					</ol>
 				</section>
 			</section>
+
 			<section>
 				<section>
-					<h1>Event Representation Methods</h1>
-				</section>
-
-				<section>
-					<h3>Various Paradigms</h3>
-					<ul>
-						<li>Invididual Events</li>
-						<br>
-						<li>Time Surfaces</li>
-						<br>
-						<li>Event Frames</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Individual Events</h3>
-					<img src="img/Bina_rep/snn_visu.png" height="240px"/>
-					<p><small>Visualization of a Spiking Neural Network. From video: <a
-								href="https://www.youtube.com/watch?v=oG0PTP3ogCA">https://www.youtube.com/watch?v=oG0PTP3ogCA</a></small>
-					</p>
-					<ul>
-						<li>Asynchronous processing of events (e.g. Spiking Neural Networks)</li>
-						<!-- <li>Little to no transformation</li> -->
-						<li style="color: green;">Efficient and perfect integration with event cameras</li>
-						<li style="color: red;">Performance limited</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Time Surfaces</h3>
-					<img src="img/Bina_rep/hats.png" alt="HATS">
-					<p><small>Example computation of HATS, from paper [Sironi2018]</small></p>
-					<ul>
-						<li>Extract <b>temporal information</b> of an event stream and expose it as a 2D surface/image
-						</li>
-						<li>Easily integrated with conventional CV algorithms</li>
-						<li style="color: green;">Robust to noisy events</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Event Frames</h3>
-					<img src="img/Bina_rep/event_frame.png" height="120px" alt="Binary event frames">
-					<p><small>Example of binary event frame [Kogler2009]</small></p>
-					<ul>
-						<li><b>Accumulate</b> events into 2D frames to feed conventional algorithms</li>
-						<li style="color: green;">Popular due to an intuitive representation of edge maps</li>
-						<li class="fragment" data-fragment-index="1" style="color: red;">Absence of explicit temporal
-							information</li>
-						<ul class="fragment" data-fragment-index="1">
-							<li style="color: green;"><b>Still achieves competitive results</b></li>
-						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Link with Bina-Rep</h3>
-					<ul>
-						<li>Follows the <b>Event Frame</b> strategy</li>
-						<li><b>Capable of expressing temporal information</b> without intensive computation</li>
-					</ul>
+					<h1>Theory</h1>
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<h1>Bina-Rep Event Frames</h1>
+					<h1>Related Works</h1>
 				</section>
 
 				<section>
-					<h3>Binary Event Frames</h3>
+					<h3></h3>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Proposed Method</h1>
+				</section>
+
+				<section>
+					<h3>Formulation</h3>
+					<p><b>Spike Tensor</b></p>
 					<div class="r-stack">
-						<img src="img/Bina_rep/binary_event_frame_0.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/binary_event_frame_1.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/binary_event_frame_2.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/binary_event_frame_3.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/binary_event_frame_4.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/binary_event_frame_5.png" alt="fomrulation">
+						<img alt="spike_tensor" src="img/ssl/spike_tensor.drawio_0.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_1.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_2.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_3.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_4.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_5.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_6.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio.png">
+						<img class="fragment" alt="spike_tensor" src="img/ssl/spike_tensor.drawio_8.png">
+						<img src="img/Bina_rep/hand_clap.gif" alt="clap" class="fragment">
 					</div>
 				</section>
 
 				<section>
-					<h3>Bina-Rep Event Frames</h3>
+					<h3>Formulation</h3>
+					<p><b>Neuromorphic Data Augmentation</b> (NDA)</p>
 					<div class="r-stack">
-						<img src="img/Bina_rep/bina_rep_frame.drawio_0.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_1.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_2.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_3.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_4.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_5.png" alt="fomrulation">
-						<img class="fragment" src="img/Bina_rep/bina_rep_frame.drawio_6.png" alt="fomrulation">
+						<img src="img/ssl/dataaug_0.png" data-fragment-index="0" alt="data" class="fragment">
+						<img src="img/ssl/dataaug_1.png" data-fragment-index="1" alt="data" class="fragment">
+						<img src="img/ssl/dataaug.png" data-fragment-index="2" alt="data" class="fragment">
+						<img src="img/ssl/dataaug_comp.png" alt="data" class="fragment" data-fragment-index="3">
+						<img src="img/ssl/dataaug_comp2.png" alt="data" class="fragment" data-fragment-index="4">
+						<img src="img/ssl/dataaug_comp3.png" alt="data" class="fragment" data-fragment-index="5">
+					</div>
+					<p class="fragment" data-fragment-index="3">NDAs can be <b>compositions</b> of NDAs</p>
+				</section>
+
+				<section>
+					<h3>Method</h3>
+					<p><b>Overview</b></p>
+					<div class="r-stack">
+						<img alt="model" class="fragment" src="img/ssl/model_0.png">
+						<img alt="model" class="fragment" src="img/ssl/model_1.png">
+						<img alt="model" class="fragment" src="img/ssl/model_2.png">
+						<img alt="model" class="fragment" src="img/ssl/model_3.png">
+						<img alt="model" class="fragment" src="img/ssl/model_4.png">
+						<img alt="model" class="fragment" src="img/ssl/model_5.png">
+						<img alt="model" class="fragment" src="img/ssl/model_6.png">
+						<img alt="model" class="fragment" src="img/ssl/model.png">
 					</div>
 				</section>
 
 				<section>
-					<h3>Bina-Rep Frames Sequence</h3>
-					<img src="img/Bina_rep/binarep_sequence.drawio.png" alt="seq binarep">
+					<h3>Method</h3>
+					<p><b>Encoder Architectures</b></p>
+					<div class="r-stack">
+						<div class="fragment fade-out">
+							<p><b>Challenges:</b></p>
+							<ul>
+								<li>Adapt the spike tensor to fit to a specific type of conv. encoder</li>
+								<br>
+								<li>Representations $\mathbf{Y}^d \in \mathbb{R}^m$ do <b>not</b> have any temporal dimension</li>
+								<br>
+								<li>...</li>
+							</ul>
+						</div>
+						<img src="img/ssl/encoder_cnn.png" alt="encoder" class="fragment fade-in-then-out">
+						<img src="img/ssl/encoder_3dcnn.png" alt="encoder" class="fragment fade-in-then-out">
+						<img src="img/ssl/encoder_snn.png" height="550px" alt="encoder" class="fragment fade-in-then-out">
+					</div>
+					
+				</section>
+
+				<section>
+					<h3>Method</h3>
+					<p><b>Projector</b></p>
+					<img src="img/ssl/projector.png" alt="proj">
+				</section>
+
+				<section>
+					<h3>Method</h3>
+					<p><b>Variants</b></p>
+					<div class="r-stack">
+						<img class="fragment" data-fragment-index="0" src="img/ssl/variant_twin.png" alt="twin">
+						<img class="fragment" data-fragment-index="1" src="img/ssl/variant_teach.png" alt="twin">
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0">Twins</p>
+						<p class="fragment" data-fragment-index="1">Student - Teacher</p>
+					</div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Neuromorphic Data Augmentation</h1>
+				</section>
+
+				<section>
+					<img src="img/ssl/lift.gif" height="400px" alt="lift">
+				</section>
+
+				<section>
+					<h3>Existing</h3>
+					<p><b>Flip Polarity</b></p>
+					<img src="img/ssl/lift_flipo.gif" height="400px" alt="lift">
+				</section>
+
+				<section>
+					<h3>Previous works</h3>
+					<p><b>Reverse</b></p>
+					<img src="img/ssl/lift_reverse.gif" height="400px" alt="lift">
+				</section>
+
+				<section>
+					<h3>Previous works</h3>
+					<p><b>Random Resized Crop</b></p>
+					<img src="img/ssl/lift_crop.gif" height="400px" alt="lift">
+					<p>Scale $\in [0.08, 1.0]$</p>
+				</section>
+
+				<section>
+					<h3>Previous works</h3>
+					<p><b>Static Translation</b></p>
+					<img src="img/ssl/lift_static_translation.gif" height="350px" alt="lift">
+					<p>$l_x \in [- 0.2 \times W, 0.2 \times W]$</p>
+					<p>$l_y \in [- 0.2 \times H, 0.2 \times H]$</p>
+				</section>
+
+				<section>
+					<h3>Previous works</h3>
+					<p><b>Static Rotation</b></p>
+					<img src="img/ssl/lift_static_rotation.gif" height="400px" alt="lift">
+					<p>Degrees $\in [-75°,+75°]$</p>
+				</section>
+
+				<section>
+					<h3>Previous Works</h3>
+					<p><b>Cutout</b></p>
+					<img src="img/ssl/lift_cutout.gif" height="350px" alt="lift">
+					<p>$N_{hole} \in [1,3]$ of scale $\in [0.3, 0.6]$ each</p>
+				</section>
+
+				<section>
+					<h3>Previous Works</h3>
+					<p><b>EventDrop</b></p>
+					<div class="r-stack">
+						<img src="img/ssl/eventdrop.png" data-fragment-index="0" alt="lift" class="fragment fade-in-then-out">
+						<img src="img/ssl/lift_evdrop_area.gif" height="400px" alt="lift" class="fragment fade-in-then-out" data-fragment-index="1">
+						<img src="img/ssl/lift_evdrop_time.gif" height="400px" alt="lift" class="fragment fade-in-then-out" data-fragment-index="2">
+						<img src="img/ssl/lift_evdrop_drop.gif" height="400px" alt="lift" class="fragment fade-in" data-fragment-index="3">
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="1">Drop by Area</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2">Drop by Time</p>
+						<p class="fragment fade-in" data-fragment-index="3">Drop random events</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>Proposed</h3>
+					<p><b>Background Activity Noise</b> (BA Noise)</p>
+					<img src="img/ssl/lift_ba.gif" alt="lift" height="400px">
+					
+				</section>
+
+				<section>
+					<h3>Proposed</h3>
+					<p><b>Dynamic Translation</b></p>
+					<img src="img/ssl/lift_dyn_translation.gif" height="350px" alt="lift">
+					<p>$l_x \in [- 0.2 \times W, 0.2 \times W]$</p>
+					<p>$l_y \in [- 0.2 \times H, 0.2 \times H]$</p>
+				</section>
+
+				<section>
+					<h3>Proposed</h3>
+					<p><b>Dynamic Rotation</b></p>
+					<img src="img/ssl/lift_dyn_rotation.gif" height="400px" alt="lift">
+					<p>Degrees $\in [-75°,+75°]$</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Evaluation Protocols</h1>
+				</section>
+
+				<section>
+					<h3>Objectives</h3>
 					<ul>
-						<li><b style="color: green;">Sparser</b> : $T$ bina-rep frames of $N$-bit numbers $ = T \times
-							N$ binary event frames</li>
+						<li>We want to evaluate a model on its...</li>
+						<br>
+						<ul>
+							<li class="fragment">🎯 <b>accuracy</b> obtained using its representations</li>
+							<br>
+							<li class="fragment">💾 <b>(data-)efficiency </b> to reduce the need of labeled data</li>
+							<br>
+							<li class="fragment">🔁 <b>transferability</b> to other datasets</li>
+							<br>
+							<li class="fragment">🔀 <b>transferability</b> to other tasks</li>
+						</ul>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Difference with similar representations</h3>
+					<h3>Additional considerations</h3>
+					<p style="color: orange">⚠️ Event-based datasets variability ⚠️</p>
 					<div class="r-stack">
-						<img src="img/Bina_rep/link_binarep.drawio_0.png" alt="difference">
-						<img class="fragment" src="img/Bina_rep/link_binarep.drawio_1.png" alt="difference">
-						<img class="fragment" src="img/Bina_rep/link_binarep.drawio_2.png" alt="difference">
-						<img class="fragment" src="img/Bina_rep/link_binarep.drawio.png" alt="difference">
+						<img class="fragment fade-out" data-fragment-index="0" src="img/ssl/lift.gif" alt="Lift"
+							height="400px">
+						<img class="fragment current-visible" data-fragment-index="0" src="img/ssl/ncaltech101.gif"
+							height="400px" alt="calt">
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-out" data-fragment-index="0">Still Camera + moving objects</p>
+						<p class="fragment current-visible" data-fragment-index="0">Moving camera + moving/still objects
+						</p>
+					</div>
+
+					<!-- TODO -->
+				</section>
+
+				<section>
+					<h3>1. Linear Evaluation</h3>
+					<div class="r-stack">
+						<img alt="eval" src="img/ssl/ssl_conv_enc.png" class="fragment fade-out"
+							data-fragment-index="0">
+						<img src="img/ssl/ssl_conv_enc_ssl.png" alt="alt" class="fragment current-visible"
+							data-fragment-index="0">
+						<img src="img/ssl/ssl_conv_enc_linear.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_linear_train.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_linear_variant.png" alt="lin" class="fragment">
+					</div>
+					<p class="fragment">
+						<b>Metric:</b> top-1 accuracy on linear classifier
+					</p>
+				</section>
+
+				<section>
+					<h3>2. Semi-supervised Training</h3>
+					<div class="r-stack">
+						<img alt="eval" src="img/ssl/ssl_conv_enc.png" class="fragment fade-out"
+							data-fragment-index="0">
+						<img src="img/ssl/ssl_conv_enc_ssl.png" alt="alt" class="fragment current-visible"
+							data-fragment-index="0">
+						<img src="img/ssl/ssl_conv_enc_linear2.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_finetune.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_finetune2.png" alt="lin" class="fragment">
+					</div>
+
+					<div class="fragment">
+						<p><b>Metrics:</b> top-1 accuracy on</p>
+						<ul>
+							<li>10% of the train set</li>
+							<li>25% of the train set</li>
+						</ul>
 					</div>
 				</section>
 
 				<section>
-					<h3>Model for event-based recognition</h3>
+					<h3>3. Transfer to other datasets</h3>
 					<div class="r-stack">
-						<img height="350px" src="img/Bina_rep/model_0.png" alt="model CNN image">
-						<img height="350px" class="fragment" src="img/Bina_rep/model_1.png" alt="model CNN image">
-						<img height="350px" class="fragment" src="img/Bina_rep/model_2.png" alt="model CNN image">
-						<img height="350px" class="fragment" src="img/Bina_rep/model.png" alt="model CNN image">
+						<img alt="eval" src="img/ssl/ssl_conv_enc.png" class="fragment fade-in-then-out">
+						<img src="img/ssl/ssl_conv_enc_ssl2_0.png" alt="alt" class="fragment fade-in-then-out">
+						<img src="img/ssl/ssl_conv_enc_ssl2.png" alt="alt" class="fragment fade-in-then-out">
+						<img src="img/ssl/ssl_conv_enc_freeze.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_linear.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_linear_train.png" alt="in" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_linear_variant2.png" alt="in" class="fragment">
 					</div>
+					<div class="fragment">
+						<p><b>Metrics:</b> top-1 accuracy</p>
+						<ul>
+							<li>1️⃣ : <b>DVSGesture</b> <span style="font-style: italic;">(SSL)</span> ➡️ <b>DailyAction-DVS</b> <span style="font-style: italic;">(fine.)</span></li>
+							<li>2️⃣ : <b>N-Caltech101</b> <span style="font-style: italic;">(SSL)</span> ➡️ <b>N-MNIST</b> <span style="font-style: italic;">(fine.)</span></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>4. Transfer to other tasks</h3>
+					<p><b>Object Detection</b></p>
+					<div class="r-stack">
+						<img alt="eval" src="img/ssl/ssl_conv_enc.png" class="fragment fade-out"
+							data-fragment-index="0">
+						<img src="img/ssl/ssl_conv_enc_ssl.png" alt="alt" class="fragment current-visible"
+							data-fragment-index="0">
+						<img src="img/ssl/ssl_conv_enc_det.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_det_1.png" alt="lin" class="fragment">
+						<img src="img/ssl/ssl_conv_enc_det_2.png" alt="lin" class="fragment">
+					</div>
+					<p class="fragment">
+						50% of <b>Gen1</b> <span style="font-style: italic;">(SSL)</span> ➡️ 50% of <b>Gen1</b> <span style="font-style: italic;">(fine.)</span>
+					</p>
 				</section>
 			</section>
 
@@ -350,11 +538,17 @@
 					<h3>Implementation Details</h3>
 					<ul>
 						<li>PyTorch 1.8 on one NVIDIA Tesla P100 GPU</li>
-						<li class="fragment highlight-red">Frames Resolution: $224 \times 224$</li>
-						<li class="fragment highlight-red">CNN used: <b>ResNet-18</b><small>[Kaiming2016]</small></li>
-						<li>Trained during <b>60 epochs</b> using <b>Adam optimizer</b> with a <b>learning rate of
+						<li>Resolution: $128 \times 128$</li>
+						<li>Employed architectures:</li>
+						<ul>
+							<li>CNN: <b>ResNet-18</b><small>[Kaiming2016]</small></li>
+							<li>3DCNN: <b>MC3-ResNet-18</b><small>[Kaiming2016]</small></li>
+							<li>SNN: <b>SEW-ResNet-18</b><small>[Kaiming2016]</small></li>
+						</ul>
+						<li>Trained during <b>500 epochs</b> using <b>Adam optimizer</b> with a <b>learning rate of
 								$0.001$</b></li>
-						<li class="fragment highlight-red">8-bit <code>uint</code> representation used for Bina-Rep (i.e. $N=8$)</li>
+						<li class="fragment highlight-red">8-bit <code>uint</code> representation used for Bina-Rep
+							(i.e. $N=8$)</li>
 					</ul>
 				</section>
 
