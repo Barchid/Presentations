@@ -1,0 +1,508 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->	
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<link rel="stylesheet" href="css/w3.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h3 style="text-transform: none;">Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras</h3>
+				<!-- <img src="img/Bina_rep/icip22.png" alt="ICIP22"> -->
+				<!-- <br> -->
+				<p class="fragment" style="font-style: italic;">
+					Introducing the application of event cameras and <b>S</b>piking <b>N</b>eural <b>N</b>etworks (<b>SNN</b>s) in the realm of <b>F</b>acial <b>E</b>xpression <b>R</b>ecognition (<b>FER</b>).
+				</p>
+
+				<br>
+				<small><b>Sami BARCHID</b></small>
+				<br>
+				<small>&nbsp;&nbsp;&nbsp; Benjamin ALLAERT &nbsp;&nbsp;&nbsp; Amel AISSAOUI &nbsp;&nbsp;&nbsp; José MENNESSON &nbsp;&nbsp;&nbsp;
+					Chaabane DJÉRABA</small>
+				<img src="img/Bina_rep/logos_cbmi.png">
+				<!-- <p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+
+			<section>
+				<section>
+					<h1>Introduction</h1>
+					<!-- <ol class="fragment">
+						<li>Event-based Vision</li>
+						<br>
+						<li>Self-Supervised Learning</li>
+					</ol> -->
+				</section>
+
+				<section>
+					<h3>🎭 Facial Expression Recognition</h3>
+					<p>Classification of a subject's facial expression from an input image or video</p>
+					<img src="img/spiking_fer/fer_illu.jpg" alt="Example of FER pipeline">
+					<p><small>Source: [Sajjad2023]</small></p>
+					<ul>
+						<li><b>Practical applications:</b> security, health, communication, advertisement, ...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>🎭 Facial Expression Recognition</h3>
+					<ul>
+						<li>SOTA approaches rely on deep <b>A</b>rtificial <b>N</b>eural <b>N</b>etworks (<b>ANN</b>s), such as <b>CNN</b>s or <b>ViT</b>s</li>
+						<br>
+						<li>ANN models keep getting bigger</li>
+						<br>
+						<li class="fragment" data-fragment-index="1" style="color:red"><b>🚫 Issue:</b></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li style="color:red">📈 demand in computational resources</li>
+							<li style="color:red">📈 energy consumption </li>
+						</ul>
+						<br>
+						<li class="fragment"><b>How to make FER more energy-efficient?</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>👁️‍🗨️ Event Cameras</h3>
+					<!-- <video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video> -->
+					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video>
+					<p><small>From video here: <a
+								href="https://www.youtube.com/watch?v=LauQ6LWTkxM">https://www.youtube.com/watch?v=LauQ6LWTkxM</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>👁️‍🗨️ Event Cameras</h3>
+					<img src="img/spiking_fer/eventcamintro.png" alt="eventcam">
+				</section>
+
+				<section>
+					<h3>👁️‍🗨️ Advantages</h3>
+					<ul>
+						<li>Sparser representation</li>
+						<br>
+						<li>🚀 Low latency (~1 µs)</li>
+						<br>
+						<li style="text-decoration: line-through;">Motion blur</li>
+						<br>
+						<li> 🛡️ Higher dynamic range</li>
+						<br>
+						<li> 🌍 <b>Energy efficiency</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>👁️‍🗨️ Event-based Vision</h3>
+					<p><b style="color: orange">⚠️ Conventional vision algorithms cannot be applied directly.</b></p>
+					<ol>
+						<li class="fragment"><b>Asynchronous events</b> <span style="font-style: italic">instead
+								of</span> <b>frames</b></li>
+						<br>
+						<li class="fragment"><b>Binary changes</b> <span style="font-style: italic">instead of</span>
+							<b>intensity values</b>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>🧠 Spiking Neural Networks</h3>
+					<p>Bio-inspired neural networks composed of <b>spiking neurons</b></p>
+					<ul>
+						<li><b>Spiking neurons:</b></li>
+						<ul>
+							<li>Asynchronous communication through <b>spikes</b></li>
+							<li>Organized in networks (CNN, MLP, ...)</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="1">💪 <b>Advantages:</b></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>🌍 Energy efficiency</li>
+							<li>🚀 Fast</li>
+							<li>🤝 compatible with events</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>🎯 Objectives</h3>
+					<p><b>First energy-efficient approach for FER using SNNs and event camera</b></p>
+					<div class="r-stack">
+						<img src="img/spiking_fer/objectives_0.png" height="400px" alt="contributions">
+						<img class="fragment" src="img/spiking_fer/objectives_1.png" height="400px" alt="contributions">
+						<img class="fragment" src="img/spiking_fer/objectives.png" height="400px" alt="contributions">
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Background</h1>
+				</section>
+
+				<section>
+					<h3>Facial Expression Recognition</h3>
+
+					<img src="img/spiking_fer/challenges_fer.png" alt="challenges in sota">
+
+					<ul class="fragment">
+						<li style="color: orange">⚠️ This is an exploratory study of event-based FER</li>
+						<li><b>We tackle the simplest form of FER</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Event Frames</h3>
+					<div class="r-stack">
+						<img src="img/spiking_fer/frame_0.png"  alt="frame representation">
+						<img class="fragment" src="img/spiking_fer/frame_1.png"  alt="frame representation">
+						<img class="fragment" src="img/spiking_fer/frame_2.png"  alt="frame representation">
+						<img class="fragment" src="img/spiking_fer/frame.png"  alt="frame representation">
+					</div>
+				</section>
+
+				<section>
+					<h3>Spike Tensor</h3>
+					<div class="r-stack">
+						<img src="img/spiking_fer/Sequence_0.png" alt="Sequence of event frames">
+						<img src="img/spiking_fer/Sequence_1.png" alt="Sequence of event frames" class="fragment">
+						<img src="img/spiking_fer/Sequence.png" alt="Sequence of event frames" class="fragment">
+					</div>
+				</section>
+
+				<section>
+					<h3>Spiking Neurons</h3>
+					<div class="r-stack">
+						<img src="img/spiking_fer/spikingvsarti_0.png"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_1.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_2.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_3.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_4.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_5.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_6.png" class="fragment"  alt="explain arti vs spiking">
+					</div>
+				</section>
+
+				<section>
+					<h3>Spiking Neural Networks</h3>
+					<ul>
+						<li><b>Surrogate Gradient Learning <small>[Neftci2019]</small>: </b> SNNs can be trained using an adapted version of backpropagation</li>
+						<br>
+						<li>We use the surrogate gradient to train a deep Convolutional SNN (<b>CSNN</b>)</li>
+						<br>
+						<li>SNNs run on <b>neuromorphic hardware</b> and usually <b>simulated on GPUs</b> on $T$ discretized timesteps.</li>
+					</ul>
+
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Spiking-FER</h1>
+				</section>
+				<section>
+					<h3>💬 Problem Formulation</h3>
+					<img src="img/spiking_fer/formu.png" alt="Problem formulation">
+				</section>
+
+				<section>
+					<h3>🧱 Architecture &nbsp; $f_{\alpha}(\mathbf{X}_T)$</h3>
+					<p><b>Three subsequent modules:</b></p>
+					<ol>
+						<li class="fragment"><b>CSNN encoder:</b> generates spiking features $F_t \in \mathbb{B}^{d}$ at each timestep</li>
+						<li class="fragment"><b>Output Accumulator:</b> aggregates $\{F_t\}_{t=1}^T$ into $\mathcal{F} \in \mathbb{R}^d$</li>
+						<li class="fragment"><b>Linear Classifier:</b> generates the prediction from $\mathcal{F}$</li>
+					</ol>
+					<br>
+					<br>
+					<p class="fragment">🏋️ Trained end-to-end using cross-entropy loss</p>
+				</section>
+				
+				<section>
+					<h3>🧱 Architecture &nbsp; $f_{\alpha}(\mathbf{X}_T)$</h3>
+					<div class="r-stack">
+						<img src="img/spiking_fer/model_00.png" alt="Model archi">
+						<img class="fragment" data-fragment-index="1" src="img/spiking_fer/model_0.png" alt="Model archi">
+						<img class="fragment" data-fragment-index="2" src="img/spiking_fer/model_1.png" alt="Model archi">
+						<img class="fragment" data-fragment-index="3" src="img/spiking_fer/model.png" alt="Model archi">
+					</div>
+					<p class="fragment" data-fragment-index="1">The CSNN is a spiking version of a ResNet-18 architecture <small>[Fe2021]</small></p>
+				</section>
+
+				<section>
+					<h3>⚔️ Comparison with an ANN</h3>
+					<img src="img/spiking_fer/ann_fer.png" alt="Similar ANN">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Benchmarks</h1>
+				</section>
+
+				<section>
+					<h3>Issue</h3>
+					<p style="color: red;">❌ No dataset available for event-based FER</p>
+					<ul>
+						<li>Use existing frame-based datasets to generate events</li>
+						<li>Video-to-Events conversion using <code>v2e</code> <small>[Hu2021]</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>🪄 Conversion Protocol</h3>
+					<ol>
+						<li><b>Standardization:</b></li>
+						<ul>
+							<li>Resized and cropped to keep the face at the centre</li>
+							<li>RGB to Grayscale</li>
+						</ul>
+						<br>
+						<li><b>Conversion using <code>v2e</code></b></li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Converted Datasets</h3>
+					<img src="img/spiking_fer/datasets.png" alt="Datasets">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Experimental Setup</h1>
+				</section>
+				<section>
+					<h3>🧪 Experiments</h3>
+					<ul>
+						<li>Study on Event Data Augmentations (<b>EDA</b>s)</li>
+						<br>
+						<li>Estimation of energy consumption</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>⚖️ Evaluation Protocol</h3>
+					<ul>
+						<li><b>10-fold cross validation</b></li>
+						<br>
+						<li><b>Metric:</b> top-1 classification accuracy</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Study on <br> Event Data Augmentation</h1>
+				</section>
+
+				<section>
+					<h3>Event Data Augmentation</h3>
+					<p>Data augmentation is a good solution to improve the training of a neural network.</p>
+					<br>
+					<ul>
+						<li><b>🎯 Objective:</b> investigate the impact of EDAs in Event-based FER</li>
+						<li><b>How? :</b> employ various EDAs and check the boost in accuracy</li>
+						<li><b>Two types of EDAs:</b></li>
+						<ul>
+							<li><b>Common</b>: generic transformations</li>
+							<li><b>Specific</b>: regularization or FER-focused</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Common EDAs</h3>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Normal</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>Flip Polarity</b> (PolFlip) </p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Crop</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4"><b>Horizontal Flip</b> (HFip)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="5"><b>Reverse</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="6"><b>Noise</b></p>
+					</div>
+					
+					<div class="r-stack">
+						<img class="fragment fade-in-then-out" data-fragment-index="1" src="img/spiking_fer/nothing.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="2" src="img/spiking_fer/flip_polarity.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="3" src="img/spiking_fer/crop.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="4" src="img/spiking_fer/flip.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="5" src="img/spiking_fer/reverse.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="6" src="img/spiking_fer/background_activity.gif" alt="gif">
+					</div>
+				</section>
+
+				<section>
+					<h3>Specific EDA</h3>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Normal</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>EventDrop</b> <small>[Gu2021]</small> </p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Mirror</b></p>
+					</div>
+					
+					<div class="r-stack">
+						<img class="fragment fade-in-then-out" data-fragment-index="1" src="img/spiking_fer/nothing.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="2" src="img/spiking_fer/event_drop.gif" alt="gif">
+						<img class="fragment fade-in-then-out" data-fragment-index="3" src="img/spiking_fer/mirror.gif" alt="gif">
+					</div>
+				</section>
+
+				<section>
+					<h3>First analysis</h3>
+					<p>❓ <b>What is the best combination of common EDAs?</b></p>
+					<p>➡️ test all combinations of common EDAs</p>
+					<div class="r-stack">
+						<img class="fragment" src="img/spiking_fer/fig4.png" alt="Fig4">
+						<img class="fragment" src="img/spiking_fer/fig4_0.png" alt="Fig4">
+						<img class="fragment" src="img/spiking_fer/fig4_1.png" alt="Fig4">
+						<img class="fragment" src="img/spiking_fer/fig4_2.png" alt="Fig4">
+					</div>
+				</section>
+
+				<section>
+					<h3>Second Analysis</h3>
+					<p>❓ <b>What is the individual effect of a given common EDA?</b></p>
+					<p>➡️ check the regression coefficients obtained among the 320 previous runs</p>
+					<div class="r-stack">
+						<img src="img/spiking_fer/fig5.png" alt="fig5" class="fragment">
+						<img src="img/spiking_fer/fig5_0.png" alt="fig5_0" class="fragment">
+						<img src="img/spiking_fer/fig5_1.png" alt="fig5_1" class="fragment">
+						<img src="img/spiking_fer/fig5_2.png" alt="fig5" class="fragment">
+					</div>
+				</section>
+
+				<section>
+					<h3>Third Analysis</h3>
+					<p>❓ <b>How specific EDAs impact the training?</b></p>
+					<p>➡️ add each of the specific EDAs to the best combination for a given dataset and model</p>
+					<div class="r-stack">
+						<img src="img/spiking_fer/fig6.png" alt="fig6" class="fragment">
+					</div>
+				</section>
+			</section>
+			
+			<section>
+				<section>
+					<h1>Energy Consumption</h1>
+				</section>
+
+				<section>
+					<h3>Issue with SNN</h3>
+					<ul>
+						<li style="color: red;">They run on <b>Neuromorphic Hardware</b> and mature neuromorphic chips are not easily available</li>
+						<br>
+						<li class="fragment"><b>We use a popular estimation technique:</b></li>
+						<ol>
+							<li class="fragment">Estimate FLOPS using the activity of spiking neurons during simulations on GPU</li>
+							<li class="fragment">Compute the consumed energy for given FLOPS on a 45nm CMOS process</li>
+						</ol>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Results</h3>
+					<img src="img/spiking_fer/energy.png" alt="Energy cons">
+					<ul>
+						<li>Spiking-FER is more energy-efficient by orders of magnitude (from $47.42 \times$ to $65.39 \times$)</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Conclusion</h1>
+				</section>
+
+				<section>
+					<h3>Spiking-FER</h3>
+					<p>The <b>first SNN model</b> for <b>event-based FER</b>, a new way to perform FER using <b>event cameras</b></p>
+					<br>
+					<ul>
+						<li>achieves slightly lower performance than a similar ANN architecture...</li>
+						<li>... but is up to $65.39\times$ more energy-efficient</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Other contributions</h3>
+					<ul>
+						<li>Introduction of event-based FER</li>
+						<br>
+						<li>First benchmarks for event-based FER using synthetic events</li>
+						<br>
+						<li>Study on EDAs offers valuable insight for efficient training of future works</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Future Works</h3>
+					<ul>
+						<li>Extend to harder FER problems</li>
+						<br>
+						<li>Provide a real-world event-based FER dataset</li>
+						<br>
+						<li>Extend to other applications</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p class="r-fit-text">Thank you!</p>
+					<img src="img/spiking_fer/scanme.png" alt="Scan me">
+				</section>
+			</section>
+			<section>
+				<h3>References</h3>
+				<ul style="list-style: none;">
+					<li><small><b>[Sajjad2023]: </b>M. Sajjad, et al. "A comprehensive survey on deep facial expression recognition: challenges, applications, and future guidelines"</small></li>
+					<li><small><b>[Kaiming2016]: </b> He, Kaiming, et al. "Deep residual learning for image recognition"</small></li>
+					<li><small><b>[Goeleven2008]: </b>E. Goeleven, et al. "The Karolinska directed emotional faces: a validation study"</small></li>
+					<li><small><b>[Yan2014]: </b>W.-J. Yan, et al. "CASME II: An improved spontaneous micro-expression database and the baseline evaluation"</small></li>
+					<li><small><b>[Lucey2010]: </b>P. Lucey, et al. "The extended cohn-kanade dataset (ck+): A complete dataset for action unit and emotion-specified expression"</small></li>
+					<li><small><b>[Li2018]: </b>S. Li, W. Deng "Reliable crowdsourcing and deep locality-preserving learning for unconstrained facial expression recognition"</small></li>
+					<li><small><b>[Gu2021]: </b>Gu, Fuqiang, et al. "Eventdrop: Data augmentation for event-based learning"</small></li>
+					<li><small><b>[Fe2021]: </b>W. Fe, et al. "Deep Residual Learning in Spiking Neural Networks"</small></li>
+					<li><small><b>[Neftci2019]: </b>E. Neftci, et al. "Surrogate Gradient Learning in Spiking Neural Networks"</small></li>
+					<li><small><b>[Hu2021]: </b>Y. Hu, et al. "v2e: From Video Frames to Realistic {DVS} Events"</small></li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
