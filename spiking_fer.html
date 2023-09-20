@@ -24,9 +24,9 @@
 				<h3 style="text-transform: none;">Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras</h3>
 				<!-- <img src="img/Bina_rep/icip22.png" alt="ICIP22"> -->
 				<!-- <br> -->
-				<p class="fragment" style="font-style: italic;">
+				<!-- <p class="fragment" style="font-style: italic;">
 					Introducing the application of event cameras and <b>S</b>piking <b>N</b>eural <b>N</b>etworks (<b>SNN</b>s) in the realm of <b>F</b>acial <b>E</b>xpression <b>R</b>ecognition (<b>FER</b>).
-				</p>
+				</p> -->
 
 				<br>
 				<small><b>Sami BARCHID</b></small>
@@ -80,15 +80,28 @@
 				<section>
 					<h3>👁️‍🗨️ Event Cameras</h3>
 					<!-- <video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video> -->
-					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video>
-					<p><small>From video here: <a
-								href="https://www.youtube.com/watch?v=LauQ6LWTkxM">https://www.youtube.com/watch?v=LauQ6LWTkxM</a></small>
-					</p>
+					<ul>
+						<li>Bio-inspired sensors</li>
+						<br>
+						<li><b>Independant</b> pixels react <b>asynchronously</b> at brightness changes</li>
+						<br>
+						<li><b>Output is a stream of events</b> encoding these brightness changes</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>👁️‍🗨️ Event Cameras</h3>
-					<img src="img/spiking_fer/eventcamintro.png" alt="eventcam">
+					<img src="img/ssl/lift.gif" alt="enothing">
+				</section>
+
+				<section>
+					<h3>👁️‍🗨️ Event Cameras</h3>
+					<div class="r-stack">
+						<img src="img/spiking_fer/eventcamintro.png" alt="eventcam">
+						<img class="fragment" src="img/spiking_fer/eventcamintro_0.png" alt="eventcam">
+						<img class="fragment" src="img/spiking_fer/eventcamintro_1.png" alt="eventcam">
+						<img class="fragment" src="img/spiking_fer/eventcamintro_2.png" alt="eventcam">
+					</div>
 				</section>
 
 				<section>
@@ -106,7 +119,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>👁️‍🗨️ Event-based Vision</h3>
 					<p><b style="color: orange">⚠️ Conventional vision algorithms cannot be applied directly.</b></p>
 					<ol>
@@ -117,7 +130,7 @@
 							<b>intensity values</b>
 						</li>
 					</ol>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>🧠 Spiking Neural Networks</h3>
@@ -153,7 +166,7 @@
 					<h1>Background</h1>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Facial Expression Recognition</h3>
 
 					<img src="img/spiking_fer/challenges_fer.png" alt="challenges in sota">
@@ -162,7 +175,7 @@
 						<li style="color: orange">⚠️ This is an exploratory study of event-based FER</li>
 						<li><b>We tackle the simplest form of FER</b></li>
 					</ul>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>Event Frames</h3>
@@ -183,7 +196,7 @@
 					</div>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Spiking Neurons</h3>
 					<div class="r-stack">
 						<img src="img/spiking_fer/spikingvsarti_0.png"  alt="explain arti vs spiking">
@@ -194,14 +207,15 @@
 						<img src="img/spiking_fer/spikingvsarti_5.png" class="fragment"  alt="explain arti vs spiking">
 						<img src="img/spiking_fer/spikingvsarti_6.png" class="fragment"  alt="explain arti vs spiking">
 					</div>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>Spiking Neural Networks</h3>
 					<ul>
-						<li><b>Surrogate Gradient Learning <small>[Neftci2019]</small>: </b> SNNs can be trained using an adapted version of backpropagation</li>
 						<br>
-						<li>We use the surrogate gradient to train a deep Convolutional SNN (<b>CSNN</b>)</li>
+						<li>We use a deep Convolutional SNN (<b>CSNN</b>)</li>
+						<br>
+						<li><b>Surrogate Gradient Learning <small>[Neftci2019]</small>: </b> adapted version of backpropagation for SNNs</li>
 						<br>
 						<li>SNNs run on <b>neuromorphic hardware</b> and usually <b>simulated on GPUs</b> on $T$ discretized timesteps.</li>
 					</ul>
@@ -217,7 +231,7 @@
 					<img src="img/spiking_fer/formu.png" alt="Problem formulation">
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>🧱 Architecture &nbsp; $f_{\alpha}(\mathbf{X}_T)$</h3>
 					<p><b>Three subsequent modules:</b></p>
 					<ol>
@@ -228,7 +242,7 @@
 					<br>
 					<br>
 					<p class="fragment">🏋️ Trained end-to-end using cross-entropy loss</p>
-				</section>
+				</section> -->
 				
 				<section>
 					<h3>🧱 Architecture &nbsp; $f_{\alpha}(\mathbf{X}_T)$</h3>
@@ -261,7 +275,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>🪄 Conversion Protocol</h3>
 					<ol>
 						<li><b>Standardization:</b></li>
@@ -272,7 +286,7 @@
 						<br>
 						<li><b>Conversion using <code>v2e</code></b></li>
 					</ol>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>Converted Datasets</h3>
@@ -314,8 +328,8 @@
 					<br>
 					<ul>
 						<li><b>🎯 Objective:</b> investigate the impact of EDAs in Event-based FER</li>
-						<li><b>How? :</b> employ various EDAs and check the boost in accuracy</li>
-						<li><b>Two types of EDAs:</b></li>
+						<li><b>❓ How? :</b> employ various EDAs and check the accuracy</li>
+						<li><b>2️⃣ Two types of EDAs:</b></li>
 						<ul>
 							<li><b>Common</b>: generic transformations</li>
 							<li><b>Specific</b>: regularization or FER-focused</li>
@@ -374,7 +388,7 @@
 				<section>
 					<h3>Second Analysis</h3>
 					<p>❓ <b>What is the individual effect of a given common EDA?</b></p>
-					<p>➡️ check the regression coefficients obtained among the 320 previous runs</p>
+					<p>➡️ regression analysis on all the previous runs</p>
 					<div class="r-stack">
 						<img src="img/spiking_fer/fig5.png" alt="fig5" class="fragment">
 						<img src="img/spiking_fer/fig5_0.png" alt="fig5_0" class="fragment">
@@ -433,18 +447,11 @@
 						<li>achieves slightly lower performance than a similar ANN architecture...</li>
 						<li>... but is up to $65.39\times$ more energy-efficient</li>
 					</ul>
+					<br>
+					<br>
+					<p class="fragment"><b>Study on EDAs</b> offers valuable insight for efficient training of future works</p>
 				</section>
 
-				<section>
-					<h3>Other contributions</h3>
-					<ul>
-						<li>Introduction of event-based FER</li>
-						<br>
-						<li>First benchmarks for event-based FER using synthetic events</li>
-						<br>
-						<li>Study on EDAs offers valuable insight for efficient training of future works</li>
-					</ul>
-				</section>
 
 				<section>
 					<h3>Future Works</h3>
@@ -468,15 +475,37 @@
 				<ul style="list-style: none;">
 					<li><small><b>[Sajjad2023]: </b>M. Sajjad, et al. "A comprehensive survey on deep facial expression recognition: challenges, applications, and future guidelines"</small></li>
 					<li><small><b>[Kaiming2016]: </b> He, Kaiming, et al. "Deep residual learning for image recognition"</small></li>
-					<li><small><b>[Goeleven2008]: </b>E. Goeleven, et al. "The Karolinska directed emotional faces: a validation study"</small></li>
-					<li><small><b>[Yan2014]: </b>W.-J. Yan, et al. "CASME II: An improved spontaneous micro-expression database and the baseline evaluation"</small></li>
-					<li><small><b>[Lucey2010]: </b>P. Lucey, et al. "The extended cohn-kanade dataset (ck+): A complete dataset for action unit and emotion-specified expression"</small></li>
-					<li><small><b>[Li2018]: </b>S. Li, W. Deng "Reliable crowdsourcing and deep locality-preserving learning for unconstrained facial expression recognition"</small></li>
+					<!-- <li><small><b>[Goeleven2008]: </b>E. Goeleven, et al. "The Karolinska directed emotional faces: a validation study"</small></li> -->
+					<!-- <li><small><b>[Yan2014]: </b>W.-J. Yan, et al. "CASME II: An improved spontaneous micro-expression database and the baseline evaluation"</small></li> -->
+					<!-- <li><small><b>[Lucey2010]: </b>P. Lucey, et al. "The extended cohn-kanade dataset (ck+): A complete dataset for action unit and emotion-specified expression"</small></li> -->
+					<!-- <li><small><b>[Li2018]: </b>S. Li, W. Deng "Reliable crowdsourcing and deep locality-preserving learning for unconstrained facial expression recognition"</small></li> -->
 					<li><small><b>[Gu2021]: </b>Gu, Fuqiang, et al. "Eventdrop: Data augmentation for event-based learning"</small></li>
 					<li><small><b>[Fe2021]: </b>W. Fe, et al. "Deep Residual Learning in Spiking Neural Networks"</small></li>
 					<li><small><b>[Neftci2019]: </b>E. Neftci, et al. "Surrogate Gradient Learning in Spiking Neural Networks"</small></li>
 					<li><small><b>[Hu2021]: </b>Y. Hu, et al. "v2e: From Video Frames to Realistic {DVS} Events"</small></li>
 				</ul>
+			</section>
+			<section>
+				<section>
+					<h3>Spiking Neurons</h3>
+					<div class="r-stack">
+						<img src="img/spiking_fer/spikingvsarti_0.png"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_1.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_2.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_3.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_4.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_5.png" class="fragment"  alt="explain arti vs spiking">
+						<img src="img/spiking_fer/spikingvsarti_6.png" class="fragment"  alt="explain arti vs spiking">
+					</div>
+				</section>
+				<section>
+					<h3>👁️‍🗨️ Event Cameras</h3>
+					<!-- <video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video> -->
+					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay></video>
+					<p><small>From video here: <a
+								href="https://www.youtube.com/watch?v=LauQ6LWTkxM">https://www.youtube.com/watch?v=LauQ6LWTkxM</a></small>
+					</p>
+				</section>
 			</section>
 		</div>
 	</div>
