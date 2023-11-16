@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Retours de CVPR</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+			<section>
+				<h3>Retours de CVPR 2023</h3>
+				<br>
+				<br>
+				<p><small>Sami BARCHID</small></p>
+				<img src="img/Bina_rep/logos_cbmi.png">
+				<!-- <p><small id="js-current-date"></small></p>
+				<script>
+					document.getElementById('js-current-date').innerHTML = new Date().toLocaleDateString("en-US")
+				</script> -->
+			</section>
+<!-- 			
+			Organisation: 2 jours workshops + 3 jours conférence
+			Workshop
+				Une salle, peut-être poster session pour un poster, une certaine durée (1/2 ou 1 jour)
+				Thèmes variés, sujets importants ou très avancés
+			Event-based Vision Workshop:
+				un des plus pleins, salle bondée, intérêt de fou
+				des talks importants des grands acteurs du domaine
+				Discussions
+					très attaché au chip design
+					algorithmes pas très intéressés -->
+
+
+			<section>
+				<h3>CVPR</h3>
+				<ul>
+					<li><b>Workshops</b></li>
+					<ul>
+						<li>Sessions de 0.5 à 1 journée sur un sujet</li>
+						<li>Durée : 2 jours</li>
+					</ul>
+					<br>
+					<li><b>Main conference</b></li>
+					<ul>
+						<li>Posters, sessions pléniaires, tables rondes, ...</li>
+						<li>Durée : 3 jours</li>
+					</ul>
+				</ul>
+			</section>
+
+			<section>
+				<h3></h3>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,609 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Avancées en Vision Neuromorphique : Représentation Événementielle, Réseaux de Neurones Impulsionnels
+		Supervisés et Pré-entraînement Auto-supervisé</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<link rel="stylesheet" href="css/w3.css">
+
+	<style>
+		.ita {
+			font-style: italic;
+		}
+
+		h1, h2, h3 {
+			text-transform: none !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Titre -->
+
+			<section>
+				<img src="these/entree.png" alt="ent">
+			</section>
+
+			<section>
+				<section>
+					<h1>Introduction</h1>
+				</section>
+
+				<section>
+					<h3> 👁️‍🗨️ &nbsp; Vision Artificielle</h3>
+					<p>
+						📖 &nbsp; Extraire automatiquement des <b>informations</b> à partir de <b>données visuelles</b>
+					</p>
+					<div class="r-stack">
+						<figure class="fragment fade-in-then-out" data-fragment-index="1">
+							<img src="these/detection_exemple.png" alt="detection">
+							<!-- <figcaption>Détection d'objets</figcaption> -->
+						</figure>
+
+						<figure class="fragment fade-in-then-out" data-fragment-index="2">
+							<img src="these/vslam.gif" alt="detection">
+							<figcaption><small>[Bokovoy2019]</small></figcaption>
+						</figure>
+
+						<ul class="fragment fade-in-then-out" data-fragment-index="3">
+							<li><b>Applications nombreuses :</b> médical, industriel, sécurité, robotique, ...</li>
+							<br>
+							<li><b>Comment ?</b> Réseaux de Neurones Artificiels ( <b><span class="ita">ANN</span>s</b>
+								) par l'apprentissage profond </li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>🔋&nbsp; Consommation Énergétique</h3>
+					<p>Estimation d'énergie consommée lors d'une inférence des modèles de l'état de l'art par
+						année<small>[Desislavov2023]</small></p>
+					<div class="r-stack">
+						<img src="these/consommation_energie_0.png" alt="Consommation énergétique">
+						<img src="these/consommation_energie_1.png" alt="Consommation énergétique" class="fragment">
+						<img src="these/consommation_energie_2.png" alt="Consommation énergétique" class="fragment">
+						<img src="these/consommation_energie_3.png" alt="Consommation énergétique" class="fragment">
+						<img src="these/consommation_energie_4.png" alt="Consommation énergétique" class="fragment">
+					</div>
+				</section>
+
+				<section>
+					<h3>🔋&nbsp; Consommation Énergétique</h3>
+					<ul>
+						<li><b>Évolution des modèles</b></li>
+						<ul style="list-style-type: '📈'">
+							<li class="fragment" data-fragment-index="1"> &nbsp; Complexité <span
+									class="ita">(profondeur, paramètres, ...)</span></li>
+							<li class="fragment" data-fragment-index="2"> &nbsp; Puissance de calculs requise</li>
+							<li class="fragment" data-fragment-index="3"> &nbsp; Consommation énergétique</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="4"><b>Enjeux majeurs</b></li>
+						<ul data-fragment-index="4" class="fragment">
+							<li>Environnement</li>
+							<li>Applications</li>
+						</ul>
+					</ul>
+					<br>
+					<br>
+					<p class="fragment" data-fragment-index="5" style="color: red;">
+						➡️ &nbsp; <b>Problématique principale</b>
+					</p>
+				</section>
+
+				<section>
+					<h3>💻 &nbsp; Technologie Neuromorphique</h3>
+					<p>📖 &nbsp; Technologie inspirée par le fonctionnement des neurones biologiques.</p>
+					<br>
+					<ul class="fragment">
+						<li>📷 &nbsp;<b>Capteur :</b> Caméra événementielle</li>
+						<li>🧠 &nbsp;<b>Traitement :</b> Réseaux de neurones impulsionnels (<b><span
+									class="ita">SNN</span></b>)</li>
+						<br>
+						<li class="fragment">Systèmes de vision économes en énergie <br> &nbsp;&nbsp;&nbsp;➡️ &nbsp; <b
+								style="color:green">Solution prometteuse</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>📷 &nbsp; Caméra Événementielle</h3>
+					<ul>
+						<li>Inspirée de la biologie</li>
+						<li>Événements <b>asynchrones</b> lors d'un changement d'intensité du pixel</li>
+						<!-- <br> -->
+						<ul style="list-style-type: none;">
+							<li class="fragment">➡️ <b>Mouvement</b></li>
+						</ul>
+					</ul>
+					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay controls></video>
+					<p><small>Source : <a
+								href="https://www.youtube.com/watch?v=LauQ6LWTkxM">https://www.youtube.com/watch?v=LauQ6LWTkxM</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>🧠 &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<ul>
+						<li>Bio-inspirés <span class="ita">(neurones impulsionnels)</span></li>
+						<li>Neurones communiquent par <b>impulsions asynchrones</b></li>
+					</ul>
+					<div class="fragment" data-fragment-index="1"><video src="img/Bina_rep/snn_visu.mp4" muted autoplay height="240px" controls/></div>
+					<p class="fragment" data-fragment-index="1"><small>Source : <a
+								href="https://www.youtube.com/watch?v=oG0PTP3ogCA">https://www.youtube.com/watch?v=oG0PTP3ogCA</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Vision Neuromorphique</h3>
+					<ul>
+						<li>📖 &nbsp; méthode intégrant une caméra événementielle et/ou un SNN</li>
+						<br>
+						<li>🤝 &nbsp; <b>Traitement asynchrone en commun</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>⛰️ &nbsp; Défis du neuromorphique</h3>
+					<ul>
+						<li><b>Par rapport aux méthodes conventionnelles</b></li>
+						<ul>
+							<li>Domaine moins étudié</li>
+							<li>Technologies moins matures</li>
+							<li class="fragment" data-fragment-index="1" style="color:red">➡️ &nbsp; Performances et
+								complexité des approches neuromorphiques moins avancées</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="2"><b>Besoins du domaine</b></li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>Développement de <b style="color:green">nouvelles approches en vision neuromorphique</b>
+							</li>
+							<li><b style="color:green">Analyses approfondies</b> pour leur compréhension</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>🎯 &nbsp; Objectifs</h3>
+					<p style="border: solid 3px;"><b>Progrès des technologies neuromorphiques dans les tâches de vision
+							artificielle</b></p>
+							<br>
+					<ul class="fragment">
+						<li><b>Conception de modèles d'apprentissage profond</b> avec SNNs et/ou caméras événementielles
+						</li>
+						<li><b>Études expérimentales</b> pour approfondir nos connaissances</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Contextes</h3>
+					<div class="r-stack">
+						
+					</div>
+				</section>
+
+				<section>
+					<h3>🗃️ &nbsp; Organisation</h3>
+					<ol>
+						<li>État de l'art</li>
+						<br>
+						<li>Dévéloppement et analyse de SNNs profonds pour la localisation d'objet</li>
+						<br>
+						<li>Pré-entraînement par apprentissage auto-supervisé pour les événements</li>
+						<br>
+						<li>Conclusion</li>
+					</ol>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>État de l'Art</h1>
+				</section>
+
+				<section>
+					<h3>Trois Domaines</h3>
+					<ul>
+						<li>👴 &nbsp; <b>Approches classiques</b> : <span class="ita">ANN + images</span></li>
+						<br>
+						<li>⚡ &nbsp; <b>Réseaux de neurones impulsionnels</b></li>
+						<br>
+						<li>📸 &nbsp; <b>Vision événementielle</b> : vision artificielle avec des caméras événementielles</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>👴 &nbsp; Approches Classiques</h3>
+					<ul>
+						<li></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>👴 &nbsp; Approches Classiques</h3>
+					<p>Évolutions</p>
+				</section>
+
+				<section>
+					<h3>🗒️ &nbsp; Formulations</h3>
+				</section>
+
+				<section>
+					<h3>🗒️ &nbsp; Formulations</h3>
+				</section>
+				
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Explication du neurone impulsionnel (vs ANN)</p>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Modèle IF & LIF</p>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Codage neuronal</p>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Techniques d'apprentissage</p>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Surrogate gradient</p>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Matériel Neuromorphique</p>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p>Verrous Scientifiques</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Caméra</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Avantages</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Évolution caméras + changement paradigme</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Formulation génération événements</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Représentation événements</p>
+					<ul>
+						<li>Images événementielles (détails)</li>
+						<li>Surfaces temporelles</li>
+						<li>Voxels</li>
+						<li>Graphes</li>
+						<li>Entraînable</li>
+						<li>Traitement direct</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Contribution Bina-Rep</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Tâches de vision</p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Bases de données (différentiations) </p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p>Verrous scientifiques</p>
+				</section>
+
+				<section>
+					<h3>🗒️ &nbsp; Bilan</h3>
+					<p>Introduire les problèmes qu'on traite et basta-zer</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>SNNs pour la Localisation d'Objet</h1>
+				</section>
+
+				<section>
+					<h3>Pourquoi ?</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Preuve de Concept Préliminaire</h3>
+					<p>Parler brièvement de DECOLLE</p>
+				</section>
+
+				<section>
+					<h3>Contexte de l'Étude</h3>
+					<ul>
+						<li>Dévelo</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Formulation - Localisation d'Objet</h3>
+				</section>
+
+				<section>
+					<h3>Métrique d'Évaluation</h3>
+				</section>
+
+				<section>
+					<h3>Configuration - Latence Temporelle</h3>
+					<p>Expliquer comment on fait</p>
+				</section>
+
+				<section>
+					<h3></h3>
+				</section>
+
+				<section>
+					<h3>Modèle SNN</h3>
+				</section>
+
+				<section>
+					<h3>Modèle ANN</h3>
+				</section>
+
+				<section>
+					<h3>Images Statiques - Base de Données</h3>
+				</section>
+
+				<section>
+					<h3>Images Statiques - Codages Neuronaux</h3>
+				</section>
+
+				<section>
+					<h3>Images Statiques - Codages Neuronaux</h3>
+				</section>
+
+				<section>
+					<h3>Images Statiques - Latence Temporelle</h3>
+				</section>
+
+				<section>
+					<h3>Images Statiques - Corruptions</h3>
+				</section>
+
+				<section>
+					<h3>Baisse de Précision Relative</h3>
+				</section>
+
+				<section>
+					<h3>Images Statiques - Corruptions</h3>
+				</section>
+
+				<section>
+					<h3>Événements - Bases de Données</h3>
+				</section>
+
+				<section>
+					<h3>Événements - Latence Temporelle</h3>
+				</section>
+
+				<section>
+					<h3>Événements - Latence Temporelle</h3>
+				</section>
+
+				<section>
+					<h3>Événements - Corruptions</h3>
+					<p>Détailler les corruptions</p>
+				</section>
+				
+				<section>
+					<h3>Événements - Corruptions</h3>
+					<p>Résultats</p>
+				</section>
+
+				<section>
+					<h3>Consommation Énergétique</h3>
+				</section>
+				
+				<section>
+					<h3>Consommation Énergétique</h3>
+				</section>
+
+				<section>
+					<h3>Conclusion de l'Étude</h3>
+				</section>
+
+				<section>
+					<h3>Spiking-Fer</h3>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Pré-entraînement Auto-supervisé</h1>
+					<h2><b>pour la</b></h2>
+					<h2>Vision Événementielle</h2>
+				</section>
+
+				<section>
+					<h3>Contexte</h3>
+				</section>
+
+				<section>
+					<h3>Solutions Existantes</h3>
+					<ul>
+						<li>Pré-entraînement Supervisé</li>
+						<li>Apprentissage Auto-supervisé</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Méthode - Aperçu</h3>
+				</section>
+
+				<section>
+					<h3>Méthode - Formulation d'une EDA</h3>
+				</section>
+
+				<section>
+					<h3>Méthode - Architecture d'Encodage Conjoint</h3>
+				</section>
+
+				<section>
+					<h3>Méthode - Encodeurs Étudiés</h3>
+				</section>
+
+				<section>
+					<h3>Méthode - Variantes</h3>
+				</section>
+
+				<section>
+					<h3>Étude sur les EDAs</h3>
+				</section>
+
+				<section>
+					<h3>EDAs Étudiées</h3>
+				</section>
+
+				<section>
+					<h3>Évaluation des Performances</h3>
+				</section>
+
+				<section>
+					<h3>Protocole #1️⃣ - Évaluation Linéaire</h3>
+				</section>
+
+				<section>
+					<h3>Protocole #2️⃣ - Apprentissage Semi-supervisé</h3>
+				</section>
+
+				<section>
+					<h3>Protocole 3️⃣ - Transfert d'Apprentissage</h3>
+				</section>
+
+				<section>
+					<h3>Étude sur les EDAs</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Étude sur les EDAs</h3>
+					<p>Résultats</p>
+				</section>
+
+				<section>
+					<h3>Résultat des Évaluations</h3>
+				</section>
+
+				<section>
+					<h3>Mise en Perspective</h3>
+				</section>
+
+				<section>
+					<h3>Analyses des Représentations</h3>
+				</section>
+
+				<section>
+					<h3>Représentation - Uniformité et Tolérance</h3>
+					<p>Expliquer ce que c'est</p>
+				</section>
+
+				<section>
+					<h3>Représentation - Uniformité et Tolérance</h3>
+					<p>Expliquer </p>
+				</section>
+			</section>
+
+			<section>
+				<p class="r-fit-text">Thank you!</p>
+			</section>
+
+			<section>
+				<h3>References</h3>
+				<ul style="list-style: none;">
+					<li><small><b>[NameYEAR]: </b>M. Sajjad, et al. "A comprehensive survey on deep facial expression
+							recognition: challenges, applications, and future guidelines"</small></li>
+					<li><small><b>[Bokovoy2019]: </b>A. Bokovoy et al. "Real-time Vision-based Depth Reconstruction with NVidia Jetson"</small></li>
+					<li><small><b>[Desislavov2023]: </b>R. Desislavov et al. "Trends in AI inference energy consumption:
+							Beyond the performance-vs-parameter laws of deep learning"</small></li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h1>Annexes</h1>
+				</section>
+				
+				<section>
+					<h3>Bina-Rep</h3>
+				</section>
+
+				<section>
+					<h3>dIoU</h3>
+				</section>
+
+				<section>
+					<h3></h3>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c/t',
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+		});
+	</script>
+</body>
+
+</html>
