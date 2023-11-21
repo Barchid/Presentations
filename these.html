@@ -467,8 +467,8 @@
 
 			<section>
 				<section>
-					<h2>Pré-entraînement Auto-supervisé <br> <span style="font-weight: normal;">pour la Vision
-							Événementielle</span></h2>
+					<h2>Pré-entraînement Auto-supervisé <br> pour la Vision
+							Événementielle</h2>
 				</section>
 
 				<section>
@@ -718,71 +718,243 @@
 					<ul>
 						<li class="fragment">✅ &nbsp; <b style="color:green;">Solution :</b> définir des <b>protocoles d'évaluation standard</b> pour les travaux futurs</li>
 						<ul>
-							<li class="fragment">Bases de données populaires <span class="ita">(classification ➡️ taux de précision)</span></li>
+							<li class="fragment">BDDs populaires <span class="ita">(classification &nbsp; ➡️ &nbsp; taux de précision)</span></li>
 							<li class="fragment">Trois protocoles pour évaluer des aspects spécifiques du SSRL</li>
 						</ul>
 					</ul>
 				</section>
 
 				<section>
+					<h3>📁 &nbsp; Bases de Données</h3>
+					<div class="r-stack">
+						<img src="these/bdd_ssl_0.png" alt="bdd">
+						<img src="these/bdd_ssl_1.png" alt="bdd" class="fragment" data-fragment-index="0">
+						<img src="these/bdd_ssl.png" alt="bdd" class="fragment" data-fragment-index="2">
+					</div>
+				</section>
+
+				<section>
 					<h3>Protocole 1️⃣ &nbsp;- Évaluation Linéaire</h3>
+					<div class="r-stack">
+						<img src="these/linear_0.png" alt="linear">
+						<img src="these/linear_1.png" alt="linear" class="fragment">
+						<img src="these/linear_2.png" alt="linear" class="fragment">
+						<img src="these/linear_3.png" alt="linear" class="fragment">
+						<img src="these/linear.png" alt="linear" class="fragment">
+					</div>
+					<br>
 					<p>🎯 &nbsp; Est-ce que la méthode de SSRL <b>extrait des caractéristiques pertinentes ?</b></p>
 				</section>
 
 				<section>
 					<h3>Protocole 2️⃣ &nbsp;- Apprentissage Semi-supervisé</h3>
+					<div class="r-stack">
+						<img src="these/semisup_0.png" alt="linear">
+						<img src="these/semisup_1.png" alt="linear" class="fragment">
+						<img src="these/semisup_2.png" alt="linear" class="fragment">
+						<img src="these/semisup.png" alt="linear" class="fragment">
+					</div>
+					<br>
 					<p>🎯 &nbsp; Est-ce que la méthode de SSRL permet de <b>réduire le besoin en annotations ?</b></p>
 				</section>
 
 				<section>
 					<h3>Protocole 3️⃣ &nbsp;- Transfert d'Apprentissage</h3>
+					<div class="r-stack">
+						<img src="these/transfer_0.png" alt="linear">
+						<img src="these/transfer_1.png" alt="linear" class="fragment">
+						<img src="these/transfer_2.png" alt="linear" class="fragment">
+						<img src="these/transfer_3.png" alt="linear" class="fragment">
+						<img src="these/transfer.png" alt="linear" class="fragment">
+					</div>
+					<br>
 					<p>🎯 &nbsp; Est-ce que les caractéristiques apprises peuvent <b>être transférées à d'autres données ?</b></p>
 				</section>
 
 				<section>
-					<h3>Étude sur les EDAs</h3>
-					<p></p>
+					<h3>🔎🪄 &nbsp; Étude sur les EDAs</h3>
+					<p><b>➕ &nbsp; Étude incrémentale</b></p>
+					<ul>
+						<li><b>Trois étapes progressives : </b>une étape par catégorie d'EDA</li>
+						<br>
+						<li>Pour chaque étape, on conserve la combinaison d'EDAs <b>la plus performante de l'étape précédente</b></li>
+						<br>
+						<li>Protocole d'<b>évaluation linéaire</b> sur <b>DVSGesture</b></li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Étude sur les EDAs</h3>
-					<p>Résultats</p>
+					<h3>🔎🪄 &nbsp; Étude sur les EDAs</h3>
+					<p><b>Résultats</b></p>
+					<div class="r-stack">
+						<img alt="tab result edas" src="these/results_edas/tab_0.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_1.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_2.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_3.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_4.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_5.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_6.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_7.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_8.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_9.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_10.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_11.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_12.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_13.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_14.png">
+					</div>
 				</section>
 
 				<section>
-					<h3>Résultat des Évaluations</h3>
+					<h3>🔎🪄 &nbsp; Étude sur les EDAs</h3>
+					<p><b>Interprétations</b></p>
+					<ol>
+						<li>➕ EDAs communes $\rightarrow$ ➕ performances </li>
+						<br>
+						<li>Une EDA géométrique et une EDA en découpage $\rightarrow$ ➕ performances</li>
+						<br>
+						<li>Relations <code>OneOf</code> 👍 &nbsp; <span class="ita">(<code>EventDrop</code>, ...)</span></li>
+					</ol>
+					<br>
+					<br>
+					<p class="fragment">$D = \{\texttt{Noise,Crop,PolFlip,StatDynGeo,}$ $\texttt{EventCopyDrop}\}$</p>
+				</section>
+
+				<section>
+					<h3>⚖️ &nbsp; Évaluation des Performance</h3>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="5"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+
+						<p class="fragment fade-in-then-out" data-fragment-index="6"><b>Transfert d'Apprentissage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="7"><b>Transfert d'Apprentissage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="8"><b>Transfert d'Apprentissage</b></p>
+					</div>
+					<div class="r-stack">
+						<img src="these/results_ssl/tab_0.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="0">
+						<img src="these/results_ssl/tab_1.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="1">
+						<img src="these/results_ssl/tab_2.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="2">
+						<img src="these/results_ssl/tab_3.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="3">
+						<img src="these/results_ssl/tab_4.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="4">
+						<img src="these/results_ssl/tab_5.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="5">
+
+						<img src="these/results_ssl/transfer_0.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="6">
+						<img src="these/results_ssl/transfer_1.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="7">
+						<img src="these/results_ssl/transfer.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="8">
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="1"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4">2D-/3D-CNNs $>$ CSNN</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="5">Intérêt de la variante "Étudiant-Professeur"</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="6"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="7"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="8">✅ &nbsp; transférabilité des représentations apprises</p>
+					</div>
 				</section>
 
 				<section>
 					<h3>Mise en Perspective</h3>
+					<p><b>❓ &nbsp; Comment se compare-t-on aux méthodes supervisées ?</b></p>
+					<img class="fragment" src="these/results_ssl/perspective.png" alt="perspective">
+					<ul>
+						<li class="fragment">💪 &nbsp; Résultats <b>compétitifs</b>...</li>
+						<li class="fragment">🪶 &nbsp; ... avec des modèles <b>plus légers</b>...</li>
+						<li class="fragment">✂️ &nbsp;... sans apprentissage supervisé !</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Analyses des Représentations</h3>
+					<h3>🔎 &nbsp; Analyses des Représentations</h3>
+					<ul>
+						<li>⚠️ &nbsp; Les taux de précision sont des <b>mesures indirectes</b></li>
+						<li>➡️ &nbsp; Analyser les propriétés des représentations</li>
+					</ul>
+
+					<br>
+					<br>
+					<ul class="fragment">
+						<li><b>Deux analyses</b></li>
+						<ol>
+							<li class="fragment semi-fade-out"><b>Qualité des représentations : </b>compromis d'Uniformité - Tolérance</li>
+							<li class="fragment grow"><b>Similarité des représentations : </b>analyse par alignement de noyau centré linéaire <span class="ita">(CKA linéaire)</span></li>
+						</ol>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Représentation - Uniformité et Tolérance</h3>
-					<p>Expliquer ce que c'est</p>
+					<h3>🔎 &nbsp; Similarité des Représentations</h3>
+					<ul>
+						<li><b>CKA Linéaire :</b></li>
+						<ul>
+							<li>Utilisée en SSRL pour les images<small>[TODOCKA]</small></li>
+							<li>Compare les représentations de <b>deux encodeurs</b></li>
+							<li>Donne une valeur $\in [0,1]$ évaluant leur similarité</li>
+						</ul>
+						<br>
+						<li><b>🎯 &nbsp; Nos objectifs :</b></li>
+						<ul>
+							<li>Comparer tous les encodeurs entre eux...</li>
+							<li>... selon chaque bloc résiduel</li>
+							<li><b>Base de données :</b> DVSGesture</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Représentation - Uniformité et Tolérance</h3>
-					<p>Résultat + interpretations</p>
+					<h3>🔎 &nbsp; Similarité des Représentations</h3>
+					<div class="r-stack">
+						<img src="these/results_ssl/cka_0.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_1.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_2.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_3.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_4.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_5.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_6.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_7.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_8.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_9.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_10.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_11.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_12.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_13.png" alt="cka" class="fragment">
+					</div>
 				</section>
 
 				<section>
-					<h3>Représentation - Similarités</h3>
-					<p>Expliquer ce que c'est</p>
+					<h3>📍 &nbsp; Bilan</h3>
+					<ul>
+						<li><b>Contributions</b></li>
+						<ul>
+							<li>Méthode de SSRL événementielle pour les encodeurs convolutifs</li>
+							<li>Protocoles d'évaluation standardisés</li>
+							<li>Études expérimentales</li>
+						</ul>
+						<br>
+						<li><b>Observations</b></li>
+						<ul>
+							<li>💪 &nbsp; Efficacité et polyvalence de la méthode</li>
+							<li>🪄 &nbsp; Définition d'une distribution d'EDAs efficace</li>
+							<li>🔎 &nbsp; </li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Représentation - Similarités</h3>
-					<p>Résultat + inteprétation</p>
-				</section>
-
-				<section>
-					<h3>Bilan</h3>
+					<h3>🔓 &nbsp; Améliorations Possibles</h3>
+					<ul>
+						<li><b>Spécialiser la méthode</b> selon le type d'encodeur</li>
+						<br>
+						<li><b>Diversifier</b> les protocoles d'évaluation <span class="ita">(détection, ...)</span></li>
+						<br>
+						<li>Méthode fonctionnant sur <b>une seule étape temporelle</b></li>
+					</ul>
 				</section>
 			</section>
 
@@ -831,19 +1003,57 @@
 
 				<section>
 					<h3>VICReg</h3>
-					<img src="these/vicreg_annexe.png" alt="vicreg annexe">
-					<ul>
-						<li><b>Fonction de coût à trois termes :</b></li>
-						<ol>
-							<li><b>Invariance : </b>minimiser la distance entre les deux encastrements de la même entrée</li>
-							<li><b>Variance : </b>maintenir la variance de chaque variable d'un même vecteur dans un lot au-dessus d'un seuil</li>
-							<li><b>Covariance : </b>minimiser la covariance entre les valeurs d'un même vecteur</li>
-						</ol>
-					</ul>
+					<img height="230px" src="these/vicreg_annexe.png" alt="vicreg annexe">
+					<ol>
+						<li><b>Invariance : </b>minimiser la distance entre les deux encastrements de la même entrée</li>
+						<li><b>Variance : </b>maintenir la variance de chaque variable d'un même vecteur dans un lot au-dessus d'un seuil</li>
+						<li><b>Covariance : </b>minimiser la covariance entre les valeurs d'un même vecteur</li>
+					</ol>
 				</section>
 
 				<section>
-					<h3></h3>
+					<h3>Distribution EDAs</h3>
+					<img src="these/params_edas.png" alt="param edas" height="600px">
+				</section>
+
+				<section>
+					<h3>Mise en Perspective - SSRL événementiel</h3>
+					<p><b>ASL-DVS</b></p>
+					<img height="500px" src="these/results_ssl/perspective_asl.png" alt="ASL">
+				</section>
+
+				<section>
+					<h3>Mise en Perspective - SSRL événementiel</h3>
+					<p><b>N-CARS</b></p>
+					<img height="500px" src="these/results_ssl/perspective_ncars.png" alt="ASL">
+				</section>
+
+				<section>
+					<h3>Mise en Perspective - SSRL événementiel</h3>
+					<p><b>N-CALTECH101</b></p>
+					<img src="these/results_ssl/perspective_ncaltech101.png" alt="ASL">
+				</section>
+
+				<section>
+					<h3>Mise en Perspective - SSRL événementiel</h3>
+					<p><b>DVSGesture</b></p>
+					<img src="these/results_ssl/perspective_dvsgesture.png" alt="ASL">
+				</section>
+
+				<section>
+					<h3>Mise en Perspective - SSRL événementiel</h3>
+					<p><b>DailyAction-DVS</b></p>
+					<img src="these/results_ssl/perspective_dailyactiondvs.png" alt="ASL">
+				</section>
+
+				<section>
+					<h3>Représentation - Uniformité et Tolérance</h3>
+					<p>Expliquer ce que c'est</p>
+				</section>
+
+				<section>
+					<h3>Représentation - Uniformité et Tolérance</h3>
+					<p>Résultat + interpretations</p>
 				</section>
 			</section>
 		</div>
