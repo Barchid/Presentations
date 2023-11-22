@@ -353,49 +353,120 @@
 
 			<section>
 				<section>
-					<h1>SNNs pour la Localisation d'Objet</h1>
+					<h2>Réseaux de Neurones Impulsionnels <br> pour la Localisation d'Objet</h2>
 				</section>
 
 				<section>
-					<h3>Pourquoi ?</h3>
-					<p></p>
-				</section>
-
-				<section>
-					<h3>Preuve de Concept Préliminaire</h3>
-					<p>Parler brièvement de DECOLLE</p>
-				</section>
-
-				<section>
-					<h3>Contexte de l'Étude</h3>
+					<h3>🖼️ &nbsp; Contexte</h3>
 					<ul>
-						<li>Dévelo</li>
+						<li>💪 &nbsp; L'apprentissage profond par SG est efficace...</li>
+						<li>👶 &nbsp; ... mais est encore récent :</li>
+						<ul>
+							<li>➡️ &nbsp; Peu de tâches de vision étudiées</li>
+							<li>➡️ &nbsp; Manque d'analyses</li>
+						</ul>
+						<br>
+						<li class="fragment"><b>Dans ce travail :</b></li>
+						<ul>
+							<li class="fragment"><b>Développement</b> d'un SNN Convolutif (<span class="ita">CSNN</span>) pour la <b>localisation d'objet</b></li>
+							<li class="fragment"><b>Analyses</b> du comportement de ce CSNN selon divers aspects</li>
+						</ul>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Formulation - Localisation d'Objet</h3>
+					<h3>🗨️ &nbsp; Formulation - Localisation d'Objet</h3>
+					<div class="r-stack">
+						<img src="these/localization/localization_formulation_0.png" alt="local forma">
+						<img src="these/localization/localization_formulation_1.png" alt="local forma" class="fragment fade-in-then-out">
+						<img src="these/localization/localization_formulation_2.png" alt="local forma" class="fragment fade-in-then-out">
+						<img src="these/localization/localization_formulation_3.png" alt="local forma" class="fragment fade-in-then-out">
+						<img src="these/localization/localization_formulation_4.png" alt="local forma" class="fragment fade-in-then-out">
+						<img src="these/localization/localization_formulation.png" alt="local forma" class="fragment fade-in-then-out">
+						<div class="fragment">
+							<p><b>Pourquoi cette tâche ?</b></p>
+							<ul style="list-style-type: '✔️&nbsp;  ';">
+								<li>Traitement de l'information spatiale</li>
+								<li>Plus simple que des tâches similaires (<span class="ita">détection d'objets, ...</span>)</li>
+								<li>Scènes complexes</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 				<section>
-					<h3>Métrique d'Évaluation</h3>
+					<h3>🕵️ &nbsp; Preuve de Concept Préliminaire</h3>
+					<p style="border: 3px solid red; color:red; margin:10px; font-weight: bold;">❓ Est-ce que c'est possible ?</p>
+					<br>
+					<ul class="fragment" data-fragment-index="0">
+						<li style="color:green;"><b>✅ &nbsp; Validé</b></li>
+						<ul>
+							<li>🧱 &nbsp; CSNN profond <b>encodeur-décodeur</b></li>
+							<li>📟 &nbsp; Images statiques avec <b>codage fréquentiel</b></li>
+							<li>👍 &nbsp; Résultats <b>encourageants</b></li>
+						</ul>
+					</ul>
+					<br>
+					<br>
+					<p class="fragment" data-fragment-index="0"><small>📰<span class="ita"><span class="ita"></span> &nbsp; Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning <br><b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></span></small></p>
 				</section>
 
 				<section>
-					<h3>Configuration - Latence Temporelle</h3>
-					<p>Expliquer comment on fait</p>
+					<h3>🔎 &nbsp; Aspects Étudiés</h3>
+					<ol>
+						<li><b>Deux modalités étudiées : </b>images statiques et flux d'événements</li>
+						<br>
+						<li><b>Latence temporelle</b> ($T$)</li>
+						<br>
+						<li><b>Robustesse aux corruptions des capteurs</b></li>
+						<br>
+						<li><b>Estimation du coût énergétique</b></li>
+						<br>
+						<li><b>Codages neuronaux pour les images</b></li>
+					</ol>
 				</section>
 
 				<section>
-					<h3></h3>
+					<h3>⚔️ &nbsp; Étude Comparative</h3>
+					<p style="border: solid 3px;">❗&nbsp; On compare un encodeur convolutif CSNN avec un <b>ANN d'architecture similaire : un 2D-CNN</b></p>
+					<br>
+					<ul>
+						<li>🎯 &nbsp; identifier les différences dans le traitement des données visuelles</li>
+						<br>
+						<li>👥 &nbsp; architecture et complexité similaires</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Modèle SNN</h3>
+					<h3>🧠 &nbsp; Encodeur Convolutif - ANN</h3>
+					<div class="r-stack">
+						<img src="these/localization/ann_archi_0.png" alt="ANN">
+						<img src="these/localization/ann_archi_1.png" alt="ANN" class="fragment">
+						<img src="these/localization/ann_archi_2.png" alt="ANN" class="fragment">
+						<img src="these/localization/ann_archi_3.png" alt="ANN" class="fragment">
+						<img src="these/localization/ann_archi_4.png" alt="ANN" class="fragment">
+						<img src="these/localization/ann_archi.png" alt="ANN" class="fragment">
+					</div>
 				</section>
 
 				<section>
-					<h3>Modèle ANN</h3>
+					<h3>⚡ &nbsp; Encodeur Convolutif - SNN</h3>
+					<div class="r-stack">
+						<img src="these/localization/snn_archi_0.png" alt="SNN">
+						<img src="these/localization/snn_archi_1.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_2.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_3.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_4.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_5.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_6.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_7.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_8.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi.png" alt="SNN" class="fragment">
+					</div>
+				</section>
+
+				<section>
+					<h3>Entrées</h3>
 				</section>
 
 				<section>
