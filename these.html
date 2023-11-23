@@ -345,28 +345,139 @@
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p><b>Neurone "Integrate-and-Fire" (IF)</b></p>
-					
+					<p><b>Matériel Neuromorphique</b></p>
+					<p>📖 Architecture matérielle adaptée le fonctionnement des SNNs</p>
+					<ul>
+						<li>⚡ &nbsp; Massivement parallèle et adapté aux impulsions</li>
+						<li>🏠 &nbsp; Localité du traitement de l'information</li>
+						<br>
+						<li style="color:red;">❌ &nbsp; Moins mature</li>
+						<ul style="color: red;">
+							<li>Taille des SNNs limitée</li>
+							<li>Apprentissage profond limité</li>
+							<li>Difficulté d'acquisition</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Codage neuronal</p>
+					<p><b>Simulation sur CPU/GPU</b></p>
+					<p>📖 &nbsp; Simuler sur du matériel conventionnel les neurones impulsionnels</p>
+					<br>
+					<ul>
+						<li>Simulateurs nombreux selon le cas d'utilisation <span class="ita">(neuroscience, vision, etc)</span></li>
+						<br>
+						<li><b>Pour les SNNs profonds :</b></li>
+						<ul>
+							<li>Simulations sur les librairies d'apprentissage profond communes <span class="ita">(PyTorch<small>[TODO]</small>, ...)</span></li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Techniques d'apprentissage</p>
+					<p><b>Neurone "Integrate-and-Fire" (IF)</b><small>[TODO]</small></p>
+					<div class="r-stack">
+						<img src="these/sota/if_dyna_0.png" alt="dyna">
+						<img src="these/sota/if_dyna_1.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_2.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_3.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_4.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_5.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_6.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_7.png" alt="dyna" class="fragment">
+						<img src="these/sota/if_dyna_8.png" alt="dyna" class="fragment">
+					</div>
+					<br>
+					<ol>
+						<li class="fragment">🔌 &nbsp; Potentiel de membrane</li>
+						<li class="fragment">⚡ &nbsp; Génération d'impulsion</li>
+						<li class="fragment">💤 &nbsp; Retour au repos</li>
+					</ol>
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Surrogate gradient</p>
+					<p><b>Dynamique discrétisée sur une nombre $T$ d'étapes temporelles d'une couche $l$ de neurones IF</b></p>
+					<div class="r-stack">
+						<img src="these/sota/if_eq_0.png" alt="eq">
+						<img src="these/sota/if_eq_1.png" alt="eq" class="fragment" data-fragment-index="0">
+						<img src="these/sota/if_eq_2.png" alt="eq" class="fragment" data-fragment-index="1">
+						<img src="these/sota/if_eq_3.png" alt="eq" class="fragment" data-fragment-index="2">
+						<img src="these/sota/if_eq_4.png" alt="eq" class="fragment" data-fragment-index="3">
+						<img src="these/sota/if_eq_5.png" alt="eq" class="fragment" data-fragment-index="4">
+						<img src="these/sota/if_eq_6.png" alt="eq" class="fragment" data-fragment-index="5">
+						<img src="these/sota/if_eq.png" alt="eq" class="fragment" data-fragment-index="6">
+					</div>
+					<ul>
+						<li class="fragment" data-fragment-index="0">$U^l_t$ $\rightarrow$ potentiels de membrane à l'étape $1 \leq t \leq T$</li>
+						<li class="fragment" data-fragment-index="3">$\mathcal{W}^l$ $\rightarrow$ poids de la couche $l$</li>
+						<li class="fragment" data-fragment-index="3">$X^{l-1}_t$ $\rightarrow$ impulsions en entrée <span class="ita">(couche précédente)</span></li>
+						<li class="fragment" data-fragment-index="4">$X^{l}_t$ $\rightarrow$ impulsions en sortie</li>
+						<li class="fragment" data-fragment-index="4">$\Theta(\cdot)$ $\rightarrow$ fonction de Heaviside</li>
+						<li class="fragment" data-fragment-index="4">$\theta = 1$ $\rightarrow$ seuil d'activation</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Matériel Neuromorphique</p>
+					<p><b>🧑‍🎓 &nbsp; Techniques d'apprentissage</b></p>
+					<div class="r-stack">
+						<ul class="fragment fade-out">
+							<li><b>♻️ &nbsp; Conversion ANN-vers-SNN</b></li>
+							<ul>
+								<li>👍 &nbsp; SNNs profonds et performants</li>
+								<li>👎 &nbsp; lents et consommateurs</li>
+							</ul>
+							<br>
+							<li><b>🧠 &nbsp; Règles d'apprentissage biologique</b> <span class="ita">(STDP)</span></li>
+							<ul>
+								<li>👍 &nbsp; Non-supervisé, adapté au matériel</li>
+								<li>👎 &nbsp; Réseaux peu profonds, performances limitées</li>
+							</ul>
+						</ul>
+
+						<ul class="fragment fade-in">
+							<li><b>🏅 &nbsp; Adaptation de la rétro-propagation</b></li>
+							<ul>
+								<li>👍 &nbsp; Apprentissage direct du SNN</li>
+								<li>💪 &nbsp; Performance</li>
+								<li style="color: orange;">⚠️ &nbsp; La rétro-propagation ne peut pas être appliquée telle quelle</li>
+								<li class="fragment" style="color: green;"><b>Solution employée : </b> apprentissage par Substitut du Gradient (SG)</li>
+							</ul>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p><b>Apprentissage par Subtitut du Gradient</b> <span class="ita">(SG)</span></p>
+					<div class="r-stack">
+						<img src="these/sota/if_eq.png" alt="eq" class="fragment fade-in-then-out">
+						<img src="these/sota/if_recursive_0.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_recursive_1.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_recursive_2.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_recursive_3.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_recursive_4.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_recursive_5.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_rnn.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_rnn_1.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_forward.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_forward_1.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_forward_2.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_forward_3.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/if_forward_4.png" alt="recu" class="fragment fade-in-then-out" height="550px">
+						<img src="these/sota/heaviside.png" alt="recu" class="fragment fade-in-then-out">
+						<img src="these/sota/heaviside_back.png" alt="recu" class="fragment fade-in-then-out">
+						<img src="these/sota/surrogate.png" alt="recu" class="fragment fade-in-then-out">
+						<img src="these/sota/surrogate_back.png" alt="recu" class="fragment fade-in-then-out">
+					</div>
+				</section>
+
+				<section>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p><b></b></p>
 				</section>
 
 				<section>
