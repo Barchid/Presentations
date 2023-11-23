@@ -233,38 +233,120 @@
 				<section>
 					<h3>👴 &nbsp; Approches Classiques</h3>
 					<ul>
-						<li><b>👴 &nbsp; Historiquement : </b></li>
-						<div class="r-stack">
-							<ul class="fragment fade-in-then-out" data-fragment-index="0">
-								<li>Coucou</li>
-							</ul>
-							<p class="fragment fade-in-then-out" data-fragment-index="1"> caca</p>
-						</div>
-						<li><b>🗼 Apprentissage profond : </b> entraînement d'une architecture ANN profonde </li>
+						<li><b>⚰️ &nbsp; Historiquement :</b> </li>
+						<ul>
+							<li>Descripteurs <span class="ita">(ORB<small>[TODO]</small>, SIFT<small>[TODO]</small>)</span> en entrée d'un modèle d'apprentissage classique <span class="ita">(SVM)</span></li>
+						</ul>
+						<br>
+						<li><b>🗼 Apprentissage profond : </b> entraînement d'une architecture ANN profonde par la <b>rétropropagation du gradient</b></li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>👴 &nbsp; Approches Classiques</h3>
-					<p>Évolutions</p>
+					<p><b>Évolutions marquantes</b></p>
+
+					<div class="r-stack">
+						<figure class="fragment fade-in-then-out">
+							<figcaption>Neurone artificiel</figcaption>
+							<img src="these/sota/artificial_neuron.png" alt="artificial neuron">
+						</figure>
+						<figure class="fragment fade-in-then-out">
+							<figcaption>Multi-layer Perceptron (<span class="ita">MLP</span>)</figcaption>
+							<img src="these/sota/mlp.png" height="450px" alt="artificial neuron">
+						</figure>
+
+						<figure class="fragment fade-in-then-out">
+							<figcaption>Convolution</figcaption>
+							<img src="these/sota/convolution.png" height="450px" alt="artificial neuron">
+						</figure>
+
+						<ul class="fragment fade-in-then-out">
+							<li>Adoption des <b>réseaux de neurones convolutifs</b> <span class="ita">(CNNs)</span></li>
+							<ul>
+								<li><b>AlexNet</b><small>[TODO]</small> (2012) atteint les meilleures performances sur <b>ImageNet</b><small>[TODO]</small></li>
+								<li><b>ResNet</b><small>[TODO]</small> introduit la notion de blocs résiduels</li>
+								<li>...</li>
+								<br>
+								<li>Convolutions 2D pour les images : <b>2D-CNN</b></li>
+								<li>Convolutions 3D pour les vidéos : <b>3D-CNN</b></li>
+							</ul>
+						</ul>
+
+						<ul class="fragment fade-in-then-out">
+							<li><b>Plus récemment</b> (2020)</li>
+							<br>
+							<ul>
+								<li>Arrivée des <b>transformeurs de vision <span class="ita">(ViT)</span></b></li>
+								<br>
+								<li><span style="color:red;">Besoin en données annotées massif</span> ➡️ apprentissage auto-supervisé <span class="ita">(SSL)</span></li>
+								<br>
+								<li><b>Modèles de fondations :</b> modèles de grande envergure pré-entraînés</li>
+							</ul>
+						</ul>
+					</div>
 				</section>
 
 				<section>
-					<h3>🗒️ &nbsp; Formulations</h3>
+					<h3>🗒️ &nbsp; Formulations - Réseau de Neurones</h3>
+					<div class="r-stack">
+						<div class="fragment fade-out">
+							<p>
+								$f_{\alpha}(Input) = Output$
+							</p>
+							<ul>
+								<li>$f_{\alpha}$ $\rightarrow$ réseau de neurones dont $\alpha$ est l'ensemble des poids entraînables</li>
+								<li>$Input$ $\rightarrow$ les données en entrée</li>
+								<li>$Output$ $\rightarrow$ les caractéristiques en sortie</li>
+								<br>
+								<li>🃏 &nbsp; <b>Adaptabilité :</b> le format de $Input$ et $Output$ est manipulable selon la tâche visée </li>
+							</ul>
+						</div>
+						<div class="fragment fade-in-then-out">
+							<p><b>Classification</b></p>
+							<p>
+								$f_{\alpha}(\mathbf{I}) = c$
+							</p>
+							<br>
+							<ul>
+								<li> $\mathbf{I} \in \mathbb{R}^{C \times H \times W}$ $\rightarrow$ image statique de résolution $(H \times W)$ avec $C$ canaux</li>
+								<br>
+								<li>$c \in [1,\mathcal{C}]$ $\rightarrow$ prédiction de la classe parmi $\mathcal{C}$ catégories</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 				<section>
-					<h3>🗒️ &nbsp; Formulations</h3>
+					<h3>🗒️ &nbsp; Formulations - Encodeur Convolutif</h3>
+					<p>📖 &nbsp; Un 2D-CNN <span class="ita">(ou 3D-CNN) est utilisé pour extraire un <b>vecteur de caractéristiques</b> à partir de <b>données visuelles</b> <span class="ita">(ex. une image)</span></span></p>
+					<br>
+					<p class="fragment" data-fragment-index="0">
+						$f_{\alpha}(\mathbf{I}) = \mathcal{F}$
+					</p>
+					<br>
+					<ul class="fragment" data-fragment-index="0">
+						<li>$\mathcal{F} \in \mathbb{R}^{K}$ $\rightarrow$ le vecteur de caractéristiques de $K$ entrées</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Explication du neurone impulsionnel (vs ANN)</p>
+					<p>Réseaux de neurones composés de <b style="color: orange; border-bottom: solid 3px orange;">neurones impulsionnels</b></p>
+					<div class="r-stack">
+						<p></p>
+						<img src="these/sota/artificial_impulsion_0.png" alt="annvssnn" class="fragment">
+						<img src="these/sota/artificial_impulsion_1.png" alt="annvssnn" class="fragment">
+						<img src="these/sota/artificial_impulsion_2.png" alt="annvssnn" class="fragment">
+						<img src="these/sota/artificial_impulsion_3.png" alt="annvssnn" class="fragment">
+						<img src="these/sota/artificial_impulsion.png" alt="annvssnn" class="fragment">
+					</div>
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Modèle IF & LIF</p>
+					<p><b>Neurone "Integrate-and-Fire" (IF)</b></p>
+					
 				</section>
 
 				<section>
@@ -408,7 +490,7 @@
 					</ul>
 					<br>
 					<br>
-					<p class="fragment" data-fragment-index="0"><small>📰<span class="ita"><span class="ita"></span> &nbsp; Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning <br><b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></span></small></p>
+					<p style="border: solid 2px; padding: 10px;" class="fragment" data-fragment-index="0"><small>📰<span class="ita"><span class="ita"></span> &nbsp; Deep Spiking Convolutional Neural Network for Single Object Localization Based On Deep Continuous Local Learning <br><b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></span></small></p>
 				</section>
 
 				<section>
@@ -733,11 +815,39 @@
 				</section>
 
 				<section>
-					<h3>Conclusion de l'Étude</h3>
+					<h3>📍 &nbsp; Bilan de l'Étude</h3>
+					<ul>
+						<li class="fragment"><b>Supériorité des faibles latences</b></li>
+						<li class="fragment"><b>Codages Neuronaux</b></li>
+						<div class="r-stack">
+							<img src="these/localization/bilan_0.png" alt="coucou">
+							<img src="these/localization/bilan_1.png" alt="coucou" class="fragment">
+							<img src="these/localization/bilan_2.png" alt="coucou" class="fragment">
+							<img src="these/localization/bilan_3.png" alt="coucou" class="fragment">
+							<img src="these/localization/bilan_4.png" alt="coucou" class="fragment">
+							<img src="these/localization/bilan_5.png" alt="coucou" class="fragment">
+							<img src="these/localization/bilan_6.png" alt="coucou" class="fragment">
+							<img src="these/localization/bilan_7.png" alt="coucou" class="fragment">
+						</div>
+						<li  class="fragment"><b>SNN compétitif</b></li>
+						<ul  class="fragment">
+							<li>Efficacité énergétique 🥇</li>
+							<li><b>Événements :</b> performance - robustesse 👎</li>
+							<li><b>Images :</b> Performance 🥈 - robustesse 👍</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Spiking-Fer</h3>
+					<h3>😃 &nbsp; Spiking-FER - Contribution</h3>
+					<p><b>Reconnaissance d'Expressions Faciales Événementielle avec un CSNN</b></p>
+					<div class="r-stack">
+						<img src="these/localization/spikingfer_0.png" alt="fer">
+						<img src="these/localization/spikingfer_1.png" alt="fer" class="fragment">
+						<img src="these/localization/spikingfer_2.png" alt="fer" class="fragment">
+					</div>
+					<p class="fragment"><b>Études expérimentales :</b> augmentations de données...</p>
+					<p style="border: solid 2px; padding: 10px;" class="fragment"><small>📰<span class="ita"><span class="ita"></span> &nbsp; Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras <br><b>2023 International Conference on Content-Based Multimedia Indexing (CBMI). ACM, 2023.</b></span></small></p>
 				</section>
 			</section>
 
