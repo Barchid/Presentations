@@ -129,7 +129,7 @@
 							<li class="fragment">➡️ <b>Mouvement</b></li>
 						</ul>
 					</ul>
-					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted autoplay controls></video>
+					<video src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted controls></video>
 					<p><small>Source : <a
 								href="https://www.youtube.com/watch?v=LauQ6LWTkxM">https://www.youtube.com/watch?v=LauQ6LWTkxM</a></small>
 					</p>
@@ -192,21 +192,21 @@
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>🖼️ &nbsp; Contextes</h3>
 					<div class="r-stack">
 
 					</div>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>🗓️ &nbsp; Organisation</h3>
 					<ol style="font-weight: bold;">
-						<li>État de l'art</li>
+						<li>État de l'Art</li>
 						<br>
-						<li>SNNs pour la localisation d'objet</li>
+						<li>Réseaux de Neurones Impulsionnels  pour la Localisation d'Objet</li>
 						<br>
-						<li>Pré-entraînement auto-supervisé pour la vision événementielle</li>
+						<li>Pré-entraînement Auto-supervisé pour la Vision Événementielle</li>
 						<br>
 						<li>Conclusion</li>
 					</ol>
@@ -424,27 +424,27 @@
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
 					<p><b>🧑‍🎓 &nbsp; Techniques d'apprentissage</b></p>
 					<div class="r-stack">
-						<ul class="fragment fade-out">
+						<ul class="fragment fade-out" data-fragment-index="0">
 							<li><b>♻️ &nbsp; Conversion ANN-vers-SNN</b></li>
 							<ul>
 								<li>👍 &nbsp; SNNs profonds et performants</li>
-								<li>👎 &nbsp; lents et consommateurs</li>
+								<li>👎 &nbsp; Lents et consommateurs</li>
 							</ul>
 							<br>
 							<li><b>🧠 &nbsp; Règles d'apprentissage biologique</b> <span class="ita">(STDP)</span></li>
 							<ul>
-								<li>👍 &nbsp; Non-supervisé, adapté au matériel</li>
+								<li>👍 &nbsp; Non-supervisé, adapté au matériel neuromorphique</li>
 								<li>👎 &nbsp; Réseaux peu profonds, performances limitées</li>
 							</ul>
 						</ul>
 
-						<ul class="fragment fade-in">
+						<ul class="fragment fade-in" data-fragment-index="0">
 							<li><b>🏅 &nbsp; Adaptation de la rétro-propagation</b></li>
 							<ul>
 								<li>👍 &nbsp; Apprentissage direct du SNN</li>
 								<li>💪 &nbsp; Performance</li>
 								<li style="color: orange;">⚠️ &nbsp; La rétro-propagation ne peut pas être appliquée telle quelle</li>
-								<li class="fragment" style="color: green;"><b>Solution employée : </b> apprentissage par Substitut du Gradient (SG)</li>
+								<li class="fragment" style="color: green;"><b>Solution employée : </b> apprentissage par Substitut du Gradient (SG)<small>[TODO]</small></li>
 							</ul>
 						</ul>
 					</div>
@@ -477,70 +477,271 @@
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p><b></b></p>
+					<p><b>Codage Neuronal</b></p>
+					<ul>
+						<li style="color:red;">Image statique ($\in \mathbb{R}$) <b>pas compatible</b> avec les SNNs</li>
+						<li style="color: green;"><b>Solution :</b> convertir les pixels en trains d'impulsions &nbsp; ➡️ &nbsp; <b>codage neuronal</b></li>
+					</ul>
+					<div class="r-stack">
+						<img src="these/sota/codage_0.png" alt="codage">
+						<img src="these/sota/codage_1.png" alt="codage" class="fragment">
+						<img src="these/sota/codage_2.png" alt="codage" class="fragment">
+						<img src="these/sota/codage_3.png" alt="codage" class="fragment">
+					</div>
+					
 				</section>
 
 				<section>
 					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
-					<p>Verrous Scientifiques</p>
+					<p><b>Codage Neuronal - Exemples</b></p>
+					<img src="these/sota/codages_function.png" alt="ex">
+					
 				</section>
 
 				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Caméra</p>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p><b>Apprentissage Profond en Vision Artificielle</b></p>
+					<div class="r-stack">
+						<ul class="fragment fade-out" data-fragment-index="0">
+							<li><b>👴 &nbsp; Historiquement :</b> Bases de Données <span class="ita">(BDDs)</span> "jouets" (MNIST<small>[TODO]</small>, CIFAR10<small>[TODO]</small>, ...)</li>
+							<br>
+							<li>💪 &nbsp; <b>Grâce au SG :</b></li>
+							<ul>
+								<li>SNNs convolutifs <span class="ita">(CSNNs) profonds</span></li>
+								<li>BDDs de <b>grande envergure</b> avec des <b>scènes complexes</b></li>
+								<li>Diversité des tâches</li>
+							</ul>
+						</ul>
+						<img src="these/sota/snn_tasks.png" alt="tasks" class="fragment fade-in" data-fragment-index="0">
+					</div>
 				</section>
 
 				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Avantages</p>
-				</section>
-
-				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Évolution caméras + changement paradigme</p>
-				</section>
-
-				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Formulation génération événements</p>
-				</section>
-
-				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Représentation événements</p>
+					<h3>⚡ &nbsp; Réseaux de Neurones Impulsionnels</h3>
+					<p><b>Problématique du SG</b></p>
 					<ul>
-						<li>Images événementielles (détails)</li>
-						<li>Surfaces temporelles</li>
-						<li>Voxels</li>
-						<li>Graphes</li>
-						<li>Entraînable</li>
-						<li>Traitement direct</li>
+						<li>🆕 &nbsp; Emploi récent</li>
+						<br>
+						<li>👟 &nbsp; Développement rapide</li>
+						<br>
+						<li style="color: red;">❌ &nbsp; Peu d'analyses du comportement de ces SNNs</li>
+						<ul>
+							<li style="color: red;">➡️ &nbsp; Quelles sont les particularités par rapport aux ANNs?</li>
+						</ul>
 					</ul>
 				</section>
 
 				<section>
 					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Contribution Bina-Rep</p>
+					<p><b>Caméra événementielle</b></p>
+					<ul>
+						<li>Capteur bio-inspiré</li>
+						<br>
+						<li>Pixels <b>indépendants</b> qui réagissent <b>de manière asynchrone</b> aux <b>changements d'intensité</b></li>
+						<br>
+						<li>La sortie est un <b>flux d'événements</b> qui encodent ces changements d'intensité</li>
+						<br>
+						<li style="color: green;">Intérêt grandissant (recherche et industrielle)</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Tâches de vision</p>
+					<img src="img/ssl/lift.gif" alt="enothing">
 				</section>
 
 				<section>
 					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Bases de données (différentiations) </p>
+					<p><b>🗒️ &nbsp; Formulation</b></p>
+					<div class="r-stack">
+						<img src="img/spiking_fer/eventcamintro.png" alt="eventcam">
+						<img class="fragment" src="img/spiking_fer/eventcamintro_0.png" alt="eventcam">
+						<img class="fragment" src="img/spiking_fer/eventcamintro_1.png" alt="eventcam">
+						<img class="fragment" src="img/spiking_fer/eventcamintro_2.png" alt="eventcam">
+					</div>
 				</section>
 
 				<section>
 					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p>Verrous scientifiques</p>
+					<p><b>Avantages</b></p>
+					<ul>
+						<li>🪶 &nbsp; Représentation éparse</li>
+						<br>
+						<li>🚀 &nbsp; Faible latence (~1 µs)</li>
+						<br>
+						<li style="text-decoration: line-through;">Flou cinétique</li>
+						<br>
+						<li>🛡️  &nbsp; Haute plage dynamique</li>
+						<br>
+						<li>🌍 &nbsp; Efficacité énergétique</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p><b>Changement de paradigme</b></p>
+					<ul>
+						<li>Images statiques &nbsp; ➡️ &nbsp; flux d'événements</li>
+						<br>
+						<li style="color: red;" class="fragment grow">Les algorithmes de vision conventionnels ne fonctionnent pas tel quel</li>
+						<br>
+						<li class="fragment" style="color: green;">SNN &nbsp; 🤝 &nbsp; Événements</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p><b>Représentation d'événements</b></p>
+					<p>📖 &nbsp; <b>Pré-traitement</b> transformant un flux d'événements en une <b>représentation alternative</b> qui exprime plus efficacement les informations de la scène</p>
+					<ul class="fragment">
+						<li><b>Exemples :</b></li>
+						<ul>
+							<li class="fragment grow">Images événementielles</li>
+							<li>Surfaces temporelles</li>
+							<li>Traitement direct <span class="ita">(ex. : SNNs)</span></li>
+							<li>...</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p><b>Images Événementielles Binaires</b></p>
+					<p>📖 &nbsp; Image où chaque pixel encode la présence ou l'absence d'un événement dans $\mathcal{E}$</p>
+					<div class="r-stack">
+						<figure class="fragment fade-in-then-out">
+							<img src="these/sota/binary_frame.png" alt="binary">
+							<figcaption>Image événementielle $X_t \in \mathbb{B}^{C \times H \times W}$</figcaption>
+						</figure>
+
+						<figure class="fragment fade-in-then-out">
+							<img src="these/sota/frames_sequence_1.png" alt="seq">
+							<figcaption>Si $\mathcal{E}$ est trop grand, l'image <b>sature</b></figcaption>
+						</figure>
+
+						<figure class="fragment fade-in-then-out">
+							<img src="these/sota/frames_sequence_2.png" alt="seq">
+							<figcaption>Décomposer en $T$ sous-ensembles $\{\mathcal{E_t}\}_{t=1}^T$ </figcaption>
+						</figure>
+
+						<figure class="fragment fade-in-then-out">
+							<img src="these/sota/frames_sequence_3.png" alt="seq">
+							<figcaption>Tenseur impulsionnel $\mathbf{X}_T \in \mathbb{B}^{T \times C \times H \times W}$</figcaption>
+						</figure>
+					</div>
+				</section>
+
+				<section>
+					<h3>🆕 &nbsp; Contribution - Bina-Rep</h3>
+					<p>Une technique de représentation d'événements en images événementielles efficace pour exprimer de les informations temporelles</p>
+					<img src="these/sota/binarep.png" alt="binarep" height="250px">
+					<p style="border: solid 2px; padding: 10px;"><small>📰<span class="ita"><span class="ita"></span> &nbsp; Bina-Rep Event Frames: a Simple and Effective Representation for Event-based cameras <br><b>2022 IEEE International Conference on Image Processing (ICIP)</b></span></small></p>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p><b>Tâches de vision</b></p>
+					<ul>
+						<li><b>📈 &nbsp; Nombre croissants de tâches de vision traitées</b></li>
+						<ul>
+							<li>Classification, détection d'objet, segmentation, ...</li>
+							<li>Flux optique, amélioration d'images, reconstruction vidéo, ...</li>
+							<li>Reconnaissance labiale, détection de drones, ...</li>
+						</ul>
+						<br>
+						<li>⚡ &nbsp; Adoption des SNNs...</li>
+						<li>👴 &nbsp; ... mais ANNs restent plus populaires</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p><b>Catégorisations des Bases de Données</b></p>
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p><b>Deux catégorisations</b></p>
+							<ol>
+								<li>Selon la <b>méthode d'acquisition</b> des événements : <span class="ita" style="color: blue;">simulée</span> ou <span class="ita" style="color: magenta;">réelle</span></li>
+								<br>
+								<li>Selon la <b>dynamique</b> des scènes capturées : <span class="ita" style="color: blue;">comportement statique</span> ou <span class="ita" style="color: magenta;">comportement dynamique</span></li>
+							</ol>
+						</div>
+
+						<div class="fragment fade-in-then-out" data-fragment-index="0">
+							<p><b>Méthode d'acquisition</b></p>
+							<table>
+								<tr>
+									<td>
+										<figure>
+											<figcaption>Acquisition simulée</figcaption>
+											<img src="these/sota/nmnist.gif" alt="simu">
+										</figure>
+									</td>
+
+									<td>
+										<figure>
+											<figcaption>Acquisition réelle</figcaption>
+											<img src="img/ssl/lift.gif" alt="enothing">
+										</figure>
+									</td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="fragment fade-in-then-out" data-fragment-index="1">
+							<p><b>Dynamique de la scène</b></p>
+							<table>
+								<tr>
+									<td>
+										<figure>
+											<figcaption>Comportement statique</figcaption>
+											<img src="these/sota/ncars.png" alt="simu">
+										</figure>
+									</td>
+
+									<td>
+										<figure>
+											<figcaption>Comportement dynamique</figcaption>
+											<img src="these/sota/DVSACT16.gif" alt="enothing">
+										</figure>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>📸 &nbsp; Vision Événementielle</h3>
+					<p><b>Verrous scientifiques</b></p>
+					<ul>
+						<li>🚀 &nbsp; La vision événementielle s'étend vers de nouvelles applications</li>
+						<br>
+						<li class="fragment" data-fragment-index="0" style="color: red;">➡️ &nbsp; création de BDDs requise</li>
+						<ul class="fragment" data-fragment-index="0" style="color: red;">
+							<li>💸 &nbsp; Processus coûteux (temps et moyens)</li>
+							<li>🐌 &nbsp; Ralentit la diversification du domaine</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
 					<h3>🗒️ &nbsp; Bilan</h3>
-					<p>Introduire les problèmes qu'on traite et basta-zer</p>
+					<ul>
+						<li><b>Dans nos travaux :</b></li>
+						<ul>
+							<li><b>CSNN</b> et <b>2D-/3D-CNN</b> profonds</li>
+							<li>Apprentissage par <b>Substitut du Gradient</b> <span class="ita">(SG)</span></li>
+							<li><b>Simulation</b> des neurones impulsionnels</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="0"><b>Problématiques abordées :</b></li>
+						<ol class="fragment" data-fragment-index="0">
+							<li class="fragment shrink">Représentation d'événements</li>
+							<li class="fragment">Développement et analyses des SNNs</li>
+							<li class="fragment">Réduction des annotations pour la vision événementielle</li>
+						</ol>
+					</ul>
 				</section>
 			</section>
 
@@ -1318,7 +1519,7 @@
 				</section>
 
 				<section>
-					<h3>⚖️ &nbsp; Évaluation des Performance</h3>
+					<h3>⚖️ &nbsp; Évaluation des Performances</h3>
 					<div class="r-stack">
 						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
 						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
@@ -1462,15 +1663,47 @@
 
 				<section>
 					<h3>Bilan des Contributions</h3>
+					<ul>
+						<li>🧠 &nbsp; Développement et l'analyse de SNNs profonds &nbsp; ➡️ &nbsp; <b>localisation d'objet</b></li>
+						<br>
+						<li>📁 &nbsp; Réduction du besoin en annotations pour la vision événementielle &nbsp; ➡️ &nbsp; <b>SSRL événementiel</b></li>
+						<br>
+						<li class="fragment shrink">🪄 &nbsp; Représentation d'événements améliorées</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Travaux Futurs</h3>
+					<ul>
+						<li><b>🚀 &nbsp; Déploiement sur matériel neuromorphique</b></li>
+						<br>
+						<li>🏋️ &nbsp; Améliorations des méthodes conçues</li>
+						<ul>
+							<li><b>Meilleure extraction des caractéristiques</b> de l'encodeur CSNN</li>
+							<li><b>SSRL événementiel</b> adapté au type de réseau</li>
+						</ul>
+						<br>
+						<li><b>Nouveaux contextes applicatifs</b></li>
+					</ul>
 				</section>
 			</section>
 
 			<section>
-				<p class="r-fit-text">Merci !</p>
+				<h3>Merci pour votre attention !</h3>
+				<p style="text-align: left;"><b>Publications</b></p>
+				<ul>
+					<li>Conférences internationales à comité de lecture &nbsp; 5️⃣</li>
+					<li>Journal international à comité de lecture &nbsp; 1️⃣</li>
+				</ul>
+				<br>
+				<p style="text-align: left;"><b>Divers</b></p>
+				<ul>
+					<li>Encadrements de stages et projets Master &nbsp;  5️⃣</li>
+					<li>Enseignement &nbsp;  1️⃣</li>
+					<li>🥇 &nbsp; Doctoriales</li>
+					<li>📣 &nbsp; Médiation scientifique</li>
+				</ul>
+				<p><small><a href="https://scholar.google.com/citations?user=M8sMMssAAAAJ&hl=en">https://scholar.google.com/citations?user=M8sMMssAAAAJ&hl=en</a></small></p>
 			</section>
 
 			<section>
