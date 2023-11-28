@@ -49,7 +49,6 @@
 		}
 		.div1-3 { grid-area: 1 / 1 / 3 / 2; }
 		.div3 { grid-area: 2 / 2 / 3 / 3; }
-			
 					
 	</style>
 </head>
@@ -194,35 +193,29 @@
 				<section>
 					<h3>Défis du Neuromorphique</h3>
 					<ul>
-						<li><b>Par rapport aux méthodes conventionnelles</b></li>
+						<li><b>Émergence récente des SNNs profonds</b></li>
 						<ul>
-							<li>Domaine moins étudié</li>
-							<li>Technologies moins matures</li>
-							<li class="fragment" data-fragment-index="1" style="color:red">$\Rightarrow$ Performances et
-								complexité des approches neuromorphiques moins avancées</li>
+							<li>Progrès rapides</li>
+							<li style="color: red;"><b>Manque d'analyses :</b> compréhension des spécificités des technologies neuromorphiques</li>
 						</ul>
 						<br>
-						<li class="fragment" data-fragment-index="2"><b>Besoins du domaine</b></li>
-						<ul class="fragment" data-fragment-index="2">
-							<li>Développement de <b style="color:green">nouvelles approches en vision neuromorphique</b>
-							</li>
-							<li><b style="color:green">Analyses approfondies</b> pour leur compréhension</li>
+						<li><b>Adoption des caméras événementielles croissante</b></li>
+						<ul>
+							<li>Besoin de création de Bases de Données (<span class="ita">BDDs</span>)</li>
+							<li class="fragment" data-fragment-index="1" style="color:red"><b>Conception coûteuse : </b>complexité de concevoir des nouveaux cas d'application</li>
 						</ul>
 					</ul>
 				</section>
 
 				<section>
 					<h3>Objectifs</h3>
-					<p style="border: solid 4px;"><b>Progrès des technologies neuromorphiques dans les tâches de vision
-							artificielle</b></p>
+					<p style="border: solid 4px;"><b>Étendre les applications des technologies neuromorphiques pour la vision artificielle</b></p>
 					<br>
 					<ul>
-						<li class="fragment"><b>Conception de modèles d'apprentissage profond</b> avec SNNs
-							et/ou caméras événementielles
+						<li class="fragment"><b>Études expérimentales</b> pour approfondir nos connaissances sur les aspects de conception
 						</li>
 						<br>
-						<li class="fragment"><b>Études expérimentales</b> pour approfondir nos connaissances
-						</li>
+						<li class="fragment"><b>Conception</b> d'approches pour <b>faciliter le développement</b> de modèles profonds</li>
 					</ul>
 				</section>
 
@@ -374,13 +367,13 @@
 							<li><b>Rétropropagation</b> <span class="fragment" data-fragment-index="1">&nbsp; 🏅</span></li>
 							<ul>
 								<li>SNN $=$ Réseau de neurones récurrents</li>
-								<li>$\rightarrow$ Rétropropagation à travers le temps</li>
+								<li>$\Rightarrow$ Rétropropagation à travers le temps</li>
 								<br>
-								<li class="fragment" data-fragment-index="2" style="list-style: '✅';">&nbsp; Apprentissage direct du SNN</li>
-								<li class="fragment" data-fragment-index="2" style="list-style: '✅';">&nbsp; SNNs profonds et performants</li>
+								<li class="fragment" data-fragment-index="2" >✅ &nbsp; Apprentissage direct du SNN</li>
+								<li class="fragment" data-fragment-index="2" >✅ &nbsp; SNNs profonds et performants</li>
 								<br>
 								<li class="fragment" data-fragment-index="3" style="color: orange;">⚠️ &nbsp; Non-différentiabilité des impulsions</li>
-								<li class="fragment" data-fragment-index="3" style="color: green;"><b>$\rightarrow$ Apprentissage par Substitut du Gradient</b> (SG)<small>[Neftci2019]</small></li>
+								<li class="fragment" data-fragment-index="3" style="color: green;"><b>$\Rightarrow$ Apprentissage par Substitut du Gradient</b> (SG)<small>[Neftci2019]</small></li>
 							</ul>
 						</ul>
 					</div>
@@ -423,54 +416,57 @@
 							<br>
 							<figcaption>Tenseur impulsionnel $\mathbf{X}_T \in \mathbb{B}^{T \times C \times H \times W}$</figcaption>
 						</figure>
-
 					</div>
 				</section>
 
 				<section>
 					<h3>Modalité - Image Statique</h3>
-					<p style="color: red;">❌ &nbsp; Les images statiques ($\in \mathbb{R}$) ne sont pas adaptés pour le traitement par des neurones impulsionnels</p>
-					<br>
-					<img src="these/sota/codage.png" alt="codage">
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p style="color: red;">❌ &nbsp; Les images statiques ($\in \mathbb{R}$) ne sont pas adaptés pour le traitement par des neurones impulsionnels</p>
+							<br>
+							<img src="these/sota/codage.png" alt="codage">
+						</div>
+
+						<div class="grid-container fragment" data-fragment-index="0">
+							<div class="div1">
+								<figure>
+									<figcaption>Original</figcaption>
+									<img src="these/localization/nc/original.png" alt="origi" height="360px">
+								</figure>
+							</div>
+							<div class="div2">
+								<figure>
+									<figcaption>Codage fréquentiel</figcaption>
+									<img src="these/localization/nc/rate.gif" alt="nc" height="390px">
+								</figure>
+							</div>
+						</div>
+					</div>
 				</section>
 
-				<!-- TODO -->
 				<section>
-					<h3>Vision Événementielle</h3>
-					<ul>
-						<li>Revue -</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Réseaux de Neurones Impulsionnels</h3>
-					<p><b>Problématique du SG</b></p>
-					<ul>
-						<li>🆕 &nbsp; Emploi récent</li>
-						<br>
-						<li>👟 &nbsp; Développement rapide</li>
-						<br>
-						<li style="color: red;">❌ &nbsp; Peu d'analyses du comportement de ces SNNs</li>
-						<ul>
-							<li style="color: red;">➡️ &nbsp; Quelles sont les particularités par rapport aux ANNs?</li>
+					<h3>Revue - Vision Événementielle</h3>
+					<div class="r-stack">
+						<figure class="fragment fade-out" data-fragment-index="0">
+							<img src="these/sota/interest_events.png" alt="events interets" height="300px">
+							<figcaption>Nombre de publications pour la vision événementielle entre 2010 et 2020<small>[Gallego2023]</small></figcaption>
+						</figure>
+						<ul class="fragment fade-in-then-out" data-fragment-index="0">
+							<li>Intérêt croissant $\Rightarrow$ développement rapide du domaine</li>
+							<br>
+							<li>Diversification des <b>tâches de vision</b> traitées</li>
+							<br>
+							<li>Diversification des <b>contextes d'applications</b></li>
 						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p><b>Tâches de vision</b></p>
-					<ul>
-						<li><b>📈 &nbsp; Nombre croissants de tâches de vision traitées</b></li>
-						<ul>
-							<li>Classification, détection d'objet, segmentation, ...</li>
-							<li>Flux optique, amélioration d'images, reconstruction vidéo, ...</li>
-							<li>Reconnaissance labiale, détection de drones, ...</li>
-						</ul>
-						<br>
-						<li>⚡ &nbsp; Adoption des SNNs...</li>
-						<li>👴 &nbsp; ... mais ANNs restent plus populaires</li>
-					</ul>
+						<div class="r-stack fragment">
+							<img src="these/sota/tasks_0.png" alt="tasks" height="550px">
+							<img src="these/sota/tasks_2.png" alt="tasks" height="550px" class="fragment">
+							<img src="these/sota/tasks_3.png" alt="tasks" height="550px" class="fragment">
+							<img src="these/sota/tasks_4.png" alt="tasks" height="550px" class="fragment">
+							<img src="these/sota/tasks.png" alt="tasks" height="550px" class="fragment">
+						</div>
+					</div>
 				</section>
 
 				<section>
@@ -487,82 +483,56 @@
 							<img src="these/sota/dailyactiondvs.gif" alt="enothing">
 						</div>
 					</div> 
-
-					<!-- <div class="flex-container">
-						<div>
-							<img src="these/sota/nmnist.gif" alt="simu">
-						</div>
-						<div>
-							Comportement dynamique malbrouk s'en va en guerre
-						</div>
-					</div> -->
-					<!-- <div>
-						<figure style="display: inline-block;">
-							<figcaption>Statique</figcaption>
-							<img src="these/sota/nmnist.gif" alt="simu">
-						</figure>
-
-						<figure style="display: inline-block;">
-							<figcaption>Dynamique</figcaption>
-							<img src="img/ssl/lift.gif" alt="enothing">
-						</figure>
-					</div> -->
 				</section>
 
 				<section>
-					<h3>📸 &nbsp; Vision Événementielle</h3>
-					<p><b>Verrous scientifiques</b></p>
+					<h3>Revue - SNNs en Vision</h3>
+					<p style="color: green; border: 3px solid; padding-top: 5px;">✅ &nbsp; L'apprentissage par SG a permis un entraînement efficace des SNNs profonds</p>
 					<ul>
-						<li>🚀 &nbsp; La vision événementielle s'étend vers de nouvelles applications</li>
-						<br>
-						<li class="fragment" data-fragment-index="0" style="color: red;">➡️ &nbsp; création de BDDs requise</li>
-						<ul class="fragment" data-fragment-index="0" style="color: red;">
-							<li>💸 &nbsp; Processus coûteux (temps et moyens)</li>
-							<li>🐌 &nbsp; Ralentit la diversification du domaine</li>
+						<li><b>Au départ </b>(2019) :</li>
+						<ul>
+							<li>Hautes performances pour la classification (CIFAR10-DVS<small>[TODO]</small>, ImageNet <small>[TODO]</small>, ...)</li>
 						</ul>
+						<br>
+						<li><b>Diversification des tâches</b> (2021 - ...) : segmentation<small>[TODO]</small>, détection<small>[TODO]</small>, profondeur<small>[TODO]</small>, ...</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>🗒️ &nbsp; Bilan</h3>
+					<h3>Verrous Scientifiques</h3>
 					<ul>
-						<li><b>Dans nos travaux :</b></li>
+						<li><b>SNNs profonds :</b></li>
 						<ul>
-							<li><b>CSNN</b> et <b>2D-/3D-CNN</b> profonds</li>
-							<li>Apprentissage par <b>Substitut du Gradient</b> <span class="ita">(SG)</span></li>
-							<li><b>Simulation</b> des neurones impulsionnels</li>
+							<li>Progrès rapides</li>
+							<li style="color: red;">Retard sur la compréhension des aspects de conception</li>
+							<li class="fragment" style="color:blue;list-style-type: none;"><b>$\Rightarrow$ Études expérimentales</b></li>
 						</ul>
 						<br>
-						<li class="fragment" data-fragment-index="0"><b>Problématiques abordées :</b></li>
-						<ol class="fragment" data-fragment-index="0">
-							<li class="fragment shrink">Représentation d'événements</li>
-							<li class="fragment">Développement et analyses des SNNs</li>
-							<li class="fragment">Réduction des annotations pour la vision événementielle</li>
-						</ol>
+						<li><b>Vision événementielle :</b></li>
+						<ul>
+							<li>Diversification des contextes d'utilisation $\Rightarrow$ construction de nouvelles BDDs annotées</li>
+							<li style="color: red;">Processus coûteux</li>
+							<li class="fragment" style="color:blue;list-style-type: none;"><b>$\Rightarrow$ Réduire ce coût</b></li>
+						</ul>
 					</ul>
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<h2>Réseaux de Neurones Impulsionnels <br> pour la Localisation d'Objet</h2>
+					<br>
+					<br>
+					<h2>Étude des Réseaux de Neurones Impulsionnels <br> par la Localisation d'Objet</h2>
+					<br>
+					<br>
+					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></p>
+					<p style="text-align: justify;"><small>📔 &nbsp; <span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></p>
 				</section>
 
 				<section>
-					<h3>🖼️ &nbsp; Contexte</h3>
+					<h3>Manque d'Analyses</h3>
 					<ul>
-						<li>💪 &nbsp; L'apprentissage profond par SG est efficace...</li>
-						<li>👶 &nbsp; ... mais est encore récent :</li>
-						<ul>
-							<li>➡️ &nbsp; Peu de tâches de vision étudiées</li>
-							<li>➡️ &nbsp; Manque d'analyses</li>
-						</ul>
-						<br>
-						<li class="fragment"><b>Dans ce travail :</b></li>
-						<ul>
-							<li class="fragment"><b>Développement</b> d'un SNN Convolutif (<span class="ita">CSNN</span>) pour la <b>localisation d'objet</b></li>
-							<li class="fragment"><b>Analyses</b> du comportement de ce CSNN selon divers aspects</li>
-						</ul>
+						<li>Historiquement :</li>
 					</ul>
 				</section>
 
@@ -617,14 +587,13 @@
 				<section>
 					<h3>Encodeur Convolutif - SNN</h3>
 					<div class="r-stack">
-						<img src="these/localization/snn_archi_0.png" alt="SNN">
-						<img src="these/localization/snn_archi_1.png" alt="SNN" class="fragment">
+						<img src="these/localization/snn_archi_1.png" alt="SNN">
 						<img src="these/localization/snn_archi_2.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_3.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_4.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_5.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_6.png" alt="SNN" class="fragment">
-						<img src="these/localization/snn_archi_7.png" alt="SNN" class="fragment">
+						<!-- <img src="these/localization/snn_archi_7.png" alt="SNN" class="fragment"> -->
 						<img src="these/localization/snn_archi_8.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi.png" alt="SNN" class="fragment">
 					</div>
@@ -697,36 +666,7 @@
 				</section>
 
 				<section>
-					<h3>📷 &nbsp; Images Statiques - Latence Temporelle</h3>
-					<div class="r-stack">
-						<ul class="fragment fade-out">
-							<li><b>Protocole :</b></li>
-							<ol>
-								<li>Définir un nombre $T$ d'étapes temporelles</li>
-								<li>Mesurer la performance de localisation ($mIoU$)</li>
-							</ol>
-						</ul>
-						<img src="these/localization/latence_images_1.png" alt="latence image" class="fragment fade-in-then-out">
-						<img src="these/localization/latence_images_2.png" alt="latence image" class="fragment fade-in-then-out">
-						<img src="these/localization/latence_images_3.png" alt="latence image" class="fragment fade-in-then-out">
-						<img src="these/localization/latence_images_4.png" alt="latence image" class="fragment fade-in-then-out">
-						<img src="these/localization/latence_images_5.png" alt="latence image" class="fragment fade-in-then-out">
-						<ul class="fragment fade-in-then-out">
-							<li>❌ &nbsp; Aucune corrélation significative entre $T$ et les performances</li>
-							<br>
-							<li>❗ &nbsp; Comparaison des codages neuronaux</li>
-							<ul>
-								<li>Observations contraires aux règles biologiques (STDP)</li>
-							</ul>
-							<br>
-							<li>🥈 &nbsp; Performances inférieures à l'ANN mais compétitives</li>
-						</ul>
-						<img src="these/localization/latence_images_best.png" alt="latence image" class="fragment">
-					</div>
-				</section>
-
-				<section>
-					<h3>📷 &nbsp; Images Statiques - Robustesse</h3>
+					<h3>Images Statiques - Robustesse</h3>
 					<div class="r-stack">
 						<img src="these/localization/img_corrup/protocol_0.png" alt="corr proto">
 						<img src="these/localization/img_corrup/protocol_1.png" alt="corr proto" class="fragment fade-in-then-out">
@@ -751,11 +691,9 @@
 					<div class="r-stack">
 						<img src="these/localization/corruptions_bars_images.png" alt="mrad" height="500px" style="margin-top: 0;">
 						<img src="these/localization/corruptions_bars_images_1.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/img_corrup/mrad_1.png" alt="mrad" class="fragment">
-						<img src="these/localization/img_corrup/mrad_2.png" alt="mrad" class="fragment">
-						<img src="these/localization/img_corrup/mrad_3.png" alt="mrad" class="fragment">
-						<img src="these/localization/img_corrup/mrad_4.png" alt="mrad" class="fragment">
-						<img src="these/localization/img_corrup/mrad_5.png" alt="mrad" class="fragment">
+						<img src="these/localization/corruptions_bars_images_2.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images_3.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images_4.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
 					</div>
 				</section>
 
@@ -863,32 +801,41 @@
 
 			<section>
 				<section>
-					<h2>Pré-entraînement Auto-supervisé <br> pour la Vision
+					<br>
+					<br>
+					<br>
+					<h2>Pré-entraînement <br> Auto-supervisé <br> pour la Vision
 							Événementielle</h2>
+					<br>
+					<br>
+					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></p>
 				</section>
 
 				<section>
-					<h3>🖼️ &nbsp; Contexte</h3>
+					<h3>Contexte</h3>
 					<ul>
 						<li>📈 &nbsp; Modèles profonds pour la vision événementielle</li>
-						<li><b>Apprentissage supervisé :</b> nécessite beaucoup de données annotées</li>
-						<li style="color:red;" class="fragment" data-fragment-index="0">
-							➡️ &nbsp; Complexifie le développement de nouvelles applications
-						</li>
 						<br>
-						<li class="fragment" data-fragment-index="1"><b style="color:green;">Solution Proposée : </b>
+						<li><b>Apprentissage supervisé :</b> nécessite beaucoup de données annotées</li>
+						<br>
+						<li style="color:red;" class="fragment" data-fragment-index="0">
+							Complexifie le développement de nouvelles applications
+						</li>
+						<!-- <br>
+						<li class="fragment" data-fragment-index="1"><b style="color:green;">Solution : </b>
 							Apprentissage auto-supervisé</li>
 						<ul class="fragment" data-fragment-index="1">
 							<li>Pré-entraîner un modèle sur des données <b>sans nécessiter d'annotations</b></li>
-						</ul>
+						</ul> -->
 					</ul>
+					<br>
+					<br>
+					<p class="fragment" style="font-weight: bold; border: 3px solid; color: black; padding-top: 5px;">🗨️ &nbsp; Comment réduire le besoin en annotations pour les modèles profonds en vision événementielle ?</p>
 				</section>
 
 				<section>
-					<h3>📚 &nbsp; Solutions Existantes</h3>
+					<h3>Solutions Existantes</h3>
 					<div class="r-stack">
-						<img class="fragment fade-in-then-out" data-fragment-index="0"
-							src="these/pretraining_explained_0.png" alt="pretraining">
 						<img class="fragment fade-in-then-out" data-fragment-index="1"
 							src="these/pretraining_explained_1.png" alt="pretraining">
 						<img class="fragment fade-in-then-out" data-fragment-index="2"
@@ -901,7 +848,7 @@
 								<li><b>Supervisé :</b> utiliser une grande BDD <span class="ita">générique</span>
 									annotée puis affiner</li>
 								<ul>
-									<li>👎 &nbsp; peu de BDDs événementielles pertinentes</li>
+									<li style="color: red;">❌ &nbsp; peu de BDDs événementielles pertinentes</li>
 								</ul>
 							</ul>
 						</div>
@@ -910,9 +857,9 @@
 							<img src="these/pretraining_ssl.png" alt="pretraining">
 							<ul>
 								<li><b>Apprentissage Auto-supervisé de Représentation <span class="ita">(SSRL)</span> :</b> capturer les propriétés et motifs intrinsèques des données </li>
-								<ul>
-									<li>👍 &nbsp; pas d'annotations requises</li>
-									<li>👍 &nbsp; proche du domaine d'application</li>
+								<ul style="color: green;">
+									<li>✅ &nbsp; Pas d'annotations requises</li>
+									<li>✅ &nbsp; Proche du domaine d'application</li>
 								</ul>
 							</ul>
 						</div>
@@ -920,49 +867,38 @@
 				</section>
 
 				<section>
-					<h3>📚 &nbsp; Solutions Existantes - SSRL événementiel</h3>
+					<h3>SSRL événementiel</h3>
 					<ul>
-						<li>Peu de travaux existants</li>
-						<br>
-						<li>Tâches de bas-niveau (flux optique, ...) <small>[TODO,TODO]</small></li>
-						<br>
-						<li>Travaux concurrents pour les réseaux profonds <span class="ita">(3)</span><small>[TODO,TODO,TODO]</small></li>
+						<li><b>Trois travaux concurrents</b> <span class="ita">(2022 - 2023)</span><small>[TODO,TODO,TODO]</small></li>
 						<ul>
-							<li>👎 &nbsp; limités à du <span style="color: red;">comportement statique</span></li>
-							<li>👎 &nbsp; concentrés sur <span style="color: red;">un seul type de réseau</span> <span class="ita">(ViT / SNN)</span></li>
+							<li>❌ &nbsp; Limités à du <span style="color: red;">comportement statique</span></li>
+							<li>❌ &nbsp; Expérimentations : <span style="color: red;">évaluations différentes</span></li>
+							<li>❌ &nbsp; Concentrés sur <span style="color: red;">un type de réseau</span> <span class="ita">(ViT / SNN)</span></li>
+							<li>❌ &nbsp; Les modèles étudiés sont <span style="color: red;">lourds</span></li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="0"><b>Constat</b></li>
+						<ul class="fragment" data-fragment-index="0">
+							<li>Domaine <b style="color: green;">prometteur</b> mais encore <b style="color: red;">sous-exploité</b></li>
 						</ul>
 					</ul>
 				</section>			
 				
 				<section>
-					<h3>📚 &nbsp; Solutions Existantes - SSRL événementiel</h3>
-					<p><b>Constat</b></p>
+					<h3>Travaux</h3>
 					<ul>
-						<li>Domaine <b>très prometteur</b> pour réduire le besoin en annotations...</li>
-						<li>... mais <b>très peu étudié</b></li>
-					</ul>
-
-					<p></p>
-				</section>
-
-				<section>
-					<h3>⚙️ &nbsp; Méthode</h3>
-					<ul>
-						<li><b>🧠 &nbsp; Modèles visés :</b> encodeurs convolutifs légers <span class="ita">(CSNN, 2D-CNN, et 3D-CNN)</span></li>
+						<li><b>Nouvelle méthode de référence</b> pour des encodeurs convolutifs légers <span class="ita">(CSNN, 2D-CNN, et 3D-CNN)</span></li>
 						<br>
-						<li><b>📁 &nbsp; Polyvalence des données :</b> comportements statiques et dynamiques</li>
+						<li><b>Polyvalence des données :</b> BDDs à comportement statique et dynamique</li>
 						<br>
-						<li><b>👥 &nbsp; Architecture d'encodage conjoint</b></li>
-						<ul>
-							<li class="fragment">Architecture en <b>deux branches</b></li>
-							<li class="fragment"><b>Deux versions transformées</b> de la même entrée</li>
-							<li class="fragment">Augmentations de données événementielle <b><span class="ita">(EDAs)</span></b></li>
-						</ul>
+						<li><b>Protocoles d'évaluation standardisés</b></li>
+						<br>
+						<li><b>Étude sur les augmentations de données</b> dans le cadre du SSRL</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>⚙️ &nbsp; Méthode</h3>
+					<h3>Méthode</h3>
 					<p><b>Augmentation de Données Événementielle</b> (EDA)</p>
 					<div class="r-stack">
 						<img src="img/ssl/dataaug_0.png" data-fragment-index="0" alt="data" class="fragment">
@@ -976,11 +912,11 @@
 				</section>
 
 				<section>
-					<h3>⚙️ &nbsp; Méthode</h3>
+					<h3>Méthode</h3>
 					<p><b>Architecture d'Encodage Conjoint</b><small>[TODOvicreg,TODObarlow]</small></p>
 					<div class="r-stack">
-						<img src="these/archi_ssl_0.png" alt="archi ssl">
-						<img src="these/archi_ssl_1.png" alt="archi ssl" class="fragment">
+						<!-- <img src="these/archi_ssl_0.png" alt="archi ssl"> -->
+						<img src="these/archi_ssl_1.png" alt="archi ssl">
 						<img src="these/archi_ssl_2.png" alt="archi ssl" class="fragment">
 						<img src="these/archi_ssl_3.png" alt="archi ssl" class="fragment">
 						<img src="these/archi_ssl_3_1.png" alt="archi ssl" class="fragment">
@@ -992,13 +928,12 @@
 				</section>
 
 				<section>
-					<h3>⚙️ &nbsp; Méthode</h3>
-					
-					<p><b>Encodeurs étudiés</b></p>
+					<h3>Méthode - Encodeurs Étudiés</h3>
+					<br>
 					<ul>
 						<li><b>2D-CNN : </b>ResNet-18<small>[TODOresnet]</small></li>
-						<li><b>3D-CNN : </b>MC3-ResNet-18<small>[TODOresnet3d]</small></li>
 						<li><b>CSNN : </b>SEW-ResNet-18<small>[TODOsew]</small></li>
+						<li><b>3D-CNN : </b>MC3-ResNet-18<small>[TODOresnet3d]</small></li>
 					</ul>
 					<br>
 					<br>
@@ -1009,8 +944,8 @@
 				</section>
 
 				<section>
-					<h3>⚙️ &nbsp; Méthode</h3>
-					<p><b>Variantes</b></p>
+					<h3>Méthode - Variantes</h3>
+					<br>
 					<div class="r-stack">
 						<img src="these/variants_ssl_0.png" alt="variantes ssl">
 						<img src="these/variants_ssl_1.png" alt="variantes ssl" class="fragment" data-fragment-index="1">
@@ -1024,7 +959,7 @@
 				</section>
 
 				<section>
-					<h3>🔎 &nbsp; Étude sur les EDAs</h3>
+					<h3>Méthode - Augmentations de Données</h3>
 					<p>À chaque inférence, une composition $d_A$ / $d_B$ est échantillonnée d'une distribution $D$</p>
 					<div class="r-stack">
 						<img class="fragment fade-in-then-out" data-fragment-index="0" src="these/archi_ssl_6.png" alt="ssl d">
@@ -1032,12 +967,12 @@
 						<img class="fragment fade-in-then-out" data-fragment-index="2" src="these/eda_distrib_1.png" alt="distrib d">
 						<img class="fragment fade-in-then-out" data-fragment-index="3" src="these/eda_distrib_2.png" alt="distrib d">
 						<img class="fragment fade-in-then-out" data-fragment-index="4" src="these/eda_distrib.png" alt="distrib d">
-						<p class="fragment" data-fragment-index="5"><b>⚠️ Définir une distribution $D$ efficace est essentiel ⚠️ </b></p>
+						<p class="fragment" data-fragment-index="5" style="color: darkorange;"><b>⚠️ Définir une distribution $D$ efficace est essentiel ⚠️ </b></p>
 					</div>
 				</section>
 
 				<section>
-					<h3>🪄 &nbsp; EDAs Étudiées</h3>
+					<h3>Méthode - Augmentations de Données</h3>
 					<div class="r-stack">
 						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Exemple</b></p>
 						<p style="border: solid 3px  blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="1"><b>Augmentations Communes</b></p>
@@ -1108,70 +1043,61 @@
 				</section>
 
 				<section>
-					<h3>⚖️ &nbsp; Évaluation des Performances</h3>
-					<p style="border: solid 3px red; margin:10px; color:red;">🚫 &nbsp; Pas de protocole d'évaluation commun en SSRL événementiel</p>
-					<br>
-					<ul>
-						<li class="fragment">✅ &nbsp; <b style="color:green;">Solution :</b> définir des <b>protocoles d'évaluation standard</b> pour les travaux futurs</li>
-						<ul>
-							<li class="fragment">BDDs populaires <span class="ita">(classification &nbsp; ➡️ &nbsp; taux de précision)</span></li>
-							<li class="fragment">Trois protocoles pour évaluer des aspects spécifiques du SSRL</li>
-						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h3>📁 &nbsp; Bases de Données</h3>
+					<h3>Évaluation des Performances</h3>
 					<div class="r-stack">
-						<img src="these/bdd_ssl_0.png" alt="bdd">
-						<img src="these/bdd_ssl_1.png" alt="bdd" class="fragment" data-fragment-index="0">
-						<img src="these/bdd_ssl.png" alt="bdd" class="fragment" data-fragment-index="2">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p style="border: solid 3px red; margin:10px; color:red; padding-top: 5px;">❌ &nbsp; Pas de protocole d'évaluation commun en SSRL événementiel</p>
+							<br>
+							<ul>
+								<li style="color:green;">Définir des <b>protocoles d'évaluation standard</b> pour les travaux futurs</li>
+								<ul>
+									<li>Problèmes de classification $\rightarrow$ taux de précision</li>
+									<li>Trois protocoles pour évaluer des aspects spécifiques du SSRL</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="fragment fade-in" data-fragment-index="0">
+							<img height="500px" src="these/ssrl/bdd_ssrl.png" alt="ssrl bdd">
+						</div>
 					</div>
 				</section>
 
 				<section>
-					<h3>Protocole 1️⃣ &nbsp;- Évaluation Linéaire</h3>
+					<h3>Protocole n°1 - Évaluation Linéaire</h3>
+					<br>
 					<div class="r-stack">
-						<img src="these/linear_0.png" alt="linear">
-						<img src="these/linear_1.png" alt="linear" class="fragment">
-						<img src="these/linear_2.png" alt="linear" class="fragment">
-						<img src="these/linear_3.png" alt="linear" class="fragment">
-						<img src="these/linear.png" alt="linear" class="fragment">
+						<img src="these/linear.png" alt="linear">
 					</div>
 					<br>
 					<p>🎯 &nbsp; Est-ce que la méthode de SSRL <b>extrait des caractéristiques pertinentes ?</b></p>
 				</section>
 
 				<section>
-					<h3>Protocole 2️⃣ &nbsp;- Apprentissage Semi-supervisé</h3>
+					<h3 style="font-size: 1.1em;">Protocole n°2 - Apprentissage Semi-supervisé</h3>
+					<br>
 					<div class="r-stack">
-						<img src="these/semisup_0.png" alt="linear">
-						<img src="these/semisup_1.png" alt="linear" class="fragment">
-						<img src="these/semisup_2.png" alt="linear" class="fragment">
-						<img src="these/semisup.png" alt="linear" class="fragment">
+						<img src="these/semisup.png" alt="linear">
 					</div>
 					<br>
 					<p>🎯 &nbsp; Est-ce que la méthode de SSRL permet de <b>réduire le besoin en annotations ?</b></p>
 				</section>
 
 				<section>
-					<h3>Protocole 3️⃣ &nbsp;- Transfert d'Apprentissage</h3>
+					<h3>Protocole n°3 - Transfert d'Apprentissage</h3>
+					<br>
 					<div class="r-stack">
-						<img src="these/transfer_0.png" alt="linear">
-						<img src="these/transfer_1.png" alt="linear" class="fragment">
-						<img src="these/transfer_2.png" alt="linear" class="fragment">
-						<img src="these/transfer_3.png" alt="linear" class="fragment">
-						<img src="these/transfer.png" alt="linear" class="fragment">
+						<img src="these/transfer.png" alt="linear">
 					</div>
 					<br>
 					<p>🎯 &nbsp; Est-ce que les caractéristiques apprises peuvent <b>être transférées à d'autres données ?</b></p>
 				</section>
 
 				<section>
-					<h3>🔎🪄 &nbsp; Étude sur les EDAs</h3>
-					<p><b>➕ &nbsp; Étude incrémentale</b></p>
+					<h3>Étude sur les EDAs</h3>
+					<p style="border: 3px solid; font-weight: bold; padding-top: 5px;">🎯 &nbsp; Évaluer l'intérêt des EDAs pour le SSRL</p>
+					<br>
 					<ul>
-						<li><b>Trois étapes progressives : </b>une étape par catégorie d'EDA</li>
+						<li><b>Trois étapes incrémentales : </b>une étape par catégorie d'EDAs</li>
 						<br>
 						<li>Pour chaque étape, on conserve la combinaison d'EDAs <b>la plus performante de l'étape précédente</b></li>
 						<br>
@@ -1180,7 +1106,7 @@
 				</section>
 
 				<section>
-					<h3>🔎🪄 &nbsp; Étude sur les EDAs</h3>
+					<h3>Étude sur les EDAs</h3>
 					<p><b>Résultats</b></p>
 					<div class="r-stack">
 						<img alt="tab result edas" src="these/results_edas/tab_0.png">
@@ -1257,100 +1183,70 @@
 
 				<section>
 					<h3>Mise en Perspective</h3>
-					<p><b>❓ &nbsp; Comment se compare-t-on aux méthodes supervisées ?</b></p>
+					<p style="border: 3px solid;"><b>Comment se compare-t-on aux méthodes supervisées ?</b></p>
+					<br>
 					<img class="fragment" src="these/results_ssl/perspective.png" alt="perspective">
 					<ul>
-						<li class="fragment">💪 &nbsp; Résultats <b>compétitifs</b>...</li>
-						<li class="fragment">🪶 &nbsp; ... avec des modèles <b>plus légers</b>...</li>
-						<li class="fragment">✂️ &nbsp;... sans apprentissage supervisé !</li>
+						<li class="fragment">Résultats <b>compétitifs</b>...</li>
+						<li class="fragment">... avec des modèles <b>plus légers</b>...</li>
+						<li class="fragment">... sans apprentissage supervisé !</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>🔎 &nbsp; Analyses des Représentations</h3>
-					<ul>
-						<li>⚠️ &nbsp; Les taux de précision sont des <b>mesures indirectes</b></li>
-						<li>➡️ &nbsp; Analyser les propriétés des représentations</li>
-					</ul>
-
+					<h3>Bilan des Contributions</h3>
 					<br>
+					<ul>
+						<li class="fragment" data-fragment-index="0" style="list-style-type: '⚙️ &nbsp;';"> <b>Méthode de SSRL événementielle</b></li>
+						<ul class="fragment" data-fragment-index="0">
+							<li>Performances compétitives voire surpassant les modèles supervisés</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="1" style="list-style-type: '🪄 &nbsp;';"> <b>Étude sur les EDAs pour la SSRL</b></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Propositions de nouvelles techniques</li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="2" style="list-style-type: '⚖️ &nbsp;';"> <b>Protocoles d'évaluation standardisés</b></li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>Fondations pour la SSRL événementielle</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Limitations</h3>
+					<ul>
+						<li><b>Inégalités des encodeurs</b></li>
+						<ul>
+							<li>❌ &nbsp; $CSNN < 2D\text{ et }3D$</li>
+						</ul>
+						<br>
+						<li>Protocoles d'évaluation basés sur la <b>classification uniquement</b></li>
+						<ul>
+							<li>❌ &nbsp; Information spatiale</li>
+						</ul>
+						<br>
+						<li>Les caractéristiques sont extraites sur l'ensemble des événements</li>
+						<ul>
+							<li>❌ &nbsp; Traitement de l'information spatio-temporel</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Conclusion</h3>
+					<p class="fragment" style="text-align: justify;">
+						Le SSRL événementiel accomplit <b style="color: green;">avec succès</b> la réduction du <b style="color: green;">besoin en annotations</b>.
+					</p>
 					<br>
-					<ul class="fragment">
-						<li><b>Deux analyses</b></li>
-						<ol>
-							<li class="fragment semi-fade-out"><b>Qualité des représentations : </b>compromis d'Uniformité - Tolérance</li>
-							<li class="fragment grow"><b>Similarité des représentations : </b>analyse par alignement de noyau centré linéaire <span class="ita">(CKA linéaire)</span></li>
-						</ol>
-					</ul>
-				</section>
-
-				<section>
-					<h3>🔎 &nbsp; Similarité des Représentations</h3>
-					<ul>
-						<li><b>CKA Linéaire :</b></li>
-						<ul>
-							<li>Utilisée en SSRL pour les images<small>[TODOCKA]</small></li>
-							<li>Compare les représentations de <b>deux encodeurs</b></li>
-							<li>Donne une valeur $\in [0,1]$ évaluant leur similarité</li>
-						</ul>
-						<br>
-						<li><b>🎯 &nbsp; Nos objectifs :</b></li>
-						<ul>
-							<li>Comparer tous les encodeurs entre eux...</li>
-							<li>... selon chaque bloc résiduel</li>
-							<li><b>Base de données :</b> DVSGesture</li>
-						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h3>🔎 &nbsp; Similarité des Représentations</h3>
-					<div class="r-stack">
-						<img src="these/results_ssl/cka_0.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_1.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_2.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_3.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_4.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_5.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_6.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_7.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_8.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_9.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_10.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_11.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_12.png" alt="cka" class="fragment">
-						<img src="these/results_ssl/cka_13.png" alt="cka" class="fragment">
-					</div>
-				</section>
-
-				<section>
-					<h3>📍 &nbsp; Bilan</h3>
-					<ul>
-						<li><b>Contributions</b></li>
-						<ul>
-							<li>Méthode de SSRL événementielle pour les encodeurs convolutifs</li>
-							<li>Protocoles d'évaluation standardisés</li>
-							<li>Études expérimentales</li>
-						</ul>
-						<br>
-						<li><b>Observations</b></li>
-						<ul>
-							<li>💪 &nbsp; Efficacité et polyvalence de la méthode</li>
-							<li>🪄 &nbsp; Définition d'une distribution d'EDAs efficace</li>
-							<li>🔎 &nbsp; Différences intéressantes dans les représentations</li>
-						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h3>🔓 &nbsp; Améliorations Possibles</h3>
-					<ul>
-						<li><b>Spécialiser la méthode</b> selon le type d'encodeur</li>
-						<br>
-						<li><b>Diversifier</b> les protocoles d'évaluation <span class="ita">(détection, ...)</span></li>
-						<br>
-						<li>Méthode fonctionnant sur <b>une seule étape temporelle</b></li>
-					</ul>
+					<p class="fragment" style="text-align: justify;">
+						Cela ouvre des opportunités d'<b style="color: green;">accélérer</b> grandement la <b style="color: green;">diversification</b> de la vision événementielle. 
+					</p>
+					<br>
+					<p class="fragment" style="text-align: justify;">
+						Possibilité de voir des BDDs événementielles comportant <b style="color: green;">beaucoup de données</b> et <b style="color: green;">peu d'annotations</b>.
+					</p>
 				</section>
 			</section>
 
@@ -1360,13 +1256,11 @@
 				</section>
 
 				<section>
-					<h3>Bilan des Contributions</h3>
+					<h3>Travaux de la Thèse</h3>
 					<ul>
-						<li>🧠 &nbsp; Développement et l'analyse de SNNs profonds &nbsp; ➡️ &nbsp; <b>localisation d'objet</b></li>
+						<li>Développement et l'analyse de SNNs profonds $\Rightarrow$ <b>localisation d'objet</b></li>
 						<br>
-						<li>📁 &nbsp; Réduction du besoin en annotations pour la vision événementielle &nbsp; ➡️ &nbsp; <b>SSRL événementiel</b></li>
-						<br>
-						<li class="fragment shrink">🪄 &nbsp; Représentation d'événements améliorées</li>
+						<li>Réduction du besoin en annotations pour la vision événementielle $\Rightarrow$ <b>SSRL événementiel</b></li>
 					</ul>
 				</section>
 
