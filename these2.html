@@ -45,10 +45,37 @@
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
 			grid-column-gap: 20px;
-			grid-row-gap: 0px;
+			grid-row-gap: 10px;
 		}
 		.div1-3 { grid-area: 1 / 1 / 3 / 2; }
 		.div3 { grid-area: 2 / 2 / 3 / 3; }
+
+		.container1x3 {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr;
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+			}
+			
+		.div3-1x3 { grid-area: 1 / 3 / 2 / 4; }
+
+		.container3x3 {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-column-gap: 0px;
+			grid-row-gap: 5px;
+		}
+			
+		.div1-3x3 { grid-area: 1 / 1 / 2 / 2; }
+		.div2-3x3 { grid-area: 1 / 2 / 2 / 3; }
+		.div3-3x3 { grid-area: 1 / 3 / 2 / 4; }
+		.div4-3x3 { grid-area: 2 / 1 / 3 / 2; }
+		.div5-3x3 { grid-area: 2 / 2 / 3 / 3; }
+		.div6-3x3 { grid-area: 2 / 3 / 3 / 4; }
+			
+			
 					
 	</style>
 </head>
@@ -428,17 +455,23 @@
 							<img src="these/sota/codage.png" alt="codage">
 						</div>
 
-						<div class="grid-container fragment" data-fragment-index="0">
+						<div class="container1x3 fragment" data-fragment-index="0">
 							<div class="div1">
-								<figure>
-									<figcaption>Original</figcaption>
-									<img src="these/localization/nc/original.png" alt="origi" height="360px">
+								<figure style="margin: 0;">
+									<figcaption>&nbsp;</figcaption>
+									<img src="these/localization/nc/original.png" alt="origi" height="300px" style="margin: 0;">
 								</figure>
 							</div>
 							<div class="div2">
-								<figure>
-									<figcaption>Codage fréquentiel</figcaption>
-									<img src="these/localization/nc/rate.gif" alt="nc" height="390px">
+								<figure style="margin: 0;">
+									<figcaption>Fréquentiel</figcaption>
+									<img src="these/localization/nc/rate.gif" alt="nc" height="300px" style="margin: 0;">
+								</figure>
+							</div>
+							<div class="div3-1x3">
+								<figure style="margin: 0;">
+									<figcaption>Temporel</figcaption>
+									<img src="these/localization/nc/ttfs.gif" alt="nc" height="300px" style="margin: 0;">
 								</figure>
 							</div>
 						</div>
@@ -532,7 +565,18 @@
 				<section>
 					<h3>Manque d'Analyses</h3>
 					<ul>
-						<li>Historiquement :</li>
+						<li><b>Historiquement</b> (SNNs peu profonds avec STDP) <b>:</b></li>
+						<ul>
+							<li><b>Images statiques : </b>Supériorité du codage temporel</li>
+							<li><b>Latence temporelle</b> ($T$) <b>:</b> une grande valeur $T$ est préférable</li>
+							<li><b>Robustesse aux corruptions</b></li>
+						</ul>
+						<br>
+						<li class="fragment" data-fragment-index="0" style="color: darkorange;">⚠️ &nbsp; Est-ce que le SG est différent ?</li>
+						<ul class="fragment" data-fragment-index="0">
+							<li style="color: red;">Réponse inconnu</li>
+							<li style="list-style-type: none;">$\Rightarrow$ <b>Études expérimentales</b></li>
+						</ul>
 					</ul>
 				</section>
 
@@ -549,31 +593,24 @@
 							</ul>
 						</div> -->
 					</div>
+					<p></p>
 				</section>
 
 				<section>
-					<h3>🔎 &nbsp; Aspects Étudiés</h3>
-					<ol>
-						<li><b>Deux modalités étudiées : </b>images statiques et flux d'événements</li>
-						<br>
-						<li><b>Latence temporelle</b> ($T$)</li>
-						<br>
-						<li><b>Robustesse aux corruptions des capteurs</b></li>
-						<br>
-						<li><b>Estimation du coût énergétique</b></li>
-						<br>
-						<li><b>Codages neuronaux pour les images</b></li>
-					</ol>
-				</section>
-
-				<section>
-					<h3>⚔️ &nbsp; Étude Comparative</h3>
-					<p style="border: solid 3px;">❗&nbsp; On compare un encodeur convolutif CSNN avec un <b>ANN d'architecture similaire : un 2D-CNN</b></p>
-					<br>
+					<h3>Contenu de l'Étude</h3>
 					<ul>
-						<li>🎯 &nbsp; identifier les différences dans le traitement des données visuelles</li>
+						<li><b>Deux modalités :</b> images statiques et événements</li>
 						<br>
-						<li>👥 &nbsp; architecture et complexité similaires</li>
+						<li><b>Influence de trois paramètres sur les performances</b></li>
+						<ol>
+							<li><b>Latence temporelle</b></li>
+							<li>Corruptions des capteurs $\Rightarrow$ <b>robustesse</b></li>
+							<li>Le <b>codage neuronal</b> d'une image statique</li>
+						</ol>
+						<br>
+						<li>Estimation du coût énergétique</li>
+						<br>
+						<li><b>Comparaison systématique avec un ANN</b></li>
 					</ul>
 				</section>
 
@@ -601,16 +638,51 @@
 
 				<section>
 					<h3>Bases de Données</h3>
-					<div class="r-stack">
-						<img src="these/localization/datasets_0.png" alt="data">
-						<img src="these/localization/datasets_1.png" alt="data" class="fragment">
-						<img src="these/localization/datasets.png" alt="data" class="fragment">
-					</div>
+					<img src="these/localization/bdds_loca.png" alt="bdd loca" height="350px">
 				</section>
 
 				<section>
 					<h3>Codages Neuronaux Étudiés</h3>
-					<table>
+					<div class="container3x3">
+						<div class="div1-3x3">
+							<figure style="margin: 0;">
+								<figcaption>&nbsp;</figcaption>
+								<img src="these/localization/nc/original.png" alt="origi" height="250px" style="margin: 0;">
+							</figure>
+						</div>
+						<div class="div2-3x3">
+							<figure style="margin: 0;">
+								<figcaption>Fréquentiel</figcaption>
+								<img src="these/localization/nc/rate.gif" alt="origi" height="250px" style="margin: 0;">
+							</figure>
+						</div>
+						<div class="div3-3x3">
+							<figure style="margin: 0;">
+								<figcaption>Temporel</figcaption>
+								<img src="these/localization/nc/ttfs.gif" alt="origi" height="250px" style="margin: 0;">
+							</figure>
+						</div>
+						<div class="div4-3x3">
+							<figure style="margin: 0;">
+								<img src="these/localization/nc/phase.gif" alt="origi" height="250px" style="margin: 0;">
+								<figcaption>par Phases</figcaption>
+							</figure>
+						</div>
+						<div class="div5-3x3">
+							<figure style="margin: 0;">
+								<img src="these/localization/nc/saccade.gif" alt="origi" height="250px" style="margin: 0;">
+								<figcaption style="color: blue;">🆕 par Saccades</figcaption>
+							</figure>
+						</div>
+						<div class="div6-3x3">
+							<div style="border: 2px solid; height: 250px; width: 250px; margin-left: 35px;">
+								<br>
+								<p>Codage entraînable</p>
+								<br>
+							</div>
+						</div>
+					</div> 
+					<!-- <table>
 						<tr>
 							<td>
 								<img src="these/localization/nc/original.png" alt="origi" height="375px">
@@ -642,31 +714,54 @@
 								</div>
 							</td>
 						</tr>
-					</table>
+					</table> -->
 				</section>
 
 				<section>
-					<h3>Images Statiques - Latence Temporelle </h3>
+					<h3>Étude sur la Latence Temporelle</h3>
+					<p><b>Protocole</b></p>
+						<ol>
+							<li>Définir un nombre $T$ d'étapes temporelles</li>
+							<br>
+							<li>Effectuer un entraînement</li>
+							<br>
+							<li>Mesurer la performance de localisation (% $mIoU$) sur l'ensemble de validation</li>
+						</ol>
+				</section>
+
+				<section>
+					<h3>Latence Temporelle - Images Statiques</h3>
 					<div class="r-stack">
-						<ul class="fragment fade-out">
-							<li><b>Protocole :</b></li>
-							<ol>
-								<li>Définir un nombre $T$ d'étapes temporelles</li>
-								<li>Mesurer la performance de localisation ($mIoU$)</li>
-							</ol>
-						</ul>
-						<div class="r-stack">
-							<img src="these/localization/images_latences_0.png" alt="latence image" class="fragment fade-in-then-out">
-							<img src="these/localization/images_latences_1.png" alt="latence image" class="fragment fade-in-then-out">
-							<img src="these/localization/images_latences_2.png" alt="latence image" class="fragment fade-in-then-out">
-							<img src="these/localization/images_latences_3.png" alt="latence image" class="fragment fade-in-then-out">
-							
-						</div>
+						<img src="these/localization/images_latences_0.png" alt="latence image" class="fragment fade-out" data-fragment-index="0">
+						<img src="these/localization/images_latences_1.png" alt="latence image" class="fragment fade-in-then-out" data-fragment-index="0">
+						<img src="these/localization/images_latences_2.png" alt="latence image" class="fragment fade-in-then-out" data-fragment-index="1">
+						<img src="these/localization/images_latences_3.png" alt="latence image" class="fragment fade-in-then-out" data-fragment-index="2">
 					</div>
+					<ul>
+						<li class="fragment" data-fragment-index="0">Aucune correlation significative</li>
+						<li class="fragment" data-fragment-index="1">SNN compétitif (au mieux, $\Delta = 2.97$%)</li>
+						<li class="fragment" data-fragment-index="2"><b>Contraire au STDP :</b> codage temporel $<<$</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Images Statiques - Robustesse</h3>
+					<h3>Latence Temporelle - Événements</h3>
+					<div class="r-stack">
+						<img src="these/localization/latence_events.png" alt="latence events" class="fragment fade-out" data-fragment-index="0">
+						<img src="these/localization/latence_events_1.png" alt="latence events" class="fragment" data-fragment-index="0">
+						<img src="these/localization/latence_events_2.png" alt="latence events" class="fragment" data-fragment-index="1">
+						<img src="these/localization/latence_events_3.png" alt="latence events" class="fragment" data-fragment-index="2">
+					</div>
+					<ul>
+						<li class="fragment" data-fragment-index="0"><b>ANN :</b> Les performances restent constantes</li>
+						<li class="fragment" data-fragment-index="1"><b>SNN :</b> &nbsp; $T$ 📉 &nbsp; $\rightarrow$ performances &nbsp; 📈</li>
+						<li class="fragment" data-fragment-index="2">À partir de $T=8$, le SNN est meilleur</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Étude sur la Robustesse aux Corruptions</h3>
+					<p><b>Protocole</b></p>
 					<div class="r-stack">
 						<img src="these/localization/img_corrup/protocol_0.png" alt="corr proto">
 						<img src="these/localization/img_corrup/protocol_1.png" alt="corr proto" class="fragment fade-in-then-out">
@@ -680,31 +775,25 @@
 
 
 				<section>
-					<h3>Images Statiques - Corruptions</h3>
+					<h3>Robustesse - Images Statiques</h3>
 					<img src="these/localization/corruptions_images.png" alt="corruptions">
 				</section>
 
 				<section>
 					<h3>Images Statiques - Corruptions</h3>
-					<p>Valeur de $mRAD^{corr}$ pour chaque corruption et chaque codage neuronal</p>
-					
+					<!-- <p>Valeur de $mRAD^{corr}$ pour chaque corruption et chaque codage neuronal</p> -->
 					<div class="r-stack">
-						<img src="these/localization/corruptions_bars_images.png" alt="mrad" height="500px" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_1.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_2.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_3.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_4.png" alt="mrad" height="500px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images.png" alt="mrad" height="400px" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images_1.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images_2.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images_3.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_bars_images_4.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
 					</div>
-				</section>
-
-				<section>
-					<h3>📸 &nbsp; Événements - Latence Temporelle</h3>
-					<div class="r-stack">
-						<img src="these/localization/latence_events_0.png" alt="latence events">
-						<img src="these/localization/latence_events.png" alt="latence events" class="fragment">
-						<img src="these/localization/latence_events_1.png" alt="latence events" class="fragment">
-						<img src="these/localization/latence_events_2.png" alt="latence events" class="fragment">
-					</div>
+					<ul>
+						<li><b>Temporel :</b> très robuste sauf pour le givre</li>
+						<li><b>Saccades :</b> contraire observé</li>
+						<li style="color: green;"><b>Fréquentiel :</b> grande robustesse générale</li>
+					</ul>
 				</section>
 
 				<section>
@@ -726,22 +815,22 @@
 				<section>
 					<h3>Événements - Corruptions</h3>
 					<div class="grid-container3">
-						<div class="div1-3"> 
-							<figure>
+						<div class="div1-3" style="margin-top: 50px;"> 
+							<figure style="margin: 0;">
 								<figcaption>Original</figcaption>
-								<img src="these/localization/img_corrup/normal.gif" alt="normal" height="400px">
+								<img src="these/localization/img_corrup/normal.gif" alt="normal" height="400px" style="margin: 0;">
 							</figure>
 							
 						</div>
 						<div class="div2">
 							<figure style="margin: 0;">
 								<figcaption style="font-size: 30px;">Bruit d'activité de fond</figcaption>
-								<img src="these/localization/img_corrup/baa.gif" alt="ké" height="200px">
+								<img src="these/localization/img_corrup/baa.gif" alt="ké" height="250px" style="margin: 0;">
 							</figure>
 						</div>
 						<div class="div3">
 							<figure style="margin: 0;">
-								<img src="these/localization/img_corrup/hotpix.gif" alt="ké" height="200px">
+								<img src="these/localization/img_corrup/hotpix.gif" alt="ké" style="margin: 0;" height="250px">
 								<figcaption style="font-size: 30px;">Bruit "hot pixels"</figcaption>
 							</figure>
 						</div>
