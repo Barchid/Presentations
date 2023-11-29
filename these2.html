@@ -572,9 +572,9 @@
 							<li><b>Robustesse aux corruptions</b></li>
 						</ul>
 						<br>
-						<li class="fragment" data-fragment-index="0" style="color: darkorange;">⚠️ &nbsp; Est-ce que le SG est différent ?</li>
+						<li class="fragment" data-fragment-index="0" style="color: darkorange;">⚠️ &nbsp; Est-ce que l'apprentissage par SG est différent ?</li>
 						<ul class="fragment" data-fragment-index="0">
-							<li style="color: red;">Réponse inconnu</li>
+							<li style="color: red;">Réponse inconnue</li>
 							<li style="list-style-type: none;">$\Rightarrow$ <b>Études expérimentales</b></li>
 						</ul>
 					</ul>
@@ -797,23 +797,7 @@
 				</section>
 
 				<section>
-					<h3>📸 &nbsp; Événements - Latence Temporelle</h3>
-					<p><b>Trois Avantages d'une faible valeur $T$</b></p>					
-					<ol>
-						<li>🏃 SNN est plus <b style="color:green;">rapide</b></li>
-						<br>
-						<li>🪫 SNN est <b  style="color:green;">économe</b> en énergie</li>
-						<br>
-						<li>💪 SNN plus <b style="color:green;">performant</b></li>
-					</ol>
-					<br>
-					<br>
-					<p class="fragment" style="color:orange;">⚠️ &nbsp; Base de données à <b>comportement statique</b></p>
-				</section>
-
-
-				<section>
-					<h3>Événements - Corruptions</h3>
+					<h3>Robustesse - Événements</h3>
 					<div class="grid-container3">
 						<div class="div1-3" style="margin-top: 50px;"> 
 							<figure style="margin: 0;">
@@ -840,8 +824,8 @@
 
 
 				<section>
-					<h3>Événements - Corruptions</h3>
-					<p>Valeur de $mRAD^{corr}$ pour chaque corruption</p>
+					<h3>Robustesse - Événements</h3>
+					<!-- <p>Valeur de $mRAD^{corr}$ pour chaque corruption</p> -->
 					<img src="these/localization/event_chart_corr.png" alt="corruption" height="375px">
 					<ul>
 						<li>Sensibilité au bruit du SNN $\rightarrow$ hypothèse des potentiels de membrane</li>
@@ -862,27 +846,36 @@
 							</ul>
 						</ul>
 						<div class="r-stack fragment fade-in" data-fragment-index="0">
-							<img src="these/localization/conso_1.png" alt="conso" class="fragment">
-							<img src="these/localization/conso_2.png" alt="conso" class="fragment">
-							<img src="these/localization/conso_3.png" alt="conso" class="fragment">
-							<img src="these/localization/conso.png" alt="conso" class="fragment">
-							<img src="these/localization/conso_4.png" alt="conso" class="fragment">
-							<img src="these/localization/conso_5.png" alt="conso" class="fragment">
+							<img src="these/localization/conso_1.png" alt="conso" class="fragment" data-fragment-index="0">
+							<img src="these/localization/conso_2.png" alt="conso" class="fragment" data-fragment-index="1">
+							<img src="these/localization/conso_3.png" alt="conso" class="fragment" data-fragment-index="2">
+							<img src="these/localization/conso.png" alt="conso" class="fragment" data-fragment-index="3">
+							<img src="these/localization/conso_4.png" alt="conso" class="fragment" data-fragment-index="4">
+							<img src="these/localization/conso_5.png" alt="conso" class="fragment" data-fragment-index="5">
 						</div>
 					</div>
+					<ul>
+						<li class="fragment" data-fragment-index="3"><b>Consommation énergétique nettement plus efficace</b></li>
+						<li class="fragment" data-fragment-index="4">De $44.82\times$ à $126.6\times$...</li>
+						<li class="fragment" data-fragment-index="5">Les flux d'événements sont comparables aux codages neuronaux intensifs</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Bilan de l'Étude</h3>
 					<ul>
-						<li class="fragment"><b>Supériorité des faibles latences</b></li>
-						<li class="fragment"><b>Codages Neuronaux : </b> intérêt du <span style="color: green;"><b>codage fréquentiel</b></span></li>
+						<li class="fragment" data-fragment-index="0"><b>Supériorité des faibles latences</b></li>
+						<ul class="fragment" data-fragment-index="0">
+							<li>SNN plus rapide, plus économe, voire plus performant</li>
+						</ul>
 						<br>
-						<li  class="fragment"><b>SNN compétitif</b></li>
-						<ul  class="fragment">
-							<li>Efficacité énergétique 🥇</li>
-							<li><b>Événements :</b> performance - robustesse 👎</li>
-							<li><b>Images :</b> Performance 🥈 - robustesse 👍</li>
+						<li class="fragment" data-fragment-index="1"><b>Codages Neuronaux : </b> intérêt du <span style="color: green;"><b>codage fréquentiel</b></span></li>
+						<br>
+						<li  class="fragment" data-fragment-index="2"><b>Contradictions avec les études précédentes</b> <span class="ita">(STDP)</span><small>[TODO]</small></li>
+						<ul  class="fragment" data-fragment-index="2">
+							<li>Faiblesse du <span style="color:red;">codage temporel</span></li>
+							<li>Influence de la latence temporelle</li>
+							<li><b>$\Rightarrow$ Remise en cause des connaissances</b></li>
 						</ul>
 					</ul>
 				</section>
@@ -1061,74 +1054,8 @@
 				</section>
 
 				<section>
-					<h3>Méthode - Augmentations de Données</h3>
-					<div class="r-stack">
-						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Exemple</b></p>
-						<p style="border: solid 3px  blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="1"><b>Augmentations Communes</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>Augmentations Communes</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Augmentations Communes</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="4"><b>Augmentations Communes</b></p>
-
-						<p style="border: solid 3px blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="5"><b>Augmentations en Découpage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="6"><b>Augmentations en Découpage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="7"><b>Augmentations en Découpage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="8"><b>Augmentations en Découpage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="9"><b>Augmentations en Découpage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="10"><b>Augmentations en Découpage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="11"><b>Augmentations en Découpage</b></p>
-
-						<p style="border: solid 3px blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="12"><b>Augmentations Géométriques</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="13"><b>Augmentations Géométriques</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="14"><b>Augmentations Géométriques</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="15"><b>Augmentations Géométriques</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="16"><b>Augmentations Géométriques</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="17"><b>Augmentations Géométriques</b></p>
-					</div>
-					<div class="r-stack">
-						<img src="these/eda/normal.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="0">
-						<p class="fragment fade-in-then-out" data-fragment-index="1">📖 &nbsp; Transformations couramment utilisées, ne partagent <b>pas de caractéristiques communes</b>.</p>
-						<img src="these/eda/background_activity.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="2">
-						<img src="these/eda/polarity_flip.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="3">
-						<img src="these/eda/crop.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="4">
-
-						<p class="fragment fade-in-then-out" data-fragment-index="5">📖 &nbsp; Transformations impliquant la <b>suppression d'événements</b>.</p>
-						<img src="these/eda/cutout.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="6">
-						<img src="these/eda/drop_by_time.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="7">
-						<img src="these/eda/random_drop.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="8">
-						<img src="these/eda/event_drop.png" height="400px" alt="normal" class="fragment fade-in-then-out" data-fragment-index="9">
-						<img src="these/eda/event_copy.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="10">
-						<img src="these/eda/event_copy_drop.png" height="400px" alt="normal" class="fragment fade-in-then-out" data-fragment-index="11">
-
-						<p class="fragment fade-in-then-out" data-fragment-index="12">📖 &nbsp; Transformations impliquant une <b>distorsion spatiale des événements</b>.</p>
-						<img src="these/eda/static_translation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="13">
-						<img src="these/eda/static_rotation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="14">
-						<img src="these/eda/dynamic_translation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="15">
-						<img src="these/eda/dynamic_rotation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="16">
-						<img src="these/eda/stat_dyn_geo.png" height="400px" alt="normal" class="fragment fade-in-then-out" data-fragment-index="17">
-
-					</div>
-					<div class="r-stack">
-						<p class="fragment fade-in-then-out" data-fragment-index="0"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="1"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="2">Bruit d'activité de fond (<code>Noise</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="3">Inversion de polarité (<code>PolFlip</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="4">Recadrage (<code>Crop</code>)</p>
-						<!-- decoupage-->
-						<p class="fragment fade-in-then-out" data-fragment-index="5"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="6">Découpe par zone (<code>Cutout</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="7">Découpe par durée</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="8">Découpe aléatoire</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="9"><code>EventDrop</code></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="10">🆕 &nbsp; <code>EventCopy</code></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="11">🆕 &nbsp; <code>EventCopyDrop</code></p>
-						<!-- geo -->
-						<p class="fragment fade-in-then-out" data-fragment-index="12"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="13">Translation statique (<code>StatTran</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="14">Rotation statique (<code>StatRot</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="15">🆕 &nbsp; Translation dynamique (<code>DynTran</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="16">🆕 &nbsp; Rotation dynamique (<code>DynRot</code>)</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="17">🆕 &nbsp; <code>StatDynGeo</code></p>
-					</div>
+					<h3>Augmentations Étudiées</h3>
+					<img src="these/ssrl/edas_summary.png" alt="eda summary">
 				</section>
 
 				<section>
@@ -1186,45 +1113,60 @@
 					<p style="border: 3px solid; font-weight: bold; padding-top: 5px;">🎯 &nbsp; Évaluer l'intérêt des EDAs pour le SSRL</p>
 					<br>
 					<ul>
-						<li><b>Trois étapes incrémentales : </b>une étape par catégorie d'EDAs</li>
+						<li>Protocole d'<b>évaluation linéaire</b> sur <b>DVSGesture</b></li>
+						<li>$CSNN$ $2D$ $3D$ $CSNN_{2D}$ $CSNN_{3D}$</li>
+						<br>
+						<li><b>Trois étapes incrémentales : </b>une étape par catégorie</li>
 						<br>
 						<li>Pour chaque étape, on conserve la combinaison d'EDAs <b>la plus performante de l'étape précédente</b></li>
-						<br>
-						<li>Protocole d'<b>évaluation linéaire</b> sur <b>DVSGesture</b></li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>Étude sur les EDAs</h3>
-					<p><b>Résultats</b></p>
 					<div class="r-stack">
-						<img alt="tab result edas" src="these/results_edas/tab_0.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_1.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_2.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_3.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_4.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_5.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_6.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_7.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_8.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_9.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_10.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_11.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_12.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_13.png">
-						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_14.png">
+						<p class="fragment fade-out" data-fragment-index="2"><b>Étape 1 :</b> EDAs Communes</p>
+						<p class="fragment fade-in" data-fragment-index="2"><span class="fragment fade-out" data-fragment-index="6"><b>Étape 2 :</b> EDAs Géométriques</span></p>
+						<p class="fragment" data-fragment-index="6"><b>Étape 3 :</b> EDAs en découpage</p>
+					</div>
+					<div class="r-stack">
+						<img src="these/ssrl/eda_communes_results_0.png" height="450px" alt="eda">
+						<img src="these/ssrl/eda_communes_results_1.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="0">
+						<img src="these/ssrl/eda_communes_results.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="1">
+						<img src="these/ssrl/eda_geo_results_0.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="2">
+						<img src="these/ssrl/eda_geo_results_1.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="3">
+						<img src="these/ssrl/eda_geo_results_2.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="4">
+						<img src="these/ssrl/eda_geo_results.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="5">
+						<img src="these/ssrl/eda_drop_results.png" height="450px" alt="eda" class="fragment fade-in" data-fragment-index="6">
+					</div>
+					<div class="r-stack">
+						<div class="fragment" data-fragment-index="1">
+							<ul class="fragment fade-out" data-fragment-index="2">
+								<li>Une EDA (<span style="color: red;">rouge</span>) &lsaquo; deux EDAs (<span style="color:green;">vert</span>) &lsaquo; Trois EDAs (<span style="color:blue;">bleu</span>)</li>
+							</ul>
+						</div>
+						
+						<div class="fragment" data-fragment-index="2">
+							<ul class="fragment fade-out" data-fragment-index="6">
+								<li>Dynamiques pour 3D-CNN et CSNN</li>
+								<li>Statiques pour 2D-CNN</li>
+							</ul>
+						</div>
+
+						<ul class="fragment fade-in" data-fragment-index="7">
+							<li><code>EventCopyDrop</code> est systématiquement 🥇 ou 🥈</li>
+						</ul>
 					</div>
 				</section>
 
 				<section>
-					<h3>🔎🪄 &nbsp; Étude sur les EDAs</h3>
-					<p><b>Interprétations</b></p>
+					<h3>Étude sur les EDAs - Résumé</h3>
 					<ol>
-						<li>➕ EDAs communes $\rightarrow$ ➕ performances </li>
+						<li><b>EDAs communes :</b> au plus le mieux</li>
 						<br>
 						<li>Une EDA géométrique et une EDA en découpage $\rightarrow$ ➕ performances</li>
 						<br>
-						<li>Relations <code>OneOf</code> 👍 &nbsp; <span class="ita">(<code>EventDrop</code>, ...)</span></li>
+						<li>Intérêt des relations <code>OneOf</code> <span class="ita">(<code>EventDrop</code>, ...)</span></li>
 					</ol>
 					<br>
 					<br>
@@ -1232,7 +1174,7 @@
 				</section>
 
 				<section>
-					<h3>⚖️ &nbsp; Évaluation des Performances</h3>
+					<h3>Évaluation des Performances</h3>
 					<div class="r-stack">
 						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
 						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
@@ -1322,9 +1264,43 @@
 						</ul>
 					</ul>
 				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Conclusion</h1>
+				</section>
 
 				<section>
-					<h3>Conclusion</h3>
+					<h3 style="font-size: 1.0em;">Étude des SNNs profonds par la Localisation d'Objet</h3>
+					<p class="fragment" style="text-align: justify;">
+						Notre étude fournit des <b style="color: green;">informations clés sur des choix de conception</b> des SNNs profonds.
+					</p>
+					<br>
+					<p class="fragment" style="text-align: justify;">
+						Le SNN conçu montre l'<b style="color: green;">intérêt</b> en termes de <b style="color: green;">consommation énergétique</b> par rapport à un ANN similaire.
+					</p>
+					<br>
+					<p class="fragment" style="text-align: justify;">
+						Les conclusions antérieures sur les SNNs <b style="color: red;">ne sont pas vérifiées</b> pour l'apprentissage par SG $\Rightarrow$ Remise en cause.
+					</p>
+				</section>
+
+				<section>
+					<h3 style="font-size: 1.0em;">Étude des SNNs profonds par la Localisation d'Objet</h3>
+					<p><b>Travaux Futurs</b></p>
+					<ul>
+						<li><b>Déploiement et analyses sur matériel neuromorphique</b></li>
+						<ul>
+							<li>Quelles sont les spécificités d'un SNN déployé ?</li>
+						</ul>
+						<br>
+						<li><b></b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>SSRL événementiel</h3>
 					<p class="fragment" style="text-align: justify;">
 						Le SSRL événementiel accomplit <b style="color: green;">avec succès</b> la réduction du <b style="color: green;">besoin en annotations</b>.
 					</p>
@@ -1337,34 +1313,18 @@
 						Possibilité de voir des BDDs événementielles comportant <b style="color: green;">beaucoup de données</b> et <b style="color: green;">peu d'annotations</b>.
 					</p>
 				</section>
-			</section>
-
-			<section>
-				<section>
-					<h1>Conclusion</h1>
-				</section>
 
 				<section>
-					<h3>Travaux de la Thèse</h3>
+					<h3>SSRL Événementiel</h3>
+					<p><b>Travaux Futurs</b></p>
 					<ul>
-						<li>Développement et l'analyse de SNNs profonds $\Rightarrow$ <b>localisation d'objet</b></li>
+						<li><b>Méthodes spécialisées</b> pour un type d'encodeur</li>
 						<br>
-						<li>Réduction du besoin en annotations pour la vision événementielle $\Rightarrow$ <b>SSRL événementiel</b></li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Travaux Futurs</h3>
-					<ul>
-						<li><b>🚀 &nbsp; Déploiement sur matériel neuromorphique</b></li>
-						<br>
-						<li>🏋️ &nbsp; Améliorations des méthodes conçues</li>
-						<ul>
-							<li><b>Meilleure extraction des caractéristiques</b> de l'encodeur CSNN</li>
-							<li><b>SSRL événementiel</b> adapté au type de réseau</li>
-						</ul>
+						<li>Proposer des <b>protocoles d'évaluation</b> diversifiés <span class="ita">(détection d'objets, ...)</span></li>
 						<br>
 						<li><b>Nouveaux contextes applicatifs</b></li>
+						<br>
+						<li><b>Modèles de fondation événementiels</b> </li>
 					</ul>
 				</section>
 			</section>
@@ -1402,7 +1362,7 @@
 			<section>
 				<section>
 					<h1>Annexes</h1>
-					<h4>Théories</h4>
+					<h4>État de l'Art</h4>
 				</section>
 
 				<section>
@@ -1475,8 +1435,101 @@
 				</section>
 
 				<section>
+					<h3>Augmentations de Données Étudiées</h3>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Exemple</b></p>
+						<p style="border: solid 3px  blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="1"><b>Augmentations Communes</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>Augmentations Communes</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Augmentations Communes</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4"><b>Augmentations Communes</b></p>
+
+						<p style="border: solid 3px blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="5"><b>Augmentations en Découpage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="6"><b>Augmentations en Découpage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="7"><b>Augmentations en Découpage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="8"><b>Augmentations en Découpage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="9"><b>Augmentations en Découpage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="10"><b>Augmentations en Découpage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="11"><b>Augmentations en Découpage</b></p>
+
+						<p style="border: solid 3px blue; margin:10px; color:blue;" class="fragment fade-in-then-out" data-fragment-index="12"><b>Augmentations Géométriques</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="13"><b>Augmentations Géométriques</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="14"><b>Augmentations Géométriques</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="15"><b>Augmentations Géométriques</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="16"><b>Augmentations Géométriques</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="17"><b>Augmentations Géométriques</b></p>
+					</div>
+					<div class="r-stack">
+						<img src="these/eda/normal.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="0">
+						<p class="fragment fade-in-then-out" data-fragment-index="1">📖 &nbsp; Transformations couramment utilisées, ne partagent <b>pas de caractéristiques communes</b>.</p>
+						<img src="these/eda/background_activity.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="2">
+						<img src="these/eda/polarity_flip.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="3">
+						<img src="these/eda/crop.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="4">
+
+						<p class="fragment fade-in-then-out" data-fragment-index="5">📖 &nbsp; Transformations impliquant la <b>suppression d'événements</b>.</p>
+						<img src="these/eda/cutout.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="6">
+						<img src="these/eda/drop_by_time.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="7">
+						<img src="these/eda/random_drop.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="8">
+						<img src="these/eda/event_drop.png" height="400px" alt="normal" class="fragment fade-in-then-out" data-fragment-index="9">
+						<img src="these/eda/event_copy.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="10">
+						<img src="these/eda/event_copy_drop.png" height="400px" alt="normal" class="fragment fade-in-then-out" data-fragment-index="11">
+
+						<p class="fragment fade-in-then-out" data-fragment-index="12">📖 &nbsp; Transformations impliquant une <b>distorsion spatiale des événements</b>.</p>
+						<img src="these/eda/static_translation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="13">
+						<img src="these/eda/static_rotation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="14">
+						<img src="these/eda/dynamic_translation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="15">
+						<img src="these/eda/dynamic_rotation.gif" alt="normal" class="fragment fade-in-then-out" data-fragment-index="16">
+						<img src="these/eda/stat_dyn_geo.png" height="400px" alt="normal" class="fragment fade-in-then-out" data-fragment-index="17">
+
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="1"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2">Bruit d'activité de fond (<code>Noise</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3">Inversion de polarité (<code>PolFlip</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4">Recadrage (<code>Crop</code>)</p>
+						<!-- decoupage-->
+						<p class="fragment fade-in-then-out" data-fragment-index="5"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="6">Découpe par zone (<code>Cutout</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="7">Découpe par durée</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="8">Découpe aléatoire</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="9"><code>EventDrop</code></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="10">🆕 &nbsp; <code>EventCopy</code></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="11">🆕 &nbsp; <code>EventCopyDrop</code></p>
+						<!-- geo -->
+						<p class="fragment fade-in-then-out" data-fragment-index="12"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="13">Translation statique (<code>StatTran</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="14">Rotation statique (<code>StatRot</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="15">🆕 &nbsp; Translation dynamique (<code>DynTran</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="16">🆕 &nbsp; Rotation dynamique (<code>DynRot</code>)</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="17">🆕 &nbsp; <code>StatDynGeo</code></p>
+					</div>
+				</section>
+
+				<section>
 					<h3>Distribution EDAs</h3>
 					<img src="these/params_edas.png" alt="param edas" height="600px">
+				</section>
+
+				<section>
+					<h3>Étude sur les EDAs</h3>
+					<p><b>Résultats</b></p>
+					<div class="r-stack">
+						<img alt="tab result edas" src="these/results_edas/tab_0.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_1.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_2.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_3.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_4.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_5.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_6.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_7.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_8.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_9.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_10.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_11.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_12.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_13.png">
+						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_14.png">
+					</div>
 				</section>
 
 				<section>
