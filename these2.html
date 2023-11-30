@@ -17,6 +17,10 @@
 	<link rel="stylesheet" href="css/w3.css">
 
 	<style>
+		.reveal .slide-number {
+			font-size: 35px;
+		}
+
 		.ita {
 			font-style: italic;
 		}
@@ -121,12 +125,12 @@
 
 				<section>
 					<h3>Consommation Énergétique</h3>
-					<p>Estimation d'énergie consommée lors d'une inférence des modèles de l'état de l'art par
+					<p>Estimation de l'énergie consommée lors d'une inférence des modèles de l'état de l'art par
 						année<small>[Desislavov2023]</small></p>
 					<div class="r-stack">
-						<img src="these/consommation_energie_0.png" alt="Consommation énergétique">
-						<img src="these/consommation_energie_1.png" alt="Consommation énergétique" class="fragment">
-						<img src="these/consommation_energie_2.png" alt="Consommation énergétique" class="fragment">
+						<!-- <img src="these/consommation_energie_0.png" alt="Consommation énergétique">
+						<img src="these/consommation_energie_1.png" alt="Consommation énergétique" class="fragment"> -->
+						<img src="these/consommation_energie_2.png" alt="Consommation énergétique">
 						<img src="these/consommation_energie_3.png" alt="Consommation énergétique" class="fragment">
 						<img src="these/consommation_energie_4.png" alt="Consommation énergétique" class="fragment">
 					</div>
@@ -181,7 +185,7 @@
 					<table>
 						<tr>
 							<td><video style="display: inline !important;" src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted controls></video></td>
-							<td><img src="img/ssl/lift.gif" alt="enothing" class="fragment" height="350px" style="margin-bottom: 250px;"></td>
+							<td><img src="img/ssl/lift.gif" alt="enothing" height="350px" style="margin-bottom: 250px;"></td>
 						</tr>
 					</table>
 				</section>
@@ -229,7 +233,7 @@
 						<li><b>Adoption des caméras événementielles croissante</b></li>
 						<ul>
 							<li>Besoin de création de Bases de Données (<span class="ita">BDDs</span>)</li>
-							<li class="fragment" data-fragment-index="1" style="color:red"><b>Conception coûteuse : </b>complexité de concevoir des nouveaux cas d'application</li>
+							<li style="color:red"><b>Coûteux : </b>complexité de concevoir des nouveaux cas d'application</li>
 						</ul>
 					</ul>
 				</section>
@@ -259,7 +263,7 @@
 					<h1>État de l'Art</h1>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Trois Domaines</h3>
 					<ul>
 						<li><b>Approches classiques</b> : ANN + images</li>
@@ -269,7 +273,73 @@
 						<br>
 						<li><b>Réseaux de neurones impulsionnels</b></li>
 					</ul>
+				</section> -->
+				<section>
+					<h3>Donnée - Caméra Événementielle</h3>
+					<div class="r-stack">
+						<img src="img/ssl/lift.gif" class="fragment fade-out" data-fragment-index="0" alt="enothing">
+						<img src="img/spiking_fer/eventcamintro.png" alt="eventcam" data-fragment-index="0" class="fragment fade-in-then-out">
+						<img class="fragment fade-in-then-out" src="img/spiking_fer/eventcamintro_0.png" alt="eventcam" data-fragment-index="1">
+						<img class="fragment fade-in-then-out" src="img/spiking_fer/eventcamintro_1.png" alt="eventcam" data-fragment-index="2">
+						<img class="fragment fade-in-then-out" src="img/spiking_fer/eventcamintro_2.png" alt="eventcam" data-fragment-index="3">
+						<figure class="fragment" data-fragment-index="4">
+							<p>Discrétisation sur $T$ étapes temporelles</p>
+							<img src="these/discretisation.png" alt="binary">
+							<br>
+							<br>
+							<figcaption>Tenseur impulsionnel $\mathbf{X}_T \in \mathbb{B}^{T \times C \times H \times W}$</figcaption>
+						</figure>
+					</div>
 				</section>
+
+				<section>
+					<h3>Donnée - Caméra Événementielle</h3>
+					<p>Deux catégories selon la dynamique de la scène</p>
+
+					<div class="grid-container">
+						<div class="div1">
+							<p><b>Comportement <br> statique</b></p>
+							<img src="these/sota/nmnist.gif" alt="simu" height="360px">
+						</div>
+						<div class="div2">
+							<p><b>Comportement dynamique</b></p>
+							<img src="these/sota/dailyactiondvs.gif" alt="enothing">
+						</div>
+					</div> 
+				</section>
+
+				<section>
+					<h3>Donnée - Image Statique</h3>
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p style="color: red;">❌ &nbsp; Les images statiques ($\in \mathbb{R}$) ne sont pas adaptés pour le traitement par des neurones impulsionnels</p>
+							<br>
+							<img src="these/sota/codage.png" alt="codage">
+						</div>
+
+						<div class="container1x3 fragment" data-fragment-index="0">
+							<div class="div1">
+								<figure style="margin: 0;">
+									<figcaption>&nbsp;</figcaption>
+									<img src="these/localization/nc/original.png" alt="origi" height="300px" style="margin: 0;">
+								</figure>
+							</div>
+							<div class="div2">
+								<figure style="margin: 0;">
+									<figcaption>Fréquentiel</figcaption>
+									<img src="these/localization/nc/rate.gif" alt="nc" height="300px" style="margin: 0;">
+								</figure>
+							</div>
+							<div class="div3-1x3">
+								<figure style="margin: 0;">
+									<figcaption>Temporel</figcaption>
+									<img src="these/localization/nc/ttfs.gif" alt="nc" height="300px" style="margin: 0;">
+								</figure>
+							</div>
+						</div>
+					</div>
+				</section>
+
 
 				<section>
 					<h3>Approches Classiques</h3>
@@ -293,8 +363,8 @@
 						<ul class="fragment fade-in-then-out">
 							<li>Adoption des <b>réseaux de neurones convolutifs</b> <span class="ita">(CNNs)</span></li>
 							<ul>
-								<li><b>AlexNet</b><small>[TODO]</small> (2012) atteint les meilleures performances sur <b>ImageNet</b><small>[TODO]</small></li>
-								<li><b>ResNet</b><small>[TODO]</small> introduit la notion de blocs résiduels</li>
+								<li><b>AlexNet</b><small>[Krizhevsky2012]</small> (2012) atteint les meilleures performances sur <b>ImageNet</b><small>[Deng2009]</small></li>
+								<li><b>ResNet</b><small>[He2016]</small> introduit la notion de blocs résiduels</li>
 								<li>...</li>
 								<br>
 								<li>Convolutions 2D pour les images : <b>2D-CNN</b></li>
@@ -341,36 +411,25 @@
 						$f_{\alpha}(\mathbf{I}) = \mathcal{F}$
 					</p>
 					<div class="r-stack">
-						<img src="these/convenc_0.png" alt="convenc">
+						<!-- <img src="these/convenc_0.png" alt="convenc">
 						<img src="these/convenc_1.png" alt="convenc" class="fragment">
-						<img src="these/convenc_2.png" alt="convenc" class="fragment">
-						<img src="these/convenc.png" alt="convenc" class="fragment">
+						<img src="these/convenc_2.png" alt="convenc" class="fragment"> -->
+						<img src="these/convenc.png" alt="convenc">
 					</div>
 				</section>
 
 				<section>
 					<h3>Réseaux de Neurones Impulsionnels</h3>
+					<br>
 					<p>Réseaux de neurones composés de <b style="color: orange; border-bottom: solid 3px orange;">neurones impulsionnels</b></p>
-					<div class="r-stack">
-						<p></p>
-						<img src="these/sota/artificial_impulsion_0.png" alt="annvssnn" class="fragment">
-						<img src="these/sota/artificial_impulsion_1.png" alt="annvssnn" class="fragment">
-						<img src="these/sota/artificial_impulsion_2.png" alt="annvssnn" class="fragment">
-						<img src="these/sota/artificial_impulsion_3.png" alt="annvssnn" class="fragment">
-						<img src="these/sota/artificial_impulsion.png" alt="annvssnn" class="fragment">
-					</div>
+					<br>
+					<img src="these/sota/artificial_impulsion.png" alt="annvssnn" class="fragment">
 				</section>
 
 				<section>
 					<h3>Neurone "Integrate-and-Fire" (IF)</h3>
-					<p><small>[TODO]</small></p>
-					<img src="these/sota/if_dyna_8.png" alt="dyna">
-					<br>
-					<ol>
-						<li class="fragment">Potentiel de membrane</li>
-						<li class="fragment">Génération d'impulsion</li>
-						<li class="fragment">Retour au repos</li>
-					</ol>
+					<p><small>[Lapicque1907]</small></p>
+					<img src="these/sota/if_dyna.png" alt="dyna">
 				</section>
 
 				<section>
@@ -429,70 +488,29 @@
 				</section>
 
 				<section>
-					<h3>Modalité - Caméra Événementielle</h3>
-					<div class="r-stack">
-						<img src="img/ssl/lift.gif" class="fragment fade-out" data-fragment-index="0" alt="enothing">
-						<img src="img/spiking_fer/eventcamintro.png" alt="eventcam" data-fragment-index="0" class="fragment fade-in-then-out">
-						<img class="fragment fade-in-then-out" src="img/spiking_fer/eventcamintro_0.png" alt="eventcam" data-fragment-index="1">
-						<img class="fragment fade-in-then-out" src="img/spiking_fer/eventcamintro_1.png" alt="eventcam" data-fragment-index="2">
-						<img class="fragment fade-in-then-out" src="img/spiking_fer/eventcamintro_2.png" alt="eventcam" data-fragment-index="3">
-						<figure class="fragment" data-fragment-index="4">
-							<p>Discrétisation sur $T$ étapes temporelles</p>
-							<img src="these/discretisation.png" alt="binary">
-							<br>
-							<br>
-							<figcaption>Tenseur impulsionnel $\mathbf{X}_T \in \mathbb{B}^{T \times C \times H \times W}$</figcaption>
-						</figure>
-					</div>
-				</section>
-
-				<section>
-					<h3>Modalité - Image Statique</h3>
-					<div class="r-stack">
-						<div class="fragment fade-out" data-fragment-index="0">
-							<p style="color: red;">❌ &nbsp; Les images statiques ($\in \mathbb{R}$) ne sont pas adaptés pour le traitement par des neurones impulsionnels</p>
-							<br>
-							<img src="these/sota/codage.png" alt="codage">
-						</div>
-
-						<div class="container1x3 fragment" data-fragment-index="0">
-							<div class="div1">
-								<figure style="margin: 0;">
-									<figcaption>&nbsp;</figcaption>
-									<img src="these/localization/nc/original.png" alt="origi" height="300px" style="margin: 0;">
-								</figure>
-							</div>
-							<div class="div2">
-								<figure style="margin: 0;">
-									<figcaption>Fréquentiel</figcaption>
-									<img src="these/localization/nc/rate.gif" alt="nc" height="300px" style="margin: 0;">
-								</figure>
-							</div>
-							<div class="div3-1x3">
-								<figure style="margin: 0;">
-									<figcaption>Temporel</figcaption>
-									<img src="these/localization/nc/ttfs.gif" alt="nc" height="300px" style="margin: 0;">
-								</figure>
-							</div>
-						</div>
-					</div>
+					<h3>Revue - SNNs en Vision</h3>
+					<p style="color: green; border: 3px solid; padding-top: 5px;">✅ &nbsp; L'apprentissage par SG a permis un entraînement efficace des SNNs profonds</p>
+					<ul>
+						<li><b>Au départ </b>(2019) :</li>
+						<ul>
+							<li>Hautes performances pour la classification (CIFAR10-DVS<small>[Li2017]</small>, ImageNet <small>[Deng2009]</small>, ...)</li>
+						</ul>
+						<br>
+						<li><b>Diversification des tâches</b> (2021 - ...) : segmentation<small>[Kim2022]</small>, détection<small>[Cordone2022]</small>, profondeur<small>[Rancon2021]</small>, ...</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Revue - Vision Événementielle</h3>
 					<div class="r-stack">
-						<figure class="fragment fade-out" data-fragment-index="0">
-							<img src="these/sota/interest_events.png" alt="events interets" height="300px">
-							<figcaption>Nombre de publications pour la vision événementielle entre 2010 et 2020<small>[Gallego2023]</small></figcaption>
-						</figure>
-						<ul class="fragment fade-in-then-out" data-fragment-index="0">
+						<ul class="fragment fade-out" data-fragment-index="0">
 							<li>Intérêt croissant $\Rightarrow$ développement rapide du domaine</li>
 							<br>
 							<li>Diversification des <b>tâches de vision</b> traitées</li>
 							<br>
 							<li>Diversification des <b>contextes d'applications</b></li>
 						</ul>
-						<div class="r-stack fragment">
+						<div class="r-stack fragment" data-fragment-index="0">
 							<img src="these/sota/tasks_0.png" alt="tasks" height="550px">
 							<img src="these/sota/tasks_2.png" alt="tasks" height="550px" class="fragment">
 							<img src="these/sota/tasks_3.png" alt="tasks" height="550px" class="fragment">
@@ -500,35 +518,6 @@
 							<img src="these/sota/tasks.png" alt="tasks" height="550px" class="fragment">
 						</div>
 					</div>
-				</section>
-
-				<section>
-					<h3>Bases de Données Événementielles</h3>
-					<p>Deux catégories selon la dynamique de la scène</p>
-
-					<div class="grid-container">
-						<div class="div1">
-							<p><b>Comportement <br> statique</b></p>
-							<img src="these/sota/nmnist.gif" alt="simu" height="360px">
-						</div>
-						<div class="div2">
-							<p><b>Comportement dynamique</b></p>
-							<img src="these/sota/dailyactiondvs.gif" alt="enothing">
-						</div>
-					</div> 
-				</section>
-
-				<section>
-					<h3>Revue - SNNs en Vision</h3>
-					<p style="color: green; border: 3px solid; padding-top: 5px;">✅ &nbsp; L'apprentissage par SG a permis un entraînement efficace des SNNs profonds</p>
-					<ul>
-						<li><b>Au départ </b>(2019) :</li>
-						<ul>
-							<li>Hautes performances pour la classification (CIFAR10-DVS<small>[TODO]</small>, ImageNet <small>[TODO]</small>, ...)</li>
-						</ul>
-						<br>
-						<li><b>Diversification des tâches</b> (2021 - ...) : segmentation<small>[TODO]</small>, détection<small>[TODO]</small>, profondeur<small>[TODO]</small>, ...</li>
-					</ul>
 				</section>
 
 				<section>
@@ -624,14 +613,11 @@
 				<section>
 					<h3>Encodeur Convolutif - SNN</h3>
 					<div class="r-stack">
-						<img src="these/localization/snn_archi_1.png" alt="SNN">
+						<img src="these/localization/snn_archi_0.png" alt="SNN">
+						<img src="these/localization/snn_archi_1.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_2.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_3.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi_4.png" alt="SNN" class="fragment">
-						<img src="these/localization/snn_archi_5.png" alt="SNN" class="fragment">
-						<img src="these/localization/snn_archi_6.png" alt="SNN" class="fragment">
-						<!-- <img src="these/localization/snn_archi_7.png" alt="SNN" class="fragment"> -->
-						<img src="these/localization/snn_archi_8.png" alt="SNN" class="fragment">
 						<img src="these/localization/snn_archi.png" alt="SNN" class="fragment">
 					</div>
 				</section>
@@ -639,6 +625,7 @@
 				<section>
 					<h3>Bases de Données</h3>
 					<img src="these/localization/bdds_loca.png" alt="bdd loca" height="350px">
+					<img style="margin-top: 0;" src="these/localization/datasets.png" alt="data">
 				</section>
 
 				<section>
@@ -767,7 +754,6 @@
 						<img src="these/localization/img_corrup/protocol_1.png" alt="corr proto" class="fragment fade-in-then-out">
 						<img src="these/localization/img_corrup/protocol_2.png" alt="corr proto" class="fragment fade-in-then-out">
 						<img src="these/localization/img_corrup/protocol_3.png" alt="corr proto" class="fragment fade-in-then-out">
-						<img src="these/localization/img_corrup/protocol_4.png" alt="corr proto" class="fragment fade-in-then-out">
 						<img src="these/localization/img_corrup/protocol.png" alt="corr proto" class="fragment fade-in-then-out">
 						<img src="these/localization/img_corrup/protocol_5.png" alt="corr proto" class="fragment fade-in-then-out">
 					</div>
@@ -783,16 +769,16 @@
 					<h3>Images Statiques - Corruptions</h3>
 					<!-- <p>Valeur de $mRAD^{corr}$ pour chaque corruption et chaque codage neuronal</p> -->
 					<div class="r-stack">
-						<img src="these/localization/corruptions_bars_images.png" alt="mrad" height="400px" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_1.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_2.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_3.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
-						<img src="these/localization/corruptions_bars_images_4.png" alt="mrad" height="400px" class="fragment" style="margin-top: 0;">
+						<img src="these/localization/corruptions_charts.png" alt="mrad" height="450px" style="margin-top: 0;">
+						<img src="these/localization/corruptions_charts_0.png" alt="mrad" height="450px" class="fragment" data-fragment-index="0" style="margin-top: 0;">
+						<img src="these/localization/corruptions_charts_1.png" alt="mrad" height="450px" class="fragment" data-fragment-index="1" style="margin-top: 0;">
+						<img src="these/localization/corruptions_charts_2.png" alt="mrad" height="450px" class="fragment" data-fragment-index="2" style="margin-top: 0;">
+						<img src="these/localization/corruptions_charts_3.png" alt="mrad" height="450px" class="fragment" data-fragment-index="3" style="margin-top: 0;">
 					</div>
 					<ul>
-						<li><b>Temporel :</b> très robuste sauf pour le givre</li>
-						<li><b>Saccades :</b> contraire observé</li>
-						<li style="color: green;"><b>Fréquentiel :</b> grande robustesse générale</li>
+						<li class="fragment" data-fragment-index="1"><b>Temporel :</b> très robuste sauf pour le givre</li>
+						<li class="fragment" data-fragment-index="2"><b>Saccades :</b> contraire observé</li>
+						<li class="fragment" data-fragment-index="3" style="color: green;"><b>Fréquentiel :</b> grande robustesse générale</li>
 					</ul>
 				</section>
 
@@ -836,29 +822,29 @@
 					<h3>Consommation Énergétique</h3>
 					<div class="r-stack">
 						<ul class="fragment fade-out" data-fragment-index="0">
-							<li><b>Estimation de l'énergie consommée</b><small>[TODO]</small></li>
+							<li><b>Estimation de l'énergie consommée</b><small>[Kim2022]</small></li>
 							<br>
 							<ul>
 								<li>Calcul des FLOPs effectués lors de l'inférence</li>
 								<li style="list-style: none;">ℹ️ &nbsp; <b><span class="ita">(lié au nombre d'impulsions émises)</span></b></li>
 								<br>
-								<li>Estimation sur une puce CMOS de 45nm <small>[TODO]</small></li>
+								<li>Estimation sur une puce CMOS de 45nm <small>[Horowitz2024]</small> :</li>
+								<ul>
+									<li>$E_{ANN} \rightarrow$ énergie consommée par l'ANN <span class="ita">(en mJ)</span></li>
+									<li>$E_{SNN} \rightarrow$ énergie consommée par le SNN</li>
+								</ul>
+								<br>
+								<li style="list-style: none;">$\Rightarrow$ <b>On reporte le ratio :</b> $\frac{E_{ANN}}{E_{SNN}}$</li>
 							</ul>
 						</ul>
-						<div class="r-stack fragment fade-in" data-fragment-index="0">
-							<img src="these/localization/conso_1.png" alt="conso" class="fragment" data-fragment-index="0">
-							<img src="these/localization/conso_2.png" alt="conso" class="fragment" data-fragment-index="1">
-							<img src="these/localization/conso_3.png" alt="conso" class="fragment" data-fragment-index="2">
-							<img src="these/localization/conso.png" alt="conso" class="fragment" data-fragment-index="3">
-							<img src="these/localization/conso_4.png" alt="conso" class="fragment" data-fragment-index="4">
-							<img src="these/localization/conso_5.png" alt="conso" class="fragment" data-fragment-index="5">
+						<div class="fragment" data-fragment-index="0">
+							<img src="these/localization/conso_bars.png" alt="conso bars">
+							<ul>
+								<li class="fragment" data-fragment-index="1"><b>Net avantage pour les SNNs</b></li>
+								<li class="fragment" data-fragment-index="1">Les flux d'événements sont comparables aux codages neuronaux intensifs</li>
+							</ul>
 						</div>
 					</div>
-					<ul>
-						<li class="fragment" data-fragment-index="3"><b>Consommation énergétique nettement plus efficace</b></li>
-						<li class="fragment" data-fragment-index="4">De $44.82\times$ à $126.6\times$...</li>
-						<li class="fragment" data-fragment-index="5">Les flux d'événements sont comparables aux codages neuronaux intensifs</li>
-					</ul>
 				</section>
 
 				<section>
@@ -918,12 +904,6 @@
 				<section>
 					<h3>Solutions Existantes</h3>
 					<div class="r-stack">
-						<img class="fragment fade-in-then-out" data-fragment-index="1"
-							src="these/pretraining_explained_1.png" alt="pretraining">
-						<img class="fragment fade-in-then-out" data-fragment-index="2"
-							src="these/pretraining_explained.png" alt="pretraining">
-						<img class="fragment fade-in-then-out" data-fragment-index="3"
-							src="these/pretraining_explained_2.png" alt="pretraining">
 						<div class="fragment fade-in-then-out" data-fragment-index="4">
 							<img src="these/pretraining_supervised.png" alt="pretraining">
 							<ul>
@@ -951,7 +931,7 @@
 				<section>
 					<h3>SSRL événementiel</h3>
 					<ul>
-						<li><b>Trois travaux concurrents</b> <span class="ita">(2022 - 2023)</span><small>[TODO,TODO,TODO]</small></li>
+						<li><b>Trois travaux similaires</b> <span class="ita">(2022 - 2023)</span><small>[TODO,TODO,TODO]</small></li>
 						<ul>
 							<li>❌ &nbsp; Limités à du <span style="color: red;">comportement statique</span></li>
 							<li>❌ &nbsp; Expérimentations : <span style="color: red;">évaluations différentes</span></li>
@@ -983,19 +963,15 @@
 					<h3>Méthode</h3>
 					<p><b>Augmentation de Données Événementielle</b> (EDA)</p>
 					<div class="r-stack">
-						<img src="img/ssl/dataaug_0.png" data-fragment-index="0" alt="data" class="fragment">
-						<img src="img/ssl/dataaug_1.png" data-fragment-index="1" alt="data" class="fragment">
-						<img src="img/ssl/dataaug.png" data-fragment-index="2" alt="data" class="fragment">
-						<img src="img/ssl/dataaug_comp.png" alt="data" class="fragment" data-fragment-index="3">
-						<img src="img/ssl/dataaug_comp2.png" alt="data" class="fragment" data-fragment-index="4">
-						<img src="img/ssl/dataaug_comp3.png" alt="data" class="fragment" data-fragment-index="5">
+						<img src="img/ssl/dataaug.png" alt="data">
+						<img src="img/ssl/dataaug_comp2.png" alt="data" class="fragment" data-fragment-index="0">
 					</div>
-					<p class="fragment" data-fragment-index="3">Une EDA peut être une <b>composition</b> d'autres EDAs</p>
+					<p class="fragment" data-fragment-index="0">ℹ️ &nbsp; Une EDA peut être une <b>composition</b> d'autres EDAs</p>
 				</section>
 
 				<section>
 					<h3>Méthode</h3>
-					<p><b>Architecture d'Encodage Conjoint</b><small>[TODOvicreg,TODObarlow]</small></p>
+					<p><b>Architecture d'Encodage Conjoint</b><small>[Bardes2022][Zbontar2021]</small></p>
 					<div class="r-stack">
 						<!-- <img src="these/archi_ssl_0.png" alt="archi ssl"> -->
 						<img src="these/archi_ssl_1.png" alt="archi ssl">
@@ -1013,16 +989,13 @@
 					<h3>Méthode - Encodeurs Étudiés</h3>
 					<br>
 					<ul>
-						<li><b>2D-CNN : </b>ResNet-18<small>[TODOresnet]</small></li>
-						<li><b>CSNN : </b>SEW-ResNet-18<small>[TODOsew]</small></li>
+						<li><b>2D-CNN : </b>ResNet-18<small>[He2016]</small></li>
+						<li><b>CSNN : </b>SEW-ResNet-18<small>[Fang2021]</small></li>
 						<li><b>3D-CNN : </b>MC3-ResNet-18<small>[TODOresnet3d]</small></li>
 					</ul>
 					<br>
 					<br>
-					<ul style="list-style: none;">
-						<li>ℹ️ &nbsp; Même complexité <span class="ita">($\approx$11M paramètres)</span></li>
-						<li>ℹ️ &nbsp; Représentations $\mathbf{Y}^d \in \mathbb{R}^{K = 512}$</li>
-					</ul>
+					<p>ℹ️ &nbsp; <span class="ita">Même architecture et même complexité</span></p>
 				</section>
 
 				<section>
@@ -1065,7 +1038,7 @@
 							<p style="border: solid 3px red; margin:10px; color:red; padding-top: 5px;">❌ &nbsp; Pas de protocole d'évaluation commun en SSRL événementiel</p>
 							<br>
 							<ul>
-								<li style="color:green;">Définir des <b>protocoles d'évaluation standard</b> pour les travaux futurs</li>
+								<li style="color:green;">Définir des <b>protocoles d'évaluation standards</b> pour les travaux futurs</li>
 								<ul>
 									<li>Problèmes de classification $\rightarrow$ taux de précision</li>
 									<li>Trois protocoles pour évaluer des aspects spécifiques du SSRL</li>
@@ -1080,32 +1053,36 @@
 
 				<section>
 					<h3>Protocole n°1 - Évaluation Linéaire</h3>
-					<br>
-					<div class="r-stack">
-						<img src="these/linear.png" alt="linear">
-					</div>
-					<br>
 					<p>🎯 &nbsp; Est-ce que la méthode de SSRL <b>extrait des caractéristiques pertinentes ?</b></p>
+					<br>
+					<div class="r-stack">
+						<!-- <img src="these/linear.png" alt="linear"> -->
+						<img src="these/ssrl/ssrl_linear.png" alt="linear">
+					</div>
+					<br>
+					<br>
 				</section>
 
 				<section>
-					<h3 style="font-size: 1.1em;">Protocole n°2 - Apprentissage Semi-supervisé</h3>
-					<br>
-					<div class="r-stack">
-						<img src="these/semisup.png" alt="linear">
-					</div>
-					<br>
-					<p>🎯 &nbsp; Est-ce que la méthode de SSRL permet de <b>réduire le besoin en annotations ?</b></p>
-				</section>
-
-				<section>
-					<h3>Protocole n°3 - Transfert d'Apprentissage</h3>
-					<br>
-					<div class="r-stack">
-						<img src="these/transfer.png" alt="linear">
-					</div>
-					<br>
+					<h3>Protocole n°2 - Transfert d'Apprentissage</h3>
 					<p>🎯 &nbsp; Est-ce que les caractéristiques apprises peuvent <b>être transférées à d'autres données ?</b></p>
+					<br>
+					<div class="r-stack">
+						<img src="these/ssrl/ssrl_transf.png" alt="linear">
+					</div>
+					<br>
+					<br>
+				</section>
+
+				<section>
+					<h3 style="font-size: 1.1em;">Protocole n°3 - Apprentissage Semi-supervisé</h3>
+					<p>🎯 &nbsp; Est-ce que la méthode de SSRL permet de <b>réduire le besoin en annotations ?</b></p>
+					<br>
+					<div class="r-stack">
+						<img src="these/ssrl/ssrl_semi.png" alt="linear">
+					</div>
+					<br>
+					<br>
 				</section>
 
 				<section>
@@ -1114,7 +1091,6 @@
 					<br>
 					<ul>
 						<li>Protocole d'<b>évaluation linéaire</b> sur <b>DVSGesture</b></li>
-						<li>$CSNN$ $2D$ $3D$ $CSNN_{2D}$ $CSNN_{3D}$</li>
 						<br>
 						<li><b>Trois étapes incrémentales : </b>une étape par catégorie</li>
 						<br>
@@ -1176,52 +1152,27 @@
 				<section>
 					<h3>Évaluation des Performances</h3>
 					<div class="r-stack">
-						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="4"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="5"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
-
-						<p class="fragment fade-in-then-out" data-fragment-index="6"><b>Transfert d'Apprentissage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="7"><b>Transfert d'Apprentissage</b></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="8"><b>Transfert d'Apprentissage</b></p>
+						<ul class="fragment fade-out" data-fragment-index="0">
+							<li>Résultats des protocoles <b>Semi-supervisé</b> et <b>Transfert d'Apprentissage</b></li>
+							<br>
+							<li>Mise en perspective avec les <b>modèles supervisés</b></li>
+							<br>
+							<li>Pour un protocole donné, on rapporte :</li>
+							<ol>
+								<li>Le <b>meilleur modèle supervisé</b> de l'état de l'art</li>
+								<li>Les <b>deux meilleurs résultats</b> obtenus sur le SSRL événementiel</li>
+							</ol>
+						</ul>
+						<div class="r-stack fragment" data-fragment-index="0">
+							<img src="these/ssrl/ssrl_benchmarks_0.png" alt="ssrl benchmarks" height="600px" style="margin: 0;">
+							<img src="these/ssrl/ssrl_benchmarks_1.png" alt="ssrl benchmarks" class="fragment" height="670px" style="margin:0;">
+							<img src="these/ssrl/ssrl_benchmarks_2.png" alt="ssrl benchmarks" class="fragment" height="670px" style="margin:0;">
+							<img src="these/ssrl/ssrl_benchmarks_1.png" alt="ssrl benchmarks" class="fragment" height="670px" style="margin:0;">
+							<img src="these/ssrl/ssrl_benchmarks_3.png" alt="ssrl benchmarks" class="fragment" height="670px" style="margin:0;">
+							<img src="these/ssrl/ssrl_benchmarks_4.png" alt="ssrl benchmarks" class="fragment" height="670px" style="margin:0;">
+							<img src="these/ssrl/ssrl_benchmarks_5.png" alt="ssrl benchmarks" class="fragment" height="670px" style="margin:0;">
+						</div>
 					</div>
-					<div class="r-stack">
-						<img src="these/results_ssl/tab_0.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="0">
-						<img src="these/results_ssl/tab_1.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="1">
-						<img src="these/results_ssl/tab_2.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="2">
-						<img src="these/results_ssl/tab_3.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="3">
-						<img src="these/results_ssl/tab_4.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="4">
-						<img src="these/results_ssl/tab_5.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="5">
-
-						<img src="these/results_ssl/transfer_0.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="6">
-						<img src="these/results_ssl/transfer_1.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="7">
-						<img src="these/results_ssl/transfer.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="8">
-					</div>
-					<div class="r-stack">
-						<p class="fragment fade-in-then-out" data-fragment-index="0"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="1"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="2"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="3"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="4">2D-/3D-CNNs $>$ CSNN</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="5">Intérêt de la variante "Étudiant-Professeur"</p>
-						<p class="fragment fade-in-then-out" data-fragment-index="6"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="7"></p>
-						<p class="fragment fade-in-then-out" data-fragment-index="8">✅ &nbsp; transférabilité des représentations apprises</p>
-					</div>
-				</section>
-
-				<section>
-					<h3>Mise en Perspective</h3>
-					<p style="border: 3px solid;"><b>Comment se compare-t-on aux méthodes supervisées ?</b></p>
-					<br>
-					<img class="fragment" src="these/results_ssl/perspective.png" alt="perspective">
-					<ul>
-						<li class="fragment">Résultats <b>compétitifs</b>...</li>
-						<li class="fragment">... avec des modèles <b>plus légers</b>...</li>
-						<li class="fragment">... sans apprentissage supervisé !</li>
-					</ul>
 				</section>
 
 				<section>
@@ -1295,7 +1246,15 @@
 							<li>Quelles sont les spécificités d'un SNN déployé ?</li>
 						</ul>
 						<br>
-						<li><b></b></li>
+						<li><b>Études supplémentaires</b></li>
+						<ul>
+							<li>Qualité de l'apprentissage, attaques adverses, etc.</li>
+						</ul>
+						<br>
+						<li><b>Vers des tâches plus complexes...</b></li>
+						<ul>
+							<li>détection d'objets, segmentation panoptique, ...</li>
+						</ul>
 					</ul>
 				</section>
 
@@ -1330,7 +1289,7 @@
 			</section>
 
 			<section>
-				<h3>Merci pour votre attention !</h3>
+				<h3>Séance de Questions</h3>
 				<p style="text-align: left;"><b>Publications</b> &nbsp; 6️⃣</p>
 				<ul>
 					<li>Conférences internationales à comité de lecture &nbsp; 5️⃣</li>
@@ -1344,19 +1303,52 @@
 					<li>🥇 &nbsp; Doctoriales</li>
 					<li>📣 &nbsp; Médiation scientifique</li>
 				</ul>
-				<p><small><a href="https://scholar.google.com/citations?user=M8sMMssAAAAJ&hl=en">https://scholar.google.com/citations?user=M8sMMssAAAAJ&hl=en</a></small></p>
 			</section>
 
 			<section>
-				<h3>References</h3>
-				<ul style="list-style: none;">
-					<li><small><b>[NameYEAR]: </b>M. Sajjad, et al. "A comprehensive survey on deep facial expression
-							recognition: challenges, applications, and future guidelines"</small></li>
-					<li><small><b>[Bokovoy2019]: </b>A. Bokovoy et al. "Real-time Vision-based Depth Reconstruction with
-							NVidia Jetson"</small></li>
-					<li><small><b>[Desislavov2023]: </b>R. Desislavov et al. "Trends in AI inference energy consumption:
-							Beyond the performance-vs-parameter laws of deep learning"</small></li>
+				<h3>Contributions</h3>
+				<ul>
+					<li class="fragment shrink" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></li>
+					<li class="fragment shrink" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></li>
+					<li class="fragment shrink" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></li>
+					<li class="fragment highlight-red" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Bina-rep event frames: A simple and effective representation for event-based cameras."</span> <b>2022 IEEE International Conference on Image Processing (ICIP)</b>.</small></li>
+					<li class="fragment  highlight-blue" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras."</span> <b>2023 International Conference on Content-Based Multimedia Indexing (CBMI). ACM, 2023.</b>.</small></li>
+					<li style="border-top: solid 2px; padding-top: 5px; text-align: justify; color: darkgrey;"><small><span class="ita">"Review on indoor RGB-D semantic segmentation with deep convolutional neural networks."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></li>
 				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h1>Références</h1>
+				</section>
+				
+				<section>
+					<!-- <h3>Introduction & État de l'Art</h3> -->
+					<ul style="list-style: none; text-align: justify;">
+						<li><small><b>[Bokovoy2019]: </b>A. Bokovoy et al. "Real-time Vision-based Depth Reconstruction with NVidia Jetson"</small></li>
+						<li><small><b>[Desislavov2023]: </b>R. Desislavov et al. "Trends in AI inference energy consumption: Beyond the performance-vs-parameter laws of deep learning"</small></li>
+						<li><small><b>[Krizhevsky2012]: </b>A. Krizhevsky, et al. "Imagenet classification with deep convolutional neural networks"</small></li>
+						<li><small><b>[He2016]: </b>K. He, et al. "Deep residual learning for image recognition"</small></li>
+						<li><small><b>[Deng2009]: </b>J. Deng, et al. "Imagenet: A large-scale hierarchical image database"</small></li>
+						<li><small><b>[Lapicque1907]: </b>LM Lapicque, "Recherches quantitatives sur l’excitation electrique des nerfs"</small></li>
+						<li><small><b>[Neftci2019]: </b>E. Neftci et al., "Surrogate gradient learning in spiking neural networks: Bringing the power of gradient-based optimization to spiking neural networks"</small></li>
+						<li><small><b>[Li2017]: </b>H. Li et al., "Cifar10-dvs: an event-stream dataset for object classification."</small></li>
+						<li><small><b>[Kim2022]: </b>Y. Kim et al. "Beyond Classification: Directly Training Spiking Neural Networks for Semantic Segmentation"</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<!-- <h3>Références (2)</h3> -->
+					<ul style="list-style: none; text-align: justify;">
+						<li><small><b>[Cordone2022]: </b>L. Cordone et al. "Object Detection with Spiking Neural Networks on Automotive Event Data"</small></li>
+						<li><small><b>[Rancon2021]: </b>U. Rançon et al. "StereoSpike: Depth Learning with a Spiking Neural Network"</small></li>
+						<li><small><b>[Horowitz2014]: </b>M. Horowitz "Computing's energy problem (and what we can do about it)"</small></li>
+						<li><small><b>[Bardes2022]: </b>A. Bardes et al. "VICReg: Variance-Invariance-Covariance Regularization For Self-Supervised Learning"</small></li>
+						<li><small><b>[Zbontar2021]: </b>J. Zbontar et al. "Barlow Twins: Self-Supervised Learning via Redundancy Reduction"</small></li>
+						<li><small><b>[Fang2021]: </b>W. Fang et al. "Deep residual learning in spiking neural networks"</small></li>
+						<li><small><b>[Tran2017]: </b>D. Tran et al. "A Closer Look at Spatiotemporal Convolutions for Action Recognition"</small></li>
+					</ul>
+				</section>
 			</section>
 
 			<section>
@@ -1411,6 +1403,18 @@
 				<section>
 					<h3>Images Statiques - Latence</h3>
 					<img src="these/localization/latence_full.png" alt="latence full" height="600px">
+				</section>
+
+				<section>
+					<h3>Consommation énergétique</h3>
+					<div class="r-stack fragment fade-in" data-fragment-index="0">
+						<img src="these/localization/conso_1.png" alt="conso" class="fragment" data-fragment-index="0">
+						<img src="these/localization/conso_2.png" alt="conso" class="fragment" data-fragment-index="1">
+						<img src="these/localization/conso_3.png" alt="conso" class="fragment" data-fragment-index="2">
+						<img src="these/localization/conso.png" alt="conso" class="fragment" data-fragment-index="3">
+						<img src="these/localization/conso_4.png" alt="conso" class="fragment" data-fragment-index="4">
+						<img src="these/localization/conso_5.png" alt="conso" class="fragment" data-fragment-index="5">
+					</div>
 				</section>
 			</section>
 
@@ -1529,6 +1533,45 @@
 						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_12.png">
 						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_13.png">
 						<img alt="tab result edas" class="fragment" src="these/results_edas/tab_14.png">
+					</div>
+				</section>
+
+				<section>
+					<h3>Évaluation des Performances</h3>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="1"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="5"><b>Évaluation Linéaire et Apprentissage Semi-supervisé</b></p>
+
+						<p class="fragment fade-in-then-out" data-fragment-index="6"><b>Transfert d'Apprentissage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="7"><b>Transfert d'Apprentissage</b></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="8"><b>Transfert d'Apprentissage</b></p>
+					</div>
+					<div class="r-stack">
+						<img src="these/results_ssl/tab_0.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="0">
+						<img src="these/results_ssl/tab_1.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="1">
+						<img src="these/results_ssl/tab_2.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="2">
+						<img src="these/results_ssl/tab_3.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="3">
+						<img src="these/results_ssl/tab_4.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="4">
+						<img src="these/results_ssl/tab_5.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="5">
+
+						<img src="these/results_ssl/transfer_0.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="6">
+						<img src="these/results_ssl/transfer_1.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="7">
+						<img src="these/results_ssl/transfer.png" alt="results ssl" class="fragment fade-in-then-out" data-fragment-index="8">
+					</div>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out" data-fragment-index="0"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="1"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="2"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="3"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="4">2D-/3D-CNNs $>$ CSNN</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="5">Intérêt de la variante "Étudiant-Professeur"</p>
+						<p class="fragment fade-in-then-out" data-fragment-index="6"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="7"></p>
+						<p class="fragment fade-in-then-out" data-fragment-index="8">✅ &nbsp; transférabilité des représentations apprises</p>
 					</div>
 				</section>
 
