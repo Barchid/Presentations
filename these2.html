@@ -109,55 +109,23 @@
 							<!-- <figcaption>Détection d'objets</figcaption> -->
 						</figure>
 
-						<figure class="fragment fade-in-then-out" data-fragment-index="2">
+						<!-- <figure class="fragment fade-in-then-out" data-fragment-index="2">
 							<img src="these/vslam.gif" alt="detection">
 							<figcaption><small>[Bokovoy2019]</small></figcaption>
-						</figure>
+						</figure> -->
 
-						<ul class="fragment fade-in-then-out" data-fragment-index="3">
+						<ul class="fragment fade-in-then-out" data-fragment-index="2">
 							<li><b>Applications nombreuses :</b> médical, industriel, sécurité, robotique, ...</li>
 							<br>
 							<li><b>Comment ?</b> Réseaux de Neurones Artificiels ( <b><span class="ita">ANN</span>s</b>
 								) par l'apprentissage profond </li>
+							<br>
+							<li>📈 &nbsp; <b>Complexité des réseaux</b></li>
+							<ul>
+								<li>📈 &nbsp; Puissance de calculs requise $\Rightarrow$ <b>Consommation énergétique</b><small>[Desislavov2023]</small></li>
+							</ul>
 						</ul>
 					</div>
-				</section>
-
-				<section>
-					<h3>Consommation Énergétique</h3>
-					<p>Estimation de l'énergie consommée lors d'une inférence des modèles de l'état de l'art par
-						année<small>[Desislavov2023]</small></p>
-					<div class="r-stack">
-						<!-- <img src="these/consommation_energie_0.png" alt="Consommation énergétique">
-						<img src="these/consommation_energie_1.png" alt="Consommation énergétique" class="fragment"> -->
-						<img src="these/consommation_energie_2.png" alt="Consommation énergétique">
-						<img src="these/consommation_energie_3.png" alt="Consommation énergétique" class="fragment">
-						<img src="these/consommation_energie_4.png" alt="Consommation énergétique" class="fragment">
-					</div>
-				</section>
-
-				<section>
-					<h3>Consommation Énergétique</h3>
-					<ul>
-						<li><b>Évolution des modèles</b></li>
-						<ul style="list-style-type: '📈'">
-							<li> &nbsp; Complexité <span
-									class="ita">(profondeur, paramètres, ...)</span></li>
-							<li> &nbsp; Puissance de calculs requise</li>
-							<li> &nbsp; Consommation énergétique</li>
-						</ul>
-						<br>
-						<li><b>Enjeux majeurs</b></li>
-						<ul>
-							<li>Environnement</li>
-							<li>Applications</li>
-						</ul>
-					</ul>
-					<br>
-					<br>
-					<p style="color: red;">
-						$\Rightarrow$ <b>Problématique principale</b>
-					</p>
 				</section>
 
 				<section>
@@ -180,30 +148,19 @@
 						<li>Inspirée de la biologie</li>
 						<li>Événements <b>asynchrones</b> lors d'un changement d'intensité du pixel</li>
 						<!-- <br> -->
-						<li>Capture du <b>mouvement</b></li>
+						<li><b>Avantages :</b> faible latence, haute plage dynamique, <b style="color: green;">efficacité énergétique</b>, ... </li>
 					</ul>
-					<table>
+
+					<div class="grid-container">
+						<div class="div1"><img src="these/dvs.gif" alt="dvs" height="300px"></div>
+						<div class="div2"><img src="img/ssl/lift.gif" alt="enothing" height="350px"></div>
+					</div>
+					<!-- <table>
 						<tr>
-							<td><video style="display: inline !important;" src="img/Bina_rep/dvscamvisu.mp4" height="300px" muted controls></video></td>
+							<td><video style="display: inline !important;"  height="300px" muted controls></video> <img src="these/dvs.gif" alt=""></td>
 							<td><img src="img/ssl/lift.gif" alt="enothing" height="350px" style="margin-bottom: 250px;"></td>
 						</tr>
-					</table>
-				</section>
-
-				<section>
-					<h3>Caméra Événementielle</h3>
-					<br>
-					<ul style="list-style: none;">
-						<li>🪶 &nbsp; Représentation éparse</li>
-						<br>
-						<li>🚀 &nbsp; Faible latence (~1 µs)</li>
-						<br>
-						<li style="text-decoration: line-through;">Flou cinétique</li>
-						<br>
-						<li>🛡️  &nbsp; Haute plage dynamique</li>
-						<br>
-						<li>🌍 &nbsp; Efficacité énergétique</li>
-					</ul>
+					</table> -->
 				</section>
 
 				<section>
@@ -211,56 +168,53 @@
 					<ul>
 						<li>Bio-inspirés <span class="ita">(neurones impulsionnels)</span></li>
 						<li>Neurones communiquent par <b>impulsions binaires</b> dans le temps</li>
+						<li><b style="color: green;">Très basse consommation</b></li>
 					</ul>
 					<br>
-					<br>
-					<div><video src="img/Bina_rep/snn_visu.mp4" muted
-							height="330px" controls /></div>
+					<div><img src="these/snn.gif" alt="snn" height="330px" style="margin: 0;"></div>
 					<p><small>Source : <a
 								href="https://www.youtube.com/watch?v=oG0PTP3ogCA">https://www.youtube.com/watch?v=oG0PTP3ogCA</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h3>Défis du Neuromorphique</h3>
+					<h3>Problématiques du Neuromorphique</h3>
+					<p style="color: red; border: solid 3px;"><b>Domaine attractif mais moins développé que la vision classique</b></p>
 					<ul>
-						<li><b>Émergence récente des SNNs profonds</b></li>
-						<ul>
-							<li>Progrès rapides</li>
-							<li style="color: red;"><b>Manque d'analyses :</b> compréhension des spécificités des technologies neuromorphiques</li>
+						<li class="fragment" data-fragment-index="0"><b>Vision événementielle</b></li>
+						<ul class="fragment" data-fragment-index="0">
+							<li>ANNs profonds fortement utilisés</li>
+							<li>Diversification des applications <b style="color: red">$\Rightarrow$ besoins de BDDs d'apprentissage</b></li>
 						</ul>
-						<br>
-						<li><b>Adoption des caméras événementielles croissante</b></li>
-						<ul>
-							<li>Besoin de création de Bases de Données (<span class="ita">BDDs</span>)</li>
-							<li style="color:red"><b>Coûteux : </b>complexité de concevoir des nouveaux cas d'application</li>
+						<li class="fragment" data-fragment-index="1"><b>Réseaux de neurones impulsionnels</b></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Très prometteurs</li>
+							<li>Moins matures que les ANNs <span class="ita">(2020)</span> <b style="color: red;">$\Rightarrow$ peu de diversité des tâches de vision</b></li>
 						</ul>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Objectifs</h3>
-					<p style="border: solid 4px;"><b>Étendre les applications des technologies neuromorphiques pour la vision artificielle</b></p>
-					<br>
+					<h3>Contributions</h3>
 					<ul>
-						<li class="fragment"><b>Études expérimentales</b> pour approfondir nos connaissances sur les aspects de conception
-						</li>
-						<br>
-						<li class="fragment"><b>Conception</b> d'approches pour <b>faciliter le développement</b> de modèles profonds</li>
+						<li><b>Vision Événementielle</b></li>
+						<ul>
+							<li>Construire une BDD est un processus coûteux <span style="color: red;">$\Rightarrow$ ralentit les progrès du domaine</span></li>
+							<li class="fragment" style="border: 3px; color:blue;"><b>1ère contribution :</b> réduction du besoins en annotations en vision événementielle</li>
+						</ul>
+						<li><b>SNNs :</b> <span class="ita">(début de thèse - 2020)</span></li>
+						<ul>
+							<li>Tâches de vision simplistes <span class="ita">(classifications)</span></li>
+							<li>Émergence de SNNs profonds<small>[Neftci2019]</small></li>
+							<li class="fragment" style="border: 3px; color:blue;"><b>2ème contribution :</b> aller vers des tâches de vision plus complexes <b>(+ analyses)</b></li>
+						</ul>
 					</ul>
 				</section>
-
-				<!-- <section>
-					<h3>🖼️ &nbsp; Contextes</h3>
-					<div class="r-stack">
-
-					</div>
-				</section> -->
 			</section>
 
 			<section>
 				<section>
-					<h1>État de l'Art</h1>
+					<h1>Théories</h1>
 				</section>
 
 				<!-- <section>
@@ -340,67 +294,21 @@
 					</div>
 				</section>
 
-
 				<section>
-					<h3>Approches Classiques</h3>
-					<p><b>Évolutions marquantes</b></p>
-
-					<div class="r-stack">
-						<!-- <figure class="fragment fade-in-then-out">
-							<figcaption>Neurone artificiel</figcaption>
-							<img src="these/sota/artificial_neuron.png" alt="artificial neuron">
-						</figure>
-						<figure class="fragment fade-in-then-out">
-							<figcaption>Multi-layer Perceptron (<span class="ita">MLP</span>)</figcaption>
-							<img src="these/sota/mlp.png" height="450px" alt="artificial neuron">
-						</figure>
-
-						<figure class="fragment fade-in-then-out">
-							<figcaption>Convolution</figcaption>
-							<img src="these/sota/convolution.png" height="450px" alt="artificial neuron">
-						</figure> -->
-
-						<ul class="fragment fade-in-then-out">
-							<li>Adoption des <b>réseaux de neurones convolutifs</b> <span class="ita">(CNNs)</span></li>
-							<ul>
-								<li><b>AlexNet</b><small>[Krizhevsky2012]</small> (2012) atteint les meilleures performances sur <b>ImageNet</b><small>[Deng2009]</small></li>
-								<li><b>ResNet</b><small>[He2016]</small> introduit la notion de blocs résiduels</li>
-								<li>...</li>
-								<br>
-								<li>Convolutions 2D pour les images : <b>2D-CNN</b></li>
-								<li>Convolutions 3D pour les vidéos : <b>3D-CNN</b></li>
-							</ul>
-						</ul>
-
-						<ul class="fragment fade-in-then-out">
-							<li><b>Plus récemment</b> (2020)</li>
-							<br>
-							<ul>
-								<li>Arrivée des <b>transformeurs de vision <span class="ita">(ViT)</span></b></li>
-								<br>
-								<li><span style="color:red;">Besoin en données annotées massif</span> $\Rightarrow$ apprentissage auto-supervisé <span class="ita">(SSL)</span></li>
-								<br>
-								<li><b>Modèles de fondations :</b> modèles de grande envergure pré-entraînés</li>
-							</ul>
-						</ul>
-					</div>
-				</section>
-
-				<section>
-					<h3>Formulation - Réseau de Neurones</h3>
-					<br>
-					<p>
-						$f_{\alpha}(Input) = Output$
-					</p>
-					<br>
-					<br>
+					<h3>Apprentissage Profond</h3>
 					<ul>
-						<li>$f_{\alpha}$ $\rightarrow$ réseau de neurones dont $\alpha$ est l'ensemble des poids entraînables</li>
+						<li><b>Réseaux de neurones convolutifs <span class="ita">(CNNs)</span></b></li>
+						<ul>
+							<li><b>AlexNet</b><small>[Kzh2012]</small> (2012) atteint les meilleures performances sur <b>ImageNet</b><small>[Deng2009]</small></li>
+							<li><b>2D-CNN</b> : convolutions 2D pour les images</li>
+							<li><b>3D-CNN</b> : convolutions 3D pour les vidéos</li>
+						</ul>
 						<br>
-						<li>$Input$ $\rightarrow$ les données en entrée</li>
-						<br>
-						<li>$Output$ $\rightarrow$ les caractéristiques en sortie</li>
-						<br>
+						<li><b>Plus récemment</b> (2020)</li>
+						<ul>
+							<li><b>Transformeur de Vision</b> (ViT) $\Rightarrow$ complexité 📈 (<span class="ita">ex. ViT-22B <small>[Dehghani2023]</small>)</span></li>
+							<li><b>Modèles de fondations :</b> modèles massifs polyvalents</li>
+						</ul>
 					</ul>
 				</section>
 
@@ -416,6 +324,26 @@
 						<img src="these/convenc_2.png" alt="convenc" class="fragment"> -->
 						<img src="these/convenc.png" alt="convenc">
 					</div>
+				</section>
+
+				<section>
+					<h3>Apprentissage Profond et Événements</h3>
+					<ul>
+						<li><b>ANNs sont très courants</b> pour traiter les événements</li>
+						<br>
+						<li>📈 &nbsp; <b>Tâches de vision</b></li>
+						<ul>
+							<li>Reconnaissance, détection d'objets, segmentation, tracking, synthétisation 3D</li>
+						</ul>	
+						<li>📈 &nbsp; <b>Contextes</b></li>
+						<ul>
+							<li>Conduite autonome, robotique, lecture labiale, </li>
+						</ul>
+						<li>📈 &nbsp; <b>Architectures</b></li>
+							<ul>
+							<li>2D-/3D-CNNs, ViTs, encodeur-décodeur</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
@@ -489,9 +417,8 @@
 
 				<section>
 					<h3>Revue - SNNs en Vision</h3>
-					<p style="color: green; border: 3px solid; padding-top: 5px;">✅ &nbsp; L'apprentissage par SG a permis un entraînement efficace des SNNs profonds</p>
 					<ul>
-						<li><b>Au départ </b>(2019) :</li>
+						<li><b>Début de thèse </b>(2020-2021) :</li>
 						<ul>
 							<li>Hautes performances pour la classification (CIFAR10-DVS<small>[Li2017]</small>, ImageNet <small>[Deng2009]</small>, ...)</li>
 						</ul>
@@ -1327,7 +1254,7 @@
 					<ul style="list-style: none; text-align: justify;">
 						<li><small><b>[Bokovoy2019]: </b>A. Bokovoy et al. "Real-time Vision-based Depth Reconstruction with NVidia Jetson"</small></li>
 						<li><small><b>[Desislavov2023]: </b>R. Desislavov et al. "Trends in AI inference energy consumption: Beyond the performance-vs-parameter laws of deep learning"</small></li>
-						<li><small><b>[Krizhevsky2012]: </b>A. Krizhevsky, et al. "Imagenet classification with deep convolutional neural networks"</small></li>
+						<li><small><b>[Kzh2012]: </b>A. Kzh, et al. "Imagenet classification with deep convolutional neural networks"</small></li>
 						<li><small><b>[He2016]: </b>K. He, et al. "Deep residual learning for image recognition"</small></li>
 						<li><small><b>[Deng2009]: </b>J. Deng, et al. "Imagenet: A large-scale hierarchical image database"</small></li>
 						<li><small><b>[Lapicque1907]: </b>LM Lapicque, "Recherches quantitatives sur l’excitation electrique des nerfs"</small></li>
@@ -1347,6 +1274,7 @@
 						<li><small><b>[Zbontar2021]: </b>J. Zbontar et al. "Barlow Twins: Self-Supervised Learning via Redundancy Reduction"</small></li>
 						<li><small><b>[Fang2021]: </b>W. Fang et al. "Deep residual learning in spiking neural networks"</small></li>
 						<li><small><b>[Tran2017]: </b>D. Tran et al. "A Closer Look at Spatiotemporal Convolutions for Action Recognition"</small></li>
+						<li><small><b>[Dehghani2023]: </b>M. Dehghani et al. "Scaling Vision Transformers to 22 Billion Parameters"</small></li>
 					</ul>
 				</section>
 			</section>
@@ -1355,6 +1283,19 @@
 				<section>
 					<h1>Annexes</h1>
 					<h4>État de l'Art</h4>
+				</section>
+
+				<section>
+					<h3>Consommation Énergétique</h3>
+					<p>Estimation de l'énergie consommée lors d'une inférence des modèles de l'état de l'art par
+						année<small>[Desislavov2023]</small></p>
+					<div class="r-stack">
+						<!-- <img src="these/consommation_energie_0.png" alt="Consommation énergétique">
+						<img src="these/consommation_energie_1.png" alt="Consommation énergétique" class="fragment"> -->
+						<img src="these/consommation_energie_2.png" alt="Consommation énergétique">
+						<img src="these/consommation_energie_3.png" alt="Consommation énergétique" class="fragment">
+						<img src="these/consommation_energie_4.png" alt="Consommation énergétique" class="fragment">
+					</div>
 				</section>
 
 				<section>
