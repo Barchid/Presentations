@@ -330,18 +330,17 @@
 					<h3>Apprentissage Profond et Événements</h3>
 					<ul>
 						<li><b>ANNs sont très courants</b> pour traiter les événements</li>
-						<br>
 						<li>📈 &nbsp; <b>Tâches de vision</b></li>
 						<ul>
 							<li>Reconnaissance, détection d'objets, segmentation, tracking, synthétisation 3D</li>
 						</ul>	
 						<li>📈 &nbsp; <b>Contextes</b></li>
 						<ul>
-							<li>Conduite autonome, robotique, lecture labiale, </li>
+							<li>Conduite autonome, robotique, reconnaissance labiale, détection de fatigue, ...</li>
 						</ul>
 						<li>📈 &nbsp; <b>Architectures</b></li>
 							<ul>
-							<li>2D-/3D-CNNs, ViTs, encodeur-décodeur</li>
+							<li>2D-/3D-CNNs, ViTs, encodeur-décodeur, NERF, ...</li>
 						</ul>
 					</ul>
 				</section>
@@ -416,76 +415,56 @@
 				</section>
 
 				<section>
-					<h3>Revue - SNNs en Vision</h3>
+					<h3>SNNs Profonds en Vision</h3>
 					<ul>
-						<li><b>Début de thèse </b>(2020-2021) :</li>
+						<li><b>Début de thèse </b>(2020-2021)</li>
 						<ul>
-							<li>Hautes performances pour la classification (CIFAR10-DVS<small>[Li2017]</small>, ImageNet <small>[Deng2009]</small>, ...)</li>
+							<li>Émergence des architectures profondes <br><span class="ita" style="font-size: 0.8em;">(SEW-ResNet<small>[Fang2021]</small>, ...)</span></li>
+							<li>Hautes performances en classification <br><span class="ita" style="font-size: 0.8em;">(CIFAR10-DVS<small>[Li2017]</small>, ...)</span></li>
 						</ul>
+						<li style="list-style: none;">$\Rightarrow$ <b>Prometteur pour aller plus loin</b> </li>
 						<br>
-						<li><b>Diversification des tâches</b> (2021 - ...) : segmentation<small>[Kim2022]</small>, détection<small>[Cordone2022]</small>, profondeur<small>[Rancon2021]</small>, ...</li>
+						<li class="fragment" data-fragment-index="0"><b>Actuellement</b></li>
+						<ul class="fragment" data-fragment-index="0">
+							<li>Segmentation<small>[K2022]</small>, détection<small>[Crd2022]</small>, ...</li>
+							<li>Versions impulsionnelles d'architectures profondes (ViT<small>[Zhou2022]</small>, SSD<small>[Crd2022]</small>)</li>
+						</ul>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Revue - Vision Événementielle</h3>
-					<div class="r-stack">
-						<ul class="fragment fade-out" data-fragment-index="0">
-							<li>Intérêt croissant $\Rightarrow$ développement rapide du domaine</li>
-							<br>
-							<li>Diversification des <b>tâches de vision</b> traitées</li>
-							<br>
-							<li>Diversification des <b>contextes d'applications</b></li>
-						</ul>
-						<div class="r-stack fragment" data-fragment-index="0">
-							<img src="these/sota/tasks_0.png" alt="tasks" height="550px">
-							<img src="these/sota/tasks_2.png" alt="tasks" height="550px" class="fragment">
-							<img src="these/sota/tasks_3.png" alt="tasks" height="550px" class="fragment">
-							<img src="these/sota/tasks_4.png" alt="tasks" height="550px" class="fragment">
-							<img src="these/sota/tasks.png" alt="tasks" height="550px" class="fragment">
-						</div>
-					</div>
-				</section>
-
-				<section>
-					<h3>Verrous Scientifiques</h3>
-					<ul>
-						<li><b>SNNs profonds :</b></li>
+					<h3>Positionnement des Contributions</h3>
+					<ol>
+						<li><b>Début de thèse :</b></li>
 						<ul>
-							<li>Progrès rapides</li>
-							<li style="color: red;">Retard sur la compréhension des aspects de conception</li>
-							<li class="fragment" style="color:blue;list-style-type: none;"><b>$\Rightarrow$ Études expérimentales</b></li>
+							<li><b>Aller plus loin</b> que la classification ?</li>
+							<li><b>Analyser le comportement</b> ces nouveaux SNNs</li>
+							<li class="fragment" style="color: blue;"><b>Explorer et analyser la localisation d'objet avec les SNNs entraînés par SG</b></li>
 						</ul>
 						<br>
-						<li><b>Vision événementielle :</b></li>
+						<li><b>Progrès en vision événementielle</b></li>
 						<ul>
-							<li>Diversification des contextes d'utilisation $\Rightarrow$ construction de nouvelles BDDs annotées</li>
-							<li style="color: red;">Processus coûteux</li>
-							<li class="fragment" style="color:blue;list-style-type: none;"><b>$\Rightarrow$ Réduire ce coût</b></li>
+							<li>Comment <b>faciliter </b> le développement dans de <b>nouveaux contextes</b> ?</li>
+							<li class="fragment" style="color: blue;"><b>Méthode de pré-entraînement par apprentissage auto-supervisé</b></li>
 						</ul>
-					</ul>
+					</ol>
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<br>
-					<br>
+					
 					<h2>Étude des Réseaux de Neurones Impulsionnels <br> par la Localisation d'Objet</h2>
-					<br>
-					<br>
-					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></p>
-					<p style="text-align: justify;"><small>📔 &nbsp; <span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></p>
 				</section>
 
 				<section>
-					<h3>Manque d'Analyses</h3>
+					<h3>Analyses des SNNs</h3>
 					<ul>
 						<li><b>Historiquement</b> (SNNs peu profonds avec STDP) <b>:</b></li>
 						<ul>
-							<li><b>Images statiques : </b>Supériorité du codage temporel</li>
-							<li><b>Latence temporelle</b> ($T$) <b>:</b> une grande valeur $T$ est préférable</li>
-							<li><b>Robustesse aux corruptions</b></li>
+							<li><b>Images statiques : </b>supériorité du codage temporel<small>[Falez2019]</small></li>
+							<li><b>Latence temporelle</b> ($T$) <b>:</b> une grande valeur $T$ est préférable<small>[Guo2021]</small></li>
+							<li><b>Robustesse aux corruptions</b><small>[Guo2021]</small></li>
 						</ul>
 						<br>
 						<li class="fragment" data-fragment-index="0" style="color: darkorange;">⚠️ &nbsp; Est-ce que l'apprentissage par SG est différent ?</li>
@@ -513,7 +492,7 @@
 				</section>
 
 				<section>
-					<h3>Contenu de l'Étude</h3>
+					<h3>Travaux</h3>
 					<ul>
 						<li><b>Deux modalités :</b> images statiques et événements</li>
 						<br>
@@ -585,7 +564,7 @@
 						<div class="div5-3x3">
 							<figure style="margin: 0;">
 								<img src="these/localization/nc/saccade.gif" alt="origi" height="250px" style="margin: 0;">
-								<figcaption style="color: blue;">🆕 par Saccades</figcaption>
+								<figcaption>par Saccades</figcaption>
 							</figure>
 						</div>
 						<div class="div6-3x3">
@@ -749,7 +728,7 @@
 					<h3>Consommation Énergétique</h3>
 					<div class="r-stack">
 						<ul class="fragment fade-out" data-fragment-index="0">
-							<li><b>Estimation de l'énergie consommée</b><small>[Kim2022]</small></li>
+							<li><b>Estimation de l'énergie consommée</b><small>[K2022]</small></li>
 							<br>
 							<ul>
 								<li>Calcul des FLOPs effectués lors de l'inférence</li>
@@ -783,27 +762,40 @@
 						</ul>
 						<br>
 						<li class="fragment" data-fragment-index="1"><b>Codages Neuronaux : </b> intérêt du <span style="color: green;"><b>codage fréquentiel</b></span></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Performant et robuste</li>
+						</ul>
 						<br>
-						<li  class="fragment" data-fragment-index="2"><b>Contradictions avec les études précédentes</b> <span class="ita">(STDP)</span><small>[TODO]</small></li>
+						<li class="fragment" data-fragment-index="2"><b>Événements :</b></li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>🏅 &nbsp; <b>SNN plus performant que ANN</b></li>
+							<li>... mais moins robuste</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Conclusion</h3>
+					<ul>
+						<li>Aller au-delà de la classification <b>est possible</b></li>
+						<br>
+						<li  class="fragment" data-fragment-index="2"><b>Contradictions avec les études précédentes</b> <span class="ita">(STDP)</span><small>[Falez2019,Guo2021]</small></li>
 						<ul  class="fragment" data-fragment-index="2">
 							<li>Faiblesse du <span style="color:red;">codage temporel</span></li>
 							<li>Influence de la latence temporelle</li>
 							<li><b>$\Rightarrow$ Remise en cause des connaissances</b></li>
 						</ul>
 					</ul>
+
+					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></p>
+					<p style="text-align: justify;"><small>📔 &nbsp; <span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></p>
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<br>
-					<br>
-					<br>
 					<h2>Pré-entraînement <br> Auto-supervisé <br> pour la Vision
 							Événementielle</h2>
-					<br>
-					<br>
-					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></p>
 				</section>
 
 				<section>
@@ -1141,6 +1133,7 @@
 							<li>❌ &nbsp; Traitement de l'information spatio-temporel</li>
 						</ul>
 					</ul>
+					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></p>
 				</section>
 			</section>
 
@@ -1260,14 +1253,14 @@
 						<li><small><b>[Lapicque1907]: </b>LM Lapicque, "Recherches quantitatives sur l’excitation electrique des nerfs"</small></li>
 						<li><small><b>[Neftci2019]: </b>E. Neftci et al., "Surrogate gradient learning in spiking neural networks: Bringing the power of gradient-based optimization to spiking neural networks"</small></li>
 						<li><small><b>[Li2017]: </b>H. Li et al., "Cifar10-dvs: an event-stream dataset for object classification."</small></li>
-						<li><small><b>[Kim2022]: </b>Y. Kim et al. "Beyond Classification: Directly Training Spiking Neural Networks for Semantic Segmentation"</small></li>
+						<li><small><b>[K2022]: </b>Y. Kim et al. "Beyond Classification: Directly Training Spiking Neural Networks for Semantic Segmentation"</small></li>
 					</ul>
 				</section>
 
 				<section>
 					<!-- <h3>Références (2)</h3> -->
 					<ul style="list-style: none; text-align: justify;">
-						<li><small><b>[Cordone2022]: </b>L. Cordone et al. "Object Detection with Spiking Neural Networks on Automotive Event Data"</small></li>
+						<li><small><b>[Crd2022]: </b>L. Cordone et al. "Object Detection with Spiking Neural Networks on Automotive Event Data"</small></li>
 						<li><small><b>[Rancon2021]: </b>U. Rançon et al. "StereoSpike: Depth Learning with a Spiking Neural Network"</small></li>
 						<li><small><b>[Horowitz2014]: </b>M. Horowitz "Computing's energy problem (and what we can do about it)"</small></li>
 						<li><small><b>[Bardes2022]: </b>A. Bardes et al. "VICReg: Variance-Invariance-Covariance Regularization For Self-Supervised Learning"</small></li>
@@ -1275,6 +1268,15 @@
 						<li><small><b>[Fang2021]: </b>W. Fang et al. "Deep residual learning in spiking neural networks"</small></li>
 						<li><small><b>[Tran2017]: </b>D. Tran et al. "A Closer Look at Spatiotemporal Convolutions for Action Recognition"</small></li>
 						<li><small><b>[Dehghani2023]: </b>M. Dehghani et al. "Scaling Vision Transformers to 22 Billion Parameters"</small></li>
+						<li><small><b>[Zhou2022]: </b>Z. Zhou et al. "Spikformer: When Spiking Neural Network Meets Transformer"</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<!-- <h3>Références (2)</h3> -->
+					<ul style="list-style: none; text-align: justify;">
+						<li><small><b>[Falez2019]: </b>P. Falez "Improving spiking neural networks trained with spike timing dependent plasticity for image recognition"</small></li>
+						<li><small><b>[Guo2021]: </b>W. Guo et al. "Neural Coding in Spiking Neural Networks: A Comparative Study for Robust Neuromorphic Systems"</small></li>
 					</ul>
 				</section>
 			</section>
