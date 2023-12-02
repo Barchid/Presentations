@@ -18,7 +18,7 @@
 
 	<style>
 		.reveal .slide-number {
-			font-size: 35px;
+			font-size: 40px;
 		}
 
 		.ita {
@@ -184,7 +184,7 @@
 						<li class="fragment" data-fragment-index="0"><b>Vision événementielle</b></li>
 						<ul class="fragment" data-fragment-index="0">
 							<li>ANNs profonds fortement utilisés</li>
-							<li>Diversification des applications <b style="color: red">$\Rightarrow$ besoins de BDDs d'apprentissage</b></li>
+							<li>Diversification croissante des applications <b style="color: red">$\Rightarrow$ besoins de BDDs d'apprentissage</b></li>
 						</ul>
 						<li class="fragment" data-fragment-index="1"><b>Réseaux de neurones impulsionnels</b></li>
 						<ul class="fragment" data-fragment-index="1">
@@ -194,7 +194,7 @@
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Contributions</h3>
 					<ul>
 						<li><b>Vision Événementielle</b></li>
@@ -209,12 +209,12 @@
 							<li class="fragment" style="border: 3px; color:blue;"><b>2ème contribution :</b> aller vers des tâches de vision plus complexes <b>(+ analyses)</b></li>
 						</ul>
 					</ul>
-				</section>
+				</section> -->
 			</section>
 
 			<section>
 				<section>
-					<h1>Théories</h1>
+					<h1>État de l'Art</h1>
 				</section>
 
 				<!-- <section>
@@ -297,50 +297,30 @@
 				<section>
 					<h3>Apprentissage Profond</h3>
 					<ul>
-						<li><b>Réseaux de neurones convolutifs <span class="ita">(CNNs)</span></b></li>
+						<li><b>Réseaux de neurones convolutifs <span class="ita">(CNNs)</span><small>[Kzh2012]</small></b></li>
 						<ul>
-							<li><b>AlexNet</b><small>[Kzh2012]</small> (2012) atteint les meilleures performances sur <b>ImageNet</b><small>[Deng2009]</small></li>
 							<li><b>2D-CNN</b> : convolutions 2D pour les images</li>
 							<li><b>3D-CNN</b> : convolutions 3D pour les vidéos</li>
 						</ul>
-						<br>
-						<li><b>Plus récemment</b> (2020)</li>
-						<ul>
-							<li><b>Transformeur de Vision</b> (ViT) $\Rightarrow$ complexité 📈 (<span class="ita">ex. ViT-22B <small>[Dehghani2023]</small>)</span></li>
-							<li><b>Modèles de fondations :</b> modèles massifs polyvalents</li>
-						</ul>
+						<img src="these/convenc.png" alt="convenc">	
 					</ul>
-				</section>
-
-				<section>
-					<h3>Formulation - Encodeur Convolutif</h3>
-					<br>
-					<p>
-						$f_{\alpha}(\mathbf{I}) = \mathcal{F}$
-					</p>
-					<div class="r-stack">
-						<!-- <img src="these/convenc_0.png" alt="convenc">
-						<img src="these/convenc_1.png" alt="convenc" class="fragment">
-						<img src="these/convenc_2.png" alt="convenc" class="fragment"> -->
-						<img src="these/convenc.png" alt="convenc">
-					</div>
 				</section>
 
 				<section>
 					<h3>Apprentissage Profond et Événements</h3>
 					<ul>
-						<li><b>ANNs sont très courants</b> pour traiter les événements</li>
+						<li><b>ANNs sont très courants</b> pour traiter les événements<small>[Zheng2023]</small></li>
 						<li>📈 &nbsp; <b>Tâches de vision</b></li>
 						<ul>
-							<li>Reconnaissance, détection d'objets, segmentation, tracking, synthétisation 3D</li>
+							<li>Classification simple<small>[Orchard2015]</small> $\Rightarrow$ Synthèse de vues 3D <small>[Rudnev2023]</small></li>
 						</ul>	
 						<li>📈 &nbsp; <b>Contextes</b></li>
 						<ul>
-							<li>Conduite autonome, robotique, reconnaissance labiale, détection de fatigue, ...</li>
+							<li>i.e. Conduite autonome<small>[Cordone2022]</small>, détection de fatigue<small>[Kielty2023]</small></li>
 						</ul>
 						<li>📈 &nbsp; <b>Architectures</b></li>
 							<ul>
-							<li>2D-/3D-CNNs, ViTs, encodeur-décodeur, NERF, ...</li>
+							<li>2D-CNN<small>[Gallego2020]</small> $\Rightarrow$ Transformeur de vision (ViT)<small>[Gehrig2023]</small></li>
 						</ul>
 					</ul>
 				</section>
@@ -348,9 +328,14 @@
 				<section>
 					<h3>Réseaux de Neurones Impulsionnels</h3>
 					<br>
-					<p>Réseaux de neurones composés de <b style="color: orange; border-bottom: solid 3px orange;">neurones impulsionnels</b></p>
+					<p><b>Neurone artificiel</b> &nbsp; $vs.$ &nbsp; <b>Neurone Impulsionnel</b></p>
 					<br>
-					<img src="these/sota/artificial_impulsion.png" alt="annvssnn" class="fragment">
+					<div class="r-stack">
+						<img src="these/sota/artificial_impulsion_0.png" alt="annvssnn">
+						<img src="these/sota/artificial_impulsion_1.png" alt="annvssnn" class="fragment">
+						<img src="these/sota/artificial_impulsion_2.png" alt="annvssnn" class="fragment">
+						<img src="these/sota/artificial_impulsion.png" alt="annvssnn" class="fragment">
+					</div>
 				</section>
 
 				<section>
@@ -426,7 +411,7 @@
 						<br>
 						<li class="fragment" data-fragment-index="0"><b>Actuellement</b></li>
 						<ul class="fragment" data-fragment-index="0">
-							<li>Segmentation<small>[K2022]</small>, détection<small>[Crd2022]</small>, ...</li>
+							<li>i.e. segmentation<small>[K2022]</small>, détection<small>[Crd2022]</small></li>
 							<li>Versions impulsionnelles d'architectures profondes (ViT<small>[Zhou2022]</small>, SSD<small>[Crd2022]</small>)</li>
 						</ul>
 					</ul>
@@ -492,7 +477,7 @@
 				</section>
 
 				<section>
-					<h3>Travaux</h3>
+					<h3>Contributions</h3>
 					<ul>
 						<li><b>Deux modalités :</b> images statiques et événements</li>
 						<br>
@@ -786,9 +771,11 @@
 							<li><b>$\Rightarrow$ Remise en cause des connaissances</b></li>
 						</ul>
 					</ul>
-
-					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></p>
-					<p style="text-align: justify;"><small>📔 &nbsp; <span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></p>
+					<br>
+					<br>
+					<br>
+					<!-- <p style="text-align: justify;"><small>📔 &nbsp; <span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></p> -->
+					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></p>
 				</section>
 			</section>
 
@@ -798,8 +785,9 @@
 							Événementielle</h2>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Contexte</h3>
+					<p style="color: blue; border: solid 3px; font-weight: bold; padding: 10px;">🎯 &nbsp; Réduire le besoin en données annotées pour la vision événementielle</p>
 					<ul>
 						<li>📈 &nbsp; Modèles profonds pour la vision événementielle</li>
 						<br>
@@ -808,20 +796,14 @@
 						<li style="color:red;" class="fragment" data-fragment-index="0">
 							Complexifie le développement de nouvelles applications
 						</li>
-						<!-- <br>
-						<li class="fragment" data-fragment-index="1"><b style="color:green;">Solution : </b>
-							Apprentissage auto-supervisé</li>
-						<ul class="fragment" data-fragment-index="1">
-							<li>Pré-entraîner un modèle sur des données <b>sans nécessiter d'annotations</b></li>
-						</ul> -->
 					</ul>
 					<br>
 					<br>
 					<p class="fragment" style="font-weight: bold; border: 3px solid; color: black; padding-top: 5px;">🗨️ &nbsp; Comment réduire le besoin en annotations pour les modèles profonds en vision événementielle ?</p>
-				</section>
+				</section> -->
 
 				<section>
-					<h3>Solutions Existantes</h3>
+					<h3>Réduire le Besoin en Annotations</h3>
 					<div class="r-stack">
 						<div class="fragment fade-in-then-out" data-fragment-index="4">
 							<img src="these/pretraining_supervised.png" alt="pretraining">
@@ -850,7 +832,7 @@
 				<section>
 					<h3>SSRL événementiel</h3>
 					<ul>
-						<li><b>Trois travaux similaires</b> <span class="ita">(2022 - 2023)</span><small>[TODO,TODO,TODO]</small></li>
+						<li><b>Trois travaux similaires</b> <span class="ita">(2022 - 2023)</span><small>[Li2022,Klenk2022,Yang2023]</small></li>
 						<ul>
 							<li>❌ &nbsp; Limités à du <span style="color: red;">comportement statique</span></li>
 							<li>❌ &nbsp; Expérimentations : <span style="color: red;">évaluations différentes</span></li>
@@ -910,7 +892,7 @@
 					<ul>
 						<li><b>2D-CNN : </b>ResNet-18<small>[He2016]</small></li>
 						<li><b>CSNN : </b>SEW-ResNet-18<small>[Fang2021]</small></li>
-						<li><b>3D-CNN : </b>MC3-ResNet-18<small>[TODOresnet3d]</small></li>
+						<li><b>3D-CNN : </b>MC3-ResNet-18<small>[Tran2017]</small></li>
 					</ul>
 					<br>
 					<br>
@@ -1055,17 +1037,19 @@
 				</section>
 
 				<section>
-					<h3>Étude sur les EDAs - Résumé</h3>
-					<ol>
+					<h3>Étude sur les EDAs - Bilan</h3>
+					<!-- <ol>
 						<li><b>EDAs communes :</b> au plus le mieux</li>
 						<br>
-						<li>Une EDA géométrique et une EDA en découpage $\rightarrow$ ➕ performances</li>
+						<li>Une EDA géométrique et une EDA en découpage $\Rightarrow$ ➕ performances</li>
 						<br>
 						<li>Intérêt des relations <code>OneOf</code> <span class="ita">(<code>EventDrop</code>, ...)</span></li>
-					</ol>
+					</ol> -->
 					<br>
 					<br>
-					<p class="fragment">$D = \{\texttt{Noise,Crop,PolFlip,StatDynGeo,}$ $\texttt{EventCopyDrop}\}$</p>
+					<p><b>Pour la suite :</b></p>
+					<br>
+					<p>$D = \{\texttt{Noise,Crop,PolFlip,StatDynGeo,}$ $\texttt{EventCopyDrop}\}$</p>
 				</section>
 
 				<section>
@@ -1096,7 +1080,6 @@
 
 				<section>
 					<h3>Bilan des Contributions</h3>
-					<br>
 					<ul>
 						<li class="fragment" data-fragment-index="0" style="list-style-type: '⚙️ &nbsp;';"> <b>Méthode de SSRL événementielle</b></li>
 						<ul class="fragment" data-fragment-index="0">
@@ -1112,129 +1095,92 @@
 						<ul class="fragment" data-fragment-index="2">
 							<li>Fondations pour la SSRL événementielle</li>
 						</ul>
+						<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></p>
 					</ul>
-				</section>
-
-				<section>
-					<h3>Limitations</h3>
-					<ul>
-						<li><b>Inégalités des encodeurs</b></li>
-						<ul>
-							<li>❌ &nbsp; $CSNN < 2D\text{ et }3D$</li>
-						</ul>
-						<br>
-						<li>Protocoles d'évaluation basés sur la <b>classification uniquement</b></li>
-						<ul>
-							<li>❌ &nbsp; Information spatiale</li>
-						</ul>
-						<br>
-						<li>Les caractéristiques sont extraites sur l'ensemble des événements</li>
-						<ul>
-							<li>❌ &nbsp; Traitement de l'information spatio-temporel</li>
-						</ul>
-					</ul>
-					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></p>
 				</section>
 			</section>
-
 			<section>
 				<section>
 					<h1>Conclusion</h1>
 				</section>
 
 				<section>
-					<h3 style="font-size: 1.0em;">Étude des SNNs profonds par la Localisation d'Objet</h3>
-					<p class="fragment" style="text-align: justify;">
-						Notre étude fournit des <b style="color: green;">informations clés sur des choix de conception</b> des SNNs profonds.
-					</p>
-					<br>
-					<p class="fragment" style="text-align: justify;">
-						Le SNN conçu montre l'<b style="color: green;">intérêt</b> en termes de <b style="color: green;">consommation énergétique</b> par rapport à un ANN similaire.
-					</p>
-					<br>
-					<p class="fragment" style="text-align: justify;">
-						Les conclusions antérieures sur les SNNs <b style="color: red;">ne sont pas vérifiées</b> pour l'apprentissage par SG $\Rightarrow$ Remise en cause.
-					</p>
+					<h3>Travaux Réalisés</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>CBMI (2021)</b></small></li>
+						<li class="fragment" data-fragment-index="0" style="text-align: justify; margin:0 20px 60px 0;"><small><span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing (2023)</b></small></li>
+						<li class="fragment" style="text-align: justify; margin:0 20px 60px 0;"><small><span class="ita">"Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras."</span> <b>CBMI (2023)</b></small></li>
+						<li class="fragment" style="text-align: justify; margin:0 20px 60px 0;"><small><span class="ita">"Bina-rep event frames: A simple and effective representation for event-based cameras."</span> <b>ICIP (2022)</b></small></li>
+						<li class="fragment" style="text-align: justify; margin:0 20px 60px 0;"><small><span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>CVPR Workshop (2023)</b></small></li>
+						<!-- <li style="border-top: solid 2px; padding-top: 5px; text-align: justify; color: darkgrey;"><small><span class="ita">"Review on indoor RGB-D semantic segmentation with deep convolutional neural networks."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></li> -->
+					</ul>
 				</section>
 
 				<section>
-					<h3 style="font-size: 1.0em;">Étude des SNNs profonds par la Localisation d'Objet</h3>
-					<p><b>Travaux Futurs</b></p>
+					<h3>Bilan de la Thèse</h3>
 					<ul>
-						<li><b>Déploiement et analyses sur matériel neuromorphique</b></li>
+						<li><b>Vision neuromorphique se développe rapidement</b></li>
 						<ul>
-							<li>Quelles sont les spécificités d'un SNN déployé ?</li>
+							<li>Importance de l'apprentissage profond (ANN ou SNN)</li>
 						</ul>
-						<br>
-						<li><b>Études supplémentaires</b></li>
-						<ul>
-							<li>Qualité de l'apprentissage, attaques adverses, etc.</li>
+						<li><b>Domaine encore à enrichir</b></li>
+						<ul style="list-style-type: '&rarr;';">
+							<li>&nbsp; Exploration de nouvelles tâches</li>
+							<li>&nbsp; Analyses experimentales</li>
+							<li>&nbsp; Nouvelles méthodes</li>
 						</ul>
-						<br>
-						<li><b>Vers des tâches plus complexes...</b></li>
+						<li><b>Nécessités à court terme</b></li>
 						<ul>
-							<li>détection d'objets, segmentation panoptique, ...</li>
+							<li>Confrontation avec d'autres solutions alternatives pour la consommation d'énergie $\Rightarrow$ <b>améliorer la stabilité des méthodes</b></li>
 						</ul>
 					</ul>
 				</section>
 
 				<section>
-					<h3>SSRL événementiel</h3>
-					<p class="fragment" style="text-align: justify;">
-						Le SSRL événementiel accomplit <b style="color: green;">avec succès</b> la réduction du <b style="color: green;">besoin en annotations</b>.
-					</p>
-					<br>
-					<p class="fragment" style="text-align: justify;">
-						Cela ouvre des opportunités d'<b style="color: green;">accélérer</b> grandement la <b style="color: green;">diversification</b> de la vision événementielle. 
-					</p>
-					<br>
-					<p class="fragment" style="text-align: justify;">
-						Possibilité de voir des BDDs événementielles comportant <b style="color: green;">beaucoup de données</b> et <b style="color: green;">peu d'annotations</b>.
-					</p>
-				</section>
-
-				<section>
-					<h3>SSRL Événementiel</h3>
-					<p><b>Travaux Futurs</b></p>
+					<h3>Perspectives</h3>
 					<ul>
-						<li><b>Méthodes spécialisées</b> pour un type d'encodeur</li>
+						<li class="fragment" data-fragment-index="0"><b>Modèle de fondation pour la vision événementielle</b></li>
+						<ul class="fragment" data-fragment-index="0">
+							<li>Modèle massif pré-entraîné par SSRL $\Rightarrow$ <b>polyvalence des tâches de vision</b> </li>
+							<li>Distillation du savoir, Few-shot learning, etc.</li>
+						</ul>
+
 						<br>
-						<li>Proposer des <b>protocoles d'évaluation</b> diversifiés <span class="ita">(détection d'objets, ...)</span></li>
-						<br>
-						<li><b>Nouveaux contextes applicatifs</b></li>
-						<br>
-						<li><b>Modèles de fondation événementiels</b> </li>
+
+						<li class="fragment" data-fragment-index="1"><b>Réseaux de neurones binaires à convolutions éparses pour la vision événementielle</b></li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Latence ultra-faible<small>[Chowdhury2021]</small> et éparsité du traitement<small>[Messikomer2020]</small></li>
+							<li>Traitement efficace des flux à comportement statique</li>
+						</ul>
 					</ul>
 				</section>
 			</section>
 
 			<section>
-				<h3>Séance de Questions</h3>
+				<h3>Merci pour votre attention</h3>
 				<p style="text-align: left;"><b>Publications</b> &nbsp; 6️⃣</p>
 				<ul>
 					<li>Conférences internationales à comité de lecture &nbsp; 5️⃣</li>
+					<ul>
+						<li><b>CVPR Workshop</b></li>
+						<li><b>ICIP</b></li>
+						<li><b>CBMI</b></li>
+						
+					</ul>
+					<br>
 					<li>Journal international à comité de lecture &nbsp; 1️⃣</li>
+					<ul>
+						<li><b>Neurocomputing</b></li>
+					</ul>
 				</ul>
 				<br>
-				<p style="text-align: left;"><b>Divers</b></p>
+				<!-- <p style="text-align: left;"><b>Divers</b></p>
 				<ul>
 					<li>Encadrements de stages et projets Master &nbsp;  5️⃣</li>
 					<li>Enseignement &nbsp;  1️⃣</li>
 					<li>🥇 &nbsp; Doctoriales</li>
 					<li>📣 &nbsp; Médiation scientifique</li>
-				</ul>
-			</section>
-
-			<section>
-				<h3>Contributions</h3>
-				<ul>
-					<li class="fragment shrink" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Deep spiking convolutional neural network for single object localization based on deep continuous local learning."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></li>
-					<li class="fragment shrink" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Spiking neural networks for frame-based and event-based single object localization."</span> <b>Neurocomputing 559 (2023): 126805.</b></small></li>
-					<li class="fragment shrink" data-fragment-index="0" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></li>
-					<li class="fragment highlight-red" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Bina-rep event frames: A simple and effective representation for event-based cameras."</span> <b>2022 IEEE International Conference on Image Processing (ICIP)</b>.</small></li>
-					<li class="fragment  highlight-blue" style="text-align: justify; margin:0 20px 20px 0;"><small><span class="ita">"Spiking-Fer: Spiking Neural Network for Facial Expression Recognition With Event Cameras."</span> <b>2023 International Conference on Content-Based Multimedia Indexing (CBMI). ACM, 2023.</b>.</small></li>
-					<li style="border-top: solid 2px; padding-top: 5px; text-align: justify; color: darkgrey;"><small><span class="ita">"Review on indoor RGB-D semantic segmentation with deep convolutional neural networks."</span> <b>2021 International Conference on Content-Based Multimedia Indexing (CBMI). IEEE, 2021.</b></small></li>
-				</ul>
+				</ul> -->
 			</section>
 
 			<section>
@@ -1277,6 +1223,21 @@
 					<ul style="list-style: none; text-align: justify;">
 						<li><small><b>[Falez2019]: </b>P. Falez "Improving spiking neural networks trained with spike timing dependent plasticity for image recognition"</small></li>
 						<li><small><b>[Guo2021]: </b>W. Guo et al. "Neural Coding in Spiking Neural Networks: A Comparative Study for Robust Neuromorphic Systems"</small></li>
+						<li><small><b>[Chowdhury2021]: </b>S. S. Chowdhury et al. "One timestep is all you need: Training spiking neural networks with ultra low latency"</small></li>
+						<li><small><b>[Messikomer2020]: </b>N. Messikomer et al. "Event-based asynchronous sparse convolutional networks"</small></li>
+						<li><small><b>[Gallego2020]: </b>G. Gallego et al. "Event-based vision: a survey"</small></li>
+						<li><small><b>[Zheng2023]: </b>X. Zheng et al. "Deep learning for event-based vision: A comprehensive survey and benchmarks"</small></li>
+						<li><small><b>[Rudnev2023]: </b>V. Rudnev et al. "EventNeRF: Neural radiance fields from a single colour event camera"</small></li>
+						<li><small><b>[Gehrig2023]: </b>M. Gehrig et al. "Recurrent vision transformers for object detection with event cameras"</small></li>
+						<li><small><b>[Kielty2023]: </b>P. Kielty et al. "Neuromorphic Driver Monitoring Systems: A Proof-of-Concept for Yawn Detection and Seatbelt State Detection using an Event Camera"</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<ul style="list-style: none; text-align: justify;">
+						<li><small><b>[Li2022]: </b>Y. Li et al. "Neuromorphic data augmentation for training spiking neural networks"</small></li>
+						<li><small><b>[Klenk2022]: </b>S. Klenk et al. "Masked Event Modeling: Self-Supervised Pretraining for Event Cameras"</small></li>
+						<li><small><b>[Yang2023]: </b>Y. Yang et al. "Event Camera Data Pre-training"</small></li>
 					</ul>
 				</section>
 			</section>
@@ -1287,18 +1248,7 @@
 					<h4>État de l'Art</h4>
 				</section>
 
-				<section>
-					<h3>Consommation Énergétique</h3>
-					<p>Estimation de l'énergie consommée lors d'une inférence des modèles de l'état de l'art par
-						année<small>[Desislavov2023]</small></p>
-					<div class="r-stack">
-						<!-- <img src="these/consommation_energie_0.png" alt="Consommation énergétique">
-						<img src="these/consommation_energie_1.png" alt="Consommation énergétique" class="fragment"> -->
-						<img src="these/consommation_energie_2.png" alt="Consommation énergétique">
-						<img src="these/consommation_energie_3.png" alt="Consommation énergétique" class="fragment">
-						<img src="these/consommation_energie_4.png" alt="Consommation énergétique" class="fragment">
-					</div>
-				</section>
+				
 
 				<section>
 					<h3>Réseaux de Neurones Impulsionnels</h3>
@@ -1329,18 +1279,122 @@
 			<section>
 				<section>
 					<h1>Annexes</h1>
-					<h4>Bina-Rep</h4>
+					<h3>Bina-Rep</h3>
 				</section>
 
 				<section>
-					<h3>Bina-Rep</h3>
+					<h3>Représentation Bina-Rep</h3>
+					<img src="these/binarep/bina1.png" alt="bina">
+					<img src="these/binarep/bina2.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Visualisations</h3>
+					<img src="these/binarep/bina3.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Modèle ANN</h3>
+					<img src="these/binarep/bina4.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Comparaison avec Autres Représentations</h3>
+					<img src="these/binarep/bina5.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Bases de Données Utilisées</h3>
+					<img src="these/binarep/bina6.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Comparaison</h3>
+					<img src="these/binarep/bina7.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Vs SOTA</h3>
+					<img src="these/binarep/bina8.png" alt="bina">
+				</section>
+
+				<section>
+					<h3>Robustesse</h3>
+					<img height="600px" src="these/binarep/bina9.png" alt="bina">
 				</section>
 			</section>
 
 			<section>
 				<section>
 					<h1>Annexes</h1>
-					<h4>Localisation</h4>
+					<h3>Spiking-FER</h3>
+					<p><a href="https://barchid.github.io/Presentations/spiking_fer.html" target="_blank">https://barchid.github.io/Presentations/spiking_fer.html</a></p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Annexes</h1>
+					<h3>Travail Préliminaire de Localisation</h3>
+				</section>
+
+				<section>
+					<h3>Règle d'Apprentissage : DECOLLE</h3>
+					<img src="these/decolle/0.png" alt="decolle">
+				</section>
+
+				<section>
+					<h3>Modèle Encodeur-Décodeur</h3>
+					<img src="these/decolle/1.png" alt="decolle">
+				</section>
+
+				<section>
+					<h3>Calcul de la Prédiction</h3>
+					<ul>
+						<li>$T$ prédictions sur chacune des $L$ couches du réseau</li>
+						<li>$\Rightarrow$ comment calculer une seule prédiction la plus efficace possible ?</li>
+						<br>
+						<li><b>Intuition utilisée : </b>garder la dernière prédiction (à l'étape $T$) de la dernière couche (la couche $L$) $\rightarrow \mathbf{B}^T_L$</li>
+						<li style="color: red;">❌ &nbsp; Pas de preuve que c'est optimal</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Résultats sur Oxford-IIIT-Pet</h3>
+					<p>$63.2$% mIoU</p>
+					<img src="these/decolle/2.png" alt="decolle">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Annexes</h1>
+					<h3>Localisation</h3>
+				</section>
+
+				<section>
+					<h3>Intersection over Union (IoU)</h3>
+					<img height="600px" src="these/loca_annex/iou.png" alt="iou">
+				</section>
+
+				<section>
+					<ul>
+						<li>$\mathcal{L}_{IoU}$ = 1 - IoU</li>
+						<li>On calcule les coordonnées des centres des boites englobantes $\mathbf{B}$ (prédiction) et $\mathbf{B}^{gt}$ (label)</li>
+						<ul>
+							<li>$\mathbf{b}$ et $\mathbf{b}^{gt}$</li>
+						</ul>
+						<li>Terme de pénalité : la distance normalisée entre ces deux centres des bbox : $\mathcal{R} = \frac{\rho^2(\mathbf{b},\mathbf{b}^{gt})}{q^2}$</li>
+						<ul>
+							<li>$\rho(\cdot)$ est la distance euclidienne</li>
+							<li>$q$ est la longueur de la diagonale de la plus petite boite qui détoure les deux boites englobantes</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<img src="these/loca_annex/diou.png" alt="diou">
+					<p>$\mathcal{L}_{DIoU} = \mathcal{L}_{IoU} + \mathcal{R}$</p>
 				</section>
 
 				<section>
@@ -1359,6 +1413,25 @@
 						<img src="these/localization/conso_5.png" alt="conso" class="fragment" data-fragment-index="5">
 					</div>
 				</section>
+
+				<section>
+					<h3>Image Statique - Evolution $RAD^{corr}_{sev}$</h3>
+					<img src="these/loca_annex/rad_evo.png" alt="rad evo">
+				</section>
+				<section>
+					<h3>Événements - Evolution $RAD^{corr}_{sev}$</h3>
+					<img src="these/loca_annex/rad_event_evo.png" alt="rad evo">
+				</section>
+
+				<section>
+					<h3>Fréquences d'Activations des SNNs</h3>
+					<img src="these/loca_annex/rate_snn.png" alt="rate">
+				</section>
+
+				<section>
+					<h3>Latences Événements</h3>
+					<img src="these/loca_annex/latence_events.png" alt="latences">
+				</section>
 			</section>
 
 			<section>
@@ -1367,9 +1440,6 @@
 					<h4>SSRL Événementiel</h4>
 				</section>
 
-				<section>
-					<h3>dIoU</h3>
-				</section>
 
 				<section>
 					<h3>VICReg</h3>
@@ -1549,13 +1619,79 @@
 				</section>
 
 				<section>
-					<h3>Représentation - Uniformité et Tolérance</h3>
-					<p>Expliquer ce que c'est</p>
+					<h3>Analyse - Uniformité et Tolérance</h3>
+					<ul>
+						<li>Mesures calculées sur l'ensemble des représentations sur une même BDD</li>
+						<li><b>Uniformité :</b> mesurer la proximité de la distribution des représentations sur l'hypersphère des caractéristique avec une distribution uniforme</li>
+						<li><b>Tolérance :</b> mesurer dans quelle mesure les représentations capturent les relations sémantiques entre les échantillons</li>
+						<br>
+						<li><b>En SSRL classique : </b> un équilibre de ces deux valeurs $\Rightarrow$ meilleures représentations</li>
+					</ul>
+				</section>
+				<section>
+					<img src="these/ssl_annex/uf_cal.png" alt="cal">
+					<img src="these/ssl_annex/uf.png" alt="uf">
+				</section>
+
+
+				<section>
+					<h3>🔎 &nbsp; Similarité des Représentations</h3>
+					<ul>
+						<li><b>CKA Linéaire :</b></li>
+						<ul>
+							<li>Utilisée en SSRL pour les images</li>
+							<li>Compare les représentations de <b>deux encodeurs</b></li>
+							<li>Donne une valeur $\in [0,1]$ évaluant leur similarité</li>
+						</ul>
+						<br>
+						<li><b>🎯 &nbsp; Nos objectifs :</b></li>
+						<ul>
+							<li>Comparer tous les encodeurs entre eux...</li>
+							<li>... selon chaque bloc résiduel</li>
+							<li><b>Base de données :</b> DVSGesture</li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Représentation - Uniformité et Tolérance</h3>
-					<p>Résultat + interpretations</p>
+					<h3>🔎 &nbsp; Similarité des Représentations</h3>
+					<div class="r-stack">
+						<img src="these/results_ssl/cka_0.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_1.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_2.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_3.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_4.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_5.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_6.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_7.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_8.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_9.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_10.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_11.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_12.png" alt="cka" class="fragment">
+						<img src="these/results_ssl/cka_13.png" alt="cka" class="fragment">
+					</div>
+				</section>
+
+				<section>
+					<h3>Limitations</h3>
+					<ul>
+						<li><b>Inégalités des encodeurs</b></li>
+						<ul>
+							<li>❌ &nbsp; $CSNN < 2D\text{ et }3D$</li>
+						</ul>
+						<br>
+						<li>Protocoles d'évaluation basés sur la <b>classification uniquement</b></li>
+						<ul>
+							<li>❌ &nbsp; Information spatiale</li>
+						</ul>
+						<br>
+						<li>Les caractéristiques sont extraites sur l'ensemble des événements</li>
+						<ul>
+							<li>❌ &nbsp; Traitement de l'information spatio-temporel</li>
+						</ul>
+					</ul>
+					<p style="border-top: solid 2px; padding-top: 5px; text-align: justify;"><small>📔 &nbsp; <span class="ita">"Exploring Joint Embedding Architectures and Data Augmentations for Self-Supervised Representation Learning in Event-Based Vision."</span> <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</b>.</small></p>
 				</section>
 			</section>
 		</div>
@@ -1572,7 +1708,7 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
-			slideNumber: 'c/t',
+			slideNumber: 'c',
 			math: {
 				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
 				config: 'TeX-AMS_HTML-full',
