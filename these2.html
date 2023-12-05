@@ -348,13 +348,13 @@
 					<h3>Règles d'Apprentissage</h3>
 					<div class="r-stack">
 						<ul class="fragment fade-out" data-fragment-index="0">
-							<li><b>Conversion ANN-vers-SNN</b></li>
+							<li><b>Conversion ANN-vers-SNN</b><small>[Diehl2015]</small></li>
 							<ul>
 								<li style="list-style: '✅';"> &nbsp; SNNs profonds et performants</li>
 								<li style="list-style: '❌';">&nbsp; Lents et consommateurs</li>
 							</ul>
 							<br>
-							<li><b>Règles d'apprentissage biologique</b> <span class="ita">(STDP)</span></li>
+							<li><b>Règles d'apprentissage biologique</b> <span class="ita">(STDP)</span><small>[Falez2019]</small></li>
 							<ul>
 								<li style="list-style: '✅';"> &nbsp; Non-supervisé, adapté au matériel spécialisé</li>
 								<li style="list-style: '❌';">&nbsp; Complexité des SNNs limitée </li>
@@ -362,22 +362,22 @@
 						</ul>
 
 						<ul class="fragment fade-in" data-fragment-index="0">
-							<li><b>Rétropropagation</b> <span class="fragment" data-fragment-index="1">&nbsp; 🏅</span></li>
+							<li><b>Rétropropagation</b> <span>&nbsp; 🏅</span></li>
 							<ul>
 								<li>SNN $=$ Réseau de neurones récurrents</li>
 								<li>$\Rightarrow$ Rétropropagation à travers le temps</li>
 								<br>
-								<li class="fragment" data-fragment-index="2" >✅ &nbsp; Apprentissage direct du SNN</li>
-								<li class="fragment" data-fragment-index="2" >✅ &nbsp; SNNs profonds et performants</li>
+								<li class="fragment" data-fragment-index="2" style="color: orange;">⚠️ &nbsp; Non-différentiabilité des impulsions</li>
+								<li class="fragment" data-fragment-index="2" style="color: green;"><b>$\Rightarrow$ Apprentissage par Substitut du Gradient</b> (SG)<small>[Neftci2019]</small></li>
 								<br>
-								<li class="fragment" data-fragment-index="3" style="color: orange;">⚠️ &nbsp; Non-différentiabilité des impulsions</li>
-								<li class="fragment" data-fragment-index="3" style="color: green;"><b>$\Rightarrow$ Apprentissage par Substitut du Gradient</b> (SG)<small>[Neftci2019]</small></li>
+								<li class="fragment" data-fragment-index="3" >✅ &nbsp; Apprentissage direct du SNN</li>
+								<li class="fragment" data-fragment-index="3" >✅ &nbsp; SNNs profonds et performants</li>
 							</ul>
 						</ul>
 					</div>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Apprentissage par Substitut du Gradient</h3>
 					<div class="r-stack">
 						<div class="fragment fade-out" data-fragment-index="0">
@@ -397,7 +397,7 @@
 							<img src="these/sg_simple.png" alt="go">
 						</div>
 					</div>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>SNNs Profonds en Vision</h3>
@@ -663,12 +663,12 @@
 						<img src="these/localization/corruptions_charts.png" alt="mrad" height="450px" style="margin-top: 0;">
 						<img src="these/localization/corruptions_charts_0.png" alt="mrad" height="450px" class="fragment" data-fragment-index="0" style="margin-top: 0;">
 						<img src="these/localization/corruptions_charts_1.png" alt="mrad" height="450px" class="fragment" data-fragment-index="1" style="margin-top: 0;">
-						<img src="these/localization/corruptions_charts_2.png" alt="mrad" height="450px" class="fragment" data-fragment-index="2" style="margin-top: 0;">
+						<!-- <img src="these/localization/corruptions_charts_2.png" alt="mrad" height="450px" class="fragment" data-fragment-index="2" style="margin-top: 0;"> -->
 						<img src="these/localization/corruptions_charts_3.png" alt="mrad" height="450px" class="fragment" data-fragment-index="3" style="margin-top: 0;">
 					</div>
 					<ul>
 						<li class="fragment" data-fragment-index="1"><b>Temporel :</b> très robuste sauf pour le givre</li>
-						<li class="fragment" data-fragment-index="2"><b>Saccades :</b> contraire observé</li>
+						<!-- <li class="fragment" data-fragment-index="2"><b>Saccades :</b> contraire observé</li> -->
 						<li class="fragment" data-fragment-index="3" style="color: green;"><b>Fréquentiel :</b> grande robustesse générale</li>
 					</ul>
 				</section>
@@ -848,7 +848,7 @@
 				</section>			
 				
 				<section>
-					<h3>Travaux</h3>
+					<h3>Contributions</h3>
 					<ul>
 						<li><b>Nouvelle méthode de référence</b> pour des encodeurs convolutifs légers <span class="ita">(CSNN, 2D-CNN, et 3D-CNN)</span></li>
 						<br>
@@ -856,11 +856,11 @@
 						<br>
 						<li><b>Protocoles d'évaluation standardisés</b></li>
 						<br>
-						<li><b>Étude sur les augmentations de données</b> dans le cadre du SSRL</li>
+						<!-- <li><b>Étude sur les augmentations de données</b> dans le cadre du SSRL</li> -->
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Méthode</h3>
 					<p><b>Augmentation de Données Événementielle</b> (EDA)</p>
 					<div class="r-stack">
@@ -868,7 +868,7 @@
 						<img src="img/ssl/dataaug_comp2.png" alt="data" class="fragment" data-fragment-index="0">
 					</div>
 					<p class="fragment" data-fragment-index="0">ℹ️ &nbsp; Une EDA peut être une <b>composition</b> d'autres EDAs</p>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>Méthode</h3>
@@ -927,9 +927,31 @@
 					</div>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Augmentations Étudiées</h3>
 					<img src="these/ssrl/edas_summary.png" alt="eda summary">
+				</section> -->
+
+				<section>
+					<h3>Étude sur les Augmentations - Résumé</h3>
+					<!-- <ol>
+						<li><b>EDAs communes :</b> au plus le mieux</li>
+						<br>
+						<li>Une EDA géométrique et une EDA en découpage $\Rightarrow$ ➕ performances</li>
+						<br>
+						<li>Intérêt des relations <code>OneOf</code> <span class="ita">(<code>EventDrop</code>, ...)</span></li>
+					</ol> -->
+					<p style="border: solid 3px; font-weight: bold; color:blue; padding: 10px;">🎯 &nbsp; Trouver une distribution $D$ généralement efficace</p>
+					<ul>
+						<li>Comparaison des augmentations existantes</li>
+						<li>+ Proposition de nouvelles augmentations</li>
+						<br>
+					</ul>
+					<br>
+					<br>
+					<p>$\Rightarrow$ une distribution $D$ généralement efficace a été trouvée</p>
+					<!-- <p><b>Pour la suite :</b></p>
+					<p>$D = \{\texttt{Noise,Crop,PolFlip,StatDynGeo,}$ $\texttt{EventCopyDrop}\}$</p> -->
 				</section>
 
 				<section>
@@ -986,7 +1008,7 @@
 					<br>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Étude sur les EDAs</h3>
 					<p style="border: 3px solid; font-weight: bold; padding-top: 5px;">🎯 &nbsp; Évaluer l'intérêt des EDAs pour le SSRL</p>
 					<br>
@@ -1034,23 +1056,7 @@
 							<li><code>EventCopyDrop</code> est systématiquement 🥇 ou 🥈</li>
 						</ul>
 					</div>
-				</section>
-
-				<section>
-					<h3>Étude sur les EDAs - Bilan</h3>
-					<!-- <ol>
-						<li><b>EDAs communes :</b> au plus le mieux</li>
-						<br>
-						<li>Une EDA géométrique et une EDA en découpage $\Rightarrow$ ➕ performances</li>
-						<br>
-						<li>Intérêt des relations <code>OneOf</code> <span class="ita">(<code>EventDrop</code>, ...)</span></li>
-					</ol> -->
-					<br>
-					<br>
-					<p><b>Pour la suite :</b></p>
-					<br>
-					<p>$D = \{\texttt{Noise,Crop,PolFlip,StatDynGeo,}$ $\texttt{EventCopyDrop}\}$</p>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>Évaluation des Performances</h3>
@@ -1235,6 +1241,7 @@
 
 				<section>
 					<ul style="list-style: none; text-align: justify;">
+						<li><small><b>[Diehl2015]: </b>P. Diehl et al. "Fast-classifying, high-accuracy spiking deep networks through weight and threshold balancing"</small></li>
 						<li><small><b>[Li2022]: </b>Y. Li et al. "Neuromorphic data augmentation for training spiking neural networks"</small></li>
 						<li><small><b>[Klenk2022]: </b>S. Klenk et al. "Masked Event Modeling: Self-Supervised Pretraining for Event Cameras"</small></li>
 						<li><small><b>[Yang2023]: </b>Y. Yang et al. "Event Camera Data Pre-training"</small></li>
@@ -1248,7 +1255,27 @@
 					<h4>État de l'Art</h4>
 				</section>
 
-				
+				<section>
+					<h3>Apprentissage par Substitut du Gradient</h3>
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p style="color: red;">Problème du neurone mort<small>[Eshraghian2021]</small></p>
+							<img src="these/heaviside_simple_0.png" alt="go">
+						</div>
+						<div class="fragment fade-in-then-out" data-fragment-index="0">
+							<p style="color: red;">Problème du neurone mort<small>[Eshraghian2021]</small></p>
+							<img src="these/heaviside_simple_1.png" alt="go">
+						</div>
+						<div class="fragment fade-in-then-out" data-fragment-index="1">
+							<p style="color: red;">Problème du neurone mort<small>[Eshraghian2021]</small></p>
+							<img src="these/heaviside_simple.png" alt="go">
+						</div>
+						<div class="fragment fade-in-then-out" data-fragment-index="2">
+							<p style="color: green;">Remplacer la dérivée par un <b>substitut</b></p>
+							<img src="these/sg_simple.png" alt="go">
+						</div>
+					</div>
+				</section>
 
 				<section>
 					<h3>Réseaux de Neurones Impulsionnels</h3>
@@ -1440,6 +1467,70 @@
 					<h4>SSRL Événementiel</h4>
 				</section>
 
+				<section>
+					<h3>Méthode</h3>
+					<p><b>Augmentation de Données Événementielle</b> (EDA)</p>
+					<div class="r-stack">
+						<img src="img/ssl/dataaug.png" alt="data">
+						<img src="img/ssl/dataaug_comp2.png" alt="data" class="fragment" data-fragment-index="0">
+					</div>
+					<p class="fragment" data-fragment-index="0">ℹ️ &nbsp; Une EDA peut être une <b>composition</b> d'autres EDAs</p>
+				</section>
+
+				<section>
+					<h3>Augmentations Étudiées</h3>
+					<img src="these/ssrl/edas_summary.png" alt="eda summary">
+				</section>
+
+				<section>
+					<h3>Étude sur les EDAs</h3>
+					<p style="border: 3px solid; font-weight: bold; padding-top: 5px;">🎯 &nbsp; Évaluer l'intérêt des EDAs pour le SSRL</p>
+					<br>
+					<ul>
+						<li>Protocole d'<b>évaluation linéaire</b> sur <b>DVSGesture</b></li>
+						<br>
+						<li><b>Trois étapes incrémentales : </b>une étape par catégorie</li>
+						<br>
+						<li>Pour chaque étape, on conserve la combinaison d'EDAs <b>la plus performante de l'étape précédente</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Étude sur les EDAs</h3>
+					<div class="r-stack">
+						<p class="fragment fade-out" data-fragment-index="2"><b>Étape 1 :</b> EDAs Communes</p>
+						<p class="fragment fade-in" data-fragment-index="2"><span class="fragment fade-out" data-fragment-index="6"><b>Étape 2 :</b> EDAs Géométriques</span></p>
+						<p class="fragment" data-fragment-index="6"><b>Étape 3 :</b> EDAs en découpage</p>
+					</div>
+					<div class="r-stack">
+						<img src="these/ssrl/eda_communes_results_0.png" height="450px" alt="eda">
+						<img src="these/ssrl/eda_communes_results_1.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="0">
+						<img src="these/ssrl/eda_communes_results.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="1">
+						<img src="these/ssrl/eda_geo_results_0.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="2">
+						<img src="these/ssrl/eda_geo_results_1.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="3">
+						<img src="these/ssrl/eda_geo_results_2.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="4">
+						<img src="these/ssrl/eda_geo_results.png" height="450px" alt="eda" class="fragment fade-in-then-out" data-fragment-index="5">
+						<img src="these/ssrl/eda_drop_results.png" height="450px" alt="eda" class="fragment fade-in" data-fragment-index="6">
+					</div>
+					<div class="r-stack">
+						<div class="fragment" data-fragment-index="1">
+							<ul class="fragment fade-out" data-fragment-index="2">
+								<li>Une EDA (<span style="color: red;">rouge</span>) &lsaquo; deux EDAs (<span style="color:green;">vert</span>) &lsaquo; Trois EDAs (<span style="color:blue;">bleu</span>)</li>
+							</ul>
+						</div>
+						
+						<div class="fragment" data-fragment-index="2">
+							<ul class="fragment fade-out" data-fragment-index="6">
+								<li>Dynamiques pour 3D-CNN et CSNN</li>
+								<li>Statiques pour 2D-CNN</li>
+							</ul>
+						</div>
+
+						<ul class="fragment fade-in" data-fragment-index="7">
+							<li><code>EventCopyDrop</code> est systématiquement 🥇 ou 🥈</li>
+						</ul>
+					</div>
+				</section>
 
 				<section>
 					<h3>VICReg</h3>
